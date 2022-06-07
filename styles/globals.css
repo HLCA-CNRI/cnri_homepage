@@ -14,18 +14,15 @@
   }
 }
 
-
 .one{
-    width: 100px;
-    height: 100px;
-    background-color: red;
+    width: 33%;
     transition-property: width, background-color;
     transition-duration: 2s, 2s;
 }
 
 .one:hover{
-  width: 300px;
-  background-color: blue;
+  width: 50%;
+  background-color: white;
 }
 
 .bigSquare{
@@ -33,3 +30,4 @@
   height: 200px;
   background-color: red;
 }
+

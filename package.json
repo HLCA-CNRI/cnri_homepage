@@ -13,10 +13,13 @@
     "@material-ui/icons": "^4.11.3",
     "flowbite": "^1.4.7",
     "flowbite-react": "^0.0.25",
+    "jsdom": "^19.0.0",
+    "net": "^1.0.2",
     "next": "12.1.6",
     "next-videos": "1.4.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-hover-video-player": "^9.6.0",
     "react-player": "^2.10.1",
     "styled-components": "^5.3.5"
   },

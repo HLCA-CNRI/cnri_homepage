@@ -2,11 +2,12 @@ import logo from "../../images/logo.png";
 
 const NavigationBar: React.FC = () => {
   return (
-    <div>
+    <div className = "sticky inset-x-0 top-0 left-0 bg-white  w-[100%] shadow-md">
+      <div className = "mx-16">
       <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
       <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="/Product" className="flex items-center my-4">
+          <a href="/" className="flex items-center my-4">
             <img src={logo.src} width={180} height={70} />
           </a>
           <div className="flex md:order-2">
@@ -84,6 +85,9 @@ const NavigationBar: React.FC = () => {
           </div>
         </div>
       </nav>
+
+      </div>
+     
     </div>
   );
 };

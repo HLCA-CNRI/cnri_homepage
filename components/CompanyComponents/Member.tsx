@@ -31,8 +31,8 @@ const Member = ({name}:MemeberType) =>{
         },
         "minhyeok": {
             name:"고민혁",
-            position:"",
-            description: "",
+            position:"Researcher Scientist",
+            description: "서울대학교 기계항공공학부 학사과정 중이며 LCA 기법 트렌드에 관심이 많고 훗날 이를 주도하고 싶다는 목표가 있습니다.",
             pic: minhyeok.src
         },
         "kyunghoh" : {

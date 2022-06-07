@@ -43,18 +43,18 @@ const Home: NextPage = () => {
         </div>
 
         <section className="sticky inset-x-0 top-[110px] left-0 flex justify-center border-2 w-[100%] bg-white">
-          <a className = "p-4 px-12 cursor-pointer">
+          <div className = "p-4 px-12 cursor-pointer">
             Measure
-          </a>
-          <a className = "p-4 px-12 cursor-pointer">
+          </div>
+          <div className = "p-4 px-12 cursor-pointer">
             Reduce
-          </a>
-          <a className = "p-4 px-12 cursor-pointer">
+          </div>
+          <div className = "p-4 px-12 cursor-pointer">
             Remove
-          </a>
-          <a className = "p-4 px-12 cursor-pointer">
+          </div>
+          <div className = "p-4 px-12 cursor-pointer">
             Report
-          </a>
+          </div>
         
         </section>
 

@@ -2,8 +2,16 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import NavigationBar from "../components/LayoutComponents/NavigationBar";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { motion,useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import TransitionInfo from "../components/LandingComponents.tsx/TransitionInfo";
+import Box from "../components/Box";
+
+const boxVariant = {
+  visible: { opacity: 1, scale: 2 },
+  hidden: { opacity: 0, scale: 0 },
+}
 
 const Home: NextPage = () => {
 
@@ -20,6 +28,15 @@ const Home: NextPage = () => {
     vid.pause()
   }
 
+  const control = useAnimation()
+  const [ref, inView] = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      control.start("hidden");
+    } 
+  }, [control, inView]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -29,6 +46,18 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
+        {/* <div className = "p-16">
+          <motion.div ref={ref} className = "  border-4 grid place-items-center" animate={{ x: 0 }} initial={{x: 400} } variants={boxVariant} >
+            <Box></Box>
+            <Box></Box>
+            <Box></Box>
+            <Box></Box>
+            <Box></Box>
+            <Box></Box>
+            <Box></Box>
+          </motion.div>
+        </div> */}
+      
         <div className="bg-slate-200 mx-16">
           <div className="pt-10">
             <div className="flex justify-center font-bold text-7xl">
@@ -65,8 +94,14 @@ const Home: NextPage = () => {
         </section>
 
         <div className=" mx-16 text-5xl">Measure</div>
+        <div className="mx-16 grid grid-cols-2 gap-14">
+          <TransitionInfo/>
+          <TransitionInfo/>
 
-        <div className="mx-16 grid grid-cols-2 ">
+
+        </div>
+
+        {/* <div className="mx-16 grid grid-cols-2 ">
           <div className="h-[70vh] border-2">
             <div className="h-[70%]">
             <video src={require('../video/company1.mp4')}  autoPlay loop className = "rounded-lg shadow-xl" onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave} />
@@ -87,18 +122,12 @@ const Home: NextPage = () => {
               </div>
               <div>설명</div>
             </div>
-          </div>
-
-          
+          </div>          
+        </div> */}
+        <div className="h-[100vh] mx-16">
+          Remove 
+      
         </div>
-        <div className=" mx-16 h-[70vh] border-2">
-          <div className = "h-[50%]"></div>
-        <video src={require('../video/company3.mp4')}  autoPlay loop className = "w-[100%] h-[50%] rounded-lg shadow-xl" onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave}/>
-
-        </div>
-        
-
-        <div className="h-[100vh] mx-16">Remove</div>
       </main>
 
       {/* <footer className={styles.footer}>

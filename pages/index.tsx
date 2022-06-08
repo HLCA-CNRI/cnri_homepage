@@ -6,6 +6,20 @@ import NavigationBar from "../components/LayoutComponents/NavigationBar";
 import { useState } from "react";
 
 const Home: NextPage = () => {
+
+  const handleVideoMouseEnter = (e:any) => {
+    const vid = e.target
+    vid.muted = true
+    vid.play()
+  }
+
+  const handleVideoMouseLeave = (e:any) => {
+    const vid = e.target
+    vid.muted = false
+    vid.currentTime = 0
+    vid.pause()
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -43,16 +57,46 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        <section className="sticky inset-x-0 top-[110px] left-0 flex justify-center border-2 w-[100%] bg-white">
+        <section className=" inset-x-0 top-[110px] left-0 flex justify-center border-2 w-[100%] bg-white">
           <div className="p-4 px-12 cursor-pointer">Measure</div>
           <div className="p-4 px-12 cursor-pointer">Reduce</div>
           <div className="p-4 px-12 cursor-pointer">Remove</div>
           <div className="p-4 px-12 cursor-pointer">Report</div>
         </section>
 
-       
+        <div className=" mx-16 text-5xl">Measure</div>
 
-        <div className="h-[100vh] mx-16">Reduce</div>
+        <div className="mx-16 grid grid-cols-2 ">
+          <div className="h-[70vh] border-2">
+            <div className="h-[70%]">
+            <video src={require('../video/company1.mp4')}  autoPlay loop className = "rounded-lg shadow-xl" onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave} />
+            </div>
+            <div>설명</div>
+          </div>
+
+          <div className="h-[70vh] border-2">
+            <div className="h-[50%] flex">
+              <div className="w-[50%]">설명</div>
+              <div className = " w-[50%]">
+              <video src={require('../video/company2.mp4')}  autoPlay loop className = "rounded-lg shadow-xl " onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave}/>
+              </div>
+            </div>
+            <div className="h-[50%] flex">
+              <div className=" w-[50%]">
+              <video src={require('../video/company3.mp4')}  autoPlay loop className = "rounded-lg shadow-xl" onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave}/>
+              </div>
+              <div>설명</div>
+            </div>
+          </div>
+
+          
+        </div>
+        <div className=" mx-16 h-[70vh] border-2">
+          <div className = "h-[50%]"></div>
+        <video src={require('../video/company3.mp4')}  autoPlay loop className = "w-[100%] h-[50%] rounded-lg shadow-xl" onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave}/>
+
+        </div>
+        
 
         <div className="h-[100vh] mx-16">Remove</div>
       </main>

@@ -5,7 +5,12 @@ module.exports = {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        'hero-pattern': "url('images/stkImage.png')",
+        // 'footer-texture': "url('/img/footer-texture.png')",
+       })
+    },
   },
   plugins: [
     require('flowbite/plugin')

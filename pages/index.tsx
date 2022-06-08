@@ -2,39 +2,39 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { useState,useEffect } from "react";
-import { motion,useAnimation } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import TransitionInfo from "../components/LandingComponents.tsx/TransitionInfo";
+import VerticalTansitionVideoInfo from "../components/LandingComponents.tsx/VerticalTransitionVideoInfo";
+import HorizontalTransitionVideoInfo from "../components/LandingComponents.tsx/HorizontalTransitionVideoInfo";
 import Box from "../components/Box";
 
 const boxVariant = {
   visible: { opacity: 1, scale: 2 },
   hidden: { opacity: 0, scale: 0 },
-}
+};
 
 const Home: NextPage = () => {
+  const handleVideoMouseEnter = (e: any) => {
+    const vid = e.target;
+    vid.muted = true;
+    vid.play();
+  };
 
-  const handleVideoMouseEnter = (e:any) => {
-    const vid = e.target
-    vid.muted = true
-    vid.play()
-  }
+  const handleVideoMouseLeave = (e: any) => {
+    const vid = e.target;
+    vid.muted = false;
+    vid.currentTime = 0;
+    vid.pause();
+  };
 
-  const handleVideoMouseLeave = (e:any) => {
-    const vid = e.target
-    vid.muted = false
-    vid.currentTime = 0
-    vid.pause()
-  }
-
-  const control = useAnimation()
-  const [ref, inView] = useInView()
+  const control = useAnimation();
+  const [ref, inView] = useInView();
 
   useEffect(() => {
     if (inView) {
       control.start("hidden");
-    } 
+    }
   }, [control, inView]);
 
   return (
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
             <Box></Box>
           </motion.div>
         </div> */}
-      
+
         <div className="bg-slate-200 mx-16">
           <div className="pt-10">
             <div className="flex justify-center font-bold text-7xl">
@@ -93,41 +93,18 @@ const Home: NextPage = () => {
           <div className="p-4 px-12 cursor-pointer">Report</div>
         </section>
 
+        {/* MEASURE SECTION*/}
         <div className=" mx-16 text-5xl">Measure</div>
-        <div className="mx-16 grid grid-cols-2 gap-14">
-          <TransitionInfo/>
-          <TransitionInfo/>
-
-
-        </div>
-
-        {/* <div className="mx-16 grid grid-cols-2 ">
-          <div className="h-[70vh] border-2">
-            <div className="h-[70%]">
-            <video src={require('../video/company1.mp4')}  autoPlay loop className = "rounded-lg shadow-xl" onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave} />
-            </div>
-            <div>설명</div>
+        <div className="mx-16 grid grid-cols-2 gap-14 my-4">
+          <VerticalTansitionVideoInfo imagePosition="top" />
+          <div>
+            <HorizontalTransitionVideoInfo imagePosition="right" />
+            <HorizontalTransitionVideoInfo imagePosition="left"/>
           </div>
-
-          <div className="h-[70vh] border-2">
-            <div className="h-[50%] flex">
-              <div className="w-[50%]">설명</div>
-              <div className = " w-[50%]">
-              <video src={require('../video/company2.mp4')}  autoPlay loop className = "rounded-lg shadow-xl " onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave}/>
-              </div>
-            </div>
-            <div className="h-[50%] flex">
-              <div className=" w-[50%]">
-              <video src={require('../video/company3.mp4')}  autoPlay loop className = "rounded-lg shadow-xl" onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave}/>
-              </div>
-              <div>설명</div>
-            </div>
-          </div>          
-        </div> */}
-        <div className="h-[100vh] mx-16">
-          Remove 
-      
         </div>
+
+
+        <div className="h-[100vh] mx-16">Remove</div>
       </main>
 
       {/* <footer className={styles.footer}>

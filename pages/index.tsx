@@ -15,27 +15,26 @@ const boxVariant = {
 };
 
 const Home: NextPage = () => {
-  const handleVideoMouseEnter = (e: any) => {
-    const vid = e.target;
-    vid.muted = true;
-    vid.play();
+
+  const TansitionLToR = {
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, x: -150 },
+  };
+  
+  const TansitionRToL = {
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, x: 150 },
   };
 
-  const handleVideoMouseLeave = (e: any) => {
-    const vid = e.target;
-    vid.muted = false;
-    vid.currentTime = 0;
-    vid.pause();
+  const TansitionTToB = {
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, y: -100 },
   };
-
-  const control = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      control.start("hidden");
-    }
-  }, [control, inView]);
+  
+  const TansitionBToT = {
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    hidden: { opacity: 0, y: 100 },
+  };
 
   return (
     <div className={styles.container}>
@@ -96,15 +95,36 @@ const Home: NextPage = () => {
         {/* MEASURE SECTION*/}
         <div className=" mx-16 text-5xl">Measure</div>
         <div className="mx-16 grid grid-cols-2 gap-14 my-4">
-          <VerticalTansitionVideoInfo imagePosition="top" />
+          <VerticalTansitionVideoInfo imagePosition="top"  moveFrom = {TansitionLToR} />
           <div>
-            <HorizontalTransitionVideoInfo imagePosition="right" />
-            <HorizontalTransitionVideoInfo imagePosition="left"/>
+            <HorizontalTransitionVideoInfo imagePosition="right" moveFrom = {TansitionRToL}/>
+            <HorizontalTransitionVideoInfo imagePosition="left" moveFrom = {TansitionBToT}/>
           </div>
         </div>
 
+        {/* REDUCE SECTION*/}
+        <div className=" mx-16 text-5xl">Reduce</div>
+        <div className="mx-16 grid grid-cols-2 gap-14 my-4">
+        <div>
+            <HorizontalTransitionVideoInfo imagePosition="right" moveFrom = {TansitionLToR}/>
+            <HorizontalTransitionVideoInfo imagePosition="left" moveFrom = {TansitionBToT}/>
+          </div>
+          <VerticalTansitionVideoInfo imagePosition="top" moveFrom = {TansitionRToL} />
+        </div>
 
-        <div className="h-[100vh] mx-16">Remove</div>
+         {/* REMOVE SECTION*/}
+         <div className=" mx-16 text-5xl">Remove</div>
+        <div className="mx-16">
+          <HorizontalTransitionVideoInfo imagePosition="left" moveFrom = {TansitionLToR}/>
+           <HorizontalTransitionVideoInfo imagePosition="right" moveFrom = {TansitionRToL}/>
+        </div>
+
+        {/* REPORT SECTION*/}
+        <div className=" mx-16 text-5xl">Report</div>
+        <div className="mx-16 grid grid-cols-2 gap-14 my-4">
+          <VerticalTansitionVideoInfo imagePosition="top" moveFrom = {TansitionLToR}/>
+          <VerticalTansitionVideoInfo imagePosition="top" moveFrom = {TansitionRToL}/>
+        </div>
       </main>
 
       {/* <footer className={styles.footer}>

@@ -4,20 +4,16 @@ import { useEffect } from "react";
 
 interface VerticalTansitionVideoInfoType  {
   imagePosition:string
+  moveFrom:any
 
 }
 
-const TransitionVariant = {
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-  hidden: { opacity: 0, x: -400 },
-};
-
 const DescriptionVariant = {
   open: { opacity: 1, transition: { duration: 0.6 } },
-  close: { opacity: 0 },
+  close: { opacity: 0.4 },
 };
 
-const VerticalTansitionVideoInfo = ({imagePosition}:VerticalTansitionVideoInfoType) => {
+const VerticalTansitionVideoInfo = ({imagePosition,moveFrom}:VerticalTansitionVideoInfoType) => {
   const handleVideoMouseEnter = (e: any) => {
     const vid = e.target;
     vid.muted = true;
@@ -49,7 +45,7 @@ const VerticalTansitionVideoInfo = ({imagePosition}:VerticalTansitionVideoInfoTy
       <motion.div
         animate={controlVid}
         initial="hidden"
-        variants={TransitionVariant}
+        variants={moveFrom}
       >
         <div>
           {/* <div onMouseEnter={() => controlText.start("open") } onMouseLeave={() => controlText.start("close")}> */}

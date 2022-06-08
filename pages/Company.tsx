@@ -17,8 +17,8 @@ const Company: React.FC = () => {
   
 
   return (
-    <div className="m-4 border-2 mx-16 ">
-      <div className="bg-slate-100 my-4">
+    <div className="m-4 mx-16 ">
+      <div className="my-4">
         <div className="text-5xl">Philosophy</div>
         <div className="flex ">
           <VideoOnHover />
@@ -26,7 +26,7 @@ const Company: React.FC = () => {
           <VideoOnHover />
         </div>
       </div>
-      <div className="bg-slate-200">
+      <div >
         <div className="text-5xl">Members</div>
         {/* <div className="flex overflow-x-auto space-x-7 w-[100%] border-4 py-4 no-scrollbar"> */}
           <motion.div ref = {carousel} className="cursor-grab overflow-hidden ">
@@ -42,7 +42,7 @@ const Company: React.FC = () => {
 
         {/* </div> */}
       </div>
-      <div className="bg-slate-300 my-4">
+      <div className="my-4">
         <div className="text-5xl">History</div>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-20 py-4">
           <History year={2022} />

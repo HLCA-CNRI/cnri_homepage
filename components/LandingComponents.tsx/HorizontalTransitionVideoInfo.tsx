@@ -6,19 +6,13 @@ import { Opacity } from "@material-ui/icons";
 interface HorizontalTransitionVideoInfoType {
   imagePosition: string;
   moveVidFrom: any;
-  moveContextFrom: any,
+  moveContextFrom: any;
   contentInfo: {
     title: string;
     content: string;
     videoPath: string;
   };
 }
-// const DescriptionVariant = {
-//   initial: { opacity: 0, x:500 , transition: { duration: 0.6 } },
-//   open: { opacity: 1, x:0, transition: { duration: 0.6 } },
-//   close: { opacity: 0, transition: { duration: 0.6 } },
-//   close2: {x:500,transition: { duration: 0 } }
-// };
 
 const HorizontalTransitionVideoInfo = ({
   imagePosition,
@@ -26,27 +20,24 @@ const HorizontalTransitionVideoInfo = ({
   moveContextFrom,
   contentInfo,
 }: HorizontalTransitionVideoInfoType) => {
-
-  if (imagePosition == "left"){
-    console.log(contentInfo)
+  if (imagePosition == "left") {
+    console.log(contentInfo);
   }
   const handleVideoMouseEnter = (e: any) => {
-   
     const vid = e.target;
     vid.muted = true;
     vid.play();
-    
+
     controlText.start("open");
   };
 
-  const handleVideoMouseLeave = async(e: any) => {
+  const handleVideoMouseLeave = async (e: any) => {
     const vid = e.target;
     vid.muted = false;
     vid.currentTime = 0;
     vid.pause();
-    await controlText.start("close")
-    await controlText.start("close2")
-
+    await controlText.start("close");
+    await controlText.start("close2");
   };
   const controlVid = useAnimation();
   const controlText = useAnimation();
@@ -60,29 +51,24 @@ const HorizontalTransitionVideoInfo = ({
   }, [controlVid, inView]);
 
   return (
-    <div ref={ref}>
-      <div
-        className={`text-3xl font-bold m-2 w-[100%] flex ${
-          imagePosition == "right" ? "justify-end" : ""
-        } w-[100%]`}
-      >
-        {/* <div className = "w-[50%]"> */}
-        {contentInfo.title}
-        {/* </div> */}
-      </div>
+    <div ref={ref} className = "mt-4">
       <motion.div
         animate={controlVid}
         initial="vidHidden"
         variants={moveVidFrom}
-        className="grid  grid-cols-2 gap-4"
-        
+        className="grid  grid-cols-2 "
       >
         {imagePosition == "right" ? (
           <motion.div
             animate={controlText}
             initial="initial"
             variants={moveContextFrom}
-         
+            onMouseEnter={() => controlText.start("open")}
+            onMouseLeave={async () => {
+              await controlText.start("close");
+              await controlText.start("close2");
+            }}
+            className = "bg-slate-400 p-6"
           >
             {contentInfo.content}
           </motion.div>
@@ -90,14 +76,23 @@ const HorizontalTransitionVideoInfo = ({
           ""
         )}
 
-        <div>
+        <div className = "bg-slate-400 p-6">
+          <div
+            className={`text-3xl font-bold m-2 w-[100%] flex ${
+              imagePosition == "right" ? "justify-end" : ""
+            } w-[100%]`}
+          >
+            {/* <div className = "w-[50%]"> */}
+            {contentInfo.title}
+            {/* </div> */}
+          </div>
           <video
-            src={(contentInfo.videoPath)}
+            src={contentInfo.videoPath}
             // autoPlay
             loop
             onMouseEnter={handleVideoMouseEnter}
             onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl"
+            className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl z-40 "
           />
         </div>
 
@@ -106,6 +101,13 @@ const HorizontalTransitionVideoInfo = ({
             animate={controlText}
             initial="initial"
             variants={moveContextFrom}
+            onMouseEnter={() => controlText.start("open")}
+            onMouseLeave={async () => {
+              await controlText.start("close");
+              await controlText.start("close2");
+            }}
+            className = "bg-slate-400 p-6"
+            
           >
             {contentInfo.content}
           </motion.div>

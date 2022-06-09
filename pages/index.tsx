@@ -13,14 +13,14 @@ import Link from "next/link";
 
 const Home: NextPage = () => {
   const TansitionVidLToR = {
-    vidVisible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+    vidVisible: {z:30, opacity: 1, x: 0, transition: { duration: 0.6 } },
     vidHidden: { opacity: 0, x: -150 },
   
   };
 
   const TansitionVidRToL = {
     vidVisible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-    vidHidden: { opacity: 0, x: 150 },
+    vidHidden: { opacity: 0, x: 100 },
 
   };
 
@@ -29,12 +29,17 @@ const Home: NextPage = () => {
     vidHidden: { opacity: 0, y: -150 },
  
   };
+  const TansitionVidBToT = {
+    vidVisible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    vidHidden: { opacity: 0, y: 150 },
+ 
+  };
 
   const TransitionContextLToR = {
-    initial: { opacity: 0, x: -100, transition: { duration: 0.6 } },
-    open: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-    close: { opacity: 0, transition: { duration: 0.6 } },
-    close2: { x: -100, transition: { duration: 0 } },
+    initial: {z:30, opacity: 0, x: -100, transition: { duration: 0.6 } },
+    open: {z:30, opacity: 1, x: 0, transition: { duration: 0.6 } },
+    close: { z:30,opacity: 0, transition: { duration: 0.6 } },
+    close2: {z:30, x: -100, transition: { duration: 0 } },
 
   }
 
@@ -46,10 +51,17 @@ const Home: NextPage = () => {
   }
 
   const TransitionContextTToB = {
-    initial: { opacity: 0, y: -80, transition: { duration: 0.6 } },
+    initial: {z:0, opacity: 0, y: -200, transition: { duration: 0.6 } },
+    open: {z:0, opacity: 1, y: 0, transition: { duration: 0.6 } },
+    close: {z:0, opacity: 0, transition: { duration: 0.6 } },
+    close2: {z:0, y: -200, transition: { duration: 0 } },
+  }
+
+  const TransitionContextBToT = {
+    initial: { opacity: 0, y: 80, transition: { duration: 0.6 } },
     open: { opacity: 1, y: 0, transition: { duration: 0.6 } },
     close: { opacity: 0, transition: { duration: 0.6 } },
-    close2: { y: -80, transition: { duration: 0 } },
+    close2: { y: 80, transition: { duration: 0 } },
   }
 
   return (
@@ -60,7 +72,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-slate-200 mx-16 ">
+      <div className="bg-slate-200 mx-16">
         <div className="pt-10">
           <div className="flex justify-center font-bold text-7xl">
             넷제로 달성을 위해 필요한
@@ -80,7 +92,7 @@ const Home: NextPage = () => {
             데모신청
           </button>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <img
             src="https://watershed.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.f2c8f15e.png&w=1920&q=75"
             className="w-[63%] mt-4 "
@@ -106,7 +118,7 @@ const Home: NextPage = () => {
         </Link>
       </section>
 
-      <main>
+      <main className = "overflow-x-hidden">
         {/* MEASURE SECTION*/}
         <div id="measure" className=" mx-16 text-5xl">
           Measure
@@ -114,18 +126,21 @@ const Home: NextPage = () => {
         <div className="mx-16 grid grid-cols-2 gap-14 my-4">
           <VerticalTansitionVideoInfo
             imagePosition="top"
-            moveFrom={TansitionVidLToR}
+            moveVidFrom={TansitionVidLToR}
+            moveContextFrom = {TransitionContextTToB}
             contentInfo={LandingContents.Measure.content1}
           />
           <div>
             <HorizontalTransitionVideoInfo
               imagePosition="right"
-              moveFrom={TansitionVidRToL}
+              moveVidFrom={TansitionVidRToL}
+              moveContextFrom = {TransitionContextRToL}
               contentInfo={LandingContents.Measure.content2}
             />
             <HorizontalTransitionVideoInfo
               imagePosition="left"
-              moveFrom={TansitionVidLToR}
+              moveVidFrom={TansitionVidBToT}
+              moveContextFrom = {TransitionContextLToR}
               contentInfo={LandingContents.Measure.content3}
             />
           </div>
@@ -139,20 +154,21 @@ const Home: NextPage = () => {
           <div>
             <HorizontalTransitionVideoInfo
               imagePosition="right"
-              moveVidFrom={TansitionVidRToL}
-              moveContextFrom = {TransitionContextLToR}
+              moveVidFrom={TansitionVidLToR}
+              moveContextFrom = {TransitionContextRToL}
               contentInfo={LandingContents.Reduce.content1}
             />
             <HorizontalTransitionVideoInfo
               imagePosition="left"
-              moveVidFrom={TansitionVidLToR}
+              moveVidFrom={TansitionVidBToT}
               moveContextFrom = {TransitionContextLToR}
               contentInfo={LandingContents.Reduce.content2}
             />
           </div>
           <VerticalTansitionVideoInfo
             imagePosition="top"
-            moveFrom={TansitionVidRToL}
+            moveVidFrom={TansitionVidRToL}
+            moveContextFrom = {TransitionContextTToB}
             contentInfo={LandingContents.Reduce.content3}
           />
         </div>
@@ -171,7 +187,7 @@ const Home: NextPage = () => {
           <HorizontalTransitionVideoInfo
             imagePosition="right"
             moveVidFrom={TansitionVidRToL}
-            moveContextFrom = {TransitionContextLToR}
+            moveContextFrom = {TransitionContextRToL}
             contentInfo={LandingContents.Measure.content1}
           />
         </div>
@@ -183,12 +199,14 @@ const Home: NextPage = () => {
         <div className="mx-16 grid grid-cols-2 gap-14 my-4">
           <VerticalTansitionVideoInfo
             imagePosition="top"
-            moveFrom={TansitionVidLToR}
+            moveVidFrom={TansitionVidLToR}
+            moveContextFrom = {TransitionContextTToB}
             contentInfo={LandingContents.Measure.content1}
           />
           <VerticalTansitionVideoInfo
             imagePosition="top"
-            moveFrom={TansitionVidRToL}
+            moveVidFrom={TansitionVidRToL}
+            moveContextFrom = {TransitionContextTToB}
             contentInfo={LandingContents.Measure.content1}
           />
         </div>

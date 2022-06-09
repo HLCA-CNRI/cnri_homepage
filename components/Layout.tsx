@@ -9,11 +9,11 @@ interface LayoutInterface {
 
 const Layout = ({children}:LayoutInterface) =>{
     return (
-        <div>
+        <>
             <NavigationBar/>
             {children}
             <Footer/>
-        </div>
+        </>
     )
 
 }

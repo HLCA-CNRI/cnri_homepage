@@ -1,7 +1,10 @@
+import Box from "../components/Box"
 const Product: React.FC = () => {
     return(
         <div>
-            Product
+            <Box></Box>
+            <Box></Box>
+            <Box></Box>
         </div>
     )
 

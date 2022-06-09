@@ -15,7 +15,7 @@ interface VerticalTansitionVideoInfoType  {
 
 const DescriptionVariant = {
   open: { opacity: 1, transition: { duration: 0.6 } },
-  close: { opacity: 0.4 },
+  close: { opacity: 0.2 },
 };
 
 const VerticalTansitionVideoInfo = ({imagePosition,moveFrom,contentInfo}:VerticalTansitionVideoInfoType) => {
@@ -26,21 +26,22 @@ const VerticalTansitionVideoInfo = ({imagePosition,moveFrom,contentInfo}:Vertica
     controlText.start("open");
   };
 
-  const handleVideoMouseLeave = (e: any) => {
+  const handleVideoMouseLeave = async(e: any) => {
     const vid = e.target;
     vid.muted = false;
     vid.currentTime = 0;
     vid.pause();
-    controlText.start("close");
+    await controlText.start("close")
+    await controlText.start("close2")
   };
   const controlVid = useAnimation();
   const controlText = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
     if (inView) {
-      controlVid.start("visible");
+      controlVid.start("vidVisible");
     } else {
-      controlVid.start("hidden");
+      controlVid.start("vidHidden");
     }
   }, [controlVid, inView]);
 
@@ -49,25 +50,25 @@ const VerticalTansitionVideoInfo = ({imagePosition,moveFrom,contentInfo}:Vertica
       <div className="text-3xl font-bold m-2 w-[100%]">{contentInfo.title}</div>
       <motion.div
         animate={controlVid}
-        initial="hidden"
+        initial="vidHidden"
         variants={moveFrom}
       >
         <div>
           {/* <div onMouseEnter={() => controlText.start("open") } onMouseLeave={() => controlText.start("close")}> */}
           <video
-            src={require("../../video/measure2.mp4")}
+            src={(contentInfo.videoPath)}
             // autoPlay
             loop
             onMouseEnter={handleVideoMouseEnter}
             onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-fill  hover:scale-x-105 duration-700 rounded-lg shadow-xl"
+            className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl"
           />
         </div>
 
         <motion.div
           animate={controlText}
-          initial="close"
-          variants={DescriptionVariant}
+          initial="initial"
+          variants={moveFrom}
           className = "mt-4"
 
         >

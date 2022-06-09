@@ -1,46 +1,61 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import { Opacity } from "@material-ui/icons";
 //Grid 형태로 놓고 싶어서 따로 Horizontal TransitionVideoInfo를 만듬
 interface HorizontalTransitionVideoInfoType {
   imagePosition: string;
-  moveFrom:any
-  contentInfo:{
-    title:string, 
-    content:string, 
-    videoPath:string
-  }
+  moveVidFrom: any;
+  moveContextFrom: any,
+  contentInfo: {
+    title: string;
+    content: string;
+    videoPath: string;
+  };
 }
-const DescriptionVariant = {
-  open: { opacity: 1, transition: { duration: 0.6 } },
-  close: { opacity: 0.4 },
-};
+// const DescriptionVariant = {
+//   initial: { opacity: 0, x:500 , transition: { duration: 0.6 } },
+//   open: { opacity: 1, x:0, transition: { duration: 0.6 } },
+//   close: { opacity: 0, transition: { duration: 0.6 } },
+//   close2: {x:500,transition: { duration: 0 } }
+// };
 
 const HorizontalTransitionVideoInfo = ({
-  imagePosition,moveFrom,contentInfo
+  imagePosition,
+  moveVidFrom,
+  moveContextFrom,
+  contentInfo,
 }: HorizontalTransitionVideoInfoType) => {
+
+  if (imagePosition == "left"){
+    console.log(contentInfo)
+  }
   const handleVideoMouseEnter = (e: any) => {
+   
     const vid = e.target;
     vid.muted = true;
     vid.play();
+    
     controlText.start("open");
   };
 
-  const handleVideoMouseLeave = (e: any) => {
+  const handleVideoMouseLeave = async(e: any) => {
     const vid = e.target;
     vid.muted = false;
     vid.currentTime = 0;
     vid.pause();
-    controlText.start("close");
+    await controlText.start("close")
+    await controlText.start("close2")
+
   };
   const controlVid = useAnimation();
   const controlText = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
     if (inView) {
-      controlVid.start("visible");
+      controlVid.start("vidVisible");
     } else {
-      controlVid.start("hidden");
+      controlVid.start("vidHidden");
     }
   }, [controlVid, inView]);
 
@@ -51,26 +66,25 @@ const HorizontalTransitionVideoInfo = ({
           imagePosition == "right" ? "justify-end" : ""
         } w-[100%]`}
       >
-          {/* <div className = "w-[50%]"> */}
-          {contentInfo.title}
-          {/* </div> */}
-       
+        {/* <div className = "w-[50%]"> */}
+        {contentInfo.title}
+        {/* </div> */}
       </div>
       <motion.div
         animate={controlVid}
-        initial="hidden"
-        variants={
-            moveFrom
-        }
+        initial="vidHidden"
+        variants={moveVidFrom}
         className="grid  grid-cols-2 gap-4"
+        
       >
         {imagePosition == "right" ? (
           <motion.div
             animate={controlText}
-            initial="close"
-            variants={DescriptionVariant}
+            initial="initial"
+            variants={moveContextFrom}
+         
           >
-           {contentInfo.content}
+            {contentInfo.content}
           </motion.div>
         ) : (
           ""
@@ -78,22 +92,22 @@ const HorizontalTransitionVideoInfo = ({
 
         <div>
           <video
-            src={require("../../video/measure1.mp4")}
+            src={(contentInfo.videoPath)}
             // autoPlay
             loop
             onMouseEnter={handleVideoMouseEnter}
             onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-fill  hover:scale-x-105 duration-700 rounded-lg shadow-xl"
+            className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl"
           />
         </div>
 
         {imagePosition == "left" ? (
           <motion.div
             animate={controlText}
-            initial="close"
-            variants={DescriptionVariant}
+            initial="initial"
+            variants={moveContextFrom}
           >
-           {contentInfo.content}
+            {contentInfo.content}
           </motion.div>
         ) : (
           ""

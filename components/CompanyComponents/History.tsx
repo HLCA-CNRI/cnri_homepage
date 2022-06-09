@@ -34,7 +34,7 @@ const History = ({year}:HistoryType) => {
   return (
     <div className = "relative  overflow-hidden  shadow-lg cursor-pointe rounded-lg ">
       {/* <BlackContainer /> */}
-      <img src={nature1.src} className = "object-cover w-full "/>
+      <img src={stkImage.src} className = "object-cover w-full "/>
 
      <div className ={`${isActive ?"absolute top-0 left-0 px-6 py-4  w-[100%] h-[100%] bg-slate-600 opacity-60":""}`}/>
 

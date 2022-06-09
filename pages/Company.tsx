@@ -29,7 +29,7 @@ const Company: React.FC = () => {
       <div >
         <div className="text-5xl">Members</div>
         {/* <div className="flex overflow-x-auto space-x-7 w-[100%] border-4 py-4 no-scrollbar"> */}
-          <motion.div ref = {carousel} className="cursor-grab overflow-hidden ">
+          <motion.div ref = {carousel} className="cursor-grab overflow-hidden  overflow-x-auto no-scrollbar">
             <motion.div drag = "x" dragConstraints ={{right:0,left: -width}} className="flex">
             <Member name = "min"/>
             <Member name = "jonghoh"/>

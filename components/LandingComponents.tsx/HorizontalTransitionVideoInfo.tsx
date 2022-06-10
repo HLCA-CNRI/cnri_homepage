@@ -21,7 +21,7 @@ const HorizontalTransitionVideoInfo = ({
   contentInfo,
 }: HorizontalTransitionVideoInfoType) => {
   if (imagePosition == "left") {
-    console.log(contentInfo);
+    // console.log(contentInfo);
   }
   const handleVideoMouseEnter = (e: any) => {
     const vid = e.target;

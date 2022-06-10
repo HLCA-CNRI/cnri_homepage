@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import VideoOnHover from "../components/CompanyComponents/VideoOnHover";
 import Member from "../components/CompanyComponents/Member";
 import History from "../components/CompanyComponents/History";
+import SlideShow from "../components/SlideShow";
 
 const Company: React.FC = () => {
 
@@ -19,6 +20,9 @@ const Company: React.FC = () => {
   return (
     <div className="m-4 mx-16 ">
       <div className="my-4">
+      <div className = "w-[100%] bg-slate-200">
+                <SlideShow/>
+            </div>
         <div className="text-5xl">Philosophy</div>
         <div className="flex ">
           <VideoOnHover />
@@ -29,7 +33,7 @@ const Company: React.FC = () => {
       <div >
         <div className="text-5xl">Members</div>
         {/* <div className="flex overflow-x-auto space-x-7 w-[100%] border-4 py-4 no-scrollbar"> */}
-          <motion.div ref = {carousel} className="cursor-grab overflow-hidden  overflow-x-auto no-scrollbar">
+          <motion.div ref = {carousel} className="cursor-grab  overflow-x-auto no-scrollbar pl-18">
             <motion.div drag = "x" dragConstraints ={{right:0,left: -width}} className="flex">
             <Member name = "min"/>
             <Member name = "jonghoh"/>

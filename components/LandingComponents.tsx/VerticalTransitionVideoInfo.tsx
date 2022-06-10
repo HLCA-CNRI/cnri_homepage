@@ -46,7 +46,7 @@ const VerticalTansitionVideoInfo = ({
     if (inView) {
       controlVid.start("vidVisible");
     } else {
-      controlVid.start("vidHidden");
+      // controlVid.start("vidHidden");
     }
   }, [controlVid, inView]);
 
@@ -81,7 +81,7 @@ const VerticalTansitionVideoInfo = ({
             await controlText.start("close2");
           }}
           >
-            <div className=" bg-slate-400 p-6 z-0">
+            <div className=" bg-slate-400 p-6 z-0 ">
             {contentInfo.content}
 
             </div>

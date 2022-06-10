@@ -46,7 +46,7 @@ const HorizontalTransitionVideoInfo = ({
     if (inView) {
       controlVid.start("vidVisible");
     } else {
-      controlVid.start("vidHidden");
+      // controlVid.start("vidHidden");
     }
   }, [controlVid, inView]);
 
@@ -70,7 +70,10 @@ const HorizontalTransitionVideoInfo = ({
             }}
             className = "bg-slate-400 p-6"
           >
+             <div className = " flex items-center justify-center h-[100%]">
             {contentInfo.content}
+
+            </div>
           </motion.div>
         ) : (
           ""
@@ -106,10 +109,14 @@ const HorizontalTransitionVideoInfo = ({
               await controlText.start("close");
               await controlText.start("close2");
             }}
-            className = "bg-slate-400 p-6"
+            className = "bg-slate-400 p-6 "
             
           >
+            <div className = " flex items-center justify-center h-[100%]">
             {contentInfo.content}
+
+            </div>
+            
           </motion.div>
         ) : (
           ""

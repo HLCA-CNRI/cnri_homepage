@@ -13,56 +13,51 @@ import Link from "next/link";
 
 const Home: NextPage = () => {
   const TansitionVidLToR = {
-    vidVisible: {z:30, opacity: 1, x: 0, transition: { duration: 0.6 } },
+    vidVisible: { z: 30, opacity: 1, x: 0, transition: { duration: 0.6 } },
     vidHidden: { opacity: 0, x: -150 },
-  
   };
 
   const TansitionVidRToL = {
     vidVisible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
     vidHidden: { opacity: 0, x: 100 },
-
   };
 
   const TansitionVidTToB = {
     vidVisible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
     vidHidden: { opacity: 0, y: -150 },
- 
   };
   const TansitionVidBToT = {
     vidVisible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
     vidHidden: { opacity: 0, y: 150 },
- 
   };
 
   const TransitionContextLToR = {
-    initial: {z:30, opacity: 0, x: -100, transition: { duration: 0.6 } },
-    open: {z:30, opacity: 1, x: 0, transition: { duration: 0.6 } },
-    close: { z:30,opacity: 0, transition: { duration: 0.6 } },
-    close2: {z:30, x: -100, transition: { duration: 0 } },
-
-  }
+    initial: { z: 30, opacity: 0, x: -100, transition: { duration: 0.6 } },
+    open: { z: 30, opacity: 1, x: 0, transition: { duration: 0.6 } },
+    close: { z: 30, opacity: 0, transition: { duration: 0.6 } },
+    close2: { z: 30, x: -100, transition: { duration: 0 } },
+  };
 
   const TransitionContextRToL = {
     initial: { opacity: 0, x: 200, transition: { duration: 0.6 } },
     open: { opacity: 1, x: 0, transition: { duration: 0.6 } },
     close: { opacity: 0, transition: { duration: 0.6 } },
     close2: { x: 200, transition: { duration: 0 } },
-  }
+  };
 
   const TransitionContextTToB = {
-    initial: {z:0, opacity: 0, y: -200, transition: { duration: 0.6 } },
-    open: {z:0, opacity: 1, y: 0, transition: { duration: 0.6 } },
-    close: {z:0, opacity: 0, transition: { duration: 0.6 } },
-    close2: {z:0, y: -200, transition: { duration: 0 } },
-  }
+    initial: { z: 0, opacity: 0, y: -200, transition: { duration: 0.6 } },
+    open: { z: 0, opacity: 1, y: 0, transition: { duration: 0.6 } },
+    close: { z: 0, opacity: 0, transition: { duration: 0.6 } },
+    close2: { z: 0, y: -200, transition: { duration: 0 } },
+  };
 
   const TransitionContextBToT = {
     initial: { opacity: 0, y: 80, transition: { duration: 0.6 } },
     open: { opacity: 1, y: 0, transition: { duration: 0.6 } },
     close: { opacity: 0, transition: { duration: 0.6 } },
     close2: { y: 80, transition: { duration: 0 } },
-  }
+  };
 
   return (
     <>
@@ -102,128 +97,116 @@ const Home: NextPage = () => {
 
       <section className="sticky inset-x-0 top-[72px] left-0 flex justify-center border-2 w-[100%] bg-white z-50 opacity-90">
         <Link href="#measure">
-          <a className="p-4 px-12 cursor-pointer">Measure</a>
+          <a className="p-4 px-12 cursor-pointer">측정</a>
         </Link>
 
         <Link href="#reduce">
-          <a className="p-4 px-12 cursor-pointer">Reduce</a>
+          <a className="p-4 px-12 cursor-pointer">감축</a>
         </Link>
 
         <Link href="#remove">
-          <a className="p-4 px-12 cursor-pointer">Remove</a>
+          <a className="p-4 px-12 cursor-pointer">오프셋</a>
         </Link>
 
         <Link href="#report">
-          <a className="p-4 px-12 cursor-pointer">Report</a>
+          <a className="p-4 px-12 cursor-pointer">보고서</a>
         </Link>
       </section>
-
-      <main className = "overflow-x-hidden">
-        {/* MEASURE SECTION*/}
-        <div id="measure" className=" mx-16 text-5xl">
-          Measure
-        </div>
-        <div className="mx-16 grid grid-cols-2 gap-14 my-4">
-          <VerticalTansitionVideoInfo
-            imagePosition="top"
-            moveVidFrom={TansitionVidLToR}
-            moveContextFrom = {TransitionContextTToB}
-            contentInfo={LandingContents.Measure.content1}
-          />
-          <div>
-            <HorizontalTransitionVideoInfo
-              imagePosition="right"
-              moveVidFrom={TansitionVidRToL}
-              moveContextFrom = {TransitionContextRToL}
-              contentInfo={LandingContents.Measure.content2}
+      {/* Measure Section */}
+      <section id="measure" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
+          <div className="text-5xl">Measure</div>
+          <div className="grid grid-cols-2 gap-14 my-4">
+            <VerticalTansitionVideoInfo
+              imagePosition="top"
+              moveVidFrom={TansitionVidLToR}
+              moveContextFrom={TransitionContextTToB}
+              contentInfo={LandingContents.Measure.content1}
             />
-            <HorizontalTransitionVideoInfo
-              imagePosition="left"
-              moveVidFrom={TansitionVidBToT}
-              moveContextFrom = {TransitionContextLToR}
-              contentInfo={LandingContents.Measure.content3}
-            />
+            <div>
+              <HorizontalTransitionVideoInfo
+                imagePosition="right"
+                moveVidFrom={TansitionVidRToL}
+                moveContextFrom={TransitionContextRToL}
+                contentInfo={LandingContents.Measure.content2}
+              />
+              <HorizontalTransitionVideoInfo
+                imagePosition="left"
+                moveVidFrom={TansitionVidBToT}
+                moveContextFrom={TransitionContextLToR}
+                contentInfo={LandingContents.Measure.content3}
+              />
+            </div>
           </div>
-        </div>
-
-        {/* REDUCE SECTION*/}
-        <div id="reduce" className=" mx-16 text-5xl">
+      </section>
+      {/* Reduce Section */}
+      <section id="reduce" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
+      <div className="text-5xl">
           Reduce
         </div>
-        <div className="mx-16 grid grid-cols-2 gap-14 my-4">
+        <div className="grid grid-cols-2 gap-14 my-4">
           <div>
             <HorizontalTransitionVideoInfo
-              imagePosition="right"
+              imagePosition="left"
               moveVidFrom={TansitionVidLToR}
-              moveContextFrom = {TransitionContextRToL}
+              moveContextFrom={TransitionContextLToR}
               contentInfo={LandingContents.Reduce.content1}
             />
             <HorizontalTransitionVideoInfo
-              imagePosition="left"
+              imagePosition="right"
               moveVidFrom={TansitionVidBToT}
-              moveContextFrom = {TransitionContextLToR}
+              moveContextFrom={TransitionContextRToL}
               contentInfo={LandingContents.Reduce.content2}
             />
           </div>
           <VerticalTansitionVideoInfo
             imagePosition="top"
             moveVidFrom={TansitionVidRToL}
-            moveContextFrom = {TransitionContextTToB}
+            moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Reduce.content3}
           />
         </div>
-
-        {/* REMOVE SECTION*/}
-        <div id="remove" className=" mx-16 text-5xl">
+      </section>
+      {/* Remove Section */}
+      <section  id="remove" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
+      <div  className="text-5xl">
           Remove
         </div>
-        <div className="mx-16">
+        <div >
           <HorizontalTransitionVideoInfo
             imagePosition="left"
             moveVidFrom={TansitionVidLToR}
-            moveContextFrom = {TransitionContextLToR}
+            moveContextFrom={TransitionContextLToR}
             contentInfo={LandingContents.Remove.content1}
           />
           <HorizontalTransitionVideoInfo
             imagePosition="right"
             moveVidFrom={TansitionVidRToL}
-            moveContextFrom = {TransitionContextRToL}
+            moveContextFrom={TransitionContextRToL}
             contentInfo={LandingContents.Measure.content1}
           />
         </div>
-
-        {/* REPORT SECTION*/}
-        <div id="report" className=" mx-16 text-5xl">
+      </section>
+      {/* Report Section */}
+      <section id="report" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
+      <div className=" text-5xl">
           Report
         </div>
-        <div className="mx-16 grid grid-cols-2 gap-14 my-4">
+        <div className=" grid grid-cols-2 gap-14 my-4">
           <VerticalTansitionVideoInfo
             imagePosition="top"
             moveVidFrom={TansitionVidLToR}
-            moveContextFrom = {TransitionContextTToB}
+            moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Measure.content1}
           />
           <VerticalTansitionVideoInfo
             imagePosition="top"
             moveVidFrom={TansitionVidRToL}
-            moveContextFrom = {TransitionContextTToB}
+            moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Measure.content1}
           />
         </div>
-      </main>
-
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer> */}
+        
+      </section>
     </>
   );
 };

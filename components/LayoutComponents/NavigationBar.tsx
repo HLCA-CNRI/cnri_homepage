@@ -63,7 +63,7 @@ const NavigationBar: React.FC = () => {
               <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                 <li>
                   <Link
-                    href="/product"
+                    href="/Product"
                     className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-lg"
                     aria-current="page"
                   >
@@ -72,7 +72,7 @@ const NavigationBar: React.FC = () => {
                 </li>
                 <li>
                   <Link
-                    href="/company"
+                    href="/Company"
                     className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-lg"
                   >
                     <a>Company</a>
@@ -80,7 +80,7 @@ const NavigationBar: React.FC = () => {
                 </li>
                 <li>
                   <Link
-                    href="/randd"
+                    href="/Randd"
                     className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 text-lg"
                   >
                     <a>R&D</a>

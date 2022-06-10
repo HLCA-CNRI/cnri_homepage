@@ -96,3 +96,5 @@ const NavigationBar: React.FC = () => {
 };
 
 export default NavigationBar;
+
+

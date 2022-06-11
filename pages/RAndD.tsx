@@ -1,5 +1,18 @@
 import SlideShow from "../components/SlideShow";
+import React, { useState, useRef, useEffect } from "react";
+
+import LCA from "../components/RAndDCompoenents/LCA";
+
 const RAndD = () => {
+  const [video, setVideo] = useState(`./video/measure3.mp4`)
+  const videoRef = useRef<null | HTMLVideoElement>(null);
+  useEffect(()=>{
+    if(videoRef && videoRef.current){
+      console.log(videoRef.current.src)
+    }
+  },[])
+
+
   return (
     <div className="m-4 border-2 mx-16 ">
       <div className="w-[100%] bg-slate-200">
@@ -7,21 +20,17 @@ const RAndD = () => {
       </div>
       <div className="w-[100%] bg-slate-300 p-4">
         <div className="text-5xl">What is LCA?</div>
+        <LCA/>
+        <div className="grid grid-cols-2"></div>
       </div>
       <div className="w-[100%] bg-slate-400 p-4">
         <div className="text-5xl">Our Work and Partnership</div>
-        <div>
-          <svg height="140" width="500">
-            <ellipse
-              cx="200"
-              cy="80"
-              rx="100"
-              ry="50"
-              className="fill:yellow;stroke:purple;stroke-width:2"
-            />
-          </svg>
-        </div>
+     
       </div>
+
+      
+
+
     </div>
   );
 };

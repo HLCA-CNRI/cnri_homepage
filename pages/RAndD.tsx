@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import LCA from "../components/RAndDCompoenents/LCA";
 import Partnership from "../components/RAndDCompoenents/Partnership";
 
-const RAndD = () => {
+const Randd = () => {
   const [video, setVideo] = useState(`./video/measure3.mp4`);
   const videoRef = useRef<null | HTMLVideoElement>(null);
   useEffect(() => {
@@ -31,4 +31,4 @@ const RAndD = () => {
   );
 };
 
-export default RAndD;
+export default Randd;

@@ -10,11 +10,11 @@ const LCA = () => {
   useEffect(() => {
     if(userInteracted){
         let currentIdx = 0
-        const interval = setInterval(()=>{
+        const interval = setInterval(async()=>{
             const values = [LCAContents.resources,LCAContents.processing,LCAContents.manufacturing,LCAContents.distribution,LCAContents.use,LCAContents.endOfLife,LCAContents.resources]
-            setCurrentObj(values[currentIdx + 1])
+            await setCurrentObj(values[currentIdx + 1])
             currentIdx == (values.length -2) ? currentIdx = 0 : currentIdx += 1
-        },3000)
+        },5000)
           return () => clearInterval(interval);
     }
   }, [userInteracted]);
@@ -30,19 +30,26 @@ const LCA = () => {
   const MouseOut = (e:any) =>{
     setUserInteracted(true)
   }
+
+  const clickIcon = (e:any) =>{
+      if(videoRef && videoRef.current){
+        videoRef.current.play()
+      }
+  }
+
   return (
     <div className="w-[100%] bg-slate-400">
       <div className="grid grid-cols-3">
         <div className="col-span-2">
-          <video ref={videoRef} src={currentObj.videoPath} autoPlay loop  className = "px-4 pt-4"/>
+          <video ref={videoRef} src={currentObj.videoPath}  loop  className = "px-4 pt-4"/>
           <div className = "text-md px-4 pb-4">
-              <li>{currentObj.content1}</li>
-              <li>{currentObj.content2}</li>
+              <div>{currentObj.content1}</div>
+              <div>{currentObj.content2}</div>
           </div>
         </div>
         <div className="grid grid-cols-5">
           <div className="col-span-2"></div>
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={LCAContents.resources.default}
               coloredIcon={LCAContents.resources.colored}
@@ -51,7 +58,7 @@ const LCA = () => {
           </div>
           <div className="col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={LCAContents.processing.default}
               coloredIcon={LCAContents.processing.colored}
@@ -61,7 +68,7 @@ const LCA = () => {
 
           <div className=" col-span-3"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={LCAContents.manufacturing.default}
               coloredIcon={LCAContents.manufacturing.colored}
@@ -71,7 +78,7 @@ const LCA = () => {
 
           <div className=" col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={LCAContents.distribution.default}
               coloredIcon={LCAContents.distribution.colored}
@@ -81,7 +88,7 @@ const LCA = () => {
 
           <div className=" col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={LCAContents.distribution.default}
               coloredIcon={LCAContents.distribution.colored}
@@ -91,8 +98,7 @@ const LCA = () => {
 
           <div className=" col-span-3"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
-            <Icon
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>            <Icon
               defaultIcon={LCAContents.use.default}
               coloredIcon={LCAContents.use.colored}
               isCurrent={currentObj.title == "use" ? true : false}
@@ -101,8 +107,7 @@ const LCA = () => {
 
           <div className="col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
-            <Icon
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>            <Icon
               defaultIcon={LCAContents.endOfLife.default}
               coloredIcon={LCAContents.endOfLife.colored}
               isCurrent={currentObj.title == "endOfLife" ? true : false}

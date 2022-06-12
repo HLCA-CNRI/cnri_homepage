@@ -75,6 +75,4 @@ export const LandingContents = {
             isVideo:false,
         },
     }
-
-
 }

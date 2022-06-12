@@ -8,14 +8,14 @@ const Partnership = () => {
   const [currentObj, setCurrentObj] = useState(
     WorkAndPartnershipContent.totalBusiness
   );
-  const videoRef = useRef<null | HTMLVideoElement>(null);
+  const picRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
     if(userInteracted){
         let currentIdx = 0
-        const interval = setInterval(()=>{
+        const interval = setInterval(async()=>{
             const values = [WorkAndPartnershipContent.totalBusiness,WorkAndPartnershipContent.ts,WorkAndPartnershipContent.h2,WorkAndPartnershipContent.posco,WorkAndPartnershipContent.snu,WorkAndPartnershipContent.totalBusiness]
-            setCurrentObj(values[currentIdx + 1])
+            await setCurrentObj(values[currentIdx + 1])
             currentIdx == (values.length -2) ? currentIdx = 0 : currentIdx += 1
         },2000)
           return () => clearInterval(interval);
@@ -30,16 +30,23 @@ const Partnership = () => {
     }
   };
 
+
   const MouseOut = (e:any) =>{
     setUserInteracted(true)
   }
+
+  const clickIcon = (e:any) =>{
+    setUserInteracted(false)
+  }
+
+
 
   return (
     <div className="w-[100%] bg-slate-400">
       <div className="grid grid-cols-2">
         <div className="grid grid-cols-5">
           <div className="col-span-2"></div>
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
               coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
@@ -47,7 +54,7 @@ const Partnership = () => {
             />
           </div>
           <div className="col-span-2"></div>
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.ts.default}
               coloredIcon={WorkAndPartnershipContent.ts.colored}
@@ -57,7 +64,7 @@ const Partnership = () => {
           <div className="col-span-3"></div>
     
 
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.posco.default}
               coloredIcon={WorkAndPartnershipContent.posco.colored}
@@ -66,7 +73,7 @@ const Partnership = () => {
           </div>
 
           <div className="col-span-2"></div>
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
               coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
@@ -76,7 +83,7 @@ const Partnership = () => {
           
           <div className="col-span-2"></div>
           <div className="col-span-5  h-8"></div>
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.h2.default}
               coloredIcon={WorkAndPartnershipContent.h2.colored}
@@ -85,7 +92,7 @@ const Partnership = () => {
           </div>
           <div className="col-span-3"></div>
       
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.snu.default}
               coloredIcon={WorkAndPartnershipContent.snu.colored}
@@ -96,7 +103,11 @@ const Partnership = () => {
         </div>
 
         <div className="">
-          <video ref={videoRef} src={currentObj.videoPath} autoPlay loop />
+          {/* <video ref={picRef} src={currentObj.videoPath} autoPlay loop /> */}
+          <div ref={picRef}>
+              {currentObj.img}
+              Hello
+          </div>
         </div>
       </div>
     </div>

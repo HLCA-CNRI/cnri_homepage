@@ -2,6 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { Opacity } from "@material-ui/icons";
+import report1 from "../../images/report1.png"
 //Grid 형태로 놓고 싶어서 따로 Horizontal TransitionVideoInfo를 만듬
 interface HorizontalTransitionVideoInfoType {
   imagePosition: string;
@@ -11,6 +12,7 @@ interface HorizontalTransitionVideoInfoType {
     title: string;
     content: string;
     videoPath: string;
+    isVideo:boolean;
   };
 }
 
@@ -89,14 +91,15 @@ const HorizontalTransitionVideoInfo = ({
             {contentInfo.title}
             {/* </div> */}
           </div>
-          <video
+          {contentInfo.isVideo ? <video
             src={contentInfo.videoPath}
             // autoPlay
             loop
             onMouseEnter={handleVideoMouseEnter}
             onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl z-40 "
-          />
+            className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl"
+          />: <img src = {report1.src} className = "w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl z-40 "/>}
+          
         </div>
 
         {imagePosition == "left" ? (

@@ -43,10 +43,14 @@ const History = ({year}:HistoryType) => {
        <button onClick = {clickButton} className = "mb-3 text-3xl font-semibold tracking-tight text-white flex w-[100%] justify-center hover:rotate-45">+</button>
        {isActive ? 
      <div className = "text-white">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem 
+        <li>법인 설립</li>
+        <li>창헙진흥원 주관</li>
+        <li>국토교통부, 사업통산자원부 주요 LCA R&D</li>
+        <li>서울대학교 창업단 입주기업 선정</li>
+        <li>서울대학교 송한호 교수, 국토교통부 장관 표창 수상</li>
      </div>:
-     ""
-     }
+     ""}
+
     </div>
      </div>
 

@@ -3,10 +3,10 @@ import {useState} from "react"
 interface IconType{
     defaultIcon:any, 
     coloredIcon:any, 
-    initial:boolean
+    isCurrent:boolean
 }
 
-const Icon = ({defaultIcon,coloredIcon,initial}:IconType) =>{  
+const Icon = ({defaultIcon,coloredIcon,isCurrent}:IconType) =>{  
     const [isColored,setIsColored] = useState(false)  
     const changeToColored = (e:any) =>{
         setIsColored(true)
@@ -16,7 +16,7 @@ const Icon = ({defaultIcon,coloredIcon,initial}:IconType) =>{
     }
     return (
         <div onMouseOver={changeToColored} onMouseLeave = {changeToDefault}>
-            {isColored ? coloredIcon:defaultIcon}
+            {isCurrent ? coloredIcon:defaultIcon}
         </div>
     )
 }

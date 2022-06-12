@@ -114,7 +114,8 @@ const Home: NextPage = () => {
       </section>
       {/* Measure Section */}
       <section id="measure" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-          <div className="text-5xl">Measure</div>
+          <div className="text-5xl">{LandingContents.Measure.title}</div>
+          <div className="text-2xl">{LandingContents.Measure.subtitle}</div>
           <div className="grid grid-cols-2 gap-14 my-4">
             <VerticalTansitionVideoInfo
               imagePosition="top"
@@ -140,9 +141,8 @@ const Home: NextPage = () => {
       </section>
       {/* Reduce Section */}
       <section id="reduce" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-      <div className="text-5xl">
-          Reduce
-        </div>
+      <div className="text-5xl">{LandingContents.Reduce.title}</div>
+        <div className="text-2xl">{LandingContents.Reduce.subtitle}</div>
         <div className="grid grid-cols-2 gap-14 my-4">
           <div>
             <HorizontalTransitionVideoInfo
@@ -168,9 +168,8 @@ const Home: NextPage = () => {
       </section>
       {/* Remove Section */}
       <section  id="remove" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-      <div  className="text-5xl">
-          Remove
-        </div>
+      <div className="text-5xl">{LandingContents.Remove.title}</div>
+        <div className="text-2xl">{LandingContents.Remove.subtitle}</div>
         <div >
           <HorizontalTransitionVideoInfo
             imagePosition="left"
@@ -182,29 +181,20 @@ const Home: NextPage = () => {
             imagePosition="right"
             moveVidFrom={TansitionVidRToL}
             moveContextFrom={TransitionContextRToL}
-            contentInfo={LandingContents.Measure.content1}
+            contentInfo={LandingContents.Remove.content2}
           />
         </div>
       </section>
       {/* Report Section */}
       <section id="report" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-      <div className=" text-5xl">
-          Report
-        </div>
-        <div className=" grid grid-cols-2 gap-14 my-4">
-          <VerticalTansitionVideoInfo
-            imagePosition="top"
+      <div className="text-5xl">{LandingContents.Report.title}</div>
+        <div className="text-2xl">{LandingContents.Report.subtitle}</div>
+        <HorizontalTransitionVideoInfo
+            imagePosition="left"
             moveVidFrom={TansitionVidLToR}
-            moveContextFrom={TransitionContextTToB}
-            contentInfo={LandingContents.Measure.content1}
+            moveContextFrom={TransitionContextLToR}
+            contentInfo={LandingContents.Report.content1}
           />
-          <VerticalTansitionVideoInfo
-            imagePosition="top"
-            moveVidFrom={TansitionVidRToL}
-            moveContextFrom={TransitionContextTToB}
-            contentInfo={LandingContents.Measure.content1}
-          />
-        </div>
         
       </section>
     </>

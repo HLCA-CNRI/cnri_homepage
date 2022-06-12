@@ -1,98 +1,111 @@
 import React, { useState, useRef, useEffect } from "react";
-import Prac from "../../components/Pac";
+
 import { LCAContents } from "../../functions/LCAContents";
 import Icon from "../../components/RAndDCompoenents/Icon";
 
 const LCA = () => {
-  const [video, setVideo] = useState(`./video/measure3.mp4`);
+  const [userInteracted, setUserInteracted] = useState(true)
+  const [currentObj, setCurrentObj] = useState(LCAContents.resources);
   const videoRef = useRef<null | HTMLVideoElement>(null);
   useEffect(() => {
-    if (videoRef && videoRef.current) {
-      console.log(videoRef.current.src);
+    if(userInteracted){
+        let currentIdx = 0
+        const interval = setInterval(()=>{
+            const values = [LCAContents.resources,LCAContents.processing,LCAContents.manufacturing,LCAContents.distribution,LCAContents.use,LCAContents.endOfLife,LCAContents.resources]
+            setCurrentObj(values[currentIdx + 1])
+            currentIdx == (values.length -2) ? currentIdx = 0 : currentIdx += 1
+        },3000)
+          return () => clearInterval(interval);
     }
-  }, []);
+  }, [userInteracted]);
 
   const MouseOver = (e: any) => {
-    console.log("Hello");
+    setUserInteracted(false)
     const val = e.target.id;
     if (LCAContents[val] != undefined) {
-      console.log("Here", LCAContents[val].videoPath);
-      setVideo(LCAContents[val].videoPath);
+      setCurrentObj(LCAContents[val]);
     }
   };
+
+  const MouseOut = (e:any) =>{
+    setUserInteracted(true)
+  }
   return (
     <div className="w-[100%] bg-slate-400">
       <div className="grid grid-cols-3">
         <div className="col-span-2">
-          <video ref={videoRef} src={video} autoPlay loop />
+          <video ref={videoRef} src={currentObj.videoPath} autoPlay loop  className = "px-4 pt-4"/>
+          <div className = "text-md px-4 pb-4">
+              <li>{currentObj.content1}</li>
+              <li>{currentObj.content2}</li>
+          </div>
         </div>
         <div className="grid grid-cols-5">
           <div className="col-span-2"></div>
-          {/* <Prac /> */}
-          <div onMouseOver={MouseOver}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
             <Icon
               defaultIcon={LCAContents.resources.default}
               coloredIcon={LCAContents.resources.colored}
-              initial={false}
+              isCurrent={currentObj.title == "resources" ? true : false}
             />
           </div>
           <div className="col-span-2"></div>
 
-          <div onMouseOver={MouseOver}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
             <Icon
               defaultIcon={LCAContents.processing.default}
               coloredIcon={LCAContents.processing.colored}
-              initial={false}
+              isCurrent={currentObj.title == "processing" ? true : false}
             />
           </div>
 
           <div className=" col-span-3"></div>
 
-          <div onMouseOver={MouseOver}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
             <Icon
               defaultIcon={LCAContents.manufacturing.default}
               coloredIcon={LCAContents.manufacturing.colored}
-              initial={false}
+              isCurrent={currentObj.title == "manufacturing" ? true : false}
             />
           </div>
 
           <div className=" col-span-2"></div>
 
-          <div onMouseOver={MouseOver}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
             <Icon
               defaultIcon={LCAContents.distribution.default}
               coloredIcon={LCAContents.distribution.colored}
-              initial={false}
+              isCurrent={currentObj.title == "distribution" ? true : false}
             />
           </div>
 
           <div className=" col-span-2"></div>
 
-          <div onMouseOver={MouseOver}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
             <Icon
               defaultIcon={LCAContents.distribution.default}
               coloredIcon={LCAContents.distribution.colored}
-              initial={false}
+              isCurrent={currentObj.title == "distribution" ? true : false}
             />
           </div>
 
           <div className=" col-span-3"></div>
 
-          <div onMouseOver={MouseOver}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
             <Icon
               defaultIcon={LCAContents.use.default}
               coloredIcon={LCAContents.use.colored}
-              initial={false}
+              isCurrent={currentObj.title == "use" ? true : false}
             />
           </div>
 
           <div className="col-span-2"></div>
 
-          <div onMouseOver={MouseOver}>
+          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut}>
             <Icon
               defaultIcon={LCAContents.endOfLife.default}
               coloredIcon={LCAContents.endOfLife.colored}
-              initial={false}
+              isCurrent={currentObj.title == "endOfLife" ? true : false}
             />
           </div>
 

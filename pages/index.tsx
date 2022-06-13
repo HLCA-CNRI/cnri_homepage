@@ -70,23 +70,13 @@ const Home: NextPage = () => {
 
       <div className="bg-slate-200 mx-16">
         <div className="pt-10">
-          <div className="flex justify-center font-bold text-7xl">
-            넷제로 달성을 위해 필요한
-          </div>
-          <div className="flex justify-center pt-2 font-bold text-7xl">
-            Actionable Plan의 모든 것
-          </div>
-          <div className="flex justify-center pt-4 font-semibold text-xl">
-            넷제로 달성을 위해 필요한 Actionable Plan의 모든 것
-          </div>
+          <div className="flex justify-center font-bold text-7xl">넷제로 달성을 위해 필요한</div>
+          <div className="flex justify-center pt-2 font-bold text-7xl">Actionable Plan의 모든 것</div>
+          <div className="flex justify-center pt-4 font-semibold text-xl">넷제로 달성을 위해 필요한 Actionable Plan의 모든 것</div>
         </div>
         <div className="flex justify-center pt-10">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-full mx-4 w-[15%] h-12">
-            체험하기
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-full mx-4 w-[15%] h-12">
-            데모신청
-          </button>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-full mx-4 w-[15%] h-12">체험하기</button>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-full mx-4 w-[15%] h-12">데모신청</button>
         </div>
         <div className="flex justify-center ">
           <img src={landingMain.src} className="w-[63%] mt-4 " />
@@ -111,10 +101,7 @@ const Home: NextPage = () => {
         </Link>
       </section>
       {/* Measure Section */}
-      <section
-        id="measure"
-        className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start"
-      >
+      <section id="measure" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
         <div className="text-5xl">{LandingContents.Measure.title}</div>
         <div className="text-2xl">{LandingContents.Measure.subtitle}</div>
         <div className="grid grid-cols-2 gap-14 my-4 border-2">
@@ -134,46 +121,38 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="border-2 h-[50%] flex flex-col justify-end">
-                <HorizontalTransitionVideoInfo
-                  imagePosition="left"
-                  moveVidFrom={TansitionVidBToT}
-                  moveContextFrom={TransitionContextLToR}
-                  contentInfo={LandingContents.Measure.content3}
-                />
-
+              <HorizontalTransitionVideoInfo
+                imagePosition="left"
+                moveVidFrom={TansitionVidBToT}
+                moveContextFrom={TransitionContextLToR}
+                contentInfo={LandingContents.Measure.content3}
+              />
             </div>
           </div>
         </div>
       </section>
       {/* Reduce Section */}
-      <section
-        id="reduce"
-        className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start"
-      >
+      <section id="reduce" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
         <div className="text-5xl">{LandingContents.Reduce.title}</div>
         <div className="text-2xl">{LandingContents.Reduce.subtitle}</div>
         <div className="grid grid-cols-2 gap-14 my-4">
-          <div className = "h-full">
-            <div className = "h-[50%]">
-            <HorizontalTransitionVideoInfo
-              imagePosition="left"
-              moveVidFrom={TansitionVidLToR}
-              moveContextFrom={TransitionContextLToR}
-              contentInfo={LandingContents.Reduce.content1}
-            />
-
+          <div className="h-full">
+            <div className="h-[50%]">
+              <HorizontalTransitionVideoInfo
+                imagePosition="left"
+                moveVidFrom={TansitionVidLToR}
+                moveContextFrom={TransitionContextLToR}
+                contentInfo={LandingContents.Reduce.content1}
+              />
             </div>
-            <div className = "h-[50%]">
-            <HorizontalTransitionVideoInfo
-              imagePosition="right"
-              moveVidFrom={TansitionVidBToT}
-              moveContextFrom={TransitionContextRToL}
-              contentInfo={LandingContents.Reduce.content2}
-            />
-
+            <div className="h-[50%]">
+              <HorizontalTransitionVideoInfo
+                imagePosition="right"
+                moveVidFrom={TansitionVidBToT}
+                moveContextFrom={TransitionContextRToL}
+                contentInfo={LandingContents.Reduce.content2}
+              />
             </div>
-            
-            
           </div>
           <VerticalTansitionVideoInfo
             imagePosition="top"
@@ -184,10 +163,7 @@ const Home: NextPage = () => {
         </div>
       </section>
       {/* Remove Section */}
-      <section
-        id="remove"
-        className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start"
-      >
+      <section id="remove" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
         <div className="text-5xl">{LandingContents.Remove.title}</div>
         <div className="text-2xl">{LandingContents.Remove.subtitle}</div>
         <div>
@@ -206,10 +182,7 @@ const Home: NextPage = () => {
         </div>
       </section>
       {/* Report Section */}
-      <section
-        id="report"
-        className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start"
-      >
+      <section id="report" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
         <div className="text-5xl">{LandingContents.Report.title}</div>
         <div className="text-2xl">{LandingContents.Report.subtitle}</div>
         <HorizontalTransitionVideoInfo

@@ -18,12 +18,7 @@ const DescriptionVariant = {
   close: { opacity: 0.2 },
 };
 
-const VerticalTansitionVideoInfo = ({
-  imagePosition,
-  moveVidFrom,
-  moveContextFrom,
-  contentInfo,
-}: VerticalTansitionVideoInfoType) => {
+const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo }: VerticalTansitionVideoInfoType) => {
   const handleVideoMouseEnter = (e: any) => {
     const vid = e.target;
     vid.muted = true;
@@ -51,41 +46,34 @@ const VerticalTansitionVideoInfo = ({
   }, [controlVid, inView]);
 
   return (
-    <div ref={ref} >
+    <div ref={ref}>
       {/* <div className="text-3xl font-bold  w-[100%] bg-slate-400 pt-6 px-6">{contentInfo.title}</div> */}
-  
-      <motion.div
-        animate={controlVid}
-        initial="vidHidden"
-        variants={moveVidFrom}
-      >
-        <div className="text-3xl font-bold  w-[100%] bg-slate-400 pt-6 px-6">{contentInfo.title}</div>
-        <div className = "bg-slate-400 p-6 z-30">
-          <video
-            src={contentInfo.videoPath}
-            loop
-            onMouseEnter={handleVideoMouseEnter}
-            onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl z-30"
-          />
+
+      <motion.div animate={controlVid} initial="vidHidden" variants={moveVidFrom} className="flex flex-col h-full">
+        <div>
+          <div className="text-3xl font-bold  w-[100%] bg-slate-400 pt-6 px-6">{contentInfo.title}</div>
+          <div className="bg-slate-400 p-6 z-30">
+            <video
+              src={contentInfo.videoPath}
+              loop
+              onMouseEnter={handleVideoMouseEnter}
+              onMouseLeave={handleVideoMouseLeave}
+              className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl z-30"
+            />
+          </div>
         </div>
 
         <motion.div
           animate={controlText}
           initial="initial"
           variants={moveContextFrom}
-          className="z-0"
-          onMouseEnter={()=>controlText.start("open")}
-          onMouseLeave={async()=>{
+          className="bg-slate-400 z-0 h-full"
+          onMouseEnter={() => controlText.start("open")}
+          onMouseLeave={async () => {
             await controlText.start("close");
             await controlText.start("close2");
-          }}
-          >
-            <div className=" bg-slate-400 p-6 z-0 ">
-            {contentInfo.content}
-
-            </div>
-          
+          }}>
+          <div className="p-6 z-0">{contentInfo.content}</div>
         </motion.div>
       </motion.div>
     </div>

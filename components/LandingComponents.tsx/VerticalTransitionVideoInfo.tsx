@@ -58,7 +58,7 @@ const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFro
               loop
               onMouseEnter={handleVideoMouseEnter}
               onMouseLeave={handleVideoMouseLeave}
-              className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl z-30"
+              className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl z-30"
             />
           </div>
         </div>

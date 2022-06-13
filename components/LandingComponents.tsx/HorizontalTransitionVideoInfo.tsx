@@ -89,12 +89,12 @@ const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContext
               loop
               onMouseEnter={handleVideoMouseEnter}
               onMouseLeave={handleVideoMouseLeave}
-              className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl "
+              className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl "
             />
           ) : (
             <img
               src={report1.src}
-              className="w-[100%] transition-[width] delay-150 object-fill rounded-lg shadow-xl z-40 "
+              className="w-[100%] transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 "
               onMouseEnter={handleImgMouseEnter}
               onMouseLeave={handleImgMouseLeave}
             />

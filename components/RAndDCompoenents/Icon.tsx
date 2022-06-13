@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {memo, useState} from "react"
 
 interface IconType{
     defaultIcon:any, 
@@ -21,4 +21,4 @@ const Icon = ({defaultIcon,coloredIcon,isCurrent}:IconType) =>{
     )
 }
 
-export default Icon
+export default memo(Icon)

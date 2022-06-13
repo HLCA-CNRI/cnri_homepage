@@ -41,6 +41,15 @@ const HorizontalTransitionVideoInfo = ({
     await controlText.start("close");
     await controlText.start("close2");
   };
+
+  const handleImgMouseEnter = (e:any) =>{
+    controlText.start("open");
+  }
+
+  const handleImgMouseLeave = async(e:any) =>{
+    await controlText.start("close");
+    await controlText.start("close2");
+  }
   const controlVid = useAnimation();
   const controlText = useAnimation();
   const [ref, inView] = useInView();
@@ -53,12 +62,12 @@ const HorizontalTransitionVideoInfo = ({
   }, [controlVid, inView]);
 
   return (
-    <div ref={ref} className = "mt-4">
+    <div ref={ref} className = "h-[100%] bg-zinc-400 flex ">
       <motion.div
         animate={controlVid}
         initial="vidHidden"
         variants={moveVidFrom}
-        className="grid  grid-cols-2 "
+        className="grid grid-cols-2 "
       >
         {imagePosition == "right" ? (
           <motion.div
@@ -81,7 +90,7 @@ const HorizontalTransitionVideoInfo = ({
           ""
         )}
 
-        <div className = "bg-slate-400 p-6">
+        <div className = "bg-slate-400 p-6 h-[100%] flex flex-col justify-center">
           <div
             className={`text-3xl font-bold m-2 w-[100%] flex ${
               imagePosition == "right" ? "justify-end" : ""
@@ -97,8 +106,8 @@ const HorizontalTransitionVideoInfo = ({
             loop
             onMouseEnter={handleVideoMouseEnter}
             onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl"
-          />: <img src = {report1.src} className = "w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl z-40 "/>}
+            className="w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl "
+          />: <img src = {report1.src} className = "w-[100%] transition-[width] delay-150 object-fill  rounded-lg shadow-xl z-40 " onMouseEnter={handleImgMouseEnter} onMouseLeave={handleImgMouseLeave}/>}
           
         </div>
 
@@ -112,7 +121,7 @@ const HorizontalTransitionVideoInfo = ({
               await controlText.start("close");
               await controlText.start("close2");
             }}
-            className = "bg-slate-400 p-6 "
+            className = "bg-slate-400 p-6 h-[100%] flex flex-col justify-end "
             
           >
             <div className = " flex items-center justify-center h-[100%]">

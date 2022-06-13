@@ -10,6 +10,7 @@ import HorizontalTransitionVideoInfo from "../components/LandingComponents.tsx/H
 import Box from "../components/Box";
 import { LandingContents } from "../functions/LandingContents";
 import Link from "next/link";
+import landingMain from "../images/landingMain.gif";
 
 const Home: NextPage = () => {
   const TansitionVidLToR = {
@@ -88,10 +89,7 @@ const Home: NextPage = () => {
           </button>
         </div>
         <div className="flex justify-center ">
-          <img
-            src="https://watershed.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero.f2c8f15e.png&w=1920&q=75"
-            className="w-[63%] mt-4 "
-          />
+          <img src={landingMain.src} className="w-[63%] mt-4 " />
         </div>
       </div>
 
@@ -113,50 +111,69 @@ const Home: NextPage = () => {
         </Link>
       </section>
       {/* Measure Section */}
-      <section id="measure" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-          <div className="text-5xl">{LandingContents.Measure.title}</div>
-          <div className="text-2xl">{LandingContents.Measure.subtitle}</div>
-          <div className="grid grid-cols-2 gap-14 my-4">
-            <VerticalTansitionVideoInfo
-              imagePosition="top"
-              moveVidFrom={TansitionVidLToR}
-              moveContextFrom={TransitionContextTToB}
-              contentInfo={LandingContents.Measure.content1}
-            />
-            <div>
+      <section
+        id="measure"
+        className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start"
+      >
+        <div className="text-5xl">{LandingContents.Measure.title}</div>
+        <div className="text-2xl">{LandingContents.Measure.subtitle}</div>
+        <div className="grid grid-cols-2 gap-14 my-4 border-2">
+          <VerticalTansitionVideoInfo
+            imagePosition="top"
+            moveVidFrom={TansitionVidLToR}
+            moveContextFrom={TransitionContextTToB}
+            contentInfo={LandingContents.Measure.content1}
+          />
+          <div className="border-2 h-[100%]">
+            <div className="border-2 h-[50%]">
               <HorizontalTransitionVideoInfo
                 imagePosition="right"
                 moveVidFrom={TansitionVidRToL}
                 moveContextFrom={TransitionContextRToL}
                 contentInfo={LandingContents.Measure.content2}
               />
-              <HorizontalTransitionVideoInfo
-                imagePosition="left"
-                moveVidFrom={TansitionVidBToT}
-                moveContextFrom={TransitionContextLToR}
-                contentInfo={LandingContents.Measure.content3}
-              />
+            </div>
+            <div className="border-2 h-[50%] flex flex-col justify-end">
+                <HorizontalTransitionVideoInfo
+                  imagePosition="left"
+                  moveVidFrom={TansitionVidBToT}
+                  moveContextFrom={TransitionContextLToR}
+                  contentInfo={LandingContents.Measure.content3}
+                />
+
             </div>
           </div>
+        </div>
       </section>
       {/* Reduce Section */}
-      <section id="reduce" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-      <div className="text-5xl">{LandingContents.Reduce.title}</div>
+      <section
+        id="reduce"
+        className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start"
+      >
+        <div className="text-5xl">{LandingContents.Reduce.title}</div>
         <div className="text-2xl">{LandingContents.Reduce.subtitle}</div>
         <div className="grid grid-cols-2 gap-14 my-4">
-          <div>
+          <div className = "h-full">
+            <div className = "h-[50%]">
             <HorizontalTransitionVideoInfo
               imagePosition="left"
               moveVidFrom={TansitionVidLToR}
               moveContextFrom={TransitionContextLToR}
               contentInfo={LandingContents.Reduce.content1}
             />
+
+            </div>
+            <div className = "h-[50%]">
             <HorizontalTransitionVideoInfo
               imagePosition="right"
               moveVidFrom={TansitionVidBToT}
               moveContextFrom={TransitionContextRToL}
               contentInfo={LandingContents.Reduce.content2}
             />
+
+            </div>
+            
+            
           </div>
           <VerticalTansitionVideoInfo
             imagePosition="top"
@@ -167,10 +184,13 @@ const Home: NextPage = () => {
         </div>
       </section>
       {/* Remove Section */}
-      <section  id="remove" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-      <div className="text-5xl">{LandingContents.Remove.title}</div>
+      <section
+        id="remove"
+        className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start"
+      >
+        <div className="text-5xl">{LandingContents.Remove.title}</div>
         <div className="text-2xl">{LandingContents.Remove.subtitle}</div>
-        <div >
+        <div>
           <HorizontalTransitionVideoInfo
             imagePosition="left"
             moveVidFrom={TansitionVidLToR}
@@ -186,16 +206,18 @@ const Home: NextPage = () => {
         </div>
       </section>
       {/* Report Section */}
-      <section id="report" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-      <div className="text-5xl">{LandingContents.Report.title}</div>
+      <section
+        id="report"
+        className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start"
+      >
+        <div className="text-5xl">{LandingContents.Report.title}</div>
         <div className="text-2xl">{LandingContents.Report.subtitle}</div>
         <HorizontalTransitionVideoInfo
-            imagePosition="left"
-            moveVidFrom={TansitionVidLToR}
-            moveContextFrom={TransitionContextLToR}
-            contentInfo={LandingContents.Report.content1}
-          />
-        
+          imagePosition="left"
+          moveVidFrom={TansitionVidLToR}
+          moveContextFrom={TransitionContextLToR}
+          contentInfo={LandingContents.Report.content1}
+        />
       </section>
     </>
   );

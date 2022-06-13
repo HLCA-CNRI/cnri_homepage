@@ -2,6 +2,7 @@ import { WorkAndPartnershipContent } from "../../functions/WorkAndResponsibiliti
 import { useState, useRef, useEffect } from "react";
 import totalBusinessD from "../../images/companies/totalBusinessD.png";
 import Icon from "./Icon";
+import logo from "../../images/logo.png"
 
 const Partnership = () => {
   const [userInteracted, setUserInteracted] = useState(true)
@@ -41,8 +42,9 @@ const Partnership = () => {
 
 
 
+
   return (
-    <div className="w-[100%] bg-slate-400">
+    <div className="w-[100%]">
       <div className="grid grid-cols-2">
         <div className="grid grid-cols-5">
           <div className="col-span-2"></div>
@@ -73,13 +75,10 @@ const Partnership = () => {
           </div>
 
           <div className="col-span-2"></div>
-          <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
-            <Icon
-              defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
-              coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
-              isCurrent={currentObj.title == "totalBusiness" ? true : false}
-            />
-          </div>
+          <img src = {logo.src}></img>
+          {/* <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
+            <div>Hello</div>
+          </div> */}
           
           <div className="col-span-2"></div>
           <div className="col-span-5  h-8"></div>
@@ -103,10 +102,13 @@ const Partnership = () => {
         </div>
 
         <div className="">
-          {/* <video ref={picRef} src={currentObj.videoPath} autoPlay loop /> */}
           <div ref={picRef}>
+              <div>
               {currentObj.img}
-              Hello
+              </div>
+              <div>
+              <ul>{currentObj.content.map((note:string) => <li key = {note} >{note}</li>)}</ul>
+              </div>
           </div>
         </div>
       </div>

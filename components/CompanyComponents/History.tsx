@@ -3,6 +3,7 @@ import stkImage from "../../images/stkImage.png"
 import nature1 from "../../images/nature1.jpg"
 import styled from "styled-components";
 import { Button } from "flowbite-react";
+import HistoryContent from "../../functions/HistoryContents";
 
 
 const Container = styled.div`
@@ -28,8 +29,8 @@ const History = ({year}:HistoryType) => {
 
   const clickButton = () => {
     setIsActive(!isActive)
-    console.log("click!");
-  };
+    };
+
 
   return (
     <div className = "relative  overflow-hidden  shadow-lg cursor-pointe rounded-lg ">
@@ -43,11 +44,7 @@ const History = ({year}:HistoryType) => {
        <button onClick = {clickButton} className = "mb-3 text-3xl font-semibold tracking-tight text-white flex w-[100%] justify-center hover:rotate-45">+</button>
        {isActive ? 
      <div className = "text-white">
-        <li>법인 설립</li>
-        <li>창헙진흥원 주관</li>
-        <li>국토교통부, 사업통산자원부 주요 LCA R&D</li>
-        <li>서울대학교 창업단 입주기업 선정</li>
-        <li>서울대학교 송한호 교수, 국토교통부 장관 표창 수상</li>
+      <ul>{HistoryContent[year].content.map((note:string) => <li key = {note} >{note}</li>)}</ul>
      </div>:
      ""}
 

@@ -18,12 +18,12 @@ const Randd = () => {
       <div className="w-[100%] bg-slate-200">
         <SlideShow />
       </div>
-      <div className="w-[100%] bg-slate-300 p-4">
+      <div className="w-[100%] ">
         <div className="text-5xl">What is LCA?</div>
         <LCA />
         <div className="grid grid-cols-2"></div>
       </div>
-      <div className="w-[100%] bg-slate-400 p-4">
+      <div className="w-[100%] ">
         <div className="text-5xl">Our Work and Partnership</div>
         <Partnership/>
       </div>

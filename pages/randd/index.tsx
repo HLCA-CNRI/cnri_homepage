@@ -1,8 +1,8 @@
-import SlideShow from "../components/SlideShow";
+import SlideShow from "../../components/SlideShow";
 import React, { useState, useRef, useEffect } from "react";
 
-import LCA from "../components/RAndDCompoenents/LCA";
-import Partnership from "../components/RAndDCompoenents/Partnership";
+import LCA from "../../components/RAndDCompoenents/LCA";
+import Partnership from "../../components/RAndDCompoenents/Partnership";
 
 const Randd = () => {
   const [video, setVideo] = useState(`./video/measure3.mp4`);
@@ -25,7 +25,7 @@ const Randd = () => {
       </div>
       <div className="w-[100%] ">
         <div className="text-5xl">Our Work and Partnership</div>
-        <Partnership/>
+        <Partnership />
       </div>
     </div>
   );

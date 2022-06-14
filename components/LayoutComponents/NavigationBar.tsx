@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const NavigationBar: React.FC = () => {
   return (
-    <div className="sticky z-50  inset-x-0 top-0  bg-white  w-[100%] shadow-sm ">
+    <div className="sticky z-50  inset-x-0 top-0  bg-white  w-[100%] shadow-sm border-b-2">
       <div className="mx-16">
         <Script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></Script>
         <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">

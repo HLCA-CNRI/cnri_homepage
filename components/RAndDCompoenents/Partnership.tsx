@@ -5,6 +5,7 @@ import Icon from "./Icon";
 import logo from "../../images/logo.png"
 import Carousel from "../Carousel";
 
+
 const Partnership = () => {
   const [userInteracted, setUserInteracted] = useState(true)
   const [currentObj, setCurrentObj] = useState(
@@ -45,8 +46,8 @@ const Partnership = () => {
   console.log(typeof currentObj.img)
 
   return (
-    <div className="w-[100%]">
-      <div className="grid grid-cols-2">
+    <div className="w-[100%] border-2">
+      <div className="grid grid-cols-3">
         <div className="grid grid-cols-5">
           <div className="col-span-2"></div>
           <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
@@ -110,7 +111,9 @@ const Partnership = () => {
           
         </div>
 
-        <div className="">
+        <div className="col-span-2 grid grid-cols-10">
+          <div></div>
+          <div className = "col-span-9">
           <div className = "text-4xl pb-4">{currentObj.kTitle}</div>
           <div ref={picRef} onMouseEnter = {MouseOver} onMouseLeave = {MouseOut}>
               <div>
@@ -121,6 +124,9 @@ const Partnership = () => {
               <ul>{currentObj.content.map((note:string) => <li key = {note} >{note}</li>)}</ul>
               </div>
           </div>
+
+          </div>
+
         </div>
       </div>
     </div>

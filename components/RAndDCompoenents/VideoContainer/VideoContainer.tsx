@@ -14,7 +14,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "resources" ? videoRef : null}
           src={videoPaths[0]}
           loop
-          className={classNames(currentContent === "resources" ? "" : "hidden", "pt-4 videos")}
+          className={classNames(currentContent === "resources" ? "" : "hidden", " videos rounded-lg shadow-xl")}
 
         />
       }
@@ -24,7 +24,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "processing" ? videoRef : null}
           src={videoPaths[1]}
           loop
-          className={classNames(currentContent === "processing" ? "" : "hidden", "pt-4 videos")}
+          className={classNames(currentContent === "processing" ? "" : "hidden", " videos rounded-lg shadow-xl")}
         />
       }
       {
@@ -33,7 +33,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "manufacturing" ? videoRef : null}
           src={videoPaths[2]}
           loop
-          className={classNames(currentContent === "manufacturing" ? "" : "hidden", "pt-4 videos")}
+          className={classNames(currentContent === "manufacturing" ? "" : "hidden", " videos rounded-lg shadow-xl")}
         />
       }
       {
@@ -42,7 +42,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "distribution" ? videoRef : null}
           src={videoPaths[3]}
           loop
-          className={classNames(currentContent === "distribution" ? "" : "hidden", "pt-4 videos")}
+          className={classNames(currentContent === "distribution" ? "" : "hidden", " videos rounded-lg shadow-xl")}
         />
       }
       {
@@ -51,7 +51,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "use" ? videoRef : null}
           src={videoPaths[4]}
           loop
-          className={classNames(currentContent === "use" ? "" : "hidden", "pt-4 videos")}
+          className={classNames(currentContent === "use" ? "" : "hidden", "videos rounded-lg shadow-xl")}
         />
       }
       {
@@ -60,7 +60,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "endOfLife" ? videoRef : null}
           src={videoPaths[5]}
           loop
-          className={classNames(currentContent === "endOfLife" ? "" : "hidden", "pt-4 videos")}
+          className={classNames(currentContent === "endOfLife" ? "" : "hidden", "videos rounded-lg shadow-xl object-fill")}
         />
       }
     </div>

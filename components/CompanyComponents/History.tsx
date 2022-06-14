@@ -28,6 +28,7 @@ interface HistoryType {
 const History = ({ year }: HistoryType) => {
   const [isActive, setIsActive] = useState(false);
 
+
   const clickButton = () => {
     setIsActive(!isActive);
   };
@@ -37,7 +38,7 @@ const History = ({ year }: HistoryType) => {
       {/* <BlackContainer /> */}
 
       {year == 2021 ? (
-        <img src={historyimg2.src} className="object-cover w-full " />
+        <img src={historyimg2.src} className="object-cover w-full "  />
       ) : (
         <img src={historyimg1.src} className="object-cover w-full h-full" />
       )}
@@ -51,20 +52,20 @@ const History = ({ year }: HistoryType) => {
       />
 
       <div className={`absolute top-0 left-0 px-6 py-4  w-[100%]`}>
-        <h4 className="text-5xl font-semibold tracking-tight text-white flex w-[100%] justify-center">
+        <h4 className="text-7xl font-extrabold tracking-tight text-white flex w-[100%] justify-center mt-5">
           {year}
         </h4>
         <button
           onClick={clickButton}
-          className="mb-3 text-3xl font-semibold tracking-tight text-white flex w-[100%] justify-center hover:rotate-45"
+          className="mb-3 text-5xl font-semibold tracking-tight text-white flex w-[100%] justify-center hover:rotate-45 mt-3"
         >
           +
         </button>
         {isActive ? (
-          <div className="text-white">
+          <div className="text-white text-xl mx-20 mt-10">
             <ul>
               {HistoryContent[year].content.map((note: string) => (
-                <li key={note}>{note}</li>
+                <li key={note} className = "my-4">{note}</li>
               ))}
             </ul>
           </div>

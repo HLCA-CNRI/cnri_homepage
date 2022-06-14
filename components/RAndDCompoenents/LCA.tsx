@@ -84,7 +84,7 @@ const LCA = () => {
   };
 
   return (
-    <div className="w-[100%]">
+    <div className="w-[100%] p-6 bg-[#DEEBF7]">
       <div className="grid grid-cols-3">
         <div className="col-span-2">
           <div className="grid grid-cols-10">
@@ -96,7 +96,7 @@ const LCA = () => {
                 onMouseLeave={mouseLeaveVid}
                 className = ""
               >
-                <div className = "text-4xl">{currentObj.kTitle}</div>
+                <div className = "text-4xl mb-4">{currentObj.kTitle}</div>
                 <div >
                 <VideoContainer
                   videoRef={videoRef}
@@ -116,7 +116,7 @@ const LCA = () => {
                 
               </div>
 
-              <div className="pb-4 h-[10%] text-lg">
+              <div className="pb-4 h-[10%] text-lg mt-4">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
               </div>

@@ -5,6 +5,7 @@ import Partnership from "../../components/RAndDCompoenents/Partnership";
 import Carousel from "../../components/Carousel"
 import cherin from "../../images/members/cherin.jpg"
 import prof from "../../images/members/prof.jpg"
+import rAnddIntro from "../../images/rAnddIntro.jpg"
 
 
 
@@ -18,7 +19,7 @@ const Randd = () => {
   }, []);
 
   return (
-    <div className="m-4 border-2 mx-16 ">
+    <div className="m-4 mx-16 ">
       <div className="w-[100%] bg-slate-200">
         <SlideShow />
       </div>

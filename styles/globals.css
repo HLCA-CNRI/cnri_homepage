@@ -27,7 +27,7 @@
 .one{
     width: 33%;
     transition-property: width;
-    transition-duration: 2s, 2s;
+    transition-duration: 1s, 1s;
 }
 
 .one:hover{

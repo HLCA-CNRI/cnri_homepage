@@ -1,12 +1,9 @@
 import min from "../images/members/min.jpg";
-import jonghoh from "../images/members/jonghoh.jpg";
-import prof from "../images/members/prof.jpg";
-import minhyeok from "../images/members/minhyeok.jpg";
-import kyunghoh from "../images/members/kyunghoh.jpg";
 
 export const LCAContents: { [key: string]: any } = {
   resources: {
     title: "resources",
+    kTitle: "원료 채굴",
     content1: "제품의 원료를 채굴하는 과정에서 탄소가 배출됩니다.",
     content2: "휘발유의 원료인 원유를 채굴하기 위해 메탄과 경유를 연소시키는 과정에서 온실가스를 배출합니다.",
     default: (
@@ -43,11 +40,12 @@ export const LCAContents: { [key: string]: any } = {
         </g>
       </svg>
     ),
-    videoPath: "./video/measure1.mp4",
+    videoPath: "./video/LCAvids/resources.mp4",
     image: <img id="resources" src={min.src} />,
   },
   processing: {
     title: "processing",
+    kTitle: "원료 가공",
     content1: "제품의 원료를 용도에 맞는 성질로 전환하기 위해 가공하는 과정에서 탄소가 배출됩니다",
     content2: "천연가스를 한국으로 수입하기 위해서는 액화천연가스(LNG, Liquefied Natural Gas) 형태로 액화시키는 과정에서 온실가스를 배출합니다.",
     default: (
@@ -206,13 +204,14 @@ export const LCAContents: { [key: string]: any } = {
         </g>
       </svg>
     ),
-    videoPath: "./video/measure2.mp4",
+    videoPath: "./video/LCAvids/processing.mp4",
     image: <img id="processing" src={min.src} />,
   },
   manufacturing: {
     title: "manufacturing",
-    content1: "제품의 원료를 용도에 맞는 성질로 전환하기 위해 가공하는 과정에서 탄소가 배출됩니다",
-    content2: "천연가스를 한국으로 수입하기 위해서는 액화천연가스(LNG, Liquefied Natural Gas) 형태로 액화시키는 과정에서 온실가스를 배출합니다.",
+    kTitle:"제품 제조",
+    content1: "판매를 위한 제품을 제조하는 과정에서 탄소가 배출됩니다.",
+    content2: "21세기 문명을 지탱하는 철강을 생산하기 위해서는 다량의 온실가스를 배출하게 됩니다.",
     default: (
       <svg id="manufacturing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <g transform="translate(-.499996-.354575)">
@@ -401,13 +400,14 @@ export const LCAContents: { [key: string]: any } = {
         </g>
       </svg>
     ),
-    videoPath: "./video/measure3.mp4",
+    videoPath: "./video/LCAvids/manufacturing.mp4",
     image: <img src={min.src} />,
   },
   distribution: {
     title: "distribution",
-    content1: "제품의 원료를 용도에 맞는 성질로 전환하기 위해 가공하는 과정에서 탄소가 배출됩니다",
-    content2: "천연가스를 한국으로 수입하기 위해서는 액화천연가스(LNG, Liquefied Natural Gas) 형태로 액화시키는 과정에서 온실가스를 배출합니다.",
+    kTitle : "분배",
+    content1: "생산된 제품을 수요처까지 분배하는 과정에서 탄소가 배출됩니다.",
+    content2: "해외에서 생산된 제품 중 일부는 항공 화물을 통해 운송되며 경유를 연소시키는 과정에서 온실가스를 배출합니다.",
     default: (
       <svg id="distribution" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <g transform="translate(-.499996-.354575)">
@@ -568,13 +568,14 @@ export const LCAContents: { [key: string]: any } = {
         </g>
       </svg>
     ),
-    videoPath: "./video/measure1.mp4",
+    videoPath: "./video/LCAvids/distribution.mp4",
     image: <img src={min.src} />,
   },
   use: {
     title: "use",
-    content1: "제품의 원료를 용도에 맞는 성질로 전환하기 위해 가공하는 과정에서 탄소가 배출됩니다",
-    content2: "천연가스를 한국으로 수입하기 위해서는 액화천연가스(LNG, Liquefied Natural Gas) 형태로 액화시키는 과정에서 온실가스를 배출합니다.",
+    kTitle: "제품 사용",
+    content1: "판매된 제품을 사용하는 과정에서 탄소가 배출됩니다.",
+    content2: "휘발유 차량을 통해 목적지에 도달하는 과정에서 휘발유를 연소시키게 되며 온실가스를 배출합니다.",
     default: (
       <svg id="use" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <g transform="translate(-.499996-.354575)">
@@ -637,13 +638,14 @@ export const LCAContents: { [key: string]: any } = {
         </g>
       </svg>
     ),
-    videoPath: "./video/reduce1.mp4",
+    videoPath: "./video/LCAvids/use.mp4",
     image: <img src={min.src} />,
   },
   endOfLife: {
     title: "endOfLife",
-    content1: "제품의 원료를 용도에 맞는 성질로 전환하기 위해 가공하는 과정에서 탄소가 배출됩니다",
-    content2: "천연가스를 한국으로 수입하기 위해서는 액화천연가스(LNG, Liquefied Natural Gas) 형태로 액화시키는 과정에서 온실가스를 배출합니다.",
+    kTitle: "폐기",
+    content1: "수명을 다한 제품이 폐기되는 과정에서 탄소가 배출됩니다.",
+    content2: "대부분의 쓰레기는 소각 처리되며 소각 과정에서 온실가스를 배출합니다.",
     default: (
       <svg id="endOfLife" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
         <g transform="translate(-.499996-.354575)">
@@ -758,7 +760,7 @@ export const LCAContents: { [key: string]: any } = {
         </g>
       </svg>
     ),
-    videoPath: "./video/reduce2.mp4",
+    videoPath: "./video/LCAvids/endOfLife.mp4",
     image: <img src={min.src} />,
   },
 };

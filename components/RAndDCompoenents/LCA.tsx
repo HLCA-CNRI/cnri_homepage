@@ -88,14 +88,16 @@ const LCA = () => {
       <div className="grid grid-cols-3">
         <div className="col-span-2">
           <div className="grid grid-cols-10">
-            <div className="col-span-9 border-4">
+            <div className="col-span-9 ">
               {/* <video ref={videoRef} src={currentObj.videoPath} loop className={`pt-4`} /> */}
               <div
                 onMouseEnter={mouseEnterVid}
                 onClick={clickIcon}
                 onMouseLeave={mouseLeaveVid}
-                className = "border-4"
+                className = ""
               >
+                <div className = "text-4xl">{currentObj.kTitle}</div>
+                <div >
                 <VideoContainer
                   videoRef={videoRef}
                   currentContent={currentObj.title}
@@ -109,9 +111,12 @@ const LCA = () => {
                     LCAContents.resources.videoPath,
                   ]}
                 />
+
+                </div>
+                
               </div>
 
-              <div className="text-md pb-4">
+              <div className="pb-4 h-[10%] text-lg">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
               </div>

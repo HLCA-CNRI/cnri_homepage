@@ -23,12 +23,12 @@ const Randd = () => {
         <SlideShow />
       </div>
       <div className="w-[100%] ">
-        <div className="text-5xl">What is LCA?</div>
+        <div className="text-5xl mb-10">What is LCA?</div>
         <LCA />
         <div className="grid grid-cols-2"></div>
       </div>
-      <div className="w-[100%] ">
-        <div className="text-5xl">Our Work and Partnership</div>
+      <div className="w-[100%] mt-20">
+        <div className="text-5xl mb-10">Our Work and Partnership</div>
         <Partnership />
       </div>
   

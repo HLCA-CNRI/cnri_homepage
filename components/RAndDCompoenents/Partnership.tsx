@@ -85,7 +85,9 @@ const Partnership = () => {
           </div> */}
           
           <div className="col-span-2"></div>
+         
           <div className="col-span-5  h-8"></div>
+          <div className="col-span-1"></div>
           <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.h2.default}
@@ -94,7 +96,7 @@ const Partnership = () => {
               hasMultiple = {false}
             />
           </div>
-          <div className="col-span-3"></div>
+          <div className="col-span-1"></div>
       
           <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <Icon
@@ -104,16 +106,18 @@ const Partnership = () => {
               hasMultiple = {false}
             />
           </div>
+          <div className="col-span-1"></div>
           
         </div>
 
         <div className="">
+          <div className = "text-4xl pb-4">{currentObj.kTitle}</div>
           <div ref={picRef} onMouseEnter = {MouseOver} onMouseLeave = {MouseOut}>
               <div>
               {currentObj.hasMultiple ? <Carousel values = {currentObj.img}></Carousel>:<div>{currentObj.img}</div>}
               
               </div>
-              <div>
+              <div className = "text-lg">
               <ul>{currentObj.content.map((note:string) => <li key = {note} >{note}</li>)}</ul>
               </div>
           </div>

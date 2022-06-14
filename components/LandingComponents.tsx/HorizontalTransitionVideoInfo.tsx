@@ -14,9 +14,11 @@ interface HorizontalTransitionVideoInfoType {
     videoPath: string;
     isVideo: boolean;
   };
+  isTop:boolean;
+  colorType:string
 }
 
-const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo }: HorizontalTransitionVideoInfoType) => {
+const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo,isTop ,colorType}: HorizontalTransitionVideoInfoType) => {
   if (imagePosition == "left") {
     // console.log(contentInfo);
   }
@@ -57,7 +59,7 @@ const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContext
   }, [controlVid, inView]);
 
   return (
-    <div ref={ref} className="h-[100%] bg-zinc-400 flex ">
+    <div ref={ref} className={`h-[100%] flex ${isTop ? "pb-4":"pt-4"}`}>
       <motion.div animate={controlVid} initial="vidHidden" variants={moveVidFrom} className="flex flex-row">
         {imagePosition == "right" ? (
           <motion.div
@@ -69,14 +71,14 @@ const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContext
               await controlText.start("close");
               await controlText.start("close2");
             }}
-            className="bg-slate-400 p-6 flex-1">
-            <div className=" flex items-center justify-center h-[100%]">{contentInfo.content}</div>
+            className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]"} p-6 flex-1 rounded-l-lg shadow-xl `}>
+            <div className=" flex items-center justify-center h-[100%] text-sm">{contentInfo.content}</div>
           </motion.div>
         ) : (
           ""
         )}
 
-        <div className="bg-slate-400 p-6 h-[100%] flex flex-col justify-center basis-3/5">
+        <div className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]" } p-6 h-[100%] flex flex-col justify-center basis-3/5 ${imagePosition == "right" ? "rounded-lg":"rounded-lg"} shadow-xl`}>
           <div className={`text-3xl font-bold m-2 w-[100%] flex ${imagePosition == "right" ? "justify-end" : ""} w-[100%]`}>
             {/* <div className = "w-[50%]"> */}
             {contentInfo.title}
@@ -89,12 +91,12 @@ const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContext
               loop
               onMouseEnter={handleVideoMouseEnter}
               onMouseLeave={handleVideoMouseLeave}
-              className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl "
+              className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-4 "
             />
           ) : (
             <img
               src={report1.src}
-              className="w-[100%] transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 "
+              className="w-[100%] transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 mt-4"
               onMouseEnter={handleImgMouseEnter}
               onMouseLeave={handleImgMouseLeave}
             />
@@ -111,8 +113,8 @@ const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContext
               await controlText.start("close");
               await controlText.start("close2");
             }}
-            className="bg-slate-400 p-6 h-[100%] flex flex-col justify-end flex-1">
-            <div className=" flex items-center justify-center h-[100%]">{contentInfo.content}</div>
+            className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]"} p-6 h-[100%] flex flex-col justify-end flex-1 rounded-r-lg shadow-xl`}>
+            <div className=" flex items-center justify-center h-[100%] text-sm">{contentInfo.content}</div>
           </motion.div>
         ) : (
           ""

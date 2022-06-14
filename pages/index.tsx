@@ -68,22 +68,21 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-slate-200 mx-16">
+      <div className="mx-16">
         <div className="pt-10">
-          <div className="flex justify-center font-bold text-7xl">넷제로 달성을 위해 필요한</div>
-          <div className="flex justify-center pt-2 font-bold text-7xl">Actionable Plan의 모든 것</div>
-          <div className="flex justify-center pt-4 font-semibold text-xl">넷제로 달성을 위해 필요한 Actionable Plan의 모든 것</div>
+          <div className="flex justify-center font-bold text-6xl">넷제로 달성을 위해 필요한</div>
+          <div className="flex justify-center pt-2 font-bold text-6xl">Actionable Plan의 모든 것</div>
         </div>
-        <div className="flex justify-center pt-10">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-full mx-4 w-[15%] h-12">체험하기</button>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-full mx-4 w-[15%] h-12">데모신청</button>
+        <div className="flex justify-center mt-10 mb-6  ">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-xl text-xl mx-4 w-[20%] h-16">체험하기</button>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-xl  text-xl mx-4 w-[20%] h-16">데모신청</button>
         </div>
         <div className="flex justify-center ">
-          <img src={landingMain.src} className="w-[63%] mt-4 " />
+          <img src={landingMain.src} className="w-[80%] mt-4  shadow-lg rounded-lg mb-6" />
         </div>
       </div>
 
-      <section className="sticky inset-x-0 top-[72px] left-0 flex justify-center border-2 w-[100%] bg-white z-50 opacity-90">
+      <section className="sticky inset-x-0 top-[72px] left-0 flex justify-center  w-[100%] bg-white z-50 opacity-90 border-2">
         <Link href="#measure">
           <a className="p-4 px-12 cursor-pointer">측정</a>
         </Link>
@@ -101,41 +100,53 @@ const Home: NextPage = () => {
         </Link>
       </section>
       {/* Measure Section */}
-      <section id="measure" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-        <div className="text-5xl">{LandingContents.Measure.title}</div>
-        <div className="text-2xl">{LandingContents.Measure.subtitle}</div>
-        <div className="grid grid-cols-2 gap-14 my-4 border-2">
+      <section id="measure" className=" mx-16 pt-10 scroll-mt-28 snap-start">
+        <div className="text-5xl font-semibold mb-2">{LandingContents.Measure.title}</div>
+        <div className="text-2xl mb-7">{LandingContents.Measure.subtitle}</div>
+        <div className="grid grid-cols-5 gap-10 my-4 ">
+          <div className = "col-span-2">
           <VerticalTansitionVideoInfo
             imagePosition="top"
             moveVidFrom={TansitionVidLToR}
             moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Measure.content1}
+            colorType = {"blue"}
           />
-          <div className="border-2 h-[100%]">
-            <div className="border-2 h-[50%]">
+
+          </div>
+
+
+         
+          
+          <div className=" h-[100%] col-span-3">
+            <div className=" h-[50%]">
               <HorizontalTransitionVideoInfo
                 imagePosition="right"
                 moveVidFrom={TansitionVidRToL}
                 moveContextFrom={TransitionContextRToL}
                 contentInfo={LandingContents.Measure.content2}
+                isTop = {true}
+                colorType = {"green"}
               />
             </div>
-            <div className="border-2 h-[50%] flex flex-col justify-end">
+            <div className=" h-[50%] flex flex-col justify-end">
               <HorizontalTransitionVideoInfo
                 imagePosition="left"
                 moveVidFrom={TansitionVidBToT}
                 moveContextFrom={TransitionContextLToR}
                 contentInfo={LandingContents.Measure.content3}
+                isTop = {false}
+                colorType = {""}
               />
             </div>
           </div>
         </div>
       </section>
       {/* Reduce Section */}
-      <section id="reduce" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-        <div className="text-5xl">{LandingContents.Reduce.title}</div>
-        <div className="text-2xl">{LandingContents.Reduce.subtitle}</div>
-        <div className="grid grid-cols-2 gap-14 my-4">
+      <section id="reduce" className="  mx-16 pt-10 scroll-mt-28 snap-start">
+        <div className="text-5xl font-semibold mb-2">{LandingContents.Reduce.title}</div>
+        <div className="text-2xl mb-7">{LandingContents.Reduce.subtitle}</div>
+        <div className="grid grid-cols-2 gap-10 my-4">
           <div className="h-full">
             <div className="h-[50%]">
               <HorizontalTransitionVideoInfo
@@ -143,6 +154,8 @@ const Home: NextPage = () => {
                 moveVidFrom={TansitionVidLToR}
                 moveContextFrom={TransitionContextLToR}
                 contentInfo={LandingContents.Reduce.content1}
+                isTop = {true}
+                colorType = {""}
               />
             </div>
             <div className="h-[50%]">
@@ -151,6 +164,8 @@ const Home: NextPage = () => {
                 moveVidFrom={TansitionVidBToT}
                 moveContextFrom={TransitionContextRToL}
                 contentInfo={LandingContents.Reduce.content2}
+                isTop = {false}
+                colorType = {"green"}
               />
             </div>
           </div>
@@ -159,37 +174,44 @@ const Home: NextPage = () => {
             moveVidFrom={TansitionVidRToL}
             moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Reduce.content3}
+            colorType = {"blue"}
           />
         </div>
       </section>
       {/* Remove Section */}
-      <section id="remove" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-        <div className="text-5xl">{LandingContents.Remove.title}</div>
-        <div className="text-2xl">{LandingContents.Remove.subtitle}</div>
-        <div>
-          <HorizontalTransitionVideoInfo
+      <section id="remove" className="  mx-16 pt-10 scroll-mt-28 snap-start">
+        <div className="text-5xl font-semibold mb-2">{LandingContents.Remove.title}</div>
+        <div className="text-2xl mb-7">{LandingContents.Remove.subtitle}</div>
+        <div className = "grid grid-cols-2 gap-10">
+        <VerticalTansitionVideoInfo
             imagePosition="left"
             moveVidFrom={TansitionVidLToR}
-            moveContextFrom={TransitionContextLToR}
+            moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Remove.content1}
+            colorType = {"blue"}
           />
-          <HorizontalTransitionVideoInfo
+
+          <VerticalTansitionVideoInfo
             imagePosition="right"
             moveVidFrom={TansitionVidRToL}
-            moveContextFrom={TransitionContextRToL}
+            moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Remove.content2}
+            colorType = {""}
           />
+          
         </div>
       </section>
       {/* Report Section */}
-      <section id="report" className=" border-2 mx-16 pt-10 scroll-mt-28 snap-start">
-        <div className="text-5xl">{LandingContents.Report.title}</div>
-        <div className="text-2xl">{LandingContents.Report.subtitle}</div>
+      <section id="report" className="  mx-16 pt-10 scroll-mt-28 snap-start">
+        <div className="text-5xl font-semibold mb-2">{LandingContents.Report.title}</div>
+        <div className="text-2xl mb-7">{LandingContents.Report.subtitle}</div>
         <HorizontalTransitionVideoInfo
           imagePosition="left"
           moveVidFrom={TansitionVidLToR}
           moveContextFrom={TransitionContextLToR}
           contentInfo={LandingContents.Report.content1}
+          isTop = {true}
+          colorType = "green"
         />
       </section>
     </>

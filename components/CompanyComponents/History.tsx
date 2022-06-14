@@ -34,7 +34,7 @@ const History = ({ year }: HistoryType) => {
   };
 
   return (
-    <div className="relative  overflow-hidden  shadow-lg cursor-pointe rounded-lg ">
+    <div className="relative  overflow-hidden  shadow-lg cursor-pointer rounded-lg ">
       {/* <BlackContainer /> */}
 
       {year == 2021 ? (

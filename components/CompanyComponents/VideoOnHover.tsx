@@ -28,7 +28,7 @@ const VideoOnHover = ({videoPath,isMiddle}:VideoOnHoverType) => {
 
   return (
     <div className={`mt-2 ${isMiddle ? "mx-8":"" } one `}>
-      <video src={(videoPath)}  loop onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave} className = " relative w-[100%] transition-[width] ease-in-out delay-150 object-cover  h-96  hover:scale-x-105 duration-700  rounded-lg shadow-xl"/> 
+      <video src={(videoPath)}  loop onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave} className = " relative w-[100%] transition-[width] ease-in-out delay-150 object-cover  h-96    rounded-lg shadow-xl"/> 
       <div className ="">
         <div className = "text-lg"></div>
       </div>    

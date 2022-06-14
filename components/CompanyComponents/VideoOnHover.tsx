@@ -1,11 +1,12 @@
-import stkImage from "../images/stkImage.png";
-
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 
 //STYLES
-import { Wrapper } from "../../public/video/App.style";
+interface VideoOnHoverType {
+  videoPath:string
 
-const VideoOnHover = () => {
+}
+
+const VideoOnHover = ({videoPath}:VideoOnHoverType) => {
 
   const [playVid,setPlayVid] = useState(false)
 
@@ -26,13 +27,10 @@ const VideoOnHover = () => {
 
   return (
     <div className="mt-2 mx-4 one">
-      {
-        playVid ?  <video src={(`./video/video1.mp4`)}  autoPlay loop onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave} className = "w-[100%] transition-[width] ease-in-out delay-150 object-cover  h-96  hover:scale-x-105 duration-700  rounded-lg shadow-xl"/> : 
-          <img
-      src="https://www.samsungcnt.com/assets/img/home/business4.jpg"
-      alt="" onMouseEnter={(e:React.MouseEvent) => setPlayVid(true)}  onMouseLeave={(e:React.MouseEvent) => setPlayVid(false)} className = "w-[100%] h-96 rounded-lg shadow-xl"/>
-      }
-     
+      <video src={(videoPath)}  loop onMouseEnter={handleVideoMouseEnter}  onMouseLeave = {handleVideoMouseLeave} className = " relative w-[100%] transition-[width] ease-in-out delay-150 object-cover  h-96  hover:scale-x-105 duration-700  rounded-lg shadow-xl"/> 
+      <div className ="">
+        <div className = "text-lg"></div>
+      </div>    
     </div>
   );
 };

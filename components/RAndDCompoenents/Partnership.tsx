@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import totalBusinessD from "../../images/companies/totalBusinessD.png";
 import Icon from "./Icon";
 import logo from "../../images/logo.png"
+import Carousel from "../Carousel";
 
 const Partnership = () => {
   const [userInteracted, setUserInteracted] = useState(true)
@@ -41,7 +42,7 @@ const Partnership = () => {
   }
 
 
-
+  console.log(typeof currentObj.img)
 
   return (
     <div className="w-[100%]">
@@ -53,6 +54,7 @@ const Partnership = () => {
               defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
               coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
               isCurrent={currentObj.title == "totalBusiness" ? true : false}
+              hasMultiple = {false}
             />
           </div>
           <div className="col-span-2"></div>
@@ -61,6 +63,7 @@ const Partnership = () => {
               defaultIcon={WorkAndPartnershipContent.ts.default}
               coloredIcon={WorkAndPartnershipContent.ts.colored}
               isCurrent={currentObj.title == "ts" ? true : false}
+              hasMultiple = {false}
             />
           </div>
           <div className="col-span-3"></div>
@@ -71,6 +74,7 @@ const Partnership = () => {
               defaultIcon={WorkAndPartnershipContent.posco.default}
               coloredIcon={WorkAndPartnershipContent.posco.colored}
               isCurrent={currentObj.title == "posco" ? true : false}
+              hasMultiple = {true}
             />
           </div>
 
@@ -87,6 +91,7 @@ const Partnership = () => {
               defaultIcon={WorkAndPartnershipContent.h2.default}
               coloredIcon={WorkAndPartnershipContent.h2.colored}
               isCurrent={currentObj.title == "h2" ? true : false}
+              hasMultiple = {false}
             />
           </div>
           <div className="col-span-3"></div>
@@ -96,15 +101,17 @@ const Partnership = () => {
               defaultIcon={WorkAndPartnershipContent.snu.default}
               coloredIcon={WorkAndPartnershipContent.snu.colored}
               isCurrent={currentObj.title == "snu" ? true : false}
+              hasMultiple = {false}
             />
           </div>
           
         </div>
 
         <div className="">
-          <div ref={picRef}>
+          <div ref={picRef} onMouseEnter = {MouseOver} onMouseLeave = {MouseOut}>
               <div>
-              {currentObj.img}
+              {currentObj.hasMultiple ? <Carousel values = {currentObj.img}></Carousel>:<div>{currentObj.img}</div>}
+              
               </div>
               <div>
               <ul>{currentObj.content.map((note:string) => <li key = {note} >{note}</li>)}</ul>

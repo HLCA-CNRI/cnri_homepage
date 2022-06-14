@@ -10,14 +10,17 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
     <div>
       {
         <video
+          id = "resources"
           ref={currentContent === "resources" ? videoRef : null}
           src={videoPaths[0]}
           loop
           className={classNames(currentContent === "resources" ? "" : "hidden", "pt-4 videos")}
+
         />
       }
       {
         <video
+          id = "processing"
           ref={currentContent === "processing" ? videoRef : null}
           src={videoPaths[1]}
           loop
@@ -26,6 +29,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
       }
       {
         <video
+          id = "manufacturing"
           ref={currentContent === "manufacturing" ? videoRef : null}
           src={videoPaths[2]}
           loop
@@ -34,6 +38,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
       }
       {
         <video
+          id = "distribution"
           ref={currentContent === "distribution" ? videoRef : null}
           src={videoPaths[3]}
           loop
@@ -42,6 +47,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
       }
       {
         <video
+          id = "use"
           ref={currentContent === "use" ? videoRef : null}
           src={videoPaths[4]}
           loop
@@ -50,6 +56,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
       }
       {
         <video
+          id = "endOfLife"
           ref={currentContent === "endOfLife" ? videoRef : null}
           src={videoPaths[5]}
           loop

@@ -3,10 +3,11 @@ import {memo, useState} from "react"
 interface IconType{
     defaultIcon:any, 
     coloredIcon:any, 
-    isCurrent:boolean
+    isCurrent:boolean,
+    hasMultiple:boolean
 }
 
-const Icon = ({defaultIcon,coloredIcon,isCurrent}:IconType) =>{  
+const Icon = ({defaultIcon,coloredIcon,isCurrent,hasMultiple}:IconType) =>{  
     const [isColored,setIsColored] = useState(false)  
     const changeToColored = (e:any) =>{
         setIsColored(true)

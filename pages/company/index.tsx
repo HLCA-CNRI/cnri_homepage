@@ -23,9 +23,9 @@ const Company: React.FC = () => {
         </div>
         <div className="text-5xl">Philosophy</div>
         <div className="flex ">
-          <VideoOnHover />
-          <VideoOnHover />
-          <VideoOnHover />
+          <VideoOnHover videoPath="./video/philosophy1.mp4"/>
+          <VideoOnHover  videoPath="./video/philosophy2.mp4"/>
+          <VideoOnHover  videoPath="./video/philosophy3.mp4"/>
         </div>
       </div>
       <div>

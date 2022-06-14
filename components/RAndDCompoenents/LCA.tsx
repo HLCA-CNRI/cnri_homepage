@@ -25,7 +25,7 @@ const LCA = () => {
         ];
         setCurrentObj(values[currentIdx + 1]);
         currentIdx == values.length - 2 ? (currentIdx = 0) : (currentIdx += 1);
-      }, 3000);
+      }, 1000);
       return () => clearInterval(interval);
     }
     if (videoRef && videoRef.current) videoRef.current.pause();
@@ -42,6 +42,7 @@ const LCA = () => {
       setCurrentObj(LCAContents[val]);
     }
     if (videoRef && videoRef.current) {
+      console.log(videoRef);
       videoRef.current.play();
     }
   };
@@ -57,7 +58,29 @@ const LCA = () => {
   };
 
   const clickIcon = (e: any) => {
-    setUserClicked(true);
+    setUserInteracted(true);
+    if (videoRef && videoRef.current) {
+      console.log(videoRef.current);
+      console.log("통과");
+      videoRef.current.play();
+    }
+  };
+
+  const mouseEnterVid = (e: any) => {
+    setUserInteracted(true);
+    if (videoRef && videoRef.current) {
+      console.log(videoRef.current);
+      console.log("통과");
+      videoRef.current.play();
+    }
+  };
+
+  const mouseLeaveVid = (e: any) => {
+    // console.log("leave")
+    setUserInteracted(false);
+    if (videoRef && videoRef.current) {
+      videoRef.current.pause();
+    }
   };
 
   return (
@@ -65,21 +88,29 @@ const LCA = () => {
       <div className="grid grid-cols-3">
         <div className="col-span-2">
           <div className="grid grid-cols-10">
-            <div className="col-span-9">
+            <div className="col-span-9 border-4">
               {/* <video ref={videoRef} src={currentObj.videoPath} loop className={`pt-4`} /> */}
-              <VideoContainer
-                videoRef={videoRef}
-                currentContent={currentObj.title}
-                videoPaths={[
-                  LCAContents.resources.videoPath,
-                  LCAContents.processing.videoPath,
-                  LCAContents.manufacturing.videoPath,
-                  LCAContents.distribution.videoPath,
-                  LCAContents.use.videoPath,
-                  LCAContents.endOfLife.videoPath,
-                  LCAContents.resources.videoPath,
-                ]}
-              />
+              <div
+                onMouseEnter={mouseEnterVid}
+                onClick={clickIcon}
+                onMouseLeave={mouseLeaveVid}
+                className = "border-4"
+              >
+                <VideoContainer
+                  videoRef={videoRef}
+                  currentContent={currentObj.title}
+                  videoPaths={[
+                    LCAContents.resources.videoPath,
+                    LCAContents.processing.videoPath,
+                    LCAContents.manufacturing.videoPath,
+                    LCAContents.distribution.videoPath,
+                    LCAContents.use.videoPath,
+                    LCAContents.endOfLife.videoPath,
+                    LCAContents.resources.videoPath,
+                  ]}
+                />
+              </div>
+
               <div className="text-md pb-4">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
@@ -89,36 +120,55 @@ const LCA = () => {
         </div>
         <div className="grid grid-cols-5">
           <div className="col-span-2"></div>
-          <div id="test" onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
+          <div
+            id="test"
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+          >
+            <div  className = "flex w-[100%] justify-center">원료 채굴</div>
             <Icon
               defaultIcon={LCAContents.resources.default}
               coloredIcon={LCAContents.resources.colored}
               isCurrent={currentObj.title == "resources" ? true : false}
+              hasMultiple = {false}
             />
           </div>
           <div className="col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+          >
+            <div  className = "flex w-[100%] justify-center">폐기</div>
             <Icon
-              defaultIcon={LCAContents.processing.default}
-              coloredIcon={LCAContents.processing.colored}
-              isCurrent={currentObj.title == "processing" ? true : false}
+              defaultIcon={LCAContents.endOfLife.default}
+              coloredIcon={LCAContents.endOfLife.colored}
+              isCurrent={currentObj.title == "endOfLife" ? true : false}
+              hasMultiple = {false}
             />
           </div>
 
           <div className=" col-span-3"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+          >
+            <div  className = "flex w-[100%] justify-center">원료 가공</div>
             <Icon
-              defaultIcon={LCAContents.manufacturing.default}
-              coloredIcon={LCAContents.manufacturing.colored}
-              isCurrent={currentObj.title == "manufacturing" ? true : false}
+              defaultIcon={LCAContents.processing.default}
+              coloredIcon={LCAContents.processing.colored}
+              isCurrent={currentObj.title == "processing" ? true : false}
+              hasMultiple = {false}
             />
           </div>
 
           <div className=" col-span-2"></div>
 
-          <img src={lca.src}></img>
+          <img src={lca.src} className = ""></img>
 
           {/* <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <div>Hello</div>
@@ -126,29 +176,51 @@ const LCA = () => {
 
           <div className=" col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+          >
+            <div  className = "flex w-[100%] justify-center">제품 사용</div>
             <Icon
-              defaultIcon={LCAContents.distribution.default}
-              coloredIcon={LCAContents.distribution.colored}
-              isCurrent={currentObj.title == "distribution" ? true : false}
+              defaultIcon={LCAContents.use.default}
+              coloredIcon={LCAContents.use.colored}
+              isCurrent={currentObj.title == "use" ? true : false}
+              hasMultiple = {false}
             />
           </div>
 
           <div className=" col-span-3"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+          >
+            <div  className = "flex w-[100%] justify-center">제품 제조</div>
             {" "}
-            <Icon defaultIcon={LCAContents.use.default} coloredIcon={LCAContents.use.colored} isCurrent={currentObj.title == "use" ? true : false} />
+            <Icon
+              defaultIcon={LCAContents.manufacturing.default}
+              coloredIcon={LCAContents.manufacturing.colored}
+              isCurrent={currentObj.title == "manufacturing" ? true : false}
+              hasMultiple = {false}
+            />
           </div>
 
           <div className="col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+          >
+            <div className = "flex w-[100%] justify-center">분배</div>
             {" "}
             <Icon
-              defaultIcon={LCAContents.endOfLife.default}
-              coloredIcon={LCAContents.endOfLife.colored}
-              isCurrent={currentObj.title == "endOfLife" ? true : false}
+              defaultIcon={LCAContents.distribution.default}
+              coloredIcon={LCAContents.distribution.colored}
+              isCurrent={currentObj.title == "distribution" ? true : false}
+              hasMultiple = {false}
             />
           </div>
 

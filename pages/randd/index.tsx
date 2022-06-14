@@ -1,8 +1,12 @@
 import SlideShow from "../../components/SlideShow";
 import React, { useState, useRef, useEffect } from "react";
-
 import LCA from "../../components/RAndDCompoenents/LCA";
 import Partnership from "../../components/RAndDCompoenents/Partnership";
+import Carousel from "../../components/Carousel"
+import cherin from "../../images/members/cherin.jpg"
+import prof from "../../images/members/prof.jpg"
+
+
 
 const Randd = () => {
   const [video, setVideo] = useState(`./video/measure3.mp4`);
@@ -27,6 +31,7 @@ const Randd = () => {
         <div className="text-5xl">Our Work and Partnership</div>
         <Partnership />
       </div>
+  
     </div>
   );
 };

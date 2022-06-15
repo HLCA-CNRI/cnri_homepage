@@ -2,7 +2,7 @@ export const philosophy = {
   mission: {
     title: "Mission",
     content: [
-     "Sustainable Earth ",
+     "Sustainable Earth through Carbon Neutral.",
       "탄소중립 실현을 통해","지속 가능한 지구를 실현해내겠습니다.",
     ],
   },
@@ -16,6 +16,7 @@ export const philosophy = {
   coreValues: {
     title: "Core Values",
     content: [
+
       "책임감만이 만들 수 있는 차이",
       "서로에 대한 존중과 배려",
       "기술혁신이 불러오는 세상의 변화",

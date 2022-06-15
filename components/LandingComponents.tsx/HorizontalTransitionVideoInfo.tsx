@@ -60,8 +60,8 @@ const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContext
   }, [controlVid, inView]);
 
   return (
-    <div ref={ref} className={`h-[100%] flex ${isTop ? "pb-4":"pt-4"}`}>
-      <motion.div animate={controlVid} initial="vidHidden" variants={moveVidFrom} className="flex flex-row">
+    <div ref={ref} className={`h-[100%] flex ${isTop ? "pb-4":"pt-4"}` }>
+      <motion.div animate={controlVid} initial="vidHidden" variants={moveVidFrom} className={`flex flex-row`} >
         {imagePosition == "right" ? (
           <motion.div
             animate={controlText}

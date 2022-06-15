@@ -63,7 +63,7 @@ const History = ({ year }: HistoryType) => {
           onClick={clickButton}
           className="mb-3 text-5xl font-semibold tracking-tight text-white flex w-[100%] justify-center  mt-3"
         >
-          x
+          ×
         </button>
         ) : (
           <button

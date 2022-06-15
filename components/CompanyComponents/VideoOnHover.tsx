@@ -16,8 +16,6 @@ const VideoOnHover = ({ videoPath, isMiddle, type }: VideoOnHoverType) => {
 
   const textOnMouseEnter = (e:any) =>{
     if (videoRef && videoRef.current) {
-      console.log(videoRef.current);
-      console.log("통과");
       videoRef.current.play();
     }
   }
@@ -38,9 +36,9 @@ const VideoOnHover = ({ videoPath, isMiddle, type }: VideoOnHoverType) => {
         loop
         className=" relative w-[100%] transition-[width] ease-in-out delay-150 object-cover  h-96  flex-wrap  rounded-lg shadow-xl"
       />
-      <div className="absolute inset-0 flex justify-start items-end z-10 px-4  "  onMouseEnter = {textOnMouseEnter} onMouseLeave = {textOnMouseLeave}>
+      <div className="absolute inset-0 flex justify-start items-end z-10 px-4 pb-2 "  onMouseEnter = {textOnMouseEnter} onMouseLeave = {textOnMouseLeave}>
         <div>
-          <div className=" text-4xl text-white font-semibold">{type.title}</div>
+          <div className=" text-4xl text-white font-semibold mb-4 underline underline-offset-8">{type.title}</div>
           <ul className="text-sm whitespace">
             {type.content.map((val: string) => (
               <li className="text-white my-1" key={val}>

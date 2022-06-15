@@ -133,7 +133,7 @@ const Home: NextPage = () => {
                 contentInfo={LandingContents.Measure.content3}
                 isTop = {false}
                 colorType = {""}
-                basisVal = {"2/3"}
+                basisVal = {"4/5"}
               />
             </div>
           </div>
@@ -164,7 +164,7 @@ const Home: NextPage = () => {
                 contentInfo={LandingContents.Reduce.content2}
                 isTop = {false}
                 colorType = {""}
-                basisVal = {"2/3"}
+                basisVal = {"3/5"}
               />
             </div>
           </div>

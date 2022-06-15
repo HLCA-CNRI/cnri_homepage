@@ -112,12 +112,7 @@ const Home: NextPage = () => {
             contentInfo={LandingContents.Measure.content1}
             colorType = {"blue"}
           />
-
-          </div>
-
-
-         
-          
+          </div>  
           <div className=" h-[100%] col-span-3">
             <div className=" h-[50%]">
               <HorizontalTransitionVideoInfo
@@ -127,6 +122,7 @@ const Home: NextPage = () => {
                 contentInfo={LandingContents.Measure.content2}
                 isTop = {true}
                 colorType = {"green"}
+                basisVal = {"3/5"}
               />
             </div>
             <div className=" h-[50%] flex flex-col justify-end">
@@ -137,6 +133,7 @@ const Home: NextPage = () => {
                 contentInfo={LandingContents.Measure.content3}
                 isTop = {false}
                 colorType = {""}
+                basisVal = {"2/3"}
               />
             </div>
           </div>
@@ -155,7 +152,8 @@ const Home: NextPage = () => {
                 moveContextFrom={TransitionContextLToR}
                 contentInfo={LandingContents.Reduce.content1}
                 isTop = {true}
-                colorType = {""}
+                colorType = {"green"}
+                basisVal = {"3/5"}
               />
             </div>
             <div className="h-[50%]">
@@ -165,7 +163,8 @@ const Home: NextPage = () => {
                 moveContextFrom={TransitionContextRToL}
                 contentInfo={LandingContents.Reduce.content2}
                 isTop = {false}
-                colorType = {"green"}
+                colorType = {""}
+                basisVal = {"2/3"}
               />
             </div>
           </div>
@@ -211,7 +210,8 @@ const Home: NextPage = () => {
           moveContextFrom={TransitionContextLToR}
           contentInfo={LandingContents.Report.content1}
           isTop = {true}
-          colorType = "green"
+          colorType = ""
+          basisVal = {"3/5"}
         />
       </section>
     </>

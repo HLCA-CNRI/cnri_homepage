@@ -15,10 +15,11 @@ interface HorizontalTransitionVideoInfoType {
     isVideo: boolean;
   };
   isTop:boolean;
-  colorType:string
+  colorType:string;
+  basisVal:string
 }
 
-const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo,isTop ,colorType}: HorizontalTransitionVideoInfoType) => {
+const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo,isTop ,colorType,basisVal}: HorizontalTransitionVideoInfoType) => {
   if (imagePosition == "left") {
     // console.log(contentInfo);
   }
@@ -71,14 +72,14 @@ const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContext
               await controlText.start("close");
               await controlText.start("close2");
             }}
-            className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]"} p-6 flex-1 rounded-l-lg shadow-xl `}>
+            className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]" } p-6 flex-1 `}>
             <div className=" flex items-center justify-center h-[100%] text-sm">{contentInfo.content}</div>
           </motion.div>
         ) : (
           ""
         )}
 
-        <div className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]" } p-6 h-[100%] flex flex-col justify-center basis-3/5 ${imagePosition == "right" ? "rounded-lg":"rounded-lg"} shadow-xl`}>
+        <div className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]" } p-6 h-[100%] flex flex-col justify-center basis-${basisVal}  `}>
           <div className={`text-3xl font-bold m-2 w-[100%] flex ${imagePosition == "right" ? "justify-end" : ""} w-[100%]`}>
             {/* <div className = "w-[50%]"> */}
             {contentInfo.title}
@@ -113,7 +114,7 @@ const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContext
               await controlText.start("close");
               await controlText.start("close2");
             }}
-            className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]"} p-6 h-[100%] flex flex-col justify-end flex-1 rounded-r-lg shadow-xl`}>
+            className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]"} p-6 h-[100%] flex flex-col justify-end flex-1 `}>
             <div className=" flex items-center justify-center h-[100%] text-sm">{contentInfo.content}</div>
           </motion.div>
         ) : (

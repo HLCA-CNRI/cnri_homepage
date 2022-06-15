@@ -11,15 +11,16 @@ interface VerticalTansitionVideoInfoType {
     content: string;
     videoPath: string;
   };
-  colorType: string
+  colorType: string;
 }
 
-const DescriptionVariant = {
-  open: { opacity: 1, transition: { duration: 0.6 } },
-  close: { opacity: 0.2 },
-};
-
-const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo,colorType }: VerticalTansitionVideoInfoType) => {
+const VerticalTansitionVideoInfo = ({
+  imagePosition,
+  moveVidFrom,
+  moveContextFrom,
+  contentInfo,
+  colorType,
+}: VerticalTansitionVideoInfoType) => {
   const handleVideoMouseEnter = (e: any) => {
     const vid = e.target;
     vid.muted = true;
@@ -47,19 +48,34 @@ const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFro
   }, [controlVid, inView]);
 
   return (
-    <div ref={ref} >
+    <div ref={ref}>
       {/* <div className="text-3xl font-bold  w-[100%] bg-slate-400 pt-6 px-6">{contentInfo.title}</div> */}
 
-      <motion.div animate={controlVid} initial="vidHidden" variants={moveVidFrom} className="flex flex-col h-full ">
+      <motion.div
+        animate={controlVid}
+        initial="vidHidden"
+        variants={moveVidFrom}
+        className="flex flex-col h-full "
+      >
         <div>
-          <div className={`text-3xl font-bold  w-[100%] ${colorType == "blue" ? "bg-[#EAF2FA]" :"bg-[#EEF7E9]"} pt-6 px-6 rounded-t-lg shadow-xl`}>{contentInfo.title}</div>
-          <div className={` ${colorType == "blue" ? "bg-[#EAF2FA]" :"bg-[#EEF7E9]"} p-6 z-30 rounded-b-lg shadow-xl`}>
+          <div
+            className={`text-3xl font-bold  w-[100%] ${
+              colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
+            } pt-6 px-6  `}
+          >
+            {contentInfo.title}
+          </div>
+          <div
+            className={` ${
+              colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
+            } p-6 z-30  `}
+          >
             <video
               src={contentInfo.videoPath}
               loop
               onMouseEnter={handleVideoMouseEnter}
               onMouseLeave={handleVideoMouseLeave}
-              className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg  z-30"
+              className="w-[100%] transition-[width] delay-150 object-cover shadow-xl  rounded-lg  z-30"
             />
           </div>
         </div>
@@ -68,12 +84,15 @@ const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFro
           animate={controlText}
           initial="initial"
           variants={moveContextFrom}
-          className={`${colorType == "blue" ? "bg-[#EAF2FA]" :"bg-[#EEF7E9]"} z-0 h-full rounded-b-lg shadow-xl`}
+          className={`${
+            colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
+          } z-0 `}
           onMouseEnter={() => controlText.start("open")}
           onMouseLeave={async () => {
             await controlText.start("close");
             await controlText.start("close2");
-          }}>
+          }}
+        >
           <div className="p-6 z-0 text-sm">{contentInfo.content}</div>
         </motion.div>
       </motion.div>

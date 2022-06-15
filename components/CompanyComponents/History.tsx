@@ -28,17 +28,19 @@ interface HistoryType {
 const History = ({ year }: HistoryType) => {
   const [isActive, setIsActive] = useState(false);
 
-
   const clickButton = () => {
     setIsActive(!isActive);
   };
 
   return (
-    <div className="relative  overflow-hidden  shadow-lg cursor-pointer rounded-lg ">
+    <div
+      className="relative  overflow-hidden  shadow-lg cursor-pointer rounded-lg "
+      onClick={clickButton}
+    >
       {/* <BlackContainer /> */}
 
       {year == 2021 ? (
-        <img src={historyimg2.src} className="object-cover w-full "  />
+        <img src={historyimg2.src} className="object-cover w-full " />
       ) : (
         <img src={historyimg1.src} className="object-cover w-full h-full" />
       )}
@@ -55,19 +57,35 @@ const History = ({ year }: HistoryType) => {
         <h4 className="text-7xl font-extrabold tracking-tight text-white flex w-[100%] justify-center mt-5">
           {year}
         </h4>
-        <button
+
+        {isActive ? (
+          <button
           onClick={clickButton}
-          className="mb-3 text-5xl font-semibold tracking-tight text-white flex w-[100%] justify-center hover:rotate-45 mt-3"
+          className="mb-3 text-5xl font-semibold tracking-tight text-white flex w-[100%] justify-center  mt-3"
+        >
+          x
+        </button>
+        ) : (
+          <button
+          onClick={clickButton}
+          className="mb-3 text-5xl font-semibold tracking-tight text-white flex w-[100%] justify-center  mt-3"
         >
           +
         </button>
+        )}
+        
         {isActive ? (
-          <div className="text-white text-xl mx-20 mt-10">
-            <ul>
-              {HistoryContent[year].content.map((note: string) => (
-                <li key={note} className = "my-4">{note}</li>
-              ))}
-            </ul>
+          <div className="text-white text-xl mx-16 mt-10">
+            {HistoryContent[year].map((note: any) => (
+              <div className="flex my-4 ">
+                <div key={note} className="mr-4 font-semibold">
+                  {note.month}
+                </div>
+                <div key={note} className="text-lg">
+                  {note.des}
+                </div>
+              </div>
+            ))}
           </div>
         ) : (
           ""

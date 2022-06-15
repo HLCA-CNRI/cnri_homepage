@@ -103,26 +103,26 @@ const Home: NextPage = () => {
       <section id="measure" className=" mx-16 pt-10 scroll-mt-28 snap-start">
         <div className="text-5xl font-semibold mb-2">{LandingContents.Measure.title}</div>
         <div className="text-2xl mb-7">{LandingContents.Measure.subtitle}</div>
-        <div className="grid grid-cols-5 gap-10 my-4 ">
-          <div className = "col-span-2">
-          <VerticalTansitionVideoInfo
-            imagePosition="top"
-            moveVidFrom={TansitionVidLToR}
-            moveContextFrom={TransitionContextTToB}
-            contentInfo={LandingContents.Measure.content1}
-            colorType = {"blue"}
-          />
-          </div>  
-          <div className=" h-[100%] col-span-3">
+        <div className="grid grid-cols-2 gap-10 my-4 ">
+          <div className="col-span-1">
+            <VerticalTansitionVideoInfo
+              imagePosition="top"
+              moveVidFrom={TansitionVidLToR}
+              moveContextFrom={TransitionContextTToB}
+              contentInfo={LandingContents.Measure.content1}
+              colorType={"blue"}
+            />
+          </div>
+          <div className=" h-[100%] col-span-1">
             <div className=" h-[50%]">
               <HorizontalTransitionVideoInfo
                 imagePosition="right"
                 moveVidFrom={TansitionVidRToL}
                 moveContextFrom={TransitionContextRToL}
                 contentInfo={LandingContents.Measure.content2}
-                isTop = {true}
-                colorType = {"green"}
-                basisVal = {"3/5"}
+                isTop={true}
+                colorType={"green"}
+                basisVal={"120%"}
               />
             </div>
             <div className=" h-[50%] flex flex-col justify-end">
@@ -131,9 +131,9 @@ const Home: NextPage = () => {
                 moveVidFrom={TansitionVidBToT}
                 moveContextFrom={TransitionContextLToR}
                 contentInfo={LandingContents.Measure.content3}
-                isTop = {false}
-                colorType = {""}
-                basisVal = {"4/5"}
+                isTop={false}
+                colorType={""}
+                basisVal={"fit-content"}
               />
             </div>
           </div>
@@ -151,9 +151,9 @@ const Home: NextPage = () => {
                 moveVidFrom={TansitionVidLToR}
                 moveContextFrom={TransitionContextLToR}
                 contentInfo={LandingContents.Reduce.content1}
-                isTop = {true}
-                colorType = {"green"}
-                basisVal = {"3/5"}
+                isTop={true}
+                colorType={"green"}
+                basisVal={"fit-content"}
               />
             </div>
             <div className="h-[50%]">
@@ -162,9 +162,9 @@ const Home: NextPage = () => {
                 moveVidFrom={TansitionVidBToT}
                 moveContextFrom={TransitionContextRToL}
                 contentInfo={LandingContents.Reduce.content2}
-                isTop = {false}
-                colorType = {""}
-                basisVal = {"3/5"}
+                isTop={false}
+                colorType={""}
+                basisVal={"fit-content"}
               />
             </div>
           </div>
@@ -173,7 +173,7 @@ const Home: NextPage = () => {
             moveVidFrom={TansitionVidRToL}
             moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Reduce.content3}
-            colorType = {"blue"}
+            colorType={"blue"}
           />
         </div>
       </section>
@@ -181,13 +181,13 @@ const Home: NextPage = () => {
       <section id="remove" className="  mx-16 pt-10 scroll-mt-28 snap-start">
         <div className="text-5xl font-semibold mb-2">{LandingContents.Remove.title}</div>
         <div className="text-2xl mb-7">{LandingContents.Remove.subtitle}</div>
-        <div className = "grid grid-cols-2 gap-10">
-        <VerticalTansitionVideoInfo
+        <div className="grid grid-cols-2 gap-10">
+          <VerticalTansitionVideoInfo
             imagePosition="left"
             moveVidFrom={TansitionVidLToR}
             moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Remove.content1}
-            colorType = {"blue"}
+            colorType={"blue"}
           />
 
           <VerticalTansitionVideoInfo
@@ -195,9 +195,8 @@ const Home: NextPage = () => {
             moveVidFrom={TansitionVidRToL}
             moveContextFrom={TransitionContextTToB}
             contentInfo={LandingContents.Remove.content2}
-            colorType = {""}
+            colorType={""}
           />
-          
         </div>
       </section>
       {/* Report Section */}
@@ -209,9 +208,9 @@ const Home: NextPage = () => {
           moveVidFrom={TansitionVidLToR}
           moveContextFrom={TransitionContextLToR}
           contentInfo={LandingContents.Report.content1}
-          isTop = {true}
-          colorType = ""
-          basisVal = {"3/5"}
+          isTop={true}
+          colorType=""
+          basisVal={"3/5"}
         />
       </section>
     </>

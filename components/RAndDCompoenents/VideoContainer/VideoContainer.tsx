@@ -15,7 +15,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           src={videoPaths[0]}
           loop
           className={classNames(currentContent === "resources" ? "" : "hidden", " videos rounded-lg shadow-xl")}
-
+          muted = {true}
         />
       }
       {
@@ -25,6 +25,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           src={videoPaths[1]}
           loop
           className={classNames(currentContent === "processing" ? "" : "hidden", " videos rounded-lg shadow-xl")}
+          muted = {true}
         />
       }
       {
@@ -34,6 +35,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           src={videoPaths[2]}
           loop
           className={classNames(currentContent === "manufacturing" ? "" : "hidden", " videos rounded-lg shadow-xl")}
+          muted = {true}
         />
       }
       {
@@ -43,6 +45,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           src={videoPaths[3]}
           loop
           className={classNames(currentContent === "distribution" ? "" : "hidden", " videos rounded-lg shadow-xl")}
+          muted = {true}
         />
       }
       {
@@ -52,6 +55,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           src={videoPaths[4]}
           loop
           className={classNames(currentContent === "use" ? "" : "hidden", "videos rounded-lg shadow-xl")}
+          muted = {true}
         />
       }
       {
@@ -61,6 +65,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           src={videoPaths[5]}
           loop
           className={classNames(currentContent === "endOfLife" ? "" : "hidden", "videos rounded-lg shadow-xl ")}
+          muted = {true}
         />
       }
     </div>

@@ -2,8 +2,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { Opacity } from "@material-ui/icons";
-import classNames from "classnames";
-import Image from "next/image";
 //Grid 형태로 놓고 싶어서 따로 Horizontal TransitionVideoInfo를 만듬
 interface HorizontalTransitionVideoInfoType {
   imagePosition: string;
@@ -15,20 +13,12 @@ interface HorizontalTransitionVideoInfoType {
     videoPath: string;
     isVideo: boolean;
   };
-  isTop: boolean;
-  colorType: string;
-  basisVal: string;
+  isTop:boolean;
+  colorType:string;
+  basisVal:string
 }
 
-const HorizontalTransitionVideoInfo = ({
-  imagePosition,
-  moveVidFrom,
-  moveContextFrom,
-  contentInfo,
-  isTop,
-  colorType,
-  basisVal,
-}: HorizontalTransitionVideoInfoType) => {
+const HorizontalTransitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo,isTop ,colorType,basisVal}: HorizontalTransitionVideoInfoType) => {
   if (imagePosition == "left") {
     // console.log(contentInfo);
   }
@@ -69,52 +59,68 @@ const HorizontalTransitionVideoInfo = ({
   }, [controlVid, inView]);
 
   return (
-    <motion.div
-      ref={ref}
-      animate={controlVid}
-      initial="vidHidden"
-      variants={moveVidFrom}
-      className={`h-[100%] flex flex-row drop-shadow-lg ${isTop ? "pb-4" : "pt-4"}`}>
-      {" "}
-      <motion.div
-        animate={controlText}
-        initial="initial"
-        variants={moveContextFrom}
-        style={{ width: `${basisVal}` }}
-        onMouseEnter={() => controlText.start("open")}
-        onMouseLeave={async () => {
-          await controlText.start("close");
-          await controlText.start("close2");
-        }}
-        className={`${colorType == "green" ? "bg-[#EEF7E9]" : "bg-[#FFF7E1]"} p-6 ${imagePosition === "right" ? "order-first" : "order-last"} -z-50`}>
-        <p className={classNames("flex items-center justify-center h-[100%] text-sm")}>{contentInfo.content}</p>
-      </motion.div>
-      <div className={`${colorType == "green" ? "bg-[#EEF7E9]" : "bg-[#FFF7E1]"} p-6 h-[100%] flex flex-col justify-center`}>
-        <div className={`text-3xl font-bold m-2 w-[100%] flex ${imagePosition == "right" ? "justify-end" : ""}`}>
-          {/* <div className = "w-[50%]"> */}
-          {contentInfo.title}
-          {/* </div> */}
-        </div>
-        {contentInfo.isVideo ? (
-          <video
-            src={contentInfo.videoPath}
-            // autoPlay
-            loop
-            onMouseEnter={handleVideoMouseEnter}
-            onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-4 "
-          />
+    <div ref={ref} className={`h-[100%] flex ${isTop ? "pb-4":"pt-4"}` }>
+      <motion.div animate={controlVid} initial="vidHidden" variants={moveVidFrom} className={`flex flex-row`} >
+        {imagePosition == "right" ? (
+          <motion.div
+            animate={controlText}
+            initial="initial"
+            variants={moveContextFrom}
+            onMouseEnter={() => controlText.start("open")}
+            onMouseLeave={async () => {
+              await controlText.start("close");
+              await controlText.start("close2");
+            }}
+            className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]" } p-6 flex-1 `}>
+            <div className=" flex items-center justify-center h-[100%] text-sm">{contentInfo.content}</div>
+          </motion.div>
         ) : (
-          <img
-            src={"/images/report1.png"}
-            alt={"report1"}
-            className="transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 mt-4"
-            onMouseEnter={handleImgMouseEnter}
-            onMouseLeave={handleImgMouseLeave}
-          />
+          ""
         )}
-      </div>
-    </motion.div>
+
+        <div className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]" } p-6 h-[100%] flex flex-col justify-center basis-${basisVal}  `}>
+          <div className={`text-3xl font-bold m-2 w-[100%] flex ${imagePosition == "right" ? "justify-end" : ""} w-[100%]`}>
+            {/* <div className = "w-[50%]"> */}
+            {contentInfo.title}
+            {/* </div> */}
+          </div>
+          {contentInfo.isVideo ? (
+            <video
+              src={contentInfo.videoPath}
+              // autoPlay
+              loop
+              onMouseEnter={handleVideoMouseEnter}
+              onMouseLeave={handleVideoMouseLeave}
+              className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-4 "
+            />
+          ) : (
+            <img
+              src={"./images/report1.png"}
+              className="w-[100%] transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 mt-4"
+              onMouseEnter={handleImgMouseEnter}
+              onMouseLeave={handleImgMouseLeave}
+            />
+          )}
+        </div>
+
+        {imagePosition == "left" ? (
+          <motion.div
+            animate={controlText}
+            initial="initial"
+            variants={moveContextFrom}
+            onMouseEnter={() => controlText.start("open")}
+            onMouseLeave={async () => {
+              await controlText.start("close");
+              await controlText.start("close2");
+            }}
+            className={`${colorType == "green" ? "bg-[#EEF7E9]" :"bg-[#FFF7E1]"} p-6 h-[100%] flex flex-col justify-end flex-1 `}>
+            <div className=" flex items-center justify-center h-[100%] text-sm">{contentInfo.content}</div>
+          </motion.div>
+        ) : (
+          ""
+        )}
+      </motion.div>
+    </div>
   );
 };
 

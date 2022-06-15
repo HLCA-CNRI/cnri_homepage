@@ -122,7 +122,7 @@ const LCA = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-5">
+        <div className="grid grid-cols-5 border-4">
           <div className="col-span-2"></div>
           <div id="test" onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
             <div className="flex w-[100%] justify-center">원료 채굴</div>
@@ -157,9 +157,14 @@ const LCA = () => {
             />
           </div>
 
-          <div className=" col-span-2"></div>
+          <div className=" col-span-2 "></div>
+          <div className = "relative ">
+            <div className = "absolute w-[150%] -top-[150%] -left-[30%]">
+            <img src={"/images/lca.png"} className = "  "></img>
+            </div>
+          </div>
 
-          <img src={"/images/lca.png"} className=""></img>
+         
 
           {/* <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <div>Hello</div>

@@ -1,4 +1,4 @@
-import min from "../images/members/min.jpg";
+import min from "..@/images/members/min.jpg";
 
 export const LCAContents: { [key: string]: any } = {
   resources: {
@@ -41,7 +41,7 @@ export const LCAContents: { [key: string]: any } = {
       </svg>
     ),
     videoPath: "./video/LCAvids/resources.mp4",
-    image: <img id="resources" src={min.src} />,
+    image: <img id="resources" src={"/images/members/min.jpg"} />,
   },
   processing: {
     title: "processing",
@@ -205,11 +205,11 @@ export const LCAContents: { [key: string]: any } = {
       </svg>
     ),
     videoPath: "./video/LCAvids/processing.mp4",
-    image: <img id="processing" src={min.src} />,
+    image: <img id="processing" src={"/images/members/min.jpg"} />,
   },
   manufacturing: {
     title: "manufacturing",
-    kTitle:"제품 제조",
+    kTitle: "제품 제조",
     content1: "판매를 위한 제품을 제조하는 과정에서 탄소가 배출됩니다.",
     content2: "21세기 문명을 지탱하는 철강을 생산하기 위해서는 다량의 온실가스를 배출하게 됩니다.",
     default: (
@@ -401,11 +401,11 @@ export const LCAContents: { [key: string]: any } = {
       </svg>
     ),
     videoPath: "./video/LCAvids/manufacturing.mp4",
-    image: <img src={min.src} />,
+    image: <img src={"/images/members/min.jpg"} />,
   },
   distribution: {
     title: "distribution",
-    kTitle : "분배",
+    kTitle: "분배",
     content1: "생산된 제품을 수요처까지 분배하는 과정에서 탄소가 배출됩니다.",
     content2: "해외에서 생산된 제품 중 일부는 항공 화물을 통해 운송되며 경유를 연소시키는 과정에서 온실가스를 배출합니다.",
     default: (
@@ -569,7 +569,7 @@ export const LCAContents: { [key: string]: any } = {
       </svg>
     ),
     videoPath: "./video/LCAvids/distribution.mp4",
-    image: <img src={min.src} />,
+    image: <img src={"/images/members/min.jpg"} />,
   },
   use: {
     title: "use",
@@ -639,7 +639,7 @@ export const LCAContents: { [key: string]: any } = {
       </svg>
     ),
     videoPath: "./video/LCAvids/use.mp4",
-    image: <img src={min.src} />,
+    image: <img src={"/images/members/min.jpg"} />,
   },
   endOfLife: {
     title: "endOfLife",
@@ -761,6 +761,6 @@ export const LCAContents: { [key: string]: any } = {
       </svg>
     ),
     videoPath: "./video/LCAvids/endOfLife.mp4",
-    image: <img src={min.src} />,
+    image: <img src={"/images/members/min.jpg"} />,
   },
 };

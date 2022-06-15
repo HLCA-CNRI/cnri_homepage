@@ -14,13 +14,7 @@ interface VerticalTansitionVideoInfoType {
   colorType: string;
 }
 
-const VerticalTansitionVideoInfo = ({
-  imagePosition,
-  moveVidFrom,
-  moveContextFrom,
-  contentInfo,
-  colorType,
-}: VerticalTansitionVideoInfoType) => {
+const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo, colorType }: VerticalTansitionVideoInfoType) => {
   const handleVideoMouseEnter = (e: any) => {
     const vid = e.target;
     vid.muted = true;
@@ -48,55 +42,33 @@ const VerticalTansitionVideoInfo = ({
   }, [controlVid, inView]);
 
   return (
-    <div ref={ref}>
-      {/* <div className="text-3xl font-bold  w-[100%] bg-slate-400 pt-6 px-6">{contentInfo.title}</div> */}
+    <motion.div ref={ref} animate={controlVid} initial="vidHidden" variants={moveVidFrom} className="flex flex-col h-full drop-shadow-lg">
+      <div>
+        <div className={`text-3xl font-bold  w-[100%] ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} pt-6 px-6  `}>{contentInfo.title}</div>
+        <div className={` ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} p-6 z-30  `}>
+          <video
+            src={contentInfo.videoPath}
+            loop
+            onMouseEnter={handleVideoMouseEnter}
+            onMouseLeave={handleVideoMouseLeave}
+            className="w-[100%] transition-[width] delay-150 object-cover shadow-xl  rounded-lg  z-30"
+          />
+        </div>
+      </div>
 
       <motion.div
-        animate={controlVid}
-        initial="vidHidden"
-        variants={moveVidFrom}
-        className="flex flex-col h-full "
-      >
-        <div>
-          <div
-            className={`text-3xl font-bold  w-[100%] ${
-              colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
-            } pt-6 px-6  `}
-          >
-            {contentInfo.title}
-          </div>
-          <div
-            className={` ${
-              colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
-            } p-6 z-30  `}
-          >
-            <video
-              src={contentInfo.videoPath}
-              loop
-              onMouseEnter={handleVideoMouseEnter}
-              onMouseLeave={handleVideoMouseLeave}
-              className="w-[100%] transition-[width] delay-150 object-cover shadow-xl  rounded-lg  z-30"
-            />
-          </div>
-        </div>
-
-        <motion.div
-          animate={controlText}
-          initial="initial"
-          variants={moveContextFrom}
-          className={`${
-            colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
-          } z-0 `}
-          onMouseEnter={() => controlText.start("open")}
-          onMouseLeave={async () => {
-            await controlText.start("close");
-            await controlText.start("close2");
-          }}
-        >
-          <div className="p-6 z-0 text-sm">{contentInfo.content}</div>
-        </motion.div>
+        animate={controlText}
+        initial="initial"
+        variants={moveContextFrom}
+        className={`${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} -z-50 `}
+        onMouseEnter={() => controlText.start("open")}
+        onMouseLeave={async () => {
+          await controlText.start("close");
+          await controlText.start("close2");
+        }}>
+        <div className="p-6 z-0 text-sm">{contentInfo.content}</div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

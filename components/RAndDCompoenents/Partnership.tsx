@@ -48,8 +48,8 @@ const Partnership = () => {
   console.log(typeof currentObj.img);
 
   return (
-    <div className="grid grid-cols-3 w-[100%] h-[90vh]">
-      <div className="grid grid-cols-5 h-[90vh]">
+    <div className="grid grid-cols-3 w-[100%] h-[70vh]">
+      <div className="grid grid-cols-5 h-[70vh]">
         <div className="col-span-2"></div>
         <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
           <Icon
@@ -110,7 +110,7 @@ const Partnership = () => {
         <div className="col-span-1"></div>
       </div>
 
-      <div ref={picRef} onMouseEnter={MouseOver} onMouseLeave={MouseOut} className="bg-slate-200 flex flex-col col-span-2 px-10 h-[90vh]">
+      <div ref={picRef} onMouseEnter={MouseOver} onMouseLeave={MouseOut} className="bg-slate-200 flex flex-col col-span-2 px-10 h-[70vh]">
         <div className="text-4xl pb-4 h-20">{currentObj.kTitle}</div>
         <div className="h-[80%] w-[90%] flex justify-center self-center xl:h-[60%]">
           {currentObj.hasMultiple ? <Carousel values={currentObj.img}></Carousel> : currentObj.img}

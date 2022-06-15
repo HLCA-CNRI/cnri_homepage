@@ -13,10 +13,10 @@ export const WorkAndPartnershipContent: { [key: string]: any } = {
   },
   ts: {
     title: "ts",
-    kTitle: "온실가스 LCI DB/Green NCAP",
-    content: [
+    kTitle: ["온실가스 LCI DB","Green NCAP"],
+    content: [[
       "자동차 주요 에너지원(휘발유/경유/LPG/CNG/전기/수소)과 업스트림 공정의 주요 연료(석탄/천연가스 등)에 대한 온실가스 LCI DB를 개발했습니다.",
-      "해외 LCI DB(Gabi, Ecoinvent 등), 서울대 연구실과 국내외 연구결과를 적극 활용하였으며 자체 알고리즘을 개발하여 국내 최고 수준의 결과물을 도출하였습니다.",
+      "해외 LCI DB(Gabi, Ecoinvent 등), 서울대 연구실과 국내외 연구결과를 적극 활용하였으며 자체 알고리즘을 개발하여 국내 최고 수준의 결과물을 도출하였습니다."],["국토교통부 BIG 3 과제 중 하나로 LCA 분과의 전문가 워킹그룹으로 참여했습니다.","전기차 보급이 가속화되면서 자동차 온실가스의 환경성 평가 체계의 구조 수정이 중요해졌고 전기차의 에너지원인 전기와 내연기관차의 에너지원인 휘발유/경유/LPG/CNG 의 전과정 온실가스 배출량을 측정하고 기준 수치를 도출하여 규제화를 앞두고 있습니다"],
     ],
     default: <img id="ts" alt="ts" src={"/images/companies/tsD.png"} className="object-cover w-full " />,
     colored: <img id="ts" alt="ts" src={"/images/companies/tsC.png"} className="object-cover w-full " />,

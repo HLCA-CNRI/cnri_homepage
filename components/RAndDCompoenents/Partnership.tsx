@@ -1,9 +1,7 @@
 import { WorkAndPartnershipContent } from "../../functions/WorkAndResponsibilitiesPartnership";
 import { useState, useRef, useEffect } from "react";
 import Icon from "./Icon";
-import logo from "../../images/logo.png";
 import Carousel from "../Carousel";
-import ImgContainer from "./ImgContainer/ImgContainer";
 
 const Partnership = () => {
   const [userInteracted, setUserInteracted] = useState(true);
@@ -17,12 +15,12 @@ const Partnership = () => {
       let currentIdx = 0;
       const interval = setInterval(async () => {
         const values = [
-          WorkAndPartnershipContent.totalBusiness,
           WorkAndPartnershipContent.ts,
           WorkAndPartnershipContent.h2,
-          WorkAndPartnershipContent.posco,
           WorkAndPartnershipContent.snu,
           WorkAndPartnershipContent.totalBusiness,
+          WorkAndPartnershipContent.posco,
+          WorkAndPartnershipContent.ts,
         ];
         await setCurrentObj(values[currentIdx + 1]);
         currentIdx == values.length - 2 ? (currentIdx = 0) : (currentIdx += 1);
@@ -50,7 +48,7 @@ const Partnership = () => {
   console.log(typeof currentObj.img);
 
   return (
-    <div className="grid grid-cols-3 w-[100%] h-[70vh]">
+    <div className="grid grid-cols-3 w-[100%] h-[75vh] border-4 py-4">
       <div className="grid grid-cols-5 h-[70vh]">
         <div className="col-span-2"></div>
 
@@ -60,15 +58,13 @@ const Partnership = () => {
           onClick={clickIcon}
           className="relative"
         >
-          <div className="absolute w-[150%] -bottom-[20%] -left-[40%]">
-            
-          
- <Icon
-            defaultIcon={WorkAndPartnershipContent.ts.default}
-            coloredIcon={WorkAndPartnershipContent.ts.colored}
-            isCurrent={currentObj.title == "ts" ? true : false}
-            hasMultiple={false}
-          />
+          <div className="absolute w-[150%] -bottom-[60%] -left-[20%]">
+            <Icon
+              defaultIcon={WorkAndPartnershipContent.ts.default}
+              coloredIcon={WorkAndPartnershipContent.ts.colored}
+              isCurrent={currentObj.title == "ts" ? true : false}
+              hasMultiple={false}
+            />
           </div>
         </div>
         <div className="col-span-2"></div>
@@ -79,8 +75,8 @@ const Partnership = () => {
           onClick={clickIcon}
           className="relative"
         >
-          <div className="absolute w-[150%] -bottom-[85%] -left-[40%]">
-          <Icon
+          <div className="absolute w-[150%] -bottom-[85%] -right-[40%]">
+            <Icon
               defaultIcon={WorkAndPartnershipContent.posco.default}
               coloredIcon={WorkAndPartnershipContent.posco.colored}
               isCurrent={currentObj.title == "posco" ? true : false}
@@ -89,7 +85,6 @@ const Partnership = () => {
           </div>
         </div>
 
-    
         <div className="col-span-3"></div>
         <div
           onMouseOver={MouseOver}
@@ -98,7 +93,7 @@ const Partnership = () => {
           className="relative"
         >
           <div className="absolute w-[150%] -bottom-[85%] -left-[40%]">
-          <Icon
+            <Icon
               defaultIcon={WorkAndPartnershipContent.h2.default}
               coloredIcon={WorkAndPartnershipContent.h2.colored}
               isCurrent={currentObj.title == "h2" ? true : false}
@@ -109,14 +104,10 @@ const Partnership = () => {
 
         <div className="col-span-2"></div>
         <div className="relative ">
-          <div className="absolute w-[200%] bottom-[10%] -left-[60%]">
+          <div className="absolute w-[200%] -bottom-[20%] -left-[60%]">
             <img src={"/images/logo.png"}></img>
           </div>
         </div>
-
-        {/* <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
-            <div>Hello</div>
-          </div> */}
 
         <div className="col-span-2"></div>
 
@@ -129,13 +120,13 @@ const Partnership = () => {
           onClick={clickIcon}
           className="relative"
         >
-          <div className="absolute w-[150%] bottom-[40%] -left-[40%]">
-          <Icon
-            defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
-            coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
-            isCurrent={currentObj.title == "totalBusiness" ? true : false}
-            hasMultiple={false}
-          />
+          <div className="absolute w-[150%] bottom-[40%] -left-[50%]">
+            <Icon
+              defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
+              coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
+              isCurrent={currentObj.title == "totalBusiness" ? true : false}
+              hasMultiple={false}
+            />
           </div>
         </div>
 
@@ -147,7 +138,7 @@ const Partnership = () => {
           onClick={clickIcon}
           className="relative"
         >
-          <div className="absolute w-[150%] bottom-[40%] -right-[20%]">
+          <div className="absolute w-[150%] bottom-[40%] -right-[50%]">
             <Icon
               defaultIcon={WorkAndPartnershipContent.snu.default}
               coloredIcon={WorkAndPartnershipContent.snu.colored}
@@ -163,23 +154,24 @@ const Partnership = () => {
         ref={picRef}
         onMouseEnter={MouseOver}
         onMouseLeave={MouseOut}
-        className="bg-slate-200 flex flex-col col-span-2 px-10 h-[70vh]"
+        className= "flex flex-col col-span-2 px-4 h-[70vh]"
       >
-        <div className="text-4xl pb-4 h-20">{currentObj.kTitle}</div>
-        <div className="h-[80%] w-[90%] flex justify-center self-center xl:h-[60%]">
-          {currentObj.hasMultiple ? (
-            <Carousel values={currentObj.img}></Carousel>
-          ) : (
-            currentObj.img
-          )}
-        </div>
-        <div className="text-lg ">
-          <ul>
-            {currentObj.content.map((note: string) => (
-              <li key={note}>{note}</li>
-            ))}
-          </ul>
-        </div>
+        {currentObj.hasMultiple ?(
+            <Carousel currentObj={currentObj}></Carousel>
+          ): 
+          <>
+          <div className="text-4xl pb-4 h-20">{currentObj.kTitle}</div>
+          <div className="h-[80%] w-[90%] flex justify-center self-center xl:h-[60%]">
+          {currentObj.img}
+          </div>
+          <div className="text-lg ">
+            <ul>
+              {currentObj.content.map((note: string) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          </div></>}
+        
       </div>
     </div>
   );

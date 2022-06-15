@@ -48,19 +48,22 @@ const Randd = () => {
               className="object-cover h-full w-full rounded-lg shadow-lg"
             ></img>
             </motion.div>
-            <motion.div ref = {ref} animate = {controlText}  initial = "hidden"  variants = {TansitionVidRToL} className="absolute inset-0 flex justify-center items-center z-10 text-9xl text-zinc-600">
+            <motion.div ref = {ref} animate = {controlText}  initial = "hidden"  variants = {TansitionVidRToL} className="absolute inset-0 flex justify-center items-center z-10 text-9xl font-bold text-white">
             <div >
-              R&D
+              <span >R</span>
+              <span className = "mx-2">&</span>
+              <span>D</span>
+
             </div>
             </motion.div>
           </div>
       <div className="w-[100%] ">
-        <div className="text-5xl mb-10">What is LCA?</div>
+        <div className="font-semibold text-5xl mb-5">What is LCA?</div>
         <LCA />
         <div className="grid grid-cols-2"></div>
       </div>
       <div className="w-[100%] mt-20">
-        <div className="text-5xl mb-10">Our Work and Partnership</div>
+        <div className="text-5xl font-semibold mb-5">Our Work and Partnership</div>
         <Partnership />
       </div>
     </div>

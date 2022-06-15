@@ -83,19 +83,19 @@ const LCA = () => {
   };
 
   return (
-    <div className="w-[100%] p-6 ">
-      <div className="grid grid-cols-3 bg-red-100 ">
-        <div className="col-span-2 ">
-          <div className="grid grid-cols-10">
-            <div className="col-span-9  border-4 h-200 bg-blue-100">
+    <div className="w-[100%] ">
+      <div className="grid grid-cols-5">
+        <div className="col-span-3">
+          <div className="grid grid-cols-10 mr-12">
+            <div className="col-span-9 h-200">
               {/* <video ref={videoRef} src={currentObj.videoPath} loop className={`pt-4`} /> */}
               <div
                 onMouseEnter={mouseEnterVid}
                 onClick={clickIcon}
                 onMouseLeave={mouseLeaveVid}
-                className = " h-50"
+                className=" h-50"
               >
-                <div className = "text-4xl  border-2">{currentObj.kTitle}</div>
+                <div className="text-4xl mb-2">{currentObj.kTitle}</div>
 
                 <VideoContainer
                   videoRef={videoRef}
@@ -110,32 +110,42 @@ const LCA = () => {
                     LCAContents.resources.videoPath,
                   ]}
                 />
-
-
-                
               </div>
-              <div className="pb-4 text-lg mt-4 border-2 bg-red-200 h-32 ">
+              <div className="pb-4 text-lg mt-4 h-32 ">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
               </div>
-              
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-5 border-4">
+        <div className="grid grid-cols-5 col-span-2">
           <div className="col-span-2"></div>
-          <div id="test" onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
-            <div className="flex w-[100%] justify-center">원료 채굴</div>
-            <Icon
-              defaultIcon={LCAContents.resources.default}
-              coloredIcon={LCAContents.resources.colored}
-              isCurrent={currentObj.title == "resources" ? true : false}
-              hasMultiple={false}
-            />
+          <div
+            id="test"
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+            className="relative"
+          >
+            <div className="absolute  w-[100%] bottom-[-50%]">
+              <div className=" flex w-[100%] justify-center">원료 채굴</div>
+              <Icon
+                defaultIcon={LCAContents.resources.default}
+                coloredIcon={LCAContents.resources.colored}
+                isCurrent={currentObj.title == "resources" ? true : false}
+                hasMultiple={false}
+              />
+            </div>
           </div>
           <div className="col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+            className = "relative"
+          >
+            <div className="absolute w-[100%] bottom-[-20%]">
             <div className="flex w-[100%] justify-center">폐기</div>
             <Icon
               defaultIcon={LCAContents.endOfLife.default}
@@ -143,11 +153,20 @@ const LCA = () => {
               isCurrent={currentObj.title == "endOfLife" ? true : false}
               hasMultiple={false}
             />
+
+            </div>
+           
           </div>
 
           <div className=" col-span-3"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+            className = "relative"
+          >
+            <div className="absolute w-[100%] bottom-[-20%]">
             <div className="flex w-[100%] justify-center">원료 가공</div>
             <Icon
               defaultIcon={LCAContents.processing.default}
@@ -155,16 +174,17 @@ const LCA = () => {
               isCurrent={currentObj.title == "processing" ? true : false}
               hasMultiple={false}
             />
+
+            </div>
+           
           </div>
 
           <div className=" col-span-2 "></div>
-          <div className = "relative ">
-            <div className = "absolute w-[150%] -top-[150%] -left-[30%]">
-            <img src={"/images/lca.png"} className = "  "></img>
+          <div className="relative ">
+            <div className="absolute w-[150%] -top-[20%] -left-[30%]">
+              <img src={"/images/lca.png"}></img>
             </div>
           </div>
-
-         
 
           {/* <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <div>Hello</div>
@@ -172,38 +192,59 @@ const LCA = () => {
 
           <div className=" col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
-            <div className="flex w-[100%] justify-center">제품 사용</div>
-            <Icon
-              defaultIcon={LCAContents.use.default}
-              coloredIcon={LCAContents.use.colored}
-              isCurrent={currentObj.title == "use" ? true : false}
-              hasMultiple={false}
-            />
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+            className="relative "
+          >
+            <div className="absolute w-[100%] bottom-[20%]">
+              <Icon
+                defaultIcon={LCAContents.use.default}
+                coloredIcon={LCAContents.use.colored}
+                isCurrent={currentObj.title == "use" ? true : false}
+                hasMultiple={false}
+              />
+              <div className="flex w-[100%] justify-center">제품 사용</div>
+            </div>
           </div>
 
           <div className=" col-span-3"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
-            <div className="flex w-[100%] justify-center">제품 제조</div>{" "}
-            <Icon
-              defaultIcon={LCAContents.manufacturing.default}
-              coloredIcon={LCAContents.manufacturing.colored}
-              isCurrent={currentObj.title == "manufacturing" ? true : false}
-              hasMultiple={false}
-            />
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+            className="relative"
+          >
+            <div className="absolute w-[100%] bottom-[20%]">
+              <Icon
+                defaultIcon={LCAContents.manufacturing.default}
+                coloredIcon={LCAContents.manufacturing.colored}
+                isCurrent={currentObj.title == "manufacturing" ? true : false}
+                hasMultiple={false}
+              />
+              <div className="flex w-[100%] justify-center">제품 제조</div>{" "}
+            </div>
           </div>
 
           <div className="col-span-2"></div>
 
-          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
-            <div className="flex w-[100%] justify-center">분배</div>{" "}
-            <Icon
-              defaultIcon={LCAContents.distribution.default}
-              coloredIcon={LCAContents.distribution.colored}
-              isCurrent={currentObj.title == "distribution" ? true : false}
-              hasMultiple={false}
-            />
+          <div
+            onMouseOver={MouseOver}
+            onMouseLeave={MouseOut}
+            onClick={clickIcon}
+            className="relative"
+          >
+            <div className="absolute  w-[100%] bottom-[50%]">
+              <Icon
+                defaultIcon={LCAContents.distribution.default}
+                coloredIcon={LCAContents.distribution.colored}
+                isCurrent={currentObj.title == "distribution" ? true : false}
+                hasMultiple={false}
+              />
+              <div className="flex w-[100%] justify-center">분배</div>{" "}
+            </div>
           </div>
 
           <div className="col-span-2"></div>

@@ -4,7 +4,6 @@ import VideoOnHover from "../../components/CompanyComponents/VideoOnHover";
 import Member from "../../components/CompanyComponents/Member";
 import History from "../../components/CompanyComponents/History";
 import { philosophy } from "../../functions/philosophy";
-import companyIntro from "@/images/companyIntro.jpg";
 import { useInView } from "react-intersection-observer";
 
 const TansitionVidLToR = {
@@ -44,15 +43,15 @@ const Company: React.FC = () => {
         <div className=" mb-20">
           <div className="relative">
             <motion.div ref={ref} className="h-[80vh]" animate={controlVid} initial="hidden" variants={TansitionVidLToR}>
-              <img src={companyIntro.src} className="object-cover h-full w-full rounded-lg shadow-lg"></img>
+              <img src={"/images/companyIntro.jpg"} className="object-cover h-full w-full rounded-lg shadow-lg"></img>
             </motion.div>
             <motion.div
               ref={ref}
               animate={controlText}
               initial="hidden"
               variants={TansitionVidRToL}
-              className="absolute inset-0 flex justify-center items-center z-10 text-9xl text-zinc-600">
-              <div>Company</div>
+              className="absolute inset-0 flex justify-center items-center z-10 text-9xl font-bold text-white">
+              <div>COMPANY</div>
             </motion.div>
           </div>
 

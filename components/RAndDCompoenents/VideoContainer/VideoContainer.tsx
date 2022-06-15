@@ -60,7 +60,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "endOfLife" ? videoRef : null}
           src={videoPaths[5]}
           loop
-          className={classNames(currentContent === "endOfLife" ? "" : "hidden", "videos rounded-lg shadow-xl object-fill")}
+          className={classNames(currentContent === "endOfLife" ? "" : "hidden", "videos rounded-lg shadow-xl ")}
         />
       }
     </div>

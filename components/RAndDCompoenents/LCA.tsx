@@ -84,20 +84,20 @@ const LCA = () => {
   };
 
   return (
-    <div className="w-[100%] p-6 bg-[#DEEBF7]">
-      <div className="grid grid-cols-3">
-        <div className="col-span-2">
+    <div className="w-[100%] p-6 ">
+      <div className="grid grid-cols-3 bg-red-100">
+        <div className="col-span-2 ">
           <div className="grid grid-cols-10">
-            <div className="col-span-9 ">
+            <div className="col-span-9  border-4 h-200 bg-blue-100">
               {/* <video ref={videoRef} src={currentObj.videoPath} loop className={`pt-4`} /> */}
               <div
                 onMouseEnter={mouseEnterVid}
                 onClick={clickIcon}
                 onMouseLeave={mouseLeaveVid}
-                className = ""
+                className = " h-50"
               >
-                <div className = "text-4xl mb-4">{currentObj.kTitle}</div>
-                <div >
+                <div className = "text-4xl  border-2">{currentObj.kTitle}</div>
+
                 <VideoContainer
                   videoRef={videoRef}
                   currentContent={currentObj.title}
@@ -112,14 +112,14 @@ const LCA = () => {
                   ]}
                 />
 
-                </div>
+
                 
               </div>
-
-              <div className="pb-4 h-[10%] text-lg mt-4">
+              <div className="pb-4 text-lg mt-4 border-2 bg-red-200 max-h-16 ">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
               </div>
+              
             </div>
           </div>
         </div>

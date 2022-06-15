@@ -25,8 +25,6 @@ const Company: React.FC = () => {
   const carousel = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
-
-
     if (carousel && carousel.current) {
       setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     }

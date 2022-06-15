@@ -24,7 +24,7 @@ const LCA = () => {
         ];
         setCurrentObj(values[currentIdx + 1]);
         currentIdx == values.length - 2 ? (currentIdx = 0) : (currentIdx += 1);
-      }, 1000);
+      }, 2000);
       return () => clearInterval(interval);
     }
     if (videoRef && videoRef.current) videoRef.current.pause();
@@ -89,12 +89,7 @@ const LCA = () => {
           <div className="grid grid-cols-10 mr-12">
             <div className="col-span-9 h-200">
               {/* <video ref={videoRef} src={currentObj.videoPath} loop className={`pt-4`} /> */}
-              <div
-                onMouseEnter={mouseEnterVid}
-                onClick={clickIcon}
-                onMouseLeave={mouseLeaveVid}
-                className=" h-50"
-              >
+              <div onMouseEnter={mouseEnterVid} onClick={clickIcon} onMouseLeave={mouseLeaveVid} className=" h-50">
                 <div className="text-4xl mb-2">{currentObj.kTitle}</div>
 
                 <VideoContainer
@@ -120,13 +115,7 @@ const LCA = () => {
         </div>
         <div className="grid grid-cols-5 col-span-2">
           <div className="col-span-2"></div>
-          <div
-            id="test"
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-            className="relative"
-          >
+          <div id="test" onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
             <div className="absolute  w-[100%] bottom-[-50%]">
               <div className=" flex w-[100%] justify-center">원료 채굴</div>
               <Icon
@@ -139,44 +128,30 @@ const LCA = () => {
           </div>
           <div className="col-span-2"></div>
 
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-            className = "relative"
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
             <div className="absolute w-[100%] bottom-[-20%]">
-            <div className="flex w-[100%] justify-center">폐기</div>
-            <Icon
-              defaultIcon={LCAContents.endOfLife.default}
-              coloredIcon={LCAContents.endOfLife.colored}
-              isCurrent={currentObj.title == "endOfLife" ? true : false}
-              hasMultiple={false}
-            />
-
+              <div className="flex w-[100%] justify-center">폐기</div>
+              <Icon
+                defaultIcon={LCAContents.endOfLife.default}
+                coloredIcon={LCAContents.endOfLife.colored}
+                isCurrent={currentObj.title == "endOfLife" ? true : false}
+                hasMultiple={false}
+              />
             </div>
-           
           </div>
 
           <div className=" col-span-3"></div>
 
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-            className = "relative"
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
             <div className="absolute w-[100%] bottom-[-20%]">
-            <div className="flex w-[100%] justify-center">원료 가공</div>
-            <Icon
-              defaultIcon={LCAContents.processing.default}
-              coloredIcon={LCAContents.processing.colored}
-              isCurrent={currentObj.title == "processing" ? true : false}
-              hasMultiple={false}
-            />
-
+              <div className="flex w-[100%] justify-center">원료 가공</div>
+              <Icon
+                defaultIcon={LCAContents.processing.default}
+                coloredIcon={LCAContents.processing.colored}
+                isCurrent={currentObj.title == "processing" ? true : false}
+                hasMultiple={false}
+              />
             </div>
-           
           </div>
 
           <div className=" col-span-2 "></div>
@@ -192,12 +167,7 @@ const LCA = () => {
 
           <div className=" col-span-2"></div>
 
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-            className="relative "
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative ">
             <div className="absolute w-[100%] bottom-[20%]">
               <Icon
                 defaultIcon={LCAContents.use.default}
@@ -211,12 +181,7 @@ const LCA = () => {
 
           <div className=" col-span-3"></div>
 
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-            className="relative"
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
             <div className="absolute w-[100%] bottom-[20%]">
               <Icon
                 defaultIcon={LCAContents.manufacturing.default}
@@ -230,12 +195,7 @@ const LCA = () => {
 
           <div className="col-span-2"></div>
 
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-            className="relative"
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
             <div className="absolute  w-[100%] bottom-[50%]">
               <Icon
                 defaultIcon={LCAContents.distribution.default}

@@ -2,7 +2,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { Opacity } from "@material-ui/icons";
-import report1 from "../../images/report1.png";
 import classNames from "classnames";
 import Image from "next/image";
 //Grid 형태로 놓고 싶어서 따로 Horizontal TransitionVideoInfo를 만듬
@@ -70,7 +69,13 @@ const HorizontalTransitionVideoInfo = ({
   }, [controlVid, inView]);
 
   return (
-    <motion.div ref={ref} animate={controlVid} initial="vidHidden" variants={moveVidFrom} className={`h-[100%] flex flex-row ${isTop ? "pb-4" : "pt-4"}`}>
+    <motion.div
+      ref={ref}
+      animate={controlVid}
+      initial="vidHidden"
+      variants={moveVidFrom}
+      className={`h-[100%] flex flex-row drop-shadow-lg ${isTop ? "pb-4" : "pt-4"}`}>
+      {" "}
       <motion.div
         animate={controlText}
         initial="initial"
@@ -84,9 +89,8 @@ const HorizontalTransitionVideoInfo = ({
         className={`${colorType == "green" ? "bg-[#EEF7E9]" : "bg-[#FFF7E1]"} p-6 ${imagePosition === "right" ? "order-first" : "order-last"} -z-50`}>
         <p className={classNames("flex items-center justify-center h-[100%] text-sm")}>{contentInfo.content}</p>
       </motion.div>
-
       <div className={`${colorType == "green" ? "bg-[#EEF7E9]" : "bg-[#FFF7E1]"} p-6 h-[100%] flex flex-col justify-center`}>
-        <div className={`text-3xl font-bold m-2 w-[100%] flex ${imagePosition == "right" ? "justify-end" : ""} w-[100%]`}>
+        <div className={`text-3xl font-bold m-2 w-[100%] flex ${imagePosition == "right" ? "justify-end" : ""}`}>
           {/* <div className = "w-[50%]"> */}
           {contentInfo.title}
           {/* </div> */}
@@ -101,11 +105,10 @@ const HorizontalTransitionVideoInfo = ({
             className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-4 "
           />
         ) : (
-          <Image
-            src={report1.src}
+          <img
+            src={"/images/report1.png"}
             alt={"report1"}
-            layout={"fill"}
-            className="w-[100%] transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 mt-4"
+            className="transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 mt-4"
             onMouseEnter={handleImgMouseEnter}
             onMouseLeave={handleImgMouseLeave}
           />

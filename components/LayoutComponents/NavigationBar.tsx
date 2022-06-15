@@ -1,4 +1,3 @@
-import logo from "../../images/logo.png";
 import Script from "next/script";
 import Link from "next/link";
 
@@ -11,7 +10,7 @@ const NavigationBar: React.FC = () => {
           <div className="container flex flex-wrap justify-between items-center mx-auto">
             <Link href="/" className="flex items-center my-4">
               <a>
-                <img src={logo.src} width={180} height={70} />
+                <img src={"/images/logo.png"} width={180} height={70} />
               </a>
             </Link>
 

@@ -108,6 +108,7 @@ module.exports = {
       60: '15rem',
       64: '16rem',
       72: '18rem',
+      76:`19rem`,
       80: '20rem',
       96: '24rem',
     },
@@ -547,6 +548,7 @@ module.exports = {
       min: 'min-content',
       max: 'max-content',
       fit: 'fit-content',
+      
     }),
     inset: ({ theme }) => ({
       auto: 'auto',

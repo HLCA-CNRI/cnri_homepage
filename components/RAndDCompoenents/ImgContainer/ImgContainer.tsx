@@ -7,11 +7,11 @@ interface imgContainerType{
     currentContent :string
 }
 
-const imgContainer = ({currentContent}:imgContainerType) =>{
+const ImgContainer = ({currentContent}:imgContainerType) =>{
     return(
         <div>
             {
-            <img id = "totalBusiness" src = {totalBusiness.src}  className = {`${currentContent == "totalBusiness" ? "visible":"hidden"} object-cover`}  />
+            <img id = "totalBusiness" src = {totalBusiness.src}  className = {`${currentContent == "totalBusiness" ? "visible":"hidden"} object-cover h-`}  />
             }
             {
            <img id = "h2"  src = {h2.src}  className = {`${currentContent == "h2" ? "visible":"hidden"} object-cover`}  />
@@ -27,4 +27,4 @@ const imgContainer = ({currentContent}:imgContainerType) =>{
     )
 }
 
-export default imgContainer
+export default ImgContainer

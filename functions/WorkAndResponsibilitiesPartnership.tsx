@@ -8,7 +8,7 @@ export const WorkAndPartnershipContent: { [key: string]: any } = {
     ],
     default: <img id="totalBusiness" src={"/images/companies/totalBusinessD.png"} className="object-cover w-full " />,
     colored: <img id="totalBusiness" src={"/images/companies/totalBusinessC.png"} className="object-cover w-full " />,
-    img: <img id="totalBusiness" src={"/images/partnershipData/totalBusiness.png"} className="object-cover w-full " />,
+    img: <img id="totalBusiness" src={"/images/partnershipData/totalBusiness.png"}  className=" h-full w-auto " />,
     hasMultiple: false,
   },
   ts: {
@@ -21,8 +21,8 @@ export const WorkAndPartnershipContent: { [key: string]: any } = {
     default: <img id="ts" alt="ts" src={"/images/companies/tsD.png"} className="object-cover w-full " />,
     colored: <img id="ts" alt="ts" src={"/images/companies/tsC.png"} className="object-cover w-full " />,
     img: [
-      <img key={0} id="ts" alt="ts" src={"/images/partnershipData/ts1.png"} className="object-cover w-full " />,
-      <img key={1} id="ts" alt="ts" src={"/images/partnershipData/ts2.png"} className="object-cover w-full " />,
+      <img key={0} id="ts" alt="ts" src={"/images/partnershipData/ts1.png"}  className=" h-full w-auto " />,
+      <img key={1} id="ts" alt="ts" src={"/images/partnershipData/ts2.png"}  className=" h-full w-auto " />,
     ],
     hasMultiple: true,
   },
@@ -35,7 +35,7 @@ export const WorkAndPartnershipContent: { [key: string]: any } = {
     ],
     default: <img id="h2" src={"/images/companies/h2D.png"} className="object-cover w-full " />,
     colored: <img id="h2" src={"/images/companies/h2C.png"} className="object-cover w-full " />,
-    img: <img id="ts" src={"/images/partnershipData/h2.png"} className="object-cover w-full " />,
+    img: <img id="ts" src={"/images/partnershipData/h2.png"}  className=" h-full w-auto " />,
     hasMultiple: false,
   },
   posco: {
@@ -47,7 +47,7 @@ export const WorkAndPartnershipContent: { [key: string]: any } = {
     ],
     default: <img id="posco" src={"/images/companies/poscoD.png"} className="object-cover w-full " />,
     colored: <img id="posco" src={"/images/companies/poscoC.png"} className="object-cover w-full " />,
-    img: <img id="totalBusiness" src={"/images/partnershipData/posco.png"} className="object-cover w-full " />,
+    img: <img id="totalBusiness" src={"/images/partnershipData/posco.png"}  className=" h-full w-auto " />,
     hasMultiple: false,
   },
   snu: {
@@ -57,8 +57,8 @@ export const WorkAndPartnershipContent: { [key: string]: any } = {
       "미국 캘리포니아 주정부와 연방정부에서도 적극 활용하고 있는 아르곤국가연구소가 개발한 GREET 프로그램의 알고리즘을 기반으로 서울대 연구실과 공동연구를 통해 자체 알고리즘",
     ],
     default: <img id="snu" src={"/images/companies/snuD.png"} className="object-cover w-full " />,
-    colored: <img id="snu" src={"/images/companies/snuD.png"} className="object-cover w-full " />,
-    img: <img id="totalBusiness" src={"/images/partnershipData/snu.png"} className="object-cover w-full " />,
+    colored: <img id="snu" src={"/images/companies/snuC.png"} className="object-cover w-full " />,
+    img: <img id="totalBusiness" src={"/images/partnershipData/snu.png"}  className=" h-full w-auto " />,
     hasMultiple: false,
   },
 };

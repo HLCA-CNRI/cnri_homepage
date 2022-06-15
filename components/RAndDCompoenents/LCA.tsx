@@ -84,7 +84,7 @@ const LCA = () => {
 
   return (
     <div className="w-[100%] p-6 ">
-      <div className="grid grid-cols-3 bg-red-100">
+      <div className="grid grid-cols-3 bg-red-100 ">
         <div className="col-span-2 ">
           <div className="grid grid-cols-10">
             <div className="col-span-9  border-4 h-200 bg-blue-100">
@@ -114,7 +114,7 @@ const LCA = () => {
 
                 
               </div>
-              <div className="pb-4 text-lg mt-4 border-2 bg-red-200 max-h-16 ">
+              <div className="pb-4 text-lg mt-4 border-2 bg-red-200 h-32 ">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
               </div>

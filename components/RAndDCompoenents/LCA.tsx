@@ -111,7 +111,7 @@ const LCA = () => {
                   ]}
                 />
               </div>
-              <div className="pb-4 text-lg mt-4 h-32 ">
+              <div className="pb-4 text-md mt-4 h-32 ">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
               </div>

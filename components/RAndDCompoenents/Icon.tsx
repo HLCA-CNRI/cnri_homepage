@@ -1,4 +1,5 @@
 import {memo, useState} from "react"
+import classNames from 'classNames'
 
 interface IconType{
     defaultIcon:any, 
@@ -16,8 +17,12 @@ const Icon = ({defaultIcon,coloredIcon,isCurrent,hasMultiple}:IconType) =>{
         setIsColored(false)
     }
     return (
-        <div onMouseOver={changeToColored} onMouseLeave = {changeToDefault}>
-            {isCurrent ? coloredIcon:defaultIcon}
+        <div onMouseOver={changeToColored} onMouseLeave={changeToDefault}>
+            {/* {isCurrent ?  */}
+            <div className={classNames(isCurrent ? "opacity-100":"hidden opacity-0" , "duration-700 ease-in transition-opacity")}>{coloredIcon}</div>
+            {/* : */}
+            <div className={classNames(!isCurrent ? "opacity-100":"hidden opacity-0" , "duration-700 ease-in transition-opacity")}>{defaultIcon}</div>
+            {/* } */}
         </div>
     )
 }

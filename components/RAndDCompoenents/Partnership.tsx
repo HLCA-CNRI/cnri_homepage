@@ -45,10 +45,9 @@ const Partnership = () => {
     setUserInteracted(false);
   };
 
-  console.log(typeof currentObj.img);
 
   return (
-    <div className="grid grid-cols-3 w-[100%] h-[75vh] border-4 py-4">
+    <div className="grid grid-cols-3 w-[100%] h-[75vh] py-4">
       <div className="grid grid-cols-5 h-[70vh]">
         <div className="col-span-2"></div>
 
@@ -58,7 +57,7 @@ const Partnership = () => {
           onClick={clickIcon}
           className="relative"
         >
-          <div className="absolute w-[150%] -bottom-[60%] -left-[20%]">
+          <div className="absolute w-[150%] -bottom-[60%] left-[20%]">
             <Icon
               defaultIcon={WorkAndPartnershipContent.ts.default}
               coloredIcon={WorkAndPartnershipContent.ts.colored}
@@ -92,7 +91,7 @@ const Partnership = () => {
           onClick={clickIcon}
           className="relative"
         >
-          <div className="absolute w-[150%] -bottom-[85%] -left-[40%]">
+          <div className="absolute w-[150%] -bottom-[85%] left-[40%]">
             <Icon
               defaultIcon={WorkAndPartnershipContent.h2.default}
               coloredIcon={WorkAndPartnershipContent.h2.colored}
@@ -104,7 +103,7 @@ const Partnership = () => {
 
         <div className="col-span-2"></div>
         <div className="relative ">
-          <div className="absolute w-[200%] -bottom-[20%] -left-[60%]">
+          <div className="absolute w-[200%] top-[50%] -left-[20%]">
             <img src={"/images/logo.png"}></img>
           </div>
         </div>
@@ -120,7 +119,7 @@ const Partnership = () => {
           onClick={clickIcon}
           className="relative"
         >
-          <div className="absolute w-[150%] bottom-[40%] -left-[50%]">
+          <div className="absolute w-[150%] bottom-[40%] -left-[20%]">
             <Icon
               defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
               coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
@@ -138,7 +137,7 @@ const Partnership = () => {
           onClick={clickIcon}
           className="relative"
         >
-          <div className="absolute w-[150%] bottom-[40%] -right-[50%]">
+          <div className="absolute w-[150%] bottom-[40%] -right-[120%]">
             <Icon
               defaultIcon={WorkAndPartnershipContent.snu.default}
               coloredIcon={WorkAndPartnershipContent.snu.colored}
@@ -150,21 +149,23 @@ const Partnership = () => {
         <div className="col-span-1"></div>
       </div>
 
+      <div className = "col-span-2 ml-40">
+
       <div
         ref={picRef}
         onMouseEnter={MouseOver}
         onMouseLeave={MouseOut}
-        className= "flex flex-col col-span-2 px-4 h-[70vh]"
+        className= "flex flex-col px-4 h-[70vh]"
       >
         {currentObj.hasMultiple ?(
             <Carousel currentObj={currentObj}></Carousel>
           ): 
           <>
-          <div className="text-4xl pb-4 h-20">{currentObj.kTitle}</div>
-          <div className="h-[80%] w-[90%] flex justify-center self-center xl:h-[60%]">
+          <div className="text-4xl pb-4 h-20  flex justify-start ml-8">{currentObj.kTitle}</div>
+          <div className="h-[80%] w-[90%] flex justify-center self-center xl:h-[60%] ">
           {currentObj.img}
           </div>
-          <div className="text-lg ">
+          <div className="text-md pt-4 px-8 ">
             <ul>
               {currentObj.content.map((note: string) => (
                 <li key={note}>{note}</li>
@@ -173,6 +174,10 @@ const Partnership = () => {
           </div></>}
         
       </div>
+
+      </div>
+
+     
     </div>
   );
 };

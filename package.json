@@ -15,6 +15,7 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
+    "@tailwindui/react": "^0.1.1",
     "classnames": "^2.3.1",
     "flowbite": "^1.4.7",
     "flowbite-react": "^0.0.25",

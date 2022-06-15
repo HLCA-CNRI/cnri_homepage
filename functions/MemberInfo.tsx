@@ -17,8 +17,8 @@ const Mem: { [key: string]: any } = {
   },
   prof: {
     name: "송한호",
-    position: "",
-    description: "",
+    position: "Co-Founder/Advisor",
+    description: "서울대학교 기계공학과 교수이며 자동차 전문가로서 LCA 연구를 10년 넘게 수행해왔습니다.",
     pic: "/images/members/prof.jpg",
   },
   minhyeok: {
@@ -36,7 +36,7 @@ const Mem: { [key: string]: any } = {
   cherin: {
     name: "유채린",
     position: "Software Developer",
-    description: "",
+    description: "홈페이지와 Light Calculator 개발을 담당하였고,탄소중립을 위한 멋진 개발자가 되고 싶습니다.",
     pic: "/images/members/cherin.jpg",
   },
 };

@@ -1,7 +1,7 @@
 export const WorkAndPartnershipContent: { [key: string]: any } = {
   totalBusiness: {
     title: "totalBusiness",
-    kTitle: "전과정평가 기반의 자동차 환경성 분석",
+    kTitle: "LCA 기반의 자동차 환경성 분석",
     content: [
       "산업통상자원부 자동차과, 서울대학교(민경덕 교수, 송한호 교수, 명차리 교수)와 협업하여 전기자동차와 하이브리드 자동차 간의 LCA 기반 온실가스 배출량을 분석하였습니다.",
       "전기차 보급의 가속화와 더불어 기존 내연기관, 하이브리드 자동차 관련 규제에 탄소중립연구원의 연구결과가 적극 활용될 예정입니다.",
@@ -40,7 +40,7 @@ export const WorkAndPartnershipContent: { [key: string]: any } = {
   },
   posco: {
     title: "posco",
-    kTitle: "청정수소 인증을 위한 제철 부생가스 기반 수소 생산 설비의 온실가스 배출량 평가",
+    kTitle: "부생가스 온실가스 배출량 평가",
     content: [
       "포항산업과학연구원, 서울대학교(송한호 교수)와 협업하여 광양제철소 부생가스를 활용한 수소 생산에서의 전과정 온실가스 배출량을 분석하였습니다.",
       "2022년까지 배포될 청정수소 인증제 가이드라인에 대비하여 선제적 대응 및 인증을 목표로 실질적인 연구결과를 도출해냈습니다.",

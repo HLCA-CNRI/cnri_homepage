@@ -67,7 +67,7 @@ export const LandingContents = {
       isVideo: true,
     },
     content2: {
-      title: "포트폴리오를 편하게 관리하세요.",
+      title: "포트폴리오 관리",
       content:
         "탄소 감축에 기여할 수 있는 최신 기술/사업에 참여할 수 있게 도와드립니다. 다양한 종류의 사업에 참여하면서 포트폴리오를 구성해보세요.탄소중립연구원과 협업을 원하는 감축사업자이신가요? Contact",
       videoPath: "./video/remove2.mp4",

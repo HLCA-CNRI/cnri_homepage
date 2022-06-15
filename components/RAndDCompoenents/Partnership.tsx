@@ -1,16 +1,14 @@
 import { WorkAndPartnershipContent } from "../../functions/WorkAndResponsibilitiesPartnership";
 import { useState, useRef, useEffect } from "react";
-import totalBusinessD from "../../images/companies/totalBusinessD.png";
 import Icon from "./Icon";
 import logo from "../../images/logo.png";
 import Carousel from "../Carousel";
 import ImgContainer from "./ImgContainer/ImgContainer";
 
+
 const Partnership = () => {
   const [userInteracted, setUserInteracted] = useState(true);
-  const [currentObj, setCurrentObj] = useState(
-    WorkAndPartnershipContent.totalBusiness
-  );
+  const [currentObj, setCurrentObj] = useState(WorkAndPartnershipContent.totalBusiness);
   const picRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,7 +25,7 @@ const Partnership = () => {
         ];
         await setCurrentObj(values[currentIdx + 1]);
         currentIdx == values.length - 2 ? (currentIdx = 0) : (currentIdx += 1);
-      }, 1000);
+      }, 2000);
       return () => clearInterval(interval);
     }
   }, [userInteracted]);
@@ -55,11 +53,7 @@ const Partnership = () => {
       <div className="grid grid-cols-3">
         <div className="grid grid-cols-5">
           <div className="col-span-2"></div>
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
               coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
@@ -68,11 +62,7 @@ const Partnership = () => {
             />
           </div>
           <div className="col-span-2"></div>
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.ts.default}
               coloredIcon={WorkAndPartnershipContent.ts.colored}
@@ -82,11 +72,7 @@ const Partnership = () => {
           </div>
           <div className="col-span-3"></div>
 
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.posco.default}
               coloredIcon={WorkAndPartnershipContent.posco.colored}
@@ -96,8 +82,7 @@ const Partnership = () => {
           </div>
 
           <div className="col-span-2"></div>
-          <ImgContainer currentContent = {"totalBusiness"}/>
-          <img src={logo.src} ></img>
+          <img src={"/images/logo.png"}></img>
           {/* <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
             <div>Hello</div>
           </div> */}
@@ -106,11 +91,7 @@ const Partnership = () => {
 
           <div className="col-span-5  h-8"></div>
           <div className="col-span-1"></div>
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.h2.default}
               coloredIcon={WorkAndPartnershipContent.h2.colored}
@@ -120,11 +101,7 @@ const Partnership = () => {
           </div>
           <div className="col-span-1"></div>
 
-          <div
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onClick={clickIcon}
-          >
+          <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.snu.default}
               coloredIcon={WorkAndPartnershipContent.snu.colored}
@@ -137,33 +114,18 @@ const Partnership = () => {
 
         <div className="col-span-2 grid grid-cols-10 bg-blue-50">
           <div></div>
-          <div className="col-span-9 ">
-            <div className = "bg-green-100 ">
-              <div className="text-4xl pb-4  bg-orange-200">{currentObj.kTitle}</div>
-              <div
-                ref={picRef}
-                onMouseEnter={MouseOver}
-                onMouseLeave={MouseOut}
-                className = " border-4"
-              >
-                <div>
-                  {currentObj.hasMultiple ? (
-                    <Carousel values={currentObj.img}></Carousel>
-                  ) : (
-                    <div>{currentObj.img}</div>
-                  )}
-                </div>
-               
+          <div className="col-span-9">
+            <div className="text-4xl pb-4">{currentObj.kTitle}</div>
+            <div ref={picRef} onMouseEnter={MouseOver} onMouseLeave={MouseOut}>
+              <div>{currentObj.hasMultiple ? <Carousel values={currentObj.img}></Carousel> : <div>{currentObj.img}</div>}</div>
+              <div className="text-lg">
+                <ul>
+                  {currentObj.content.map((note: string) => (
+                    <li key={note}>{note}</li>
+                  ))}
+                </ul>
               </div>
-              
             </div>
-            <div className="text-lg max-h-16 border-2">
-                  <ul>
-                    {currentObj.content.map((note: string) => (
-                      <li key={note}>{note}</li>
-                    ))}
-                  </ul>
-                </div>
           </div>
         </div>
       </div>

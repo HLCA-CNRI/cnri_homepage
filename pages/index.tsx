@@ -10,7 +10,6 @@ import HorizontalTransitionVideoInfo from "../components/LandingComponents.tsx/H
 import Box from "../components/Box";
 import { LandingContents } from "../functions/LandingContents";
 import Link from "next/link";
-import landingMain from "../images/landingMain.gif";
 
 const Home: NextPage = () => {
   const TansitionVidLToR = {
@@ -78,7 +77,7 @@ const Home: NextPage = () => {
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-xl  text-xl mx-4 w-[20%] h-16">데모신청</button>
         </div>
         <div className="flex justify-center ">
-          <img src={landingMain.src} className="w-[80%] mt-4  shadow-lg rounded-lg mb-6" />
+          <img src={"/images/landingMain.gif"} className="w-[80%] mt-4  shadow-lg rounded-lg mb-6" />
         </div>
       </div>
 
@@ -210,7 +209,7 @@ const Home: NextPage = () => {
           contentInfo={LandingContents.Report.content1}
           isTop={true}
           colorType=""
-          basisVal={"3/5"}
+          basisVal={"50%"}
         />
       </section>
     </>

@@ -4,7 +4,7 @@ import LCA from "../../components/RAndDCompoenents/LCA";
 import Partnership from "../../components/RAndDCompoenents/Partnership";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
-import rAnddIntro from "../../images/rAnddIntro.jpg"
+
 
 const TansitionVidLToR = {
   visible: { z: 30, opacity: 1, x: 0, transition:  { duration: 0.8 }  },
@@ -15,6 +15,7 @@ const TansitionVidRToL = {
   visible: { opacity: 1, x: 0, transition:  { duration: 0.8 } },
   hidden: { opacity: 0, x: 1000 },
 };
+
 
 
 const Randd = () => {
@@ -43,7 +44,7 @@ const Randd = () => {
        <div className="relative mb-20">
             <motion.div ref = {ref} className = "h-[80vh]" animate = {controlVid} initial = "hidden"  variants = {TansitionVidLToR}>
             <img
-              src={rAnddIntro.src}
+              src={"/images/rAnddIntro.jpg"}
               className="object-cover h-full w-full rounded-lg shadow-lg"
             ></img>
             </motion.div>
@@ -62,7 +63,6 @@ const Randd = () => {
         <div className="text-5xl mb-10">Our Work and Partnership</div>
         <Partnership />
       </div>
-  
     </div>
   );
 };

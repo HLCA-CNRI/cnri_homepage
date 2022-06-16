@@ -4,26 +4,39 @@ import Link from "next/link";
 const NavigationBar: React.FC = () => {
   return (
     <div className="sticky z-50  inset-x-0 top-0  bg-white  w-[100%] shadow-sm border-b-2">
-      <div className="mx-16">
         <Script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></Script>
+      <div className="mx-16">
         <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
           <div className="container flex flex-wrap justify-between items-center mx-auto">
             <Link href="/" className="flex items-center my-4">
               <a>
-                <img src={"/images/logo.png"} width={180} height={70} />
+                <img src={"/images/logo.png"} className="w-[12vw]" />
               </a>
             </Link>
 
-            <div className="flex md:order-2">
-              <button
-                type="button"
-                className="bg-blue-500 hover:bg-blue-700 text-white  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
+            <div className = "border-2 order-2 ">
+              <button  className="w-[12vw] py-2 rounded-lg text-[1.5vw]">데모신청 하기</button>
+
+            </div>
+
+            <div className = "md:visible invisible">
+              <ul className = "flex border-2 " >
+              <li className = "border-2 mx-2 w-[6vw] flex justify-center text-[1.2vw] ">PRODUCT</li>
+              <li className = "border-2 mx-2 w-[6vw] flex justify-center text-[1.2vw]">COMPANY</li>
+              <li className = "border-2 mx-2 w-[6vw] flex justify-center text-[1.2vw]">R&D</li>
+              <li className = "border-2 mx-2 w-[6vw] flex justify-center text-[1.2vw]">BLOG</li>
+              </ul>
+             
+
+            </div>
+
+            {/* <div className="flex md:order-2">
+              <button className="w-[12vw] ">
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://cis.cnrikorea.net/register"
-                  className = "h-[100%] w-[100%]"
+                  className="h-[100%] w-[100%]"
                 >
                   데모 신청하기
                 </a>
@@ -104,7 +117,7 @@ const NavigationBar: React.FC = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </nav>
       </div>
@@ -113,3 +126,4 @@ const NavigationBar: React.FC = () => {
 };
 
 export default NavigationBar;
+ 

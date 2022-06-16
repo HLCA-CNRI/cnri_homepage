@@ -69,15 +69,15 @@ const Home: NextPage = () => {
 
       <div className="mx-16">
         <div className="pt-10">
-          <div className="flex justify-center font-bold text-6xl">
+          <div className="flex justify-center font-bold   md:bg-slate-500 text-[4vw]">
             넷제로 달성을 위해 필요한
           </div>
-          <div className="flex justify-center pt-2 font-bold text-6xl">
+          <div className="flex justify-center pt-2 font-bold  text-[4vw]">
             Actionable Plan의 모든 것
           </div>
         </div>
-        <div className="flex justify-center mt-10 mb-6  ">
-          <button className="bg-white hover:bg-blue-700 hover:text-white font-bold  px-4 rounded-xl text-xl mx-4 w-[20%] h-16 border-blue-500 border-2 ">
+        <div className="flex justify-center mt-4 mb-3 md:mt-10 md:mb-6  ">
+          <button className="bg-white hover:bg-blue-500 hover:text-white font-bold p-2 text-[2vw] mr-4 w-[17vw] h-2/3 md:h-full rounded-lg  border-solid border-blue-500 border-2  ">
           <a
               target="_blank"
               rel="noopener noreferrer"
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
               체험하기
             </a>
           </button>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-xl  text-xl mx-4 w-[20%] h-16">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 text-[2vw] ml-4 w-[17vw] h-2/3 md:h-full rounded-lg  border-solid border-blue-500 border-2  ">
             <a
               target="_blank"
               rel="noopener noreferrer"

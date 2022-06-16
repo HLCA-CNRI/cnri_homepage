@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import classNames from "classnames";
 
 //Grid 형태로 놓고 싶어서 따로 Horizontal TransitionVideoInfo를 만듬
@@ -117,4 +117,4 @@ const HorizontalTransitionVideoInfo = ({
   );
 };
 
-export default HorizontalTransitionVideoInfo;
+export default memo(HorizontalTransitionVideoInfo);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { memo, useState } from "react";
 
 interface CarouselType {
   currentObj: any;
@@ -23,20 +23,18 @@ const Carousel = ({ currentObj }: CarouselType) => {
   };
   return (
     <>
-      <div className="text-4xl pb-4 h-20 flex justify-start ml-12">
-        {currentObj.kTitle[current]}
-      </div>
+      <div className="text-4xl pb-4 h-20 flex justify-start ml-12">{currentObj.kTitle[current]}</div>
       <div className="h-[80%] w-[90%] flex justify-center self-center xl:h-[60%]">
         <div className="w-[100%] border-2 flex justify-between">
           <button className="w-[20%]" onClick={clickPrev}>
             <div className="w-[100%] flex justify-center">
-              <img   className = "w-8" src="./images/buttonImg/leftBtn.png"></img>
+              <img className="w-8" src="./images/buttonImg/leftBtn.png"></img>
             </div>
           </button>
           <div className="border-2">{currentObj.img[current]}</div>
           <button className="w-[20%] " onClick={clickNext}>
             <div className="w-[100%] flex justify-center">
-              <img className = "w-8" src="./images/buttonImg/rightBtn.png"></img>
+              <img className="w-8" src="./images/buttonImg/rightBtn.png"></img>
             </div>
           </button>
         </div>
@@ -52,4 +50,4 @@ const Carousel = ({ currentObj }: CarouselType) => {
   );
 };
 
-export default Carousel;
+export default memo(Carousel);

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import styled from "styled-components";
 import { Button } from "flowbite-react";
 import HistoryContent from "../../functions/HistoryContents";
@@ -74,4 +74,4 @@ const History = ({ year }: HistoryType) => {
   );
 };
 
-export default History;
+export default memo(History);

@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 
 interface VerticalTansitionVideoInfoType {
   imagePosition: string;
@@ -72,4 +72,4 @@ const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFro
   );
 };
 
-export default VerticalTansitionVideoInfo;
+export default memo(VerticalTansitionVideoInfo);

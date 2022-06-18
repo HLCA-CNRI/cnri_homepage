@@ -62,18 +62,18 @@ const Home: NextPage = () => {
         <link rel="icon" href="/images/logo.png" />
       </Head>
 
-      <div className="mx-16">
-        <div className="pt-10">
-          <div className="flex justify-center font-bold text-6xl">넷제로 달성을 위해 필요한</div>
-          <div className="flex justify-center pt-2 font-bold text-6xl">Actionable Plan의 모든 것</div>
+      <div className="">
+        <div className="pt-[5vh]">
+          <div className="flex justify-center font-bold text-[5vw]">넷제로 달성을 위해 필요한</div>
+          <div className="flex justify-center font-bold text-[5vw] ">Actionable Plan의 모든 것</div>
         </div>
-        <div className="flex justify-center mt-10 mb-6  ">
-          <button className="bg-white hover:bg-blue-700 hover:text-white font-bold  px-4 rounded-xl text-xl mx-4 w-[20%] h-16 border-blue-500 border-2 ">
-            <a target="_blank" rel="noopener noreferrer" href="https://lc.cnrikorea.net/" className="h-[100%] w-[100%]">
+        <div className="flex justify-center mt-[3.2vh] mb-[3.2vh]  ">
+          <button className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[1.5vw] rounded-lg px-[7vw] py-[2vh] md:py-[2vh] mx-[1.5vw] font-bold">
+            <a target="_blank" rel="noopener noreferrer" href="https://lc.cnrikorea.net/" >
               체험하기
             </a>
           </button>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-xl  text-xl mx-4 w-[20%] h-16">
+          <button className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[1.5vw] rounded-lg px-[7vw] py-[2vh] md:py-[2vh] mx-[1.5vw] font-bold">
             <a target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.net/register" className="h-[100%] w-[100%]">
               데모신청
             </a>
@@ -84,7 +84,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <section className="sticky inset-x-0 top-[72px] left-0 flex justify-center  w-[100%] bg-white z-50 opacity-90 border-2">
+      <section className="sticky inset-x-0 top-[72px] left-0 flex justify-center  w-[100%] bg-white z-50 opacity-90 border-2 text-[1.2vw]">
         <Link href="#measure">
           <a className="p-4 px-12 cursor-pointer">측정</a>
         </Link>
@@ -103,9 +103,9 @@ const Home: NextPage = () => {
       </section>
       {/* Measure Section */}
       <section id="measure" className=" mx-16 pt-10 scroll-mt-28 snap-start">
-        <div className="text-5xl font-semibold mb-2">{LandingContents.Measure.title}</div>
+        <div className="text-5xl font-semibold mb-2 md:bg-slate-300 ">{LandingContents.Measure.title}</div>
         <div className="text-2xl mb-7">{LandingContents.Measure.subtitle}</div>
-        <div className="grid grid-cols-2 gap-10 my-4 ">
+        <div className=" hidden md:grid grid-cols-2 gap-10 my-4">
           <div className="col-span-1">
             <VerticalTansitionVideoInfo
               imagePosition="top"
@@ -145,7 +145,7 @@ const Home: NextPage = () => {
       <section id="reduce" className="  mx-16 pt-10 scroll-mt-28 snap-start">
         <div className="text-5xl font-semibold mb-2">{LandingContents.Reduce.title}</div>
         <div className="text-2xl mb-7">{LandingContents.Reduce.subtitle}</div>
-        <div className="grid grid-cols-2 gap-10 my-4">
+        <div className=" hidden md:grid grid-cols-2 gap-10 my-4">
           <div className="h-full">
             <div className="h-[50%]">
               <HorizontalTransitionVideoInfo
@@ -183,7 +183,7 @@ const Home: NextPage = () => {
       <section id="remove" className="  mx-16 pt-10 scroll-mt-28 snap-start">
         <div className="text-5xl font-semibold mb-2">{LandingContents.Remove.title}</div>
         <div className="text-2xl mb-7">{LandingContents.Remove.subtitle}</div>
-        <div className="grid grid-cols-2 gap-10">
+        <div className=" hidden md:grid grid-cols-2 gap-10 my-4">
           <VerticalTansitionVideoInfo
             imagePosition="left"
             moveVidFrom={TansitionVidLToR}
@@ -205,6 +205,7 @@ const Home: NextPage = () => {
       <section id="report" className="  mx-16 pt-10 scroll-mt-28 snap-start">
         <div className="text-5xl font-semibold mb-2">{LandingContents.Report.title}</div>
         <div className="text-2xl mb-7">{LandingContents.Report.subtitle}</div>
+        <div className = "hidden  md:grid">
         <HorizontalTransitionVideoInfo
           imagePosition="left"
           moveVidFrom={TansitionVidLToR}
@@ -214,7 +215,10 @@ const Home: NextPage = () => {
           colorType=""
           basisVal={"50%"}
         />
+        </div>
+         
       </section>
+
     </>
   );
 };

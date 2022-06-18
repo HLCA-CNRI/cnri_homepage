@@ -38,25 +38,25 @@ const History = ({ year }: HistoryType) => {
         <img src={"/images/historyimg1.png"} className="object-cover w-full h-full" />
       )}
 
-      <div className={`${isActive ? "absolute top-0 left-0 px-6 py-4  w-[100%] h-[100%] bg-slate-600 opacity-60" : ""}`} />
+      <div className={`${isActive ? "absolute top-0 left-0  w-[100%] h-[100%] bg-slate-600 opacity-60" : ""}`} />
 
-      <div className={`absolute top-0 left-0 px-6 py-4  w-[100%]`}>
-        <h4 className="text-7xl font-extrabold tracking-tight text-white flex w-[100%] justify-center mt-5">{year}</h4>
+      <div className={`absolute top-0 left-0 px-[2vw] w-[100%]`}>
+        <h4 className="text-[10vw] md:text-[6vw] font-extrabold tracking-tight text-white flex w-[100%] justify-center mt-[2vh]">{year}</h4>
 
         {isActive ? (
-          <button onClick={clickButton} className="mb-3 text-5xl font-semibold tracking-tight text-white flex w-[100%] justify-center  mt-3">
+          <button onClick={clickButton} className="mb-[1vh] text-[3vw] font-semibold tracking-tight text-white flex w-[100%] justify-center ">
             ×
           </button>
         ) : (
-          <button onClick={clickButton} className="mb-3 text-5xl font-semibold tracking-tight text-white flex w-[100%] justify-center  mt-3">
+          <button onClick={clickButton} className="mb-[1vh] text-[4vw] font-semibold tracking-tight text-white flex w-[100%] justify-center  ">
             +
           </button>
         )}
 
         {isActive ? (
-          <div className="text-white text-xl mx-16 mt-10">
+          <div className="text-white  mx-[6vw] ">
             {HistoryContent[year].map((note: any) => (
-              <div key={note.month} className="flex my-8 text-sm md:text-xl">
+              <div key={note.month} className="flex my-[2vh] text-[2vw] md:text-[1vw]">
                 <div key={note.month} className="mr-4 font-semibold">
                   {note.month}
                 </div>

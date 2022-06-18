@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="w-[100%] h-[40vh] ">
-      <hr className="mx-16" />
+    <div className="w-[100%] h-[40vh] border-2 ">
+      {/* <hr className="mx-16" />
       <div className="grid grid-cols-4 content-center h-[100%] ml-16">
         <div>
           <img src={"/images/logo.png"} width={180} height={70} />
@@ -42,7 +42,7 @@ const Footer = () => {
 
 
         
-      </div>
+      </div> */}
     </div>
   );
 };

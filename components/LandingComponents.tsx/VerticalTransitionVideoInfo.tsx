@@ -44,8 +44,8 @@ const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFro
   return (
     <motion.div ref={ref} animate={controlVid} initial="vidHidden" variants={moveVidFrom} className="flex flex-col h-full drop-shadow-lg">
       <div>
-        <div className={`text-3xl font-bold  w-[100%] ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} pt-6 px-6  `}>{contentInfo.title}</div>
-        <div className={` ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} p-6 z-30  `}>
+        <div className={`text-[1.8vw] font-bold  w-[100%] ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} pt-[5vh] px-[2vw]  `}>{contentInfo.title}</div>
+        <div className={` ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} px-[2vw] pt-[2vh] pb-[3vh] z-30  `}>
           <video
             src={contentInfo.videoPath}
             loop
@@ -66,7 +66,7 @@ const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFro
           await controlText.start("close");
           await controlText.start("close2");
         }}>
-        <div className="p-6 z-0 text-sm">{contentInfo.content}</div>
+        <div className="p-[2vw] z-0 text-[1vw]">{contentInfo.content}</div>
       </motion.div>
     </motion.div>
   );

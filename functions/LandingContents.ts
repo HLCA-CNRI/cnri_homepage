@@ -81,7 +81,7 @@ export const LandingContents = {
       title: "원클릭 보고서",
       content:
         "측정, 주간 보고서를 통해 저장되어 있는 데이터를 활용해서 한 번의 클릭으로 검증된, 외부로 배포가 가능한 수준의 보고서가 발행됩니다. 보고서는 글로벌 프레임워크 GRI, SASB, TCFD 등 뿐만 아니라 K-ESG와 같은 국내 고유 프레임워크까지 반영하고 있습니다. 유럽 대응을 위한 TUV, 국내 대응을 위한 한국경영인증원 등과 협업하여 보고서에 대한 제3자 검증을 목표로 하고 있습니다.",
-      videoPath: "./video/remove2.mp4",
+      videoPath: "./images/report1.png",
       isVideo: false,
     },
   },

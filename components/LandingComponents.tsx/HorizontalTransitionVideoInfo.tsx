@@ -73,7 +73,7 @@ const HorizontalTransitionVideoInfo = ({
       animate={controlVid}
       initial="vidHidden"
       variants={moveVidFrom}
-      className={`h-[100%] flex flex-row drop-shadow-lg ${isTop ? "pb-4" : "pt-4"}`}>
+      className={`h-[100%] flex flex-row drop-shadow-lg ${isTop ? "pb-[3vh]" : "pt-[3vh]"}`}>
       {" "}
       <motion.div
         animate={controlText}
@@ -85,11 +85,11 @@ const HorizontalTransitionVideoInfo = ({
           await controlText.start("close");
           await controlText.start("close2");
         }}
-        className={`${colorType == "green" ? "bg-[#EEF7E9]" : "bg-[#FFF7E1]"} p-6 ${imagePosition === "right" ? "order-first" : "order-last"} -z-50`}>
-        <p className={classNames("flex items-center justify-center h-[100%] text-sm")}>{contentInfo.content}</p>
+        className={`${colorType == "green" ? "bg-[#EEF7E9]" : "bg-[#FFF7E1]"} p-[2vw]  ${imagePosition === "right" ? "order-first" : "order-last"} -z-50`}>
+        <p className={classNames("flex items-center justify-center h-[100%] text-[1vw] py-[3vh]")}>{contentInfo.content}</p>
       </motion.div>
-      <div className={`${colorType == "green" ? "bg-[#EEF7E9]" : "bg-[#FFF7E1]"} p-6 h-[100%] flex flex-col justify-center`}>
-        <div className={`text-3xl font-bold m-2 w-[100%] flex ${imagePosition == "right" ? "justify-end" : ""}`}>
+      <div className={`${colorType == "green" ? "bg-[#EEF7E9]" : "bg-[#FFF7E1]"} p-[2vw] h-[100%] flex flex-col justify-center`}>
+        <div className={`text-[1.8vw] font-bold  w-[100%] flex ${imagePosition == "right" ? "justify-end" : ""}`}>
           {/* <div className = "w-[50%]"> */}
           {contentInfo.title}
           {/* </div> */}
@@ -101,13 +101,13 @@ const HorizontalTransitionVideoInfo = ({
             loop
             onMouseEnter={handleVideoMouseEnter}
             onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-4 "
+            className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-[2vh] "
           />
         ) : (
           <img
             src={"/images/report1.png"}
             alt={"report1"}
-            className="transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 mt-4"
+            className="transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 mt-[2vh]"
             onMouseEnter={handleImgMouseEnter}
             onMouseLeave={handleImgMouseLeave}
           />

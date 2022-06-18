@@ -6,6 +6,8 @@ import { LandingContents } from "../functions/LandingContents";
 import Link from "next/link";
 import { memo } from "react";
 
+import LandingMobile from "@/components/mobileComponents/LandingMobile";
+
 const Home: NextPage = () => {
   const TansitionVidLToR = {
     vidVisible: { z: 30, opacity: 1, x: 0, transition: { duration: 0.6 } },
@@ -64,48 +66,53 @@ const Home: NextPage = () => {
 
       <div className="">
         <div className="pt-[5vh]">
-          <div className="flex justify-center font-bold text-[5vw]">넷제로 달성을 위해 필요한</div>
-          <div className="flex justify-center font-bold text-[5vw] ">Actionable Plan의 모든 것</div>
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">넷제로 달성을 위해 필요한</div>
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">Actionable Plan의 모든 것</div>
         </div>
         <div className="flex justify-center mt-[3.2vh] mb-[3.2vh]  ">
-          <button className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[1.5vw] rounded-lg px-[7vw] py-[2vh] md:py-[2vh] mx-[1.5vw] font-bold">
+          <button className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold">
             <a target="_blank" rel="noopener noreferrer" href="https://lc.cnrikorea.net/" >
               체험하기
             </a>
           </button>
-          <button className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[1.5vw] rounded-lg px-[7vw] py-[2vh] md:py-[2vh] mx-[1.5vw] font-bold">
+          <button className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold">
             <a target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.net/register" className="h-[100%] w-[100%]">
               데모신청
             </a>
           </button>
         </div>
         <div className="flex justify-center ">
-          <img src={"/images/landingMain.gif"} className="w-[80%] mt-4  shadow-lg rounded-lg mb-6" />
+          <img src={"/images/landingMain.gif"} className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" />
         </div>
       </div>
 
-      <section className="sticky inset-x-0 top-[72px] left-0 flex justify-center  w-[100%] bg-white z-50 opacity-90 border-2 text-[1.2vw]">
+      <section className="sticky inset-x-0 top-[72px] left-0 flex justify-center  w-[100%] bg-white z-50 opacity-90 border-2 text-[2.5vw] md:text-[1vw]">
         <Link href="#measure">
-          <a className="p-4 px-12 cursor-pointer">측정</a>
+          <a className="py-[3vh] px-[3vw]  cursor-pointer">측정</a>
         </Link>
 
         <Link href="#reduce">
-          <a className="p-4 px-12 cursor-pointer">감축</a>
+          <a className="py-[3vh] px-[3vw]  cursor-pointer">감축</a>
         </Link>
 
         <Link href="#remove">
-          <a className="p-4 px-12 cursor-pointer">오프셋</a>
+          <a className="py-[3vh] px-[3vw]  cursor-pointer">오프셋</a>
         </Link>
 
         <Link href="#report">
-          <a className="p-4 px-12 cursor-pointer">보고서</a>
+          <a className="py-[3vh] px-[3vw]  cursor-pointer">보고서</a>
         </Link>
+
       </section>
+
+     
+
       {/* Measure Section */}
-      <section id="measure" className=" mx-16 pt-10 scroll-mt-28 snap-start">
-        <div className="text-5xl font-semibold mb-2 md:bg-slate-300 ">{LandingContents.Measure.title}</div>
-        <div className="text-2xl mb-7">{LandingContents.Measure.subtitle}</div>
-        <div className=" hidden md:grid grid-cols-2 gap-10 my-4">
+      <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold md:mb-[1vh]">{LandingContents.Measure.title}</div>
+        <div className="text-[4.5vw] sm:text-[2.5vw] mb-[2vh] md:mb-[3vh]">{LandingContents.Measure.subtitle}</div>
+        {/* When display is greater than md */}
+        <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <div className="col-span-1">
             <VerticalTansitionVideoInfo
               imagePosition="top"
@@ -140,12 +147,14 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        <LandingMobile moveContextFrom={TransitionContextRToL} contentInfo={[LandingContents.Measure.content1,LandingContents.Measure.content2,LandingContents.Measure.content3,LandingContents.Measure.content4]} isImg = {false}/>
       </section>
       {/* Reduce Section */}
-      <section id="reduce" className="  mx-16 pt-10 scroll-mt-28 snap-start">
-        <div className="text-5xl font-semibold mb-2">{LandingContents.Reduce.title}</div>
-        <div className="text-2xl mb-7">{LandingContents.Reduce.subtitle}</div>
-        <div className=" hidden md:grid grid-cols-2 gap-10 my-4">
+      <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold md:mb-[1vh] ">{LandingContents.Reduce.title}</div>
+        <div className="text-[4.5vw] sm:text-[2.5vw]  mb-[2vh] md:mb-[3vh]">{LandingContents.Reduce.subtitle}</div>
+          {/* When display is greater than md */}
+        <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <div className="h-full">
             <div className="h-[50%]">
               <HorizontalTransitionVideoInfo
@@ -178,12 +187,15 @@ const Home: NextPage = () => {
             colorType={"blue"}
           />
         </div>
+        <LandingMobile moveContextFrom={TransitionContextRToL} contentInfo={[LandingContents.Reduce.content1,LandingContents.Reduce.content2,LandingContents.Reduce.content3]} isImg = {false}/>
+
       </section>
       {/* Remove Section */}
-      <section id="remove" className="  mx-16 pt-10 scroll-mt-28 snap-start">
-        <div className="text-5xl font-semibold mb-2">{LandingContents.Remove.title}</div>
-        <div className="text-2xl mb-7">{LandingContents.Remove.subtitle}</div>
-        <div className=" hidden md:grid grid-cols-2 gap-10 my-4">
+      <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold md:mb-[1vh] ">{LandingContents.Remove.title}</div>
+        <div className="text-[4.5vw] sm:text-[2.5vw] mb-[2vh] md:mb-[3vh]">{LandingContents.Remove.subtitle}</div>
+          {/* When display is greater than md */}
+        <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <VerticalTansitionVideoInfo
             imagePosition="left"
             moveVidFrom={TansitionVidLToR}
@@ -200,11 +212,16 @@ const Home: NextPage = () => {
             colorType={""}
           />
         </div>
+
+        <LandingMobile moveContextFrom={TransitionContextRToL} contentInfo={[LandingContents.Remove.content1,LandingContents.Remove.content2]} isImg = {false}/>
+
+
       </section>
       {/* Report Section */}
-      <section id="report" className="  mx-16 pt-10 scroll-mt-28 snap-start">
-        <div className="text-5xl font-semibold mb-2">{LandingContents.Report.title}</div>
-        <div className="text-2xl mb-7">{LandingContents.Report.subtitle}</div>
+      <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold md:mb-[1vh]">{LandingContents.Report.title}</div>
+        <div className="text-[4.5vw] sm:text-[2.5vw] mb-[2vh] md:mb-[3vh]">{LandingContents.Report.subtitle}</div>
+          {/* When display is greater than md */}
         <div className = "hidden  md:grid">
         <HorizontalTransitionVideoInfo
           imagePosition="left"
@@ -216,8 +233,13 @@ const Home: NextPage = () => {
           basisVal={"50%"}
         />
         </div>
-         
+        <LandingMobile moveContextFrom={TransitionContextRToL} contentInfo={[LandingContents.Report.content1]} isImg = {true}/>
       </section>
+
+
+      
+    
+
 
     </>
   );

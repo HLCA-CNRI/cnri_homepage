@@ -67,6 +67,7 @@ const Partnership = () => {
               coloredIcon={WorkAndPartnershipContent.posco.colored}
               isCurrent={currentObj.title == "posco" ? true : false}
               hasMultiple={true}
+
             />
           </div>
         </div>
@@ -79,6 +80,7 @@ const Partnership = () => {
               coloredIcon={WorkAndPartnershipContent.h2.colored}
               isCurrent={currentObj.title == "h2" ? true : false}
               hasMultiple={false}
+
             />
           </div>
         </div>
@@ -102,6 +104,7 @@ const Partnership = () => {
               coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
               isCurrent={currentObj.title == "totalBusiness" ? true : false}
               hasMultiple={false}
+
             />
           </div>
         </div>
@@ -115,6 +118,7 @@ const Partnership = () => {
               coloredIcon={WorkAndPartnershipContent.snu.colored}
               isCurrent={currentObj.title == "snu" ? true : false}
               hasMultiple={false}
+
             />
           </div>
         </div>

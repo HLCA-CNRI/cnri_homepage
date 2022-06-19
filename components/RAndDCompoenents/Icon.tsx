@@ -6,6 +6,7 @@ interface IconType {
   coloredIcon: any;
   isCurrent: boolean;
   hasMultiple: boolean;
+
 }
 
 const Icon = ({ defaultIcon, coloredIcon, isCurrent, hasMultiple }: IconType) => {
@@ -17,7 +18,7 @@ const Icon = ({ defaultIcon, coloredIcon, isCurrent, hasMultiple }: IconType) =>
     setIsColored(false);
   };
   return (
-    <div onMouseOver={changeToColored} onMouseLeave={changeToDefault}>
+    <div  onMouseOver={changeToColored} onMouseLeave={changeToDefault}>
       <Transition
         show={isCurrent}
         className={isCurrent ? "" : "hidden"}

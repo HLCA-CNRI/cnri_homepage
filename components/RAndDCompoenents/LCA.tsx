@@ -37,6 +37,7 @@ const LCA = () => {
   const MouseOver = (e: any) => {
     setUserInteracted(true);
     const val = e.target.id;
+
     if (LCAContents[val] != undefined) {
       setCurrentObj(LCAContents[val]);
     }
@@ -117,12 +118,13 @@ const LCA = () => {
           <div className="col-span-2"></div>
           <div id="test" onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
             <div className="absolute  w-[100%] bottom-[-50%]">
-              <div className=" flex w-[100%] justify-center">원료 채굴</div>
+              <div className= {`flex w-[100%] justify-center ${currentObj.title == "resources" ? "" :"text-stone-400"} `}>원료 채굴</div>
               <Icon
                 defaultIcon={LCAContents.resources.default}
                 coloredIcon={LCAContents.resources.colored}
                 isCurrent={currentObj.title == "resources" ? true : false}
                 hasMultiple={false}
+
               />
             </div>
           </div>
@@ -130,7 +132,7 @@ const LCA = () => {
 
           <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
             <div className="absolute w-[100%] bottom-[-20%]">
-              <div className="flex w-[100%] justify-center">폐기</div>
+              <div className= {`flex w-[100%] justify-center ${currentObj.title == "endOfLife" ? "" :"text-stone-400"} `}>폐기</div>
               <Icon
                 defaultIcon={LCAContents.endOfLife.default}
                 coloredIcon={LCAContents.endOfLife.colored}
@@ -144,7 +146,7 @@ const LCA = () => {
 
           <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
             <div className="absolute w-[100%] bottom-[-20%]">
-              <div className="flex w-[100%] justify-center">원료 가공</div>
+              <div  className= {`flex w-[100%] justify-center ${currentObj.title == "processing" ? "" :"text-stone-400"} `}>원료 가공</div>
               <Icon
                 defaultIcon={LCAContents.processing.default}
                 coloredIcon={LCAContents.processing.colored}
@@ -175,7 +177,7 @@ const LCA = () => {
                 isCurrent={currentObj.title == "use" ? true : false}
                 hasMultiple={false}
               />
-              <div className="flex w-[100%] justify-center">제품 사용</div>
+              <div  className= {`flex w-[100%] justify-center ${currentObj.title == "use" ? "" :"text-stone-400"} `}>제품 사용</div>
             </div>
           </div>
 
@@ -189,7 +191,7 @@ const LCA = () => {
                 isCurrent={currentObj.title == "manufacturing" ? true : false}
                 hasMultiple={false}
               />
-              <div className="flex w-[100%] justify-center">제품 제조</div>{" "}
+              <div  className= {`flex w-[100%] justify-center ${currentObj.title == "manufacturing" ? "" :"text-stone-400"} `}>제품 제조</div>{" "}
             </div>
           </div>
 
@@ -203,7 +205,7 @@ const LCA = () => {
                 isCurrent={currentObj.title == "distribution" ? true : false}
                 hasMultiple={false}
               />
-              <div className="flex w-[100%] justify-center">분배</div>{" "}
+              <div  className= {`flex w-[100%] justify-center ${currentObj.title == "distribution" ? "" :"text-stone-400"} `}>분배</div>{" "}
             </div>
           </div>
 

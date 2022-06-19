@@ -8,7 +8,7 @@ import PartnershipMobile from "../../components/mobileComponents/PartnershipMobi
 import LCAMobile from "../../components/mobileComponents/LCAMobile"
 
 const TansitionVidLToR = {
-  visible: { z: 30, opacity: 1, x: 0, transition: { duration: 0.8 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
   hidden: { opacity: 0, x: -1000 },
 };
 
@@ -67,7 +67,7 @@ const Randd = () => {
           </motion.div>
         </div>
         <div className="w-[100%] ">
-          <div className="text-[8vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh] md:bg-slate-200 md:bg-slate-200">
+          <div className="text-[8vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
             What is LCA?
           </div>
           <div className="hidden sm:flex">
@@ -79,7 +79,7 @@ const Randd = () => {
 
           <div className="grid grid-cols-2"></div>
         </div>
-        <div className="w-[100%] mt-[12vh]">
+        <div className="w-[100%] mt-[6vh] sm:mt-[12vh]">
           <div className="text-[8vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
             Our Work and Partnership
           </div>

@@ -23,8 +23,8 @@ const Carousel = ({ currentObj }: CarouselType) => {
   };
   return (
     <>
-      <div className="text-4xl pb-4 h-20 flex justify-start ml-12">{currentObj.kTitle[current]}</div>
-      <div className="h-[80%] w-[90%] flex justify-center self-center xl:h-[60%]">
+      <div className=" hidden sm:flex text-[5.5vw]  font-semibold sm:text-4xl sm:pb-4 sm:h-20  justify-start sm:ml-12">{currentObj.kTitle[current]}</div>
+      <div className="sm:h-[80%] sm:w-[90%] flex justify-center self-center xl:h-[60%]">
         <div className="w-[100%] border-2 flex justify-between">
           <button className="w-[20%]" onClick={clickPrev}>
             <div className="w-[100%] flex justify-center">
@@ -39,7 +39,8 @@ const Carousel = ({ currentObj }: CarouselType) => {
           </button>
         </div>
       </div>
-      <div className="text-lg  pt-4 px-8">
+      <div className="  sm:hidden text-[5.5vw]  font-semibold sm:text-4xl sm:pb-4 sm:h-20  justify-start pb-[1vh] pt-[2vh]">{currentObj.kTitle[current]}</div>
+      <div className="text-lg  sm:px-8">
         <ul>
           {currentObj.content[current].map((note: string) => (
             <li key={note}>{note}</li>

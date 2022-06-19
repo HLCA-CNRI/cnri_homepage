@@ -108,7 +108,7 @@ const HorizontalTransitionVideoInfo = ({
           <img
             src={"/images/report1.png"}
             alt={"report1"}
-            className="transition-[width] delay-150 object-cover rounded-lg shadow-xl z-40 mt-[2vh]"
+            className="transition-[width] delay-150 object-cover rounded-lg shadow-xl  mt-[2vh]"
             onMouseEnter={handleImgMouseEnter}
             onMouseLeave={handleImgMouseLeave}
           />

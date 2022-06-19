@@ -69,7 +69,7 @@ const Company: React.FC = () => {
             >
               <img
                 src={"/images/companyIntro.jpg"}
-                className="object-cover h-full w-full rounded-lg shadow-lg"
+                className="object-cover h-full w-full rounded-lg shadow-lg z-0"
               ></img>
             </motion.div>
             <motion.div

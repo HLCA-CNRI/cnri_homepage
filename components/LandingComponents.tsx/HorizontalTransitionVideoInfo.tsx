@@ -98,6 +98,7 @@ const HorizontalTransitionVideoInfo = ({
           <video
             src={contentInfo.videoPath}
             // autoPlay
+            muted
             loop
             onMouseEnter={handleVideoMouseEnter}
             onMouseLeave={handleVideoMouseLeave}

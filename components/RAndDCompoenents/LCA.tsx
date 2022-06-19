@@ -83,7 +83,7 @@ const LCA = () => {
   };
 
   return (
-    <div className="w-[100%] ">
+    <div className="w-[100%]">
       <div className="grid grid-cols-5">
         <div className="col-span-3">
           <div className="grid grid-cols-10 mr-12">

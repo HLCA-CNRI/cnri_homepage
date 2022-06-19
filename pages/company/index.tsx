@@ -5,7 +5,7 @@ import Member from "../../components/CompanyComponents/Member";
 import History from "../../components/CompanyComponents/History";
 import { philosophy } from "../../functions/philosophy";
 import { useInView } from "react-intersection-observer";
-import PhilosophyMobile from "../../components/mobileComponents/PhilosophyMobile"
+import PhilosophyMobile from "../../components/mobileComponents/PhilosophyMobile";
 import Head from "next/head";
 
 const TansitionVidLToR = {
@@ -29,20 +29,18 @@ const Company: React.FC = () => {
   const mobilePhil = useRef<null | HTMLDivElement>(null);
   const pracRef = useRef<null | HTMLDivElement>(null);
 
-
   useEffect(() => {
     if (carousel && carousel.current) {
-      console.log(carousel.current.scrollWidth)
+      console.log(carousel.current.scrollWidth);
       setMemWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     }
     if (mobilePhil && mobilePhil.current) {
-      console.log(mobilePhil.current.scrollWidth)
-      setPhilMobWidth(mobilePhil.current.scrollWidth - mobilePhil.current.offsetWidth);
+      console.log(mobilePhil.current.scrollWidth);
+      setPhilMobWidth(
+        mobilePhil.current.scrollWidth - mobilePhil.current.offsetWidth
+      );
     }
-
-
   }, []);
-
 
   useEffect(() => {
     if (inView) {
@@ -61,48 +59,93 @@ const Company: React.FC = () => {
       </Head>
       <div className="mx-[6vw] ">
         <div className="my-[3vh] mb-[5vh] md:mb-[10vh]">
-          <div className="mb-[5vh] md:mb-[10vh]">
-            <div className="relative">
-              <motion.div ref={ref} className="h-[60vh] sm:h-[80vh]" animate={controlVid} initial="hidden" variants={TansitionVidLToR}>
-                <img src={"/images/companyIntro.jpg"} className="object-cover h-full w-full rounded-lg shadow-lg"></img>
-              </motion.div>
-              <motion.div
-                ref={ref}
-                animate={controlText}
-                initial="hidden"
-                variants={TansitionVidRToL}
-                className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white">
-                <div>COMPANY</div>
-              </motion.div>
-            </div>
+          <div className="relative">
+            <motion.div
+              ref={ref}
+              className="h-[60vh] sm:h-[80vh]"
+              animate={controlVid}
+              initial="hidden"
+              variants={TansitionVidLToR}
+            >
+              <img
+                src={"/images/companyIntro.jpg"}
+                className="object-cover h-full w-full rounded-lg shadow-lg"
+              ></img>
+            </motion.div>
+            <motion.div
+              ref={ref}
+              animate={controlText}
+              initial="hidden"
+              // variants={TansitionVidRToL}
+              className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white"
+            >
+              <div>COMPANY</div>
+            </motion.div>
 
             {/* <SlideShow /> */}
           </div>
-          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh] md:bg-slate-200 sm:bg-red-400">Philosophy</div>
+          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh] md:bg-slate-200 sm:bg-red-400">
+            Philosophy
+          </div>
           {/* When display size is greater than md  */}
           <div className=" hidden md:flex ">
-            <VideoOnHover videoPath="./video/philosophy1.mp4" isMiddle={false} type={philosophy.mission} />
-            <VideoOnHover videoPath="./video/philosophy2.mp4" isMiddle={true} type={philosophy.vision} />
-            <VideoOnHover videoPath="./video/philosophy3.mp4" isMiddle={false} type={philosophy.coreValues} />
+            <VideoOnHover
+              videoPath="./video/philosophy1.mp4"
+              isMiddle={false}
+              type={philosophy.mission}
+            />
+            <VideoOnHover
+              videoPath="./video/philosophy2.mp4"
+              isMiddle={true}
+              type={philosophy.vision}
+            />
+            <VideoOnHover
+              videoPath="./video/philosophy3.mp4"
+              isMiddle={false}
+              type={philosophy.coreValues}
+            />
           </div>
           {/* When display size is smaller than md  */}
           <div className=" md:hidden ">
-          <motion.div ref={mobilePhil} className="cursor-grab  overflow-x-auto no-scrollbar pl-18  bg-white">
-            <motion.div drag="x" dragConstraints={{ right: 0, left: -PhilMobWidth }} className="flex">
-            <PhilosophyMobile videoPath="./video/philosophy1.mp4"  type={philosophy.mission} />
-            <PhilosophyMobile videoPath="./video/philosophy2.mp4" type={philosophy.vision} />
-            <PhilosophyMobile videoPath="./video/philosophy3.mp4"  type={philosophy.coreValues} />
-
-
+            <motion.div
+              ref={mobilePhil}
+              className="cursor-grab  overflow-x-auto no-scrollbar pl-18  bg-white"
+            >
+              <motion.div
+                drag="x"
+                dragConstraints={{ right: 0, left: -PhilMobWidth }}
+                className="flex"
+              >
+                <PhilosophyMobile
+                  videoPath="./video/philosophy1.mp4"
+                  type={philosophy.mission}
+                />
+                <PhilosophyMobile
+                  videoPath="./video/philosophy2.mp4"
+                  type={philosophy.vision}
+                />
+                <PhilosophyMobile
+                  videoPath="./video/philosophy3.mp4"
+                  type={philosophy.coreValues}
+                />
+              </motion.div>
             </motion.div>
-          </motion.div>
           </div>
         </div>
         <div className="mb-[5vh] md:mb-[10vh]">
-          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">Members</div>
+          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
+            Members
+          </div>
           {/* <div className="flex overflow-x-auto space-x-7 w-[100%] border-4 py-4 no-scrollbar"> */}
-          <motion.div ref={carousel} className="cursor-grab  overflow-x-auto no-scrollbar pl-18  bg-white">
-            <motion.div drag="x" dragConstraints={{ right: 0, left: -MemWidth }} className="flex">
+          <motion.div
+            ref={carousel}
+            className="cursor-grab  overflow-x-auto no-scrollbar pl-18  bg-white"
+          >
+            <motion.div
+              drag="x"
+              dragConstraints={{ right: 0, left: -MemWidth }}
+              className="flex"
+            >
               <Member name="min" />
               <Member name="jonghoh" />
               <Member name="prof" />
@@ -116,7 +159,9 @@ const Company: React.FC = () => {
         </div>
 
         <div className="my-4">
-          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">History</div>
+          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
+            History
+          </div>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10">
             <History year={2022} />
             <History year={2021} />
@@ -133,7 +178,6 @@ const Company: React.FC = () => {
         <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
 
         </div> */}
-
       </div>
     </>
   );

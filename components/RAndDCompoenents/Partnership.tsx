@@ -44,7 +44,7 @@ const Partnership = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 w-[100%] h-[75vh] py-4">
+    <div className="grid grid-cols-3 w-[100%] h-[75vh] py-4 ">
       <div className="grid grid-cols-5 h-[70vh]">
         <div className="col-span-2"></div>
 

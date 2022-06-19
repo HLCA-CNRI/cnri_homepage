@@ -4,6 +4,8 @@ import Partnership from "../../components/RAndDCompoenents/Partnership";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
+import PartnershipMobile from "../../components/mobileComponents/PartnershipMobile"
+import LCAMobile from "../../components/mobileComponents/LCAMobile"
 
 const TansitionVidLToR = {
   visible: { z: 30, opacity: 1, x: 0, transition: { duration: 0.8 } },
@@ -36,17 +38,27 @@ const Randd = () => {
         <link rel="icon" href="/images/logo.png" />
       </Head>
 
-      <div className="m-4 mx-16 ">
-        <div className="relative mb-20">
-          <motion.div ref={ref} className="h-[80vh]" animate={controlVid} initial="hidden" variants={TansitionVidLToR}>
-            <img src={"/images/rAnddIntro.jpg"} className="object-cover h-full w-full rounded-lg shadow-lg"></img>
+      <div className="mx-[6vw]">
+        <div className="relative my-[3vh] mb-[5vh] md:mb-[10vh]">
+          <motion.div
+            ref={ref}
+            className="h-[60vh] sm:h-[80vh]"
+            animate={controlVid}
+            initial="hidden"
+            variants={TansitionVidLToR}
+          >
+            <img
+              src={"/images/rAnddIntro.jpg"}
+              className="object-cover h-full w-full rounded-lg shadow-lg"
+            ></img>
           </motion.div>
           <motion.div
             ref={ref}
             animate={controlText}
             initial="hidden"
-            variants={TansitionVidRToL}
-            className="absolute inset-0 flex justify-center items-center z-10 text-9xl font-bold text-white">
+            // variants={TansitionVidRToL}
+            className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white"
+          >
             <div>
               <span>R</span>
               <span className="mx-2">&</span>
@@ -55,13 +67,29 @@ const Randd = () => {
           </motion.div>
         </div>
         <div className="w-[100%] ">
-          <div className="font-semibold text-5xl mb-5">What is LCA?</div>
-          <LCA />
+          <div className="text-[8vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh] md:bg-slate-200 md:bg-slate-200">
+            What is LCA?
+          </div>
+          <div className="hidden sm:flex">
+            <LCA />
+          </div>
+          <div className=" sm:hidden">
+            <LCAMobile/>
+          </div>
+
           <div className="grid grid-cols-2"></div>
         </div>
-        <div className="w-[100%] mt-20">
-          <div className="text-5xl font-semibold mb-5">Our Work and Partnership</div>
+        <div className="w-[100%] mt-[12vh]">
+          <div className="text-[8vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
+            Our Work and Partnership
+          </div>
+          <div className="hidden sm:flex">
           <Partnership />
+          </div>
+          <div className="sm:hidden">
+            <PartnershipMobile/>
+          </div>
+
         </div>
       </div>
     </>

@@ -64,15 +64,12 @@ const proceedToNextCard = (e:any) =>{
                 <img src = {contentInfo[current].videoPath}></img>:
                 <video autoPlay muted loop  src = {contentInfo[current].videoPath} className = "rounded-lg mt-[1vh]"/>
                 }
-           <div className = "text-[4vw] mt-[2vh]">{contentInfo[current].title }</div>
-           <div className = "text-[2.7vw] mt-[2vh] mb-[10vh]">{contentInfo[current].content }</div>
+           <div className = "text-[4vw] xs:text-[3vw] mt-[2vh]">{contentInfo[current].title }</div>
+           <div className = "text-[2.7vw] xs:text-[2vw] mt-[2vh] mb-[10vh]">{contentInfo[current].content }</div>
 
 
             </div>
           
-
-
-            
         </motion.div>
       </AnimatePresence>
     </motion.div>

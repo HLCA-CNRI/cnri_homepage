@@ -70,16 +70,16 @@ const Home: NextPage = () => {
           <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">Actionable Plan의 모든 것</div>
         </div>
         <div className="flex justify-center mt-[3.2vh] mb-[3.2vh]  ">
-          <button className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold">
-            <a target="_blank" rel="noopener noreferrer" href="https://lc.cnrikorea.net/" >
+          <a className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold" target="_blank" rel="noopener noreferrer" href="https://lc.cnrikorea.net/">
+          
               체험하기
-            </a>
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold">
-            <a target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.net/register" className="h-[100%] w-[100%]">
+
+          </a>
+          <a className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold" target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.net/register">
+           
               데모신청
-            </a>
-          </button>
+
+          </a>
         </div>
         <div className="flex justify-center ">
           <img src={"/images/landingMain.gif"} className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" />
@@ -109,8 +109,8 @@ const Home: NextPage = () => {
 
       {/* Measure Section */}
       <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold md:mb-[1vh]">{LandingContents.Measure.title}</div>
-        <div className="text-[4.5vw] sm:text-[2.5vw] mb-[2vh] md:mb-[3vh]">{LandingContents.Measure.subtitle}</div>
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">{LandingContents.Measure.title}</div>
+        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">{LandingContents.Measure.subtitle}</div>
         {/* When display is greater than md */}
         <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <div className="col-span-1">
@@ -151,8 +151,8 @@ const Home: NextPage = () => {
       </section>
       {/* Reduce Section */}
       <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold md:mb-[1vh] ">{LandingContents.Reduce.title}</div>
-        <div className="text-[4.5vw] sm:text-[2.5vw]  mb-[2vh] md:mb-[3vh]">{LandingContents.Reduce.subtitle}</div>
+      <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">{LandingContents.Reduce.title}</div>
+        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">{LandingContents.Reduce.subtitle}</div>
           {/* When display is greater than md */}
         <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <div className="h-full">
@@ -192,8 +192,8 @@ const Home: NextPage = () => {
       </section>
       {/* Remove Section */}
       <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold md:mb-[1vh] ">{LandingContents.Remove.title}</div>
-        <div className="text-[4.5vw] sm:text-[2.5vw] mb-[2vh] md:mb-[3vh]">{LandingContents.Remove.subtitle}</div>
+      <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">{LandingContents.Remove.title}</div>
+        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">{LandingContents.Remove.subtitle}</div>
           {/* When display is greater than md */}
         <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <VerticalTansitionVideoInfo
@@ -218,9 +218,9 @@ const Home: NextPage = () => {
 
       </section>
       {/* Report Section */}
-      <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold md:mb-[1vh]">{LandingContents.Report.title}</div>
-        <div className="text-[4.5vw] sm:text-[2.5vw] mb-[2vh] md:mb-[3vh]">{LandingContents.Report.subtitle}</div>
+      <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start mb-[3vh]">
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">{LandingContents.Report.title}</div>
+        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">{LandingContents.Report.subtitle}</div>
           {/* When display is greater than md */}
         <div className = "hidden  md:grid">
         <HorizontalTransitionVideoInfo

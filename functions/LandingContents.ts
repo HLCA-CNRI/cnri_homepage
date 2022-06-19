@@ -60,9 +60,9 @@ export const LandingContents = {
     title: "Remove",
     subtitle: "탄소 감축을 위한 오프셋 펀딩",
     content1: {
-      title: "감축 목표 수립과 구체적인 이행 방안 제시",
+      title: "탄소 감축 사업에 펀딩",
       content:
-        "측정된 결과를 기반으로 귀사 모든 영역에서의 탄소 배출을 줄일 수 있게 도와드립니다.글로벌 표준인 Science-Based Targets initiative(SBTi)를 준수하여 귀사의 Net-Zero[링크] 목표를 수립하고 이를 이행하기 위한 구체적인 감축 목표를 세워드립니다. 귀사의 내부 감축과 더불어 측정된 공급망의 탄소를 기반으로 실행 가능한 감축 방안을 제시합니다.",
+        "탄소중립연구원은 국내 탄소 감축을 선도하고 있는 파트너들과 협업하고 있으며, 마켓플레이스를 통해 그들에게 쉽게 펀딩할 수 있습니다.펀딩으로 끝나지 않고 탄소중립연구원의 전문가 팀이 프로젝트를 트래킹하여 실질적인 기후 임팩트를 만들어내는지 확인합니다.",
       videoPath: "./video/remove1.mp4",
       isVideo: true,
     },
@@ -76,7 +76,7 @@ export const LandingContents = {
   },
   Report: {
     title: "Report",
-    subtitle: "탄소 감축을 위한 오프셋 펀딩",
+    subtitle: "글로벌 표준과 국내 표준을 동시에 만족",
     content1: {
       title: "원클릭 보고서",
       content:

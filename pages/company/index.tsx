@@ -9,7 +9,7 @@ import PhilosophyMobile from "../../components/mobileComponents/PhilosophyMobile
 import Head from "next/head";
 
 const TansitionVidLToR = {
-  visible: { z: 30, opacity: 1, x: 0, transition: { duration: 0.8 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
   hidden: { opacity: 0, x: -1000 },
 };
 

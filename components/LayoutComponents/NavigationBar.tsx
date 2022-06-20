@@ -1,6 +1,7 @@
 import Script from "next/script";
 import Link from "next/link";
 import { memo } from "react";
+import HamburgerMenu from "./Hamburger/HamburgerMenu";
 
 const NavigationBar: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const NavigationBar: React.FC = () => {
                 <img src={"/images/logo.png"} className="w-[20vw] md:w-[12vw]" />
               </a>
             </Link>
+            
 
             <div className="flex order-2">
               <button
@@ -28,9 +30,14 @@ const NavigationBar: React.FC = () => {
                   데모 신청하기
                 </a>
               </button>
+              <div className = "sm:hidden">
+              <HamburgerMenu/>
+
+              </div>
+           
             </div>
 
-            <div className="order-1 flex ">
+            <div className="order-1  hidden sm:flex">
               <ul className="flex ">
                 <li className="mx-[0.3vw]  px-[1vw] py-[1vh] text-[1vw] font-medium">
                   <a

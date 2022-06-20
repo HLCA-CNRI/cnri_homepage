@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="relative flex flex-col space-y-2 justify-between">
             <img className="w-1/2 md:w-5/12 h-auto" src={"/images/logo.png"} />
             <span>
-              Copyright © 2021 by carbon neutral research institute.
+              Copyright © 2022 by carbon neutral research institute.
               <span className="hidden-block">All Rights Reserved</span>
             </span>
           </div>

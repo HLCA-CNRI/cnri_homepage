@@ -86,7 +86,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <section className="sticky inset-x-0 top-[72px] md:top-[100px] left-0 flex justify-center  w-[100%] bg-white z-50 opacity-90 border-2 text-[2.5vw] md:text-[1vw]">
+      <section className="sticky inset-x-0 top-[72px] md:top-[100px] left-0 flex justify-center  w-[100%] bg-white z-40 opacity-90 border-2 text-[2.5vw] md:text-[1vw]">
         <Link href="#measure">
           <a className="py-[3vh] px-[3vw]  cursor-pointer">측정</a>
         </Link>

@@ -4,20 +4,20 @@ import { memo } from "react";
 
 const NavigationBar: React.FC = () => {
   return (
-    <div className="sticky z-50  inset-x-0 top-0  bg-white  w-[100%] shadow-sm border-b-2  h-[72px]">
+    <div className="sticky z-50  inset-x-0 top-0  bg-white  w-[100%] shadow-sm border-b-2 h-[75px]  md:h-[100px]">
       <div className="mx-[6vw] h-[100%] ">
-        <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 h-[100%] flex">
+        <nav className="bg-white border-gray-200 px-2 sm:px-4 py-[2.5vh] rounded dark:bg-gray-800 h-[100%] flex">
           <div className="container flex flex-wrap justify-between items-center mx-auto">
             <Link href="/" className="flex items-center my-4">
               <a>
-                <img src={"/images/logo.png"} className="w-[12vw]" />
+                <img src={"/images/logo.png"} className="w-[20vw] md:w-[12vw]" />
               </a>
             </Link>
 
             <div className="flex order-2">
               <button
                 type="button"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-medium text-[1.2vw] rounded-lg px-[1.3vw] py-[1vh]"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-medium text-[2vw] md:text-[1.2vw] rounded-lg px-[4vw] md:px-[1.3vw] py-[1.4vh] md:py-[1vh]"
               >
                 <a
                   target="_blank"
@@ -30,7 +30,7 @@ const NavigationBar: React.FC = () => {
               </button>
             </div>
 
-            <div className="flex order-1">
+            <div className="order-1 flex ">
               <ul className="flex ">
                 <li className="mx-[0.3vw]  px-[1vw] py-[1vh] text-[1vw] font-medium">
                   <a

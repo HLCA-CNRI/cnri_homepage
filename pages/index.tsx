@@ -66,7 +66,7 @@ const Home: NextPage = () => {
 
       <div className="">
         <div className="pt-[5vh]">
-          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">넷제로 달성을 위해 필요한</div>
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] md:bg-slate-300 sm:bg-blue-500 ">넷제로 달성을 위해 필요한</div>
           <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">Actionable Plan의 모든 것</div>
         </div>
         <div className="flex justify-center mt-[3.2vh] mb-[3.2vh]  ">
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <section className="sticky inset-x-0 top-[72px] left-0 flex justify-center  w-[100%] bg-white z-50 opacity-90 border-2 text-[2.5vw] md:text-[1vw]">
+      <section className="sticky inset-x-0 top-[72px] md:top-[100px] left-0 flex justify-center  w-[100%] bg-white z-50 opacity-90 border-2 text-[2.5vw] md:text-[1vw]">
         <Link href="#measure">
           <a className="py-[3vh] px-[3vw]  cursor-pointer">측정</a>
         </Link>

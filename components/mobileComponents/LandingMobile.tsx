@@ -19,19 +19,19 @@ const LandingMobile = ({ moveContextFrom, contentInfo,isImg }: LandingMobileType
   const [current, setCurrent] = useState(0);
 
 
-//   useEffect(() => {
-//     if (!userInteracted) {
-//       const interval = setInterval(() => {
-//         if(contentInfo.length - 1  == current ){
-//             setCurrent(0);
+  useEffect(() => {
+    if (!userInteracted) {
+      const interval = setInterval(() => {
+        if(contentInfo.length - 1  == current ){
+            setCurrent(0);
             
-//         }else{
-//             setCurrent((seconds) => seconds + 1);
-//         }
-//       }, 3000);
-//       return () => clearInterval(interval);
-//     }
-//   }, [current,userInteracted]);
+        }else{
+            setCurrent((seconds) => seconds + 1);
+        }
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [current,userInteracted]);
 
 const proceedToNextCard = (e:any) =>{
     if(contentInfo.length - 1 == current){

@@ -56,7 +56,7 @@ const History = ({ year }: HistoryType) => {
         {isActive ? (
           <div className="text-white  mx-[6vw] ">
             {HistoryContent[year].map((note: any) => (
-              <div key={note.month} className="flex my-[2vh] text-[2vw] md:text-[1vw]">
+              <div key={note.month} className="flex my-[2vh] text-[3vw] md:text-[1vw]">
                 <div key={note.month} className="mr-4 font-semibold">
                   {note.month}
                 </div>

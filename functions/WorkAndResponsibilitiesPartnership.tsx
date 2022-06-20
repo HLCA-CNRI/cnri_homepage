@@ -54,7 +54,7 @@ export const WorkAndPartnershipContent: { [key: string]: any } = {
     title: "snu",
     kTitle: "자동차 LCA 자체 알고리즘 개발",
     content: [
-      "미국 캘리포니아 주정부와 연방정부에서도 적극 활용하고 있는 아르곤국가연구소가 개발한 GREET 프로그램의 알고리즘을 기반으로 서울대 연구실과 공동연구를 통해 자체 알고리즘",
+      "미국 캘리포니아 주정부와 연방정부에서도 적극 활용하고 있는 아르곤국가연구소가 개발한 GREET 프로그램의 알고리즘을 기반으로 서울대 연구실과 공동연구를 통해 자체 알고리즘을 개발하였습니다.",
     ],
     default: <img id="snu" src={"/images/companies/snuD.png"} className="object-cover w-full " />,
     colored: <img id="snu" src={"/images/companies/snuC.png"} className="object-cover w-full " />,

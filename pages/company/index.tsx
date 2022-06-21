@@ -7,40 +7,17 @@ import { philosophy } from "../../functions/philosophy";
 import { useInView } from "react-intersection-observer";
 import PhilosophyMobile from "../../components/mobileComponents/PhilosophyMobile";
 import Head from "next/head";
+import ScrollContainer from "react-indiana-drag-scroll";
 
 const TansitionVidLToR = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
   hidden: { opacity: 0, x: -1000 },
 };
 
-const TansitionVidRToL = {
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  hidden: { opacity: 0, x: 1000 },
-};
-
 const Company: React.FC = () => {
   const controlText = useAnimation();
   const controlVid = useAnimation();
   const [ref, inView] = useInView();
-
-  const [MemWidth, setMemWidth] = useState(0);
-  const [PhilMobWidth, setPhilMobWidth] = useState(0);
-  const carousel = useRef<null | HTMLDivElement>(null);
-  const mobilePhil = useRef<null | HTMLDivElement>(null);
-  const pracRef = useRef<null | HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (carousel && carousel.current) {
-      console.log(carousel.current.scrollWidth);
-      setMemWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-    }
-    if (mobilePhil && mobilePhil.current) {
-      console.log(mobilePhil.current.scrollWidth);
-      setPhilMobWidth(
-        mobilePhil.current.scrollWidth - mobilePhil.current.offsetWidth
-      );
-    }
-  }, []);
 
   useEffect(() => {
     if (inView) {
@@ -107,55 +84,34 @@ const Company: React.FC = () => {
           </div>
           {/* When display size is smaller than md  */}
           <div className=" md:hidden ">
-            <motion.div
-              ref={mobilePhil}
-              className="cursor-grab  overflow-x-auto no-scrollbar pl-18  bg-white"
-            >
-              <motion.div
-                drag="x"
-                dragConstraints={{ right: 0, left: -PhilMobWidth }}
-                className="flex"
-              >
-                <PhilosophyMobile
-                  videoPath="./video/philosophy1.mp4"
-                  type={philosophy.mission}
-                />
-                <PhilosophyMobile
-                  videoPath="./video/philosophy2.mp4"
-                  type={philosophy.vision}
-                />
-                <PhilosophyMobile
-                  videoPath="./video/philosophy3.mp4"
-                  type={philosophy.coreValues}
-                />
-              </motion.div>
-            </motion.div>
+            <ScrollContainer className="scroll-container flex cursor-pointer">
+              <PhilosophyMobile
+                videoPath="./video/philosophy1.mp4"
+                type={philosophy.mission}
+              />
+              <PhilosophyMobile
+                videoPath="./video/philosophy2.mp4"
+                type={philosophy.vision}
+              />
+              <PhilosophyMobile
+                videoPath="./video/philosophy3.mp4"
+                type={philosophy.coreValues}
+              />
+            </ScrollContainer>
           </div>
         </div>
         <div className="mb-[5vh] md:mb-[10vh]">
           <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
             Members
           </div>
-          {/* <div className="flex overflow-x-auto space-x-7 w-[100%] border-4 py-4 no-scrollbar"> */}
-          <motion.div
-            ref={carousel}
-            className="cursor-grab  overflow-x-auto no-scrollbar pl-18  bg-white"
-          >
-            <motion.div
-              drag="x"
-              dragConstraints={{ right: 0, left: -MemWidth }}
-              className="flex"
-            >
-              <Member name="min" />
-              <Member name="jonghoh" />
-              <Member name="prof" />
-              <Member name="minhyeok" />
-              <Member name="kyunghoh" />
-              <Member name="cherin" />
-            </motion.div>
-          </motion.div>
-
-          {/* </div> */}
+          <ScrollContainer className="scroll-container flex cursor-pointer">
+            <Member name="min" />
+            <Member name="jonghoh" />
+            <Member name="prof" />
+            <Member name="minhyeok" />
+            <Member name="kyunghoh" />
+            <Member name="cherin" />
+          </ScrollContainer>
         </div>
 
         <div className="my-4">
@@ -168,7 +124,7 @@ const Company: React.FC = () => {
           </div>
         </div>
         {/* <div ref = {pracRef} className = "h-[30vw] bg-slate-200 overflow-x-auto flex">
-        <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
+        im<g src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
         <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
         <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
         <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>

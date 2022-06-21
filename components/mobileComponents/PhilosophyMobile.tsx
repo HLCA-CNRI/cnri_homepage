@@ -13,8 +13,7 @@ const PhilosophyMobile = ({ videoPath, type }: PhilosophyMobileType) => {
         <div className="relative bg-gray-100 w-[500px] rounded-r-lg  shadow-md text-gray-700">
           <video
             src={videoPath}
-            loop
-            muted
+            autoPlay loop muted playsInline 
             className=" object-cover h-[60vh] flex-wrap  rounded-lg shadow-xl"
           />
           <div className=" absolute inset-0 flex justify-start items-end z-10 px-4 pb-2 ">

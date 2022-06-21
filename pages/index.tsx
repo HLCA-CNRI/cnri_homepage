@@ -5,7 +5,6 @@ import HorizontalTransitionVideoInfo from "../components/LandingComponents.tsx/H
 import { LandingContents } from "../functions/LandingContents";
 import Link from "next/link";
 import { memo } from "react";
-
 import LandingMobile from "@/components/mobileComponents/LandingMobile";
 
 const Home: NextPage = () => {
@@ -82,7 +81,7 @@ const Home: NextPage = () => {
           </a>
         </div>
         <div className="flex justify-center ">
-          <video autoPlay loop muted playsInline className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6"  src = {"/video/LandingIntro.mp4"}></video>
+          <video  autoPlay loop muted playsInline className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6"  src = {"/video/LandingIntro.mp4"}></video>
           {/* <img src={"/images/landingMain.gif"} className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" /> */}
         </div>
       </div>
@@ -148,7 +147,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <LandingMobile moveContextFrom={TransitionContextRToL} contentInfo={[LandingContents.Measure.content1,LandingContents.Measure.content2,LandingContents.Measure.content3,LandingContents.Measure.content4]} isImg = {false}/>
+        <LandingMobile contentInfo={[LandingContents.Measure.content1,LandingContents.Measure.content2,LandingContents.Measure.content3,LandingContents.Measure.content4]} isVid = {true}/>
       </section>
       {/* Reduce Section */}
       <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
@@ -188,8 +187,7 @@ const Home: NextPage = () => {
             colorType={"blue"}
           />
         </div>
-        <LandingMobile moveContextFrom={TransitionContextRToL} contentInfo={[LandingContents.Reduce.content1,LandingContents.Reduce.content2,LandingContents.Reduce.content3]} isImg = {false}/>
-
+        <LandingMobile contentInfo={[LandingContents.Reduce.content1,LandingContents.Reduce.content2,LandingContents.Reduce.content3]} isVid = {true}/>
       </section>
       {/* Remove Section */}
       <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
@@ -214,7 +212,7 @@ const Home: NextPage = () => {
           />
         </div>
 
-        <LandingMobile moveContextFrom={TransitionContextRToL} contentInfo={[LandingContents.Remove.content1,LandingContents.Remove.content2]} isImg = {false}/>
+        <LandingMobile contentInfo={[LandingContents.Remove.content1,LandingContents.Remove.content2]}  isVid = {true}/>
 
 
       </section>
@@ -234,9 +232,8 @@ const Home: NextPage = () => {
           basisVal={"50%"}
         />
         </div>
-        <LandingMobile moveContextFrom={TransitionContextRToL} contentInfo={[LandingContents.Report.content1]} isImg = {true}/>
+        <LandingMobile contentInfo={[LandingContents.Report.content1]}  isVid = {false}/>
       </section>
-
 
       
     

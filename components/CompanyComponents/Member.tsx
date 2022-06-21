@@ -1,6 +1,7 @@
 import { memo } from "react";
 import Mem from "../../functions/MemberInfo";
 
+
 interface MemeberType {
   name: string;
 }

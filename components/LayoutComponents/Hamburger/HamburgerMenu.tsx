@@ -26,7 +26,7 @@ const MenuContainer = styled.div`
   top: 0;
   right: 0;
   user-select: none;
-  padding: 1em 2.5em;
+  padding: 1em 1.2em;
 `;
 
 const HamburgerMenu = () => {
@@ -74,7 +74,7 @@ const HamburgerMenu = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://cis.cnrikorea.net"
-                className=" mt-[72px] p-[3vw] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]"
+                className=" mt-[72px] py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]"
                 onClick={clickBurger}
               >
                  <div>PRODUCT</div>
@@ -86,7 +86,7 @@ const HamburgerMenu = () => {
             <Link
               href="/company"
             >
-              <div  className="p-[3vw] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]" onClick={clickBurger}>
+              <div  className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]" onClick={clickBurger}>
                 <div>COMPANY</div>
                 <div> {">"} </div>
               </div>
@@ -95,7 +95,7 @@ const HamburgerMenu = () => {
             <Link
               href="/randd"
             >
-              <div  className="p-[3vw]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]" onClick={clickBurger}>
+              <div  className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]" onClick={clickBurger}>
                 <div>R&D</div>
                 <div> {">"} </div>
               </div>
@@ -106,7 +106,7 @@ const HamburgerMenu = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://brunch.co.kr/@cnrikorea"
-              className="p-[3vw]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]"
+              className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]"
               onClick={clickBurger}
             >
               <div>BLOG</div>

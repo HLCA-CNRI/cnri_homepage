@@ -82,7 +82,8 @@ const Home: NextPage = () => {
           </a>
         </div>
         <div className="flex justify-center ">
-          <img src={"/images/landingMain.gif"} className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" />
+          <video className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" playsInline autoPlay muted loop src = {"/video/LandingIntro.mp4"}></video>
+          {/* <img src={"/images/landingMain.gif"} className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" /> */}
         </div>
       </div>
 

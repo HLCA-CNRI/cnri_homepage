@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="w-[100%]  ">
+    <div id = "footer" className="w-[100%]   ">
       <div className="h-fit w-screen py-12 flex justify-center border-2">
         <div className="w-full px-2 md:w-2/3 grid grid-rows-2 md:grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4 text-xs">
           <div className="relative flex flex-col space-y-2 justify-between">

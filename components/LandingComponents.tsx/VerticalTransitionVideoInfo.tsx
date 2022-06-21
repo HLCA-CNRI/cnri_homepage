@@ -14,7 +14,13 @@ interface VerticalTansitionVideoInfoType {
   colorType: string;
 }
 
-const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo, colorType }: VerticalTansitionVideoInfoType) => {
+const VerticalTansitionVideoInfo = ({
+  imagePosition,
+  moveVidFrom,
+  moveContextFrom,
+  contentInfo,
+  colorType,
+}: VerticalTansitionVideoInfoType) => {
   const handleVideoMouseEnter = (e: any) => {
     const vid = e.target;
     vid.muted = true;
@@ -42,10 +48,26 @@ const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFro
   }, [controlVid, inView]);
 
   return (
-    <motion.div ref={ref} animate={controlVid} initial="vidHidden" variants={moveVidFrom} className="flex flex-col h-full drop-shadow-lg">
+    <motion.div
+      ref={ref}
+      animate={controlVid}
+      initial="vidHidden"
+      variants={moveVidFrom}
+      className="flex flex-col h-full drop-shadow-lg"
+    >
       <div>
-        <div className={`text-[1.8vw] font-bold  w-[100%] ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} pt-[5vh] px-[2vw]  `}>{contentInfo.title}</div>
-        <div className={` ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} px-[2vw] pt-[2vh] pb-[3vh] z-30  `}>
+        <div
+          className={`text-[1.8vw] font-bold  w-[100%] ${
+            colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
+          } pt-[5vh] px-[2vw]  `}
+        >
+          {contentInfo.title}
+        </div>
+        <div
+          className={` ${
+            colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
+          } px-[2vw] pt-[2vh] pb-[3vh] z-30  `}
+        >
           <video
             src={contentInfo.videoPath}
             loop
@@ -60,13 +82,26 @@ const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFro
         animate={controlText}
         initial="initial"
         variants={moveContextFrom}
-        className={`${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} -z-50 `}
+        className={`${
+          colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
+        } -z-50 `}
         onMouseEnter={() => controlText.start("open")}
         onMouseLeave={async () => {
           await controlText.start("close");
           await controlText.start("close2");
-        }}>
-        <div className="p-[2vw] z-0 text-[1vw]">{contentInfo.content}</div>
+        }}
+      >
+        {/* There is a contact tag on the second remove content, people should be able to click it and automatically head over to the footer section.  */}
+        <div className="p-[2vw] z-0 text-[1vw]">
+          {contentInfo.content}{" "}
+          {contentInfo.title == "포트폴리오 관리" ? (
+            <a className="cursor-pointer hover:text-blue-600" href="#footer">
+              Contact
+            </a>
+          ) : (
+            ""
+          )}
+        </div>
       </motion.div>
     </motion.div>
   );

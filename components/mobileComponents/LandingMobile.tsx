@@ -53,9 +53,8 @@ const proceedToNextCard = (e:any) =>{
     >
       <AnimatePresence exitBeforeEnter >
         <motion.div
-          initial={{ opacity: 0.7 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1, transition: { duration: 2.5 } }}
-          exit={{ opacity:0.7 }}
           style={{ fontSize: 100 }}
           key={current}
           className = "bg-red-100"
@@ -65,8 +64,8 @@ const proceedToNextCard = (e:any) =>{
                 <img src = {contentInfo[current].videoPath}></img>:
                 <video playsInline autoPlay muted  src = {contentInfo[current].videoPath} className = "rounded-lg mt-[1vh]"/>
                 }
-           <div className = "text-[4vw] xs:text-[3vw] mt-[2vh]">{contentInfo[current].title }</div>
-           <div className = "text-[2.7vw] xs:text-[2vw] mt-[2vh] mb-[10vh]">{contentInfo[current].content }</div>
+           {/* <div className = "text-[4vw] xs:text-[3vw] mt-[2vh]">{contentInfo[current].title }</div>
+           <div className = "text-[2.7vw] xs:text-[2vw] mt-[2vh] mb-[10vh]">{contentInfo[current].content }</div> */}
 
 
             </div>

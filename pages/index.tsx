@@ -147,7 +147,11 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        <div className = "md:hidden">
         <LandingMobile contentInfo={[LandingContents.Measure.content1,LandingContents.Measure.content2,LandingContents.Measure.content3,LandingContents.Measure.content4]} isVid = {true}/>
+
+        </div>
+        
       </section>
       {/* Reduce Section */}
       <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
@@ -187,7 +191,9 @@ const Home: NextPage = () => {
             colorType={"blue"}
           />
         </div>
+        <div className = "md:hidden">
         <LandingMobile contentInfo={[LandingContents.Reduce.content1,LandingContents.Reduce.content2,LandingContents.Reduce.content3]} isVid = {true}/>
+        </div>
       </section>
       {/* Remove Section */}
       <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
@@ -211,9 +217,9 @@ const Home: NextPage = () => {
             colorType={""}
           />
         </div>
-
+        <div className = "md:hidden">
         <LandingMobile contentInfo={[LandingContents.Remove.content1,LandingContents.Remove.content2]}  isVid = {true}/>
-
+        </div>
 
       </section>
       {/* Report Section */}
@@ -232,7 +238,9 @@ const Home: NextPage = () => {
           basisVal={"50%"}
         />
         </div>
-        <LandingMobile contentInfo={[LandingContents.Report.content1]}  isVid = {false}/>
+        <div className = "md:hidden">      
+          <LandingMobile contentInfo={[LandingContents.Report.content1]}  isVid = {false}/>
+        </div>
       </section>
 
       

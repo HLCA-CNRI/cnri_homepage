@@ -19,27 +19,27 @@ const LandingMobile = ({ moveContextFrom, contentInfo,isImg }: LandingMobileType
   const [current, setCurrent] = useState(0);
 
 
-  useEffect(() => {
-    if (!userInteracted) {
-      const interval = setInterval(() => {
-        if(contentInfo.length - 1  == current ){
-            setCurrent(0);
+//   useEffect(() => {
+//     if (!userInteracted) {
+//       const interval = setInterval(() => {
+//         if(contentInfo.length - 1  == current ){
+//             setCurrent(0);
             
-        }else{
-            setCurrent((seconds) => seconds + 1);
-        }
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [current,userInteracted]);
+//         }else{
+//             setCurrent((seconds) => seconds + 1);
+//         }
+//       }, 3000);
+//       return () => clearInterval(interval);
+//     }
+//   }, [current,userInteracted]);
 
-const proceedToNextCard = (e:any) =>{
-    if(contentInfo.length - 1 == current){
-        setCurrent(0);   
-    }else{
-        setCurrent(current + 1)
-    }
-}
+// const proceedToNextCard = (e:any) =>{
+//     if(contentInfo.length - 1 == current){
+//         setCurrent(0);   
+//     }else{
+//         setCurrent(current + 1)
+//     }
+// }
 
 
 
@@ -49,7 +49,7 @@ const proceedToNextCard = (e:any) =>{
       className="flex justify-center border-2 rounded-lg md:hidden"
       initial="vidHidden"
     //   onClick={()=>setUserInteracted(!userInteracted)}
-        onClick={proceedToNextCard}
+        // onClick={proceedToNextCard}
     >
       <AnimatePresence exitBeforeEnter >
         <motion.div
@@ -62,8 +62,7 @@ const proceedToNextCard = (e:any) =>{
             <div className = "p-[2vw] ">
                 {isImg == true ? 
                 <img src = {contentInfo[current].videoPath}></img>:
-                <video playsInline autoPlay muted  src = {contentInfo[current].videoPath} className = "rounded-lg mt-[1vh]"/>
-                }
+                <video playsInline autoPlay muted  src = {contentInfo[current].videoPath} className = "rounded-lg mt-[1vh]"/>                }
            {/* <div className = "text-[4vw] xs:text-[3vw] mt-[2vh]">{contentInfo[current].title }</div>
            <div className = "text-[2.7vw] xs:text-[2vw] mt-[2vh] mb-[10vh]">{contentInfo[current].content }</div> */}
 

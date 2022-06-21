@@ -18,15 +18,14 @@ const HamburgerIcon = styled.div`
 const MenuContainer = styled.div`
   width: 100%;
   height: 100%;
-  max-width: 60%;
-  background-color: #ffff;
+  max-width: 100%;
   box-shadow: -2px 0 2px rgb(15, 15, 15, 0.3);
   z-index: 90;
   position: fixed;
   top: 0;
   right: 0;
   user-select: none;
-  padding: 1em 1.2em;
+ 
 `;
 
 const HamburgerMenu = () => {
@@ -69,12 +68,23 @@ const HamburgerMenu = () => {
         </HamburgerIcon>
         {open == true ? (
           <MenuContainer>
-            {/* <hr className = "mt-[72px]"></hr> */}
+            <div className = "w-[100%] flex justify-end " onClick={()=>{setOpen(false)}}>
+              
+              <div className =  " pt-[72px] w-[60%] bg-white shadow-lg border h-[100vh] ">
+              <Link
+              href="/"
+            >
+              <div  className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]" onClick={clickBurger}>
+                <div>CNRI</div>
+                <div> {">"} </div>
+              </div>
+            </Link>
+            <hr ></hr>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://cis.cnrikorea.net"
-                className=" mt-[72px] py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]"
+                className="  py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"
                 onClick={clickBurger}
               >
                  <div>PRODUCT</div>
@@ -82,11 +92,11 @@ const HamburgerMenu = () => {
               </a>
   
         
-            <hr></hr>
+            <hr ></hr>
             <Link
               href="/company"
             >
-              <div  className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]" onClick={clickBurger}>
+              <div  className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]" onClick={clickBurger}>
                 <div>COMPANY</div>
                 <div> {">"} </div>
               </div>
@@ -95,7 +105,7 @@ const HamburgerMenu = () => {
             <Link
               href="/randd"
             >
-              <div  className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]" onClick={clickBurger}>
+              <div  className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]" onClick={clickBurger}>
                 <div>R&D</div>
                 <div> {">"} </div>
               </div>
@@ -106,7 +116,7 @@ const HamburgerMenu = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://brunch.co.kr/@cnrikorea"
-              className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]"
+              className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"
               onClick={clickBurger}
             >
               <div>BLOG</div>
@@ -114,6 +124,13 @@ const HamburgerMenu = () => {
             </a>
 
             <hr></hr>
+
+              </div>
+          
+
+            </div>
+            {/* <hr className = "mt-[72px]"></hr> */}
+          
           </MenuContainer>
         ) : (
           ""

@@ -94,9 +94,9 @@ const LCAMobile = () => {
           </div>
         </div>
       </div>
-      <div className = "mt-[2vh] border-2 p-[3vw]  h-[40vh] xs:h-[60vh]">
+      <div className = "mt-[2vh] border-2 p-[3vw] h-[48vh]  xxxs:h-[55vh]  xxs:h-[70vh]">
           <video ref = {videoRef} autoPlay loop muted playsInline src = {currentObj.videoPath}></video>
-          <div className = "text-[6vw] font-semibold mt-2">{currentObj.kTitle}</div>
+          <div className = "text-[5.5vw]  font-semibold pb-[1vh] pt-[2vh]">{currentObj.kTitle}</div>
           <div className = "text-[3vw] "> {currentObj.content1} {currentObj.content2}</div>
     </div>
     </div>

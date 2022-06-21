@@ -3,6 +3,9 @@ module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
+      iphone12Pro:"390px",
+      xxxs:"400px",
+      xxs:"500px",
       xs: "540px",
       sm: "640px",
       md: "768px",

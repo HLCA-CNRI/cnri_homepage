@@ -36,7 +36,7 @@ const Company: React.FC = () => {
       </Head>
       <div className="mx-[6vw] ">
         <div className="my-[3vh] mb-[5vh] md:mb-[10vh]">
-          <div className="relative">
+          <div className="relative mb-[10vh]">
             <motion.div
               ref={ref}
               className="h-[60vh] sm:h-[80vh]"
@@ -46,7 +46,7 @@ const Company: React.FC = () => {
             >
               <img
                 src={"/images/companyIntro.jpg"}
-                className="object-cover h-full w-full rounded-lg shadow-lg z-0"
+                className="object-cover h-full w-full rounded-lg shadow-lg z-0 "
               ></img>
             </motion.div>
             <motion.div
@@ -54,14 +54,14 @@ const Company: React.FC = () => {
               animate={controlText}
               initial="hidden"
               // variants={TansitionVidRToL}
-              className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white"
+              className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white "
             >
               <div>COMPANY</div>
             </motion.div>
 
             {/* <SlideShow /> */}
           </div>
-          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh] md:bg-slate-200 sm:bg-red-400">
+          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh] ">
             Philosophy
           </div>
           {/* When display size is greater than md  */}
@@ -86,15 +86,15 @@ const Company: React.FC = () => {
           <div className=" md:hidden ">
             <ScrollContainer className="scroll-container flex cursor-pointer">
               <PhilosophyMobile
-                videoPath="./video/philosophy1.mp4"
+                imgPath="./images/philosophy1Pic.png"
                 type={philosophy.mission}
               />
               <PhilosophyMobile
-                videoPath="./video/philosophy2.mp4"
+                imgPath="./images/philosophy2Pic.png"
                 type={philosophy.vision}
               />
               <PhilosophyMobile
-                videoPath="./video/philosophy3.mp4"
+                imgPath="./images/philosophy3Pic.png"
                 type={philosophy.coreValues}
               />
             </ScrollContainer>
@@ -123,17 +123,6 @@ const Company: React.FC = () => {
             <History year={2021} />
           </div>
         </div>
-        {/* <div ref = {pracRef} className = "h-[30vw] bg-slate-200 overflow-x-auto flex">
-        im<g src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
-        <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
-        <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
-        <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
-        <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
-        <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
-        <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
-        <img src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80"  className = "w-[200px] h-[200px] mr-5"/>
-
-        </div> */}
       </div>
     </>
   );

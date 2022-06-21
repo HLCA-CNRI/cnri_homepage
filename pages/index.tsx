@@ -148,7 +148,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className = "md:hidden">
-        <LandingMobile contentInfo={[LandingContents.Measure.content1,LandingContents.Measure.content2,LandingContents.Measure.content3,LandingContents.Measure.content4]} isVid = {true}/>
+        <LandingMobile contentInfo={[LandingContents.Measure.content1,LandingContents.Measure.content2,LandingContents.Measure.content3,LandingContents.Measure.content4]} isVid = {true} backgroundColor = {"#EAF2FA"}/>
 
         </div>
         
@@ -192,7 +192,7 @@ const Home: NextPage = () => {
           />
         </div>
         <div className = "md:hidden">
-        <LandingMobile contentInfo={[LandingContents.Reduce.content1,LandingContents.Reduce.content2,LandingContents.Reduce.content3]} isVid = {true}/>
+        <LandingMobile contentInfo={[LandingContents.Reduce.content1,LandingContents.Reduce.content2,LandingContents.Reduce.content3]} isVid = {true} backgroundColor = {"#EEF7E9"}/>
         </div>
       </section>
       {/* Remove Section */}
@@ -218,7 +218,7 @@ const Home: NextPage = () => {
           />
         </div>
         <div className = "md:hidden">
-        <LandingMobile contentInfo={[LandingContents.Remove.content1,LandingContents.Remove.content2]}  isVid = {true}/>
+        <LandingMobile contentInfo={[LandingContents.Remove.content1,LandingContents.Remove.content2]}  isVid = {true} backgroundColor = {"#FFF7E1"}/>
         </div>
 
       </section>
@@ -239,7 +239,7 @@ const Home: NextPage = () => {
         />
         </div>
         <div className = "md:hidden">      
-          <LandingMobile contentInfo={[LandingContents.Report.content1]}  isVid = {false}/>
+          <LandingMobile contentInfo={[LandingContents.Report.content1]}  isVid = {false} backgroundColor = {"#FDF0E7"}/>
         </div>
       </section>
 

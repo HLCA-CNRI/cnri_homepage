@@ -40,7 +40,7 @@ const Carousel = ({ currentObj }: CarouselType) => {
         </div>
       </div>
       <div className="  sm:hidden text-[5.5vw]  font-semibold sm:text-4xl sm:pb-4 sm:h-20  justify-start pb-[1vh] pt-[2vh]">{currentObj.kTitle[current]}</div>
-      <div className="text-lg  sm:px-8">
+      <div className="text-[3vw]  sm:px-8">
         <ul>
           {currentObj.content[current].map((note: string) => (
             <li key={note}>{note}</li>

@@ -21,8 +21,8 @@ const PartnershipMobile = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-3">
-        <div id="ts" className="border-2 flex justify-center" onClick={userClick}>
+      <div className="border grid grid-cols-3">
+        <div id="ts" className={`border flex justify-center ${currentObj.title == "ts" ? "border-blue-400":""}`} onClick={userClick}>
           <div id="ts" className="w-[80%] ">
             <Icon
               defaultIcon={WorkAndPartnershipContent.ts.default}
@@ -32,7 +32,7 @@ const PartnershipMobile = () => {
             />
           </div>
         </div>
-        <div id="posco" className="border-2 flex justify-center" onClick={userClick}>
+        <div id="posco" className={`border flex justify-center ${currentObj.title == "posco" ? "border-blue-400":""}`} onClick={userClick}>
         <div id="posco" className="w-[80%] ">
             <Icon
               defaultIcon={WorkAndPartnershipContent.posco.default}
@@ -43,7 +43,7 @@ const PartnershipMobile = () => {
             />
           </div>
         </div>
-        <div className="border-2 flex justify-center">
+        <div id = "h2" className={`border flex justify-center ${currentObj.title == "h2" ? "border-blue-400":""}`}>
             <div id="h2" className="w-[80%] " onClick={userClick}> 
             <Icon
               defaultIcon={WorkAndPartnershipContent.h2.default}
@@ -54,8 +54,8 @@ const PartnershipMobile = () => {
           </div>
           </div>
       </div>
-      <div className="grid grid-cols-2">
-        <div id = "totalBusiness" className="border-2 flex justify-center"><div id="ts" className="w-[55%] " onClick={userClick}>
+      <div className="border grid grid-cols-2">
+        <div id = "totalBusiness" className= {`border flex justify-center ${currentObj.title == "totalBusiness" ? "border-blue-400":""}`}><div id="totalBusiness" className="w-[55%] " onClick={userClick}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
               coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
@@ -63,7 +63,8 @@ const PartnershipMobile = () => {
               hasMultiple={false}
             />
           </div></div>
-        <div id = "snu" className="border-2 flex justify-center"><div id="ts" className="w-[55%] " onClick={userClick}>
+        <div id = "snu" className= {`border flex justify-center ${currentObj.title == "snu" ? "border-blue-400":""}`}>
+          <div id="snu" className="w-[55%] " onClick={userClick}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.snu.default}
               coloredIcon={WorkAndPartnershipContent.snu.colored}
@@ -71,10 +72,11 @@ const PartnershipMobile = () => {
               hasMultiple={false}
 
             />
-          </div></div>
+          </div>
+        </div>
       </div>
 
-      <div className="mt-[2vh] border-4 p-[3vw] mb-[3vh]">
+      <div className="mt-[2vh] border-2 p-[3vw] mb-[3vh] h-[45vh] xs:h-[60vh]">
         <div className="text-[4.55vw]">
         {currentObj.hasMultiple ? (
             <Carousel currentObj={currentObj}></Carousel>

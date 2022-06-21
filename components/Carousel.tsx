@@ -24,10 +24,10 @@ const Carousel = ({ currentObj }: CarouselType) => {
   return (
     <>
       <div className=" hidden sm:flex text-[5.5vw]   sm:text-4xl sm:pb-4 sm:h-20  justify-start ">{currentObj.kTitle[current]}</div>
-      <div className="sm:h-[80%] sm:w-[90%]  xl:h-[60%]">
+      <div className=" ">
         <div className="flex justify-center self-center">
 
-          <div >{currentObj.img[current]}</div>
+          <div className = " w-[100vw] object-contain">{currentObj.img[current]}</div>
 
         </div>
        

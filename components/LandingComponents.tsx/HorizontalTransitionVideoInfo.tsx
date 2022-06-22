@@ -41,7 +41,7 @@ const HorizontalTransitionVideoInfo = ({
 
   const handleVidMouseLeave = async(e:any) =>{
     if (videoRef && videoRef.current) {
-      videoRef.current.muted = false 
+      // videoRef.current.muted = false 
       videoRef.current.currentTime = 0 
       videoRef.current.pause()
     }

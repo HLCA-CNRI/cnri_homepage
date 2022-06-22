@@ -14,8 +14,9 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "resources" ? videoRef : null}
           src={videoPaths[0]}
           loop
+          muted
           className={classNames(currentContent === "resources" ? "" : "hidden", " videos rounded-lg shadow-xl")}
-          muted={true}
+          
         />
       }
       {
@@ -24,8 +25,9 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "processing" ? videoRef : null}
           src={videoPaths[1]}
           loop
+          muted
           className={classNames(currentContent === "processing" ? "" : "hidden", " videos rounded-lg shadow-xl")}
-          muted={true}
+        
         />
       }
       {
@@ -34,8 +36,9 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "manufacturing" ? videoRef : null}
           src={videoPaths[2]}
           loop
+          muted
           className={classNames(currentContent === "manufacturing" ? "" : "hidden", " videos rounded-lg shadow-xl")}
-          muted={true}
+
         />
       }
       {
@@ -44,8 +47,9 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "distribution" ? videoRef : null}
           src={videoPaths[3]}
           loop
+          muted
           className={classNames(currentContent === "distribution" ? "" : "hidden", " videos rounded-lg shadow-xl")}
-          muted={true}
+
         />
       }
       {
@@ -55,7 +59,7 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           src={videoPaths[4]}
           loop
           className={classNames(currentContent === "use" ? "" : "hidden", "videos rounded-lg shadow-xl")}
-          muted={true}
+          muted
         />
       }
       {
@@ -64,8 +68,9 @@ const VideoContainer = ({ videoPaths, currentContent, videoRef }: VideoContainer
           ref={currentContent === "endOfLife" ? videoRef : null}
           src={videoPaths[5]}
           loop
+          muted
           className={classNames(currentContent === "endOfLife" ? "" : "hidden", "videos rounded-lg shadow-xl ")}
-          muted={true}
+          
         />
       }
     </div>

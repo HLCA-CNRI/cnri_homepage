@@ -16,7 +16,7 @@ const Mem: { [key: string]: any } = {
   prof: {
     name: "송한호",
     position: "Co-Founder/Advisor",
-    description: "서울대학교 기계공학과 교수이며 자동차 전문가로서 LCA 연구를 10년 넘게 수행해왔습니다.",
+    description: "서울대학교 기계공학과 교수이며 자동차 전문가로서 LCA 연구를 10년 넘게 수행해왔습니다. 탄소중립연구원을 통해 모든 탄소의 데이터화를 꿈꾸고 있습니다.",
     pic: "/images/members/prof.jpg",
   },
   minhyeok: {

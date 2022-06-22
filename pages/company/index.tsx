@@ -11,7 +11,12 @@ import ScrollContainer from "react-indiana-drag-scroll";
 
 const TansitionVidLToR = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  hidden: { opacity: 0, x: -1000 },
+  hidden: { opacity: 0, x: -500 },
+};
+
+const TansitionVidRToL = {
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  hidden: { opacity: 0, x: 500 },
 };
 
 const Company: React.FC = () => {
@@ -36,10 +41,12 @@ const Company: React.FC = () => {
       </Head>
       <div className="mx-[6vw] ">
         <div className="my-[3vh] mb-[5vh] md:mb-[10vh]">
-          <div className="relative mb-[10vh]">
+          <div className="relative mb-[5vh] md:mb-[10vh]">
+            {/* md 싸이즈 이상일때 transition 적용  */}
+          
             <motion.div
               ref={ref}
-              className="h-[60vh] sm:h-[80vh]"
+              className="h-[80vh] flex "
               animate={controlVid}
               initial="hidden"
               variants={TansitionVidLToR}
@@ -54,10 +61,37 @@ const Company: React.FC = () => {
               animate={controlText}
               initial="hidden"
               // variants={TansitionVidRToL}
-              className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white "
+              className="absolute inset-0 flex  justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white "
             >
               <div>COMPANY</div>
             </motion.div>
+
+            {/* md 싸이즈 이하일때 transition 적용  */}
+{/* 
+            <motion.div
+              ref={ref}
+              className="h-[80vh]  md:hidden "
+              animate={controlVid}
+              initial="hidden"
+              // variants={TansitionVidLToR}
+            >
+              <img
+                src={"/images/companyIntro.jpg"}
+                className="object-cover h-full w-full rounded-lg shadow-lg z-0 "
+              ></img>
+            </motion.div>
+            <motion.div
+              ref={ref}
+              animate={controlText}
+              initial="hidden"
+              // variants={TansitionVidRToL}
+              className="absolute inset-0 hidden md:hidden justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white "
+            >
+              <div>COMPANY</div>
+            </motion.div> */}
+
+            
+            
 
             {/* <SlideShow /> */}
           </div>

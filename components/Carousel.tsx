@@ -33,7 +33,7 @@ const Carousel = ({ currentObj }: CarouselType) => {
             </div>
           </button>
 
-          <div className = "max-h-[30vh] max-w-[80%] object-contain">{currentObj.img[current]}</div>
+          <div className = "h-[20vh] md:h-[35vh] max-w-[80%] object-contain">{currentObj.img[current]}</div>
 
           <button  onClick={clickNext} className = "w-[20%]">
             <div className="w-[100%] flex justify-end">

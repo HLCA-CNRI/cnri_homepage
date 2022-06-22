@@ -68,16 +68,16 @@ const Home: NextPage = () => {
 
       <div className="">
         <div className="pt-[5vh]">
-          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] 2xl:text-[4vw]">
             넷제로 달성을 위해 필요한
           </div>
-          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw]  2xl:text-[4vw]">
             Actionable Plan의 모든 것
           </div>
         </div>
-        <div className="flex justify-center mt-[3.2vh] mb-[3.2vh]  ">
+        <div className="flex justify-center my-[3.2vh]  ">
           <a
-            className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold"
+            className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
             target="_blank"
             rel="noopener noreferrer"
             href="https://lc.cnrikorea.net/"
@@ -85,7 +85,7 @@ const Home: NextPage = () => {
             체험하기
           </a>
           <a
-            className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold"
+            className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
             target="_blank"
             rel="noopener noreferrer"
             href="https://cis.cnrikorea.net/register"
@@ -106,7 +106,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <section className="sticky inset-x-0 top-[72px] md:top-[100px] left-0 flex justify-center  w-[100%] bg-white z-40 opacity-90 border-2 text-[2.5vw] md:text-[1vw]">
+      <section className="sticky inset-x-0 top-[72px] md:top-[100px] left-0 flex justify-center  w-[100%] bg-white z-40 opacity-90 border-2 text-[3.25vw] md:text-[1vw]">
         <Link href="#measure">
           <a className="py-[3vh] px-[3vw]  cursor-pointer">측정</a>
         </Link>

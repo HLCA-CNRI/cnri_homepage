@@ -4,6 +4,20 @@ import {useRef,useEffect,useState} from "react"
 
 const Container = styled.div `
   background-color: ${props => props.color};
+  overflow-x:scroll;
+  ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 0.5vh;
+  width:0.5vw;
+ 
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .3);
+  /* background-color: ${props => props.color}; */
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
 `
 
 interface LandingMobileType {
@@ -34,7 +48,7 @@ const LandingMobile = ({ contentInfo, isVid,backgroundColor }: LandingMobileType
   return (
     
       <div>
-      <Container ref = {scroll}color={backgroundColor} className="snap-x flex snap-mandatory overflow-auto hover:overflow-scroll" onScroll={setScroller}>
+      <Container ref = {scroll}color={backgroundColor} className="snap-x flex snap-mandatory overflow-auto " onScroll={setScroller}>
       {isVid ? (
         contentInfo.map((val: any) => (
           <div
@@ -74,12 +88,6 @@ const LandingMobile = ({ contentInfo, isVid,backgroundColor }: LandingMobileType
         </div>
       )}
        </Container>
-       {/* <div className = "w-[100%] h-2 bg-slate-400 flex">
-          <div className = "w-1/4 bg-red-400"></div>
-          <div className = "w-1/4 bg-blue-400"></div>
-          <div className = "w-1/4 bg-green-400"></div>
-          <div className = "w-1/4 bg-purple-400"></div>
-        </div> */}
       </div>
   );
 };

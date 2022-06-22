@@ -91,7 +91,7 @@ const LCA = () => {
             <div className="col-span-9 h-200">
               {/* <video ref={videoRef} src={currentObj.videoPath} loop className={`pt-4`} /> */}
               <div onMouseEnter={mouseEnterVid} onClick={clickIcon} onMouseLeave={mouseLeaveVid} className=" h-50">
-                <div className="text-4xl mb-2">{currentObj.kTitle}</div>
+                <div className="text-4xl mb-[2vh] lg:text-[2.5vw] ">{currentObj.kTitle}</div>
 
                 <VideoContainer
                   videoRef={videoRef}
@@ -107,7 +107,7 @@ const LCA = () => {
                   ]}
                 />
               </div>
-              <div className="pb-4 text-md mt-4 h-32 ">
+              <div className="pb-4 text-md xl:text-[1.2vw] mt-4 h-32 ">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
               </div>
@@ -131,7 +131,7 @@ const LCA = () => {
           <div className="col-span-2"></div>
 
           <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
-            <div className="absolute w-[100%] bottom-[-20%]">
+            <div className="absolute w-[100%] bottom-[-20%] left-[50%]">
               <div className= {`flex w-[100%] justify-center ${currentObj.title == "endOfLife" ? "" :"text-stone-400"} `}>폐기</div>
               <Icon
                 defaultIcon={LCAContents.endOfLife.default}
@@ -145,7 +145,7 @@ const LCA = () => {
           <div className=" col-span-3"></div>
 
           <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
-            <div className="absolute w-[100%] bottom-[-20%]">
+            <div className="absolute w-[100%] bottom-[-20%] right-[50%]">
               <div  className= {`flex w-[100%] justify-center ${currentObj.title == "processing" ? "" :"text-stone-400"} `}>원료 가공</div>
               <Icon
                 defaultIcon={LCAContents.processing.default}
@@ -158,7 +158,7 @@ const LCA = () => {
 
           <div className=" col-span-2 "></div>
           <div className="relative ">
-            <div className="absolute w-[150%] -top-[20%] -left-[30%]">
+            <div className="absolute w-[150%] -top-[30%] -left-[30%]">
               <img src={"/images/lca.png"}></img>
             </div>
           </div>
@@ -170,7 +170,7 @@ const LCA = () => {
           <div className=" col-span-2"></div>
 
           <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative ">
-            <div className="absolute w-[100%] bottom-[20%]">
+            <div className="absolute w-[100%] bottom-[20%] left-[50%]">
               <Icon
                 defaultIcon={LCAContents.use.default}
                 coloredIcon={LCAContents.use.colored}
@@ -184,7 +184,7 @@ const LCA = () => {
           <div className=" col-span-3"></div>
 
           <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
-            <div className="absolute w-[100%] bottom-[20%]">
+            <div className="absolute w-[100%] bottom-[20%] right-[50%]">
               <Icon
                 defaultIcon={LCAContents.manufacturing.default}
                 coloredIcon={LCAContents.manufacturing.colored}
@@ -198,7 +198,7 @@ const LCA = () => {
           <div className="col-span-2"></div>
 
           <div onMouseOver={MouseOver} onMouseLeave={MouseOut} onClick={clickIcon} className="relative">
-            <div className="absolute  w-[100%] bottom-[50%]">
+            <div className="absolute  w-[100%] bottom-[50%] ">
               <Icon
                 defaultIcon={LCAContents.distribution.default}
                 coloredIcon={LCAContents.distribution.colored}

@@ -9,7 +9,7 @@ const Footer = () => {
             <img className="w-1/2 md:w-5/12 h-auto" src={"/images/logo.png"} />
             <span>
               Copyright © 2022 by carbon neutral research institute.
-              <span className="hidden-block">All Rights Reserved</span>
+              <div className="hidden-block">All Rights Reserved</div>
             </span>
           </div>
           <div className = "grid md:grid-rows-5 md:grid-cols-1 gap-2">

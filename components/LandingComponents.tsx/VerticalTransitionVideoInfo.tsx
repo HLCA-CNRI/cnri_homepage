@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { memo, useEffect } from "react";
+import { memo, useEffect,useRef } from "react";
 
 interface VerticalTansitionVideoInfoType {
   imagePosition: string;
@@ -14,28 +14,27 @@ interface VerticalTansitionVideoInfoType {
   colorType: string;
 }
 
-const VerticalTansitionVideoInfo = ({
-  imagePosition,
-  moveVidFrom,
-  moveContextFrom,
-  contentInfo,
-  colorType,
-}: VerticalTansitionVideoInfoType) => {
-  const handleVideoMouseEnter = (e: any) => {
-    const vid = e.target;
-    vid.muted = true;
-    vid.play();
+const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFrom, contentInfo, colorType }: VerticalTansitionVideoInfoType) => {
+  const videoRef = useRef<null | HTMLVideoElement>(null);
+  const handleCardMouseEnter = (e:any) =>{
+    if (videoRef && videoRef.current) {
+      // videoRef.current.muted
+      videoRef.current.play()
+      
+    }
     controlText.start("open");
-  };
+  }
 
-  const handleVideoMouseLeave = async (e: any) => {
-    const vid = e.target;
-    vid.muted = false;
-    vid.currentTime = 0;
-    vid.pause();
+  const handleCardMouseLeave = async(e:any) =>{
+    if (videoRef && videoRef.current) {
+      videoRef.current.muted = false 
+      videoRef.current.currentTime = 0 
+      videoRef.current.pause()
+    }
     await controlText.start("close");
     await controlText.start("close2");
-  };
+  }
+ 
   const controlVid = useAnimation();
   const controlText = useAnimation();
   const [ref, inView] = useInView();
@@ -48,32 +47,16 @@ const VerticalTansitionVideoInfo = ({
   }, [controlVid, inView]);
 
   return (
-    <motion.div
-      ref={ref}
-      animate={controlVid}
-      initial="vidHidden"
-      variants={moveVidFrom}
-      className="flex flex-col h-full drop-shadow-lg"
-    >
+    <motion.div ref={ref} animate={controlVid} initial="vidHidden" variants={moveVidFrom} className="flex flex-col h-full drop-shadow-lg cursor-pointer" onMouseEnter={handleCardMouseEnter} onMouseLeave = {handleCardMouseLeave}>
       <div>
-        <div
-          className={`text-[1.8vw] font-bold  w-[100%] ${
-            colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
-          } pt-[5vh] px-[2vw]  `}
-        >
-          {contentInfo.title}
-        </div>
-        <div
-          className={` ${
-            colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
-          } px-[2vw] pt-[2vh] pb-[3vh]  `}
-        >
+        <div className={`text-[1.8vw] font-bold  w-[100%] ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} pt-[5vh] px-[2vw]  `}>{contentInfo.title}</div>
+        <div className={` ${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} px-[2vw] pt-[2vh] pb-[3vh] z-30  `}>
           <video
+            ref = {videoRef}
             src={contentInfo.videoPath}
+            muted
             loop
-            onMouseEnter={handleVideoMouseEnter}
-            onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-cover shadow-xl  rounded-lg "
+            className="w-[100%] transition-[width] delay-150 object-cover shadow-xl  rounded-lg  z-30"
           />
         </div>
       </div>
@@ -82,26 +65,13 @@ const VerticalTansitionVideoInfo = ({
         animate={controlText}
         initial="initial"
         variants={moveContextFrom}
-        className={`${
-          colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
-        }  `}
+        className={`${colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} -z-50 `}
         onMouseEnter={() => controlText.start("open")}
         onMouseLeave={async () => {
           await controlText.start("close");
           await controlText.start("close2");
-        }}
-      >
-        {/* There is a contact tag on the second remove content, people should be able to click it and automatically head over to the footer section.  */}
-        <div className="p-[2vw] z-0 text-[1vw]">
-          {contentInfo.content}{" "}
-          {contentInfo.title == "포트폴리오 관리" ? (
-            <a className="cursor-pointer hover:text-blue-600" href="#footer">
-              Contact
-            </a>
-          ) : (
-            ""
-          )}
-        </div>
+        }}>
+        <div className="p-[2vw] z-0 text-[1vw]">{contentInfo.content}</div>
       </motion.div>
     </motion.div>
   );

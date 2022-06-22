@@ -19,7 +19,7 @@ const NavigationBar: React.FC = () => {
             <div className="flex order-2">
               <button
                 type="button"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-medium text-[2vw] md:text-[1.2vw] rounded-lg px-[4vw] md:px-[1.3vw] py-[1.4vh] md:py-[1vh]"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[4vw] md:px-[1.3vw] sm:py-[1.4vh] my-[0.5vh] md:my-[0] md:py-[1vh]"
               >
                 <a
                   target="_blank"

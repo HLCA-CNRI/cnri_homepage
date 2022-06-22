@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { memo, useEffect } from "react";
+import { memo, useEffect,useRef } from "react";
 import classNames from "classnames";
 
 //Grid 형태로 놓고 싶어서 따로 Horizontal TransitionVideoInfo를 만듬
@@ -28,25 +28,26 @@ const HorizontalTransitionVideoInfo = ({
   colorType,
   basisVal,
 }: HorizontalTransitionVideoInfoType) => {
-  if (imagePosition == "left") {
-    // console.log(contentInfo);
-  }
-  const handleVideoMouseEnter = (e: any) => {
-    const vid = e.target;
-    vid.muted = true;
-    vid.play();
 
+  const videoRef = useRef<null | HTMLVideoElement>(null);
+
+  const handleVidMouseEnter = (e:any) =>{
+    if (videoRef && videoRef.current) {
+      videoRef.current.play()
+      
+    }
     controlText.start("open");
-  };
+  }
 
-  const handleVideoMouseLeave = async (e: any) => {
-    const vid = e.target;
-    vid.muted = false;
-    vid.currentTime = 0;
-    vid.pause();
+  const handleVidMouseLeave = async(e:any) =>{
+    if (videoRef && videoRef.current) {
+      videoRef.current.muted = false 
+      videoRef.current.currentTime = 0 
+      videoRef.current.pause()
+    }
     await controlText.start("close");
     await controlText.start("close2");
-  };
+  }
 
   const handleImgMouseEnter = (e: any) => {
     controlText.start("open");
@@ -73,7 +74,10 @@ const HorizontalTransitionVideoInfo = ({
       animate={controlVid}
       initial="vidHidden"
       variants={moveVidFrom}
-      className={`h-[100%] flex flex-row drop-shadow-lg ${isTop ? "pb-[3vh]" : "pt-[3vh]"}`}>
+      className={`h-[100%] flex flex-row drop-shadow-lg ${isTop ? "pb-[3vh]" : "pt-[3vh]"} cursor-pointer`} 
+      onMouseEnter = {contentInfo.isVideo ? handleVidMouseEnter:handleImgMouseEnter}
+      onMouseLeave = {contentInfo.isVideo ? handleVidMouseLeave:handleImgMouseLeave}
+      >
       {" "}
       <motion.div
         animate={controlText}
@@ -96,12 +100,10 @@ const HorizontalTransitionVideoInfo = ({
         </div>
         {contentInfo.isVideo ? (
           <video
-            src={contentInfo.videoPath}
-            // autoPlay
-            muted
-            loop
-            onMouseEnter={handleVideoMouseEnter}
-            onMouseLeave={handleVideoMouseLeave}
+          ref = {videoRef}
+          src={contentInfo.videoPath}
+          muted
+          loop
             className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-[2vh] "
           />
         ) : (
@@ -109,8 +111,6 @@ const HorizontalTransitionVideoInfo = ({
             src={"/images/report1.png"}
             alt={"report1"}
             className="transition-[width] delay-150 object-cover rounded-lg shadow-xl  mt-[2vh]"
-            onMouseEnter={handleImgMouseEnter}
-            onMouseLeave={handleImgMouseLeave}
           />
         )}
       </div>

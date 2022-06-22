@@ -16,7 +16,7 @@ const PhilosophyMobile = ({ imgPath, type }: PhilosophyMobileType) => {
            
             className=" object-cover h-[60vh] flex-wrap  rounded-lg shadow-xl"
           />
-          <div className=" absolute inset-0 flex justify-start items-end z-10 px-4 pb-2 ">
+          <div className=" absolute inset-0 flex justify-start items-end px-4 pb-2 ">
           <div>
           <div className=" text-[6vw] text-white font-semibold mb-4 underline underline-offset-8">{type.title}</div>
           <ul className="text-[2vw] whitespace">

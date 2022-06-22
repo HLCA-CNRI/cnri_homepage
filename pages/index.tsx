@@ -59,29 +59,49 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Welcome to CNRIKOREA</title>
-        <meta name="description" content="기후변화와 탄소중립을 위한 최고의 파트너, 탄소중립연구원입니다!" />
+        <meta
+          name="description"
+          content="기후변화와 탄소중립을 위한 최고의 파트너, 탄소중립연구원입니다!"
+        />
         <link rel="icon" href="/images/logo.png" />
       </Head>
 
       <div className="">
         <div className="pt-[5vh]">
-          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] md:bg-slate-300 sm:bg-blue-500 ">넷제로 달성을 위해 필요한</div>
-          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">Actionable Plan의 모든 것</div>
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">
+            넷제로 달성을 위해 필요한
+          </div>
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] ">
+            Actionable Plan의 모든 것
+          </div>
         </div>
         <div className="flex justify-center mt-[3.2vh] mb-[3.2vh]  ">
-          <a className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold" target="_blank" rel="noopener noreferrer" href="https://lc.cnrikorea.net/">
-          
-              체험하기
-
+          <a
+            className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://lc.cnrikorea.net/"
+          >
+            체험하기
           </a>
-          <a className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold" target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.net/register">
-           
-              데모신청
-
+          <a
+            className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] mx-[1.5vw] font-bold"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://cis.cnrikorea.net/register"
+          >
+            데모신청
           </a>
         </div>
         <div className="flex justify-center ">
-          <video  autoPlay loop muted playsInline className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6"  src = {"/video/LandingIntro.mp4"}></video>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6"
+            src={"/video/LandingIntro.mp4"}
+          ></video>
           {/* <img src={"/images/landingMain.gif"} className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" /> */}
         </div>
       </div>
@@ -102,15 +122,19 @@ const Home: NextPage = () => {
         <Link href="#report">
           <a className="py-[3vh] px-[3vw]  cursor-pointer">보고서</a>
         </Link>
-
       </section>
 
-     
-
       {/* Measure Section */}
-      <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">{LandingContents.Measure.title}</div>
-        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">{LandingContents.Measure.subtitle}</div>
+      <section
+        id="measure"
+        className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start"
+      >
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
+          {LandingContents.Measure.title}
+        </div>
+        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">
+          {LandingContents.Measure.subtitle}
+        </div>
         {/* When display is greater than md */}
         <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <div className="col-span-1">
@@ -147,17 +171,35 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className = "md:hidden">
-        <LandingMobile contentInfo={[LandingContents.Measure.content1,LandingContents.Measure.content2,LandingContents.Measure.content3,LandingContents.Measure.content4]} isVid = {true} backgroundColor = {"#EAF2FA"}/>
+        <div className="md:hidden">
+          <div className="relative ">
+            <LandingMobile
+              contentInfo={[
+                LandingContents.Measure.content1,
+                LandingContents.Measure.content2,
+                LandingContents.Measure.content3,
+                LandingContents.Measure.content4,
+              ]}
+              isVid={true}
+              backgroundColor={"#EAF2FA"}
+            />
 
+
+          </div>
         </div>
-        
       </section>
       {/* Reduce Section */}
-      <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
-      <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">{LandingContents.Reduce.title}</div>
-        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">{LandingContents.Reduce.subtitle}</div>
-          {/* When display is greater than md */}
+      <section
+        id="reduce"
+        className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start"
+      >
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
+          {LandingContents.Reduce.title}
+        </div>
+        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">
+          {LandingContents.Reduce.subtitle}
+        </div>
+        {/* When display is greater than md */}
         <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <div className="h-full">
             <div className="h-[50%]">
@@ -191,15 +233,30 @@ const Home: NextPage = () => {
             colorType={"blue"}
           />
         </div>
-        <div className = "md:hidden">
-        <LandingMobile contentInfo={[LandingContents.Reduce.content1,LandingContents.Reduce.content2,LandingContents.Reduce.content3]} isVid = {true} backgroundColor = {"#EEF7E9"}/>
+        <div className="md:hidden">
+          <LandingMobile
+            contentInfo={[
+              LandingContents.Reduce.content1,
+              LandingContents.Reduce.content2,
+              LandingContents.Reduce.content3,
+            ]}
+            isVid={true}
+            backgroundColor={"#EEF7E9"}
+          />
         </div>
       </section>
       {/* Remove Section */}
-      <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
-      <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">{LandingContents.Remove.title}</div>
-        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">{LandingContents.Remove.subtitle}</div>
-          {/* When display is greater than md */}
+      <section
+        id="remove"
+        className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start"
+      >
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
+          {LandingContents.Remove.title}
+        </div>
+        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">
+          {LandingContents.Remove.subtitle}
+        </div>
+        {/* When display is greater than md */}
         <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <VerticalTansitionVideoInfo
             imagePosition="left"
@@ -217,36 +274,48 @@ const Home: NextPage = () => {
             colorType={""}
           />
         </div>
-        <div className = "md:hidden">
-        <LandingMobile contentInfo={[LandingContents.Remove.content1,LandingContents.Remove.content2]}  isVid = {true} backgroundColor = {"#FFF7E1"}/>
+        <div className="md:hidden">
+          <LandingMobile
+            contentInfo={[
+              LandingContents.Remove.content1,
+              LandingContents.Remove.content2,
+            ]}
+            isVid={true}
+            backgroundColor={"#FFF7E1"}
+          />
         </div>
-
       </section>
       {/* Report Section */}
-      <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start mb-[3vh]">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">{LandingContents.Report.title}</div>
-        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">{LandingContents.Report.subtitle}</div>
-          {/* When display is greater than md */}
-        <div className = "hidden  md:grid">
-        <HorizontalTransitionVideoInfo
-          imagePosition="left"
-          moveVidFrom={TansitionVidLToR}
-          moveContextFrom={TransitionContextLToR}
-          contentInfo={LandingContents.Report.content1}
-          isTop={true}
-          colorType=""
-          basisVal={"50%"}
-        />
+      <section
+        id="report"
+        className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start mb-[3vh]"
+      >
+        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
+          {LandingContents.Report.title}
         </div>
-        <div className = "md:hidden">      
-          <LandingMobile contentInfo={[LandingContents.Report.content1]}  isVid = {false} backgroundColor = {"#FDF0E7"}/>
+        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">
+          {LandingContents.Report.subtitle}
+        </div>
+        {/* When display is greater than md */}
+        <div className="hidden  md:grid">
+          <HorizontalTransitionVideoInfo
+            imagePosition="left"
+            moveVidFrom={TansitionVidLToR}
+            moveContextFrom={TransitionContextLToR}
+            contentInfo={LandingContents.Report.content1}
+            isTop={true}
+            colorType=""
+            basisVal={"50%"}
+          />
+        </div>
+        <div className="md:hidden">
+          <LandingMobile
+            contentInfo={[LandingContents.Report.content1]}
+            isVid={false}
+            backgroundColor={"#FDF0E7"}
+          />
         </div>
       </section>
-
-      
-    
-
-
     </>
   );
 };

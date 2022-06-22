@@ -66,14 +66,14 @@ const VerticalTansitionVideoInfo = ({
         <div
           className={` ${
             colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
-          } px-[2vw] pt-[2vh] pb-[3vh] z-30  `}
+          } px-[2vw] pt-[2vh] pb-[3vh]  `}
         >
           <video
             src={contentInfo.videoPath}
             loop
             onMouseEnter={handleVideoMouseEnter}
             onMouseLeave={handleVideoMouseLeave}
-            className="w-[100%] transition-[width] delay-150 object-cover shadow-xl  rounded-lg  z-30"
+            className="w-[100%] transition-[width] delay-150 object-cover shadow-xl  rounded-lg "
           />
         </div>
       </div>
@@ -84,7 +84,7 @@ const VerticalTansitionVideoInfo = ({
         variants={moveContextFrom}
         className={`${
           colorType == "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"
-        } -z-50 `}
+        }  `}
         onMouseEnter={() => controlText.start("open")}
         onMouseLeave={async () => {
           await controlText.start("close");

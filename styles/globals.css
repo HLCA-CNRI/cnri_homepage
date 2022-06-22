@@ -59,3 +59,8 @@
   width: 50%;
   background-color: white;
 }
+
+body {
+  overflow-y: scroll; /* Show vertical scrollbar */
+  overflow-x: scroll; /* Show horizontal scrollbar */
+}

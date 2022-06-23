@@ -71,7 +71,7 @@ const VerticalTansitionVideoInfo = ({ imagePosition, moveVidFrom, moveContextFro
           await controlText.start("close");
           await controlText.start("close2");
         }}>
-        <div className="p-[2vw] z-0 text-[1vw]">{contentInfo.content}{contentInfo.title == "포트폴리오 관리" ? <a className="cursor-pointer hover:text-blue-600 " href="#footer">Contact</a>:""}</div>
+        <div className="p-[2vw] z-0 text-[1vw]">{contentInfo.content}{contentInfo.title == "포트폴리오 관리" ? <a className="cursor-pointer text-blue-600 " href="#footer">Contact</a>:""}</div>
       </motion.div>
     </motion.div>
   );

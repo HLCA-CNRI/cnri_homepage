@@ -5,13 +5,13 @@ import HamburgerMenu from "./Hamburger/HamburgerMenu";
 
 const NavigationBar: React.FC = () => {
   return (
-    <div className="sticky z-50  inset-x-0 top-0  bg-white  w-[100%] shadow-sm border-b-2 h-[75px]  md:h-[100px]">
+    <div className="sticky z-50  inset-x-0 top-0  bg-white  w-[100%] shadow-sm   h-[10vh] md:h-[12vh]">
       <div className="mx-[6vw] h-[100%] ">
-        <nav className="bg-white border-gray-200 px-2 sm:px-4 py-[2.5vh] rounded dark:bg-gray-800 h-[100%] flex">
+        <nav className="bg-white  px-2 sm:px-4 py-[2.5vh] rounded dark:bg-gray-800 h-[10vh] md:h-[12vh] flex">
           <div className="container flex flex-wrap justify-between items-center mx-auto">
             <Link href="/" className="flex items-center my-4">
               <a>
-                <img src={"/images/logo.png"} className="w-[20vw] md:w-[12vw]" />
+                <img src={"/images/logo.png"} className="h-[3.5vh] md:h-[7vh]" />
               </a>
             </Link>
             
@@ -19,16 +19,16 @@ const NavigationBar: React.FC = () => {
             <div className="flex order-2">
               <button
                 type="button"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[4vw] md:px-[1.3vw] sm:py-[1.4vh] my-[0.5vh] md:my-[0] md:py-[1vh]"
+                className=" "
               >
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://cis.cnrikorea.net/register"
-                  className="h-[100%] w-[100%]"
-                >
-                  데모 신청하기
-                </a>
+                  <a
+            className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[2.5vw] xs:text-[2vw] md:text-[1vw] rounded-lg py-[0.7vh] px-[3.5vw] xs:px-[2.5vw] xs:py-[1.7vh] font-bold"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://cis.cnrikorea.net/register"
+          >
+            데모 신청하기
+          </a>
               </button>
               <div className = "sm:hidden">
               <HamburgerMenu/>

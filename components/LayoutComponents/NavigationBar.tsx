@@ -5,7 +5,7 @@ import HamburgerMenu from "./Hamburger/HamburgerMenu";
 
 const NavigationBar: React.FC = () => {
   return (
-    <div className="sticky z-50  inset-x-0 top-0  bg-white  w-[100%] shadow-sm   h-[10vh] md:h-[12vh]">
+    <div className="sticky z-50  inset-x-0 top-0  bg-white  w-[100%]  h-[10vh] md:h-[12vh] shadow">
       <div className="mx-[6vw] h-[100%] ">
         <nav className="bg-white  px-2 sm:px-4 py-[2.5vh] rounded dark:bg-gray-800 h-[10vh] md:h-[12vh] flex">
           <div className="container flex flex-wrap justify-between items-center mx-auto">

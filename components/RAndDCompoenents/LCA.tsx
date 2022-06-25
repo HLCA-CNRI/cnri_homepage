@@ -1,14 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable consistent-return */
 import React, {useState, useRef, useEffect, memo} from "react";
 import LCAContents from "../../functions/LCAContents";
 import Icon from "./Icon";
 import VideoContainer from "./VideoContainer/VideoContainer";
 
 function LCA() {
-  const [userClicked, setUserClicked] = useState(false);
   const [userInteracted, setUserInteracted] = useState(false);
   const [currentObj, setCurrentObj] = useState(LCAContents.resources);
   const videoRef = useRef<null | HTMLVideoElement>();
@@ -52,7 +47,6 @@ function LCA() {
   };
 
   const MouseOut = () => {
-    setUserClicked(false);
     setUserInteracted(false);
     const videos = document.getElementsByClassName("videos");
     Array.from(videos).forEach((video: any) => {
@@ -95,6 +89,7 @@ function LCA() {
             <div className="col-span-9 h-200">
               {/* <video ref={videoRef} src={currentObj.videoPath} loop className={`pt-4`} /> */}
               <div
+                role="button"
                 onMouseEnter={mouseEnterVid}
                 onClick={clickIcon}
                 onFocus={() => 0}
@@ -126,6 +121,7 @@ function LCA() {
         <div className="grid grid-cols-5 col-span-2">
           <div className="col-span-2" />
           <div
+            role="button"
             id="test"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
@@ -149,6 +145,7 @@ function LCA() {
           <div className="col-span-2" />
 
           <div
+            role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
             onClick={clickIcon}
@@ -172,6 +169,7 @@ function LCA() {
           <div className=" col-span-3" />
 
           <div
+            role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
             onClick={clickIcon}
@@ -206,6 +204,7 @@ function LCA() {
           <div className=" col-span-2" />
 
           <div
+            role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
             onClick={clickIcon}
@@ -229,6 +228,7 @@ function LCA() {
           <div className=" col-span-3" />
 
           <div
+            role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
             onClick={clickIcon}
@@ -252,6 +252,7 @@ function LCA() {
           <div className="col-span-2" />
 
           <div
+            role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
             onClick={clickIcon}

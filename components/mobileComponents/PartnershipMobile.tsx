@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import {useState, useRef} from "react";
 import WorkAndPartnershipContent from "../../functions/WorkAndResponsibilitiesPartnership";
 import Icon from "../RAndDCompoenents/Icon";
@@ -22,6 +21,7 @@ function PartnershipMobile() {
     <div>
       <div className="border grid grid-cols-3">
         <div
+          role="button"
           id="ts"
           className={`border flex justify-center ${
             currentObj.title === "ts" ? "border-blue-400" : ""
@@ -36,6 +36,7 @@ function PartnershipMobile() {
           </div>
         </div>
         <div
+          role="button"
           id="posco"
           className={`border flex justify-center ${
             currentObj.title === "posco" ? "border-blue-400" : ""
@@ -54,7 +55,7 @@ function PartnershipMobile() {
           className={`border flex justify-center ${
             currentObj.title === "h2" ? "border-blue-400" : ""
           }`}>
-          <div id="h2" className="w-[80%] " onClick={userClick}>
+          <div role="button" id="h2" className="w-[80%] " onClick={userClick}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.h2.default}
               coloredIcon={WorkAndPartnershipContent.h2.colored}
@@ -69,7 +70,7 @@ function PartnershipMobile() {
           className={`border flex justify-center ${
             currentObj.title === "totalBusiness" ? "border-blue-400" : ""
           }`}>
-          <div id="totalBusiness" className="w-[55%] " onClick={userClick}>
+          <div role="button" id="totalBusiness" className="w-[55%] " onClick={userClick}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
               coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
@@ -82,7 +83,7 @@ function PartnershipMobile() {
           className={`border flex justify-center ${
             currentObj.title === "snu" ? "border-blue-400" : ""
           }`}>
-          <div id="snu" className="w-[55%] " onClick={userClick}>
+          <div role="button" id="snu" className="w-[55%] " onClick={userClick}>
             <Icon
               defaultIcon={WorkAndPartnershipContent.snu.default}
               coloredIcon={WorkAndPartnershipContent.snu.colored}

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/interactive-supports-focus */
 import {memo, useState} from "react";
 import HistoryContent from "../../functions/HistoryContents";
 

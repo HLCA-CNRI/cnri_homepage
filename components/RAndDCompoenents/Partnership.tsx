@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable consistent-return */
 import {useState, useRef, useEffect, memo} from "react";
 import WorkAndPartnershipContent from "../../functions/WorkAndResponsibilitiesPartnership";
 import Icon from "./Icon";
@@ -52,6 +49,7 @@ function Partnership() {
         <div className="col-span-2" />
 
         <div
+          role="button"
           onMouseOver={MouseOver}
           onMouseLeave={MouseOut}
           onClick={clickIcon}
@@ -68,6 +66,7 @@ function Partnership() {
         <div className="col-span-2" />
 
         <div
+          role="button"
           onMouseOver={MouseOver}
           onMouseLeave={MouseOut}
           onClick={clickIcon}
@@ -84,6 +83,7 @@ function Partnership() {
 
         <div className="col-span-3" />
         <div
+          role="button"
           onMouseOver={MouseOver}
           onMouseLeave={MouseOut}
           onClick={clickIcon}
@@ -111,6 +111,7 @@ function Partnership() {
         <div className="col-span-1" />
 
         <div
+          role="button"
           onMouseOver={MouseOver}
           onMouseLeave={MouseOut}
           onClick={clickIcon}
@@ -128,6 +129,7 @@ function Partnership() {
         <div className="col-span-1" />
 
         <div
+          role="button"
           onMouseOver={MouseOver}
           onMouseLeave={MouseOut}
           onClick={clickIcon}

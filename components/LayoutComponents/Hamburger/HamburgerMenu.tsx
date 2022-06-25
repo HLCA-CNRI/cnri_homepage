@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, {useState} from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
@@ -58,6 +57,7 @@ function HamburgerMenu() {
         {open === true ? (
           <MenuContainer>
             <div
+              role="button"
               className="w-[100%] flex justify-end "
               onClick={() => {
                 setOpen(false);
@@ -65,6 +65,7 @@ function HamburgerMenu() {
               <div className=" pt-[72px] w-[60%] bg-white shadow-lg border h-[100vh] ">
                 <Link href="/">
                   <div
+                    role="button"
                     className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]"
                     onClick={clickBurger}>
                     <div>CNRI</div>
@@ -85,6 +86,7 @@ function HamburgerMenu() {
                 <hr />
                 <Link href="/company">
                   <div
+                    role="button"
                     className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]"
                     onClick={clickBurger}>
                     <div>COMPANY</div>
@@ -94,6 +96,7 @@ function HamburgerMenu() {
                 <hr />
                 <Link href="/randd">
                   <div
+                    role="button"
                     className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"
                     onClick={clickBurger}>
                     <div>R&D</div>

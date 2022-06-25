@@ -93,20 +93,20 @@ function Home() {
       </div>
 
       <section className="sticky inset-x-0 top-[9.5vh] md:top-[11.5vh] left-0 flex justify-center  w-[100%] bg-white z-40 opacity-90 border-2 text-[3.25vw] md:text-[1vw]">
-        <Link href="#measure" className="py-[3vh] px-[3vw]  cursor-pointer">
-          측정
+        <Link href="#measure">
+          <div className="py-[3vh] mx-[3vw]  cursor-pointer">측정</div>
         </Link>
 
-        <Link href="#reduce" className="py-[3vh] px-[3vw]  cursor-pointer">
-          감축
+        <Link href="#reduce">
+          <div className="py-[3vh] mx-[3vw]  cursor-pointer">감축</div>
         </Link>
 
-        <Link href="#remove" className="py-[3vh] px-[3vw]  cursor-pointer">
-          오프셋
+        <Link href="#remove">
+          <div className="py-[3vh] mx-[3vw]  cursor-pointer">오프셋</div>
         </Link>
 
-        <Link href="#report" className="py-[3vh] px-[3vw]  cursor-pointer">
-          보고서
+        <Link href="#report">
+          <div className="py-[3vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>
 

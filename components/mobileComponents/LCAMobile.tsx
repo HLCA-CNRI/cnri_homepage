@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import LCAContents from "@/functions/LCAContents";
 import {useState, useRef} from "react";
 import Icon from "../RAndDCompoenents/Icon";
@@ -20,6 +19,7 @@ function LCAMobile() {
     <div>
       <div className="border grid grid-cols-3 ">
         <div
+          role="button"
           id="resources"
           className={`border flex justify-center py-[1vh] ${
             currentObj.title === "resources" ? "border-blue-400" : ""
@@ -44,6 +44,7 @@ function LCAMobile() {
         </div>
 
         <div
+          role="button"
           id="processing"
           className={`border flex justify-center py-[1vh] ${
             currentObj.title === "processing" ? "border-blue-400" : ""
@@ -66,6 +67,7 @@ function LCAMobile() {
         </div>
 
         <div
+          role="button"
           id="manufacturing"
           className={`border flex justify-center py-[1vh] ${
             currentObj.title === "manufacturing" ? "border-blue-400" : ""
@@ -87,6 +89,7 @@ function LCAMobile() {
           </div>
         </div>
         <div
+          role="button"
           id="distribution"
           className={`border flex justify-center py-[1vh] ${
             currentObj.title === "distribution" ? "border-blue-400" : ""
@@ -108,6 +111,7 @@ function LCAMobile() {
           </div>
         </div>
         <div
+          role="button"
           id="use"
           className={`border flex justify-center py-[1vh] ${
             currentObj.title === "use" ? "border-blue-400" : ""
@@ -130,6 +134,7 @@ function LCAMobile() {
         </div>
 
         <div
+          role="button"
           id="endOfLife"
           className={`border flex justify-center py-[1vh] ${
             currentObj.title === "endOfLife" ? "border-blue-400" : ""

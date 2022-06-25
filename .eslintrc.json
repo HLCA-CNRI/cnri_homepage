@@ -32,7 +32,10 @@
     "react/jsx-props-no-spreading": 0, //spreading 사용해도된다고 판단. --> 경호님도 mute 시키심.
     "no-nested-ternary": 0, // nested ternary 사용해도된다고 생각함 --> 경호님도 mute 시키심.
     "no-param-reassign": ["warn", {"props": false}], //no-param-reassign 사용해도된다고 생각함 --> 경호님도 mute 시키심.
-    "jsx-a11y/click-events-have-key-events": 0 //div이나 span 안에 onClick이 있으면 안된다.-->Homepage에는 div를 누르면 onClick이 상황이 많다. 예) History. Div이나 span에서는 onClick과 함께 onKeyDown, onKeyUp, onKeyPress와 함께 쓰거나, button 태그를 사용하면 된다.
+    "jsx-a11y/click-events-have-key-events": 0, //div이나 span 안에 onClick이 있으면 안된다.-->Homepage에는 div를 누르면 onClick이 상황이 많다. 예) History. Div이나 span에서는 onClick과 함께 onKeyDown, onKeyUp, onKeyPress와 함께 쓰거나, button 태그를 사용하면 된다.
+    "jsx-a11y/interactive-supports-focus": 0, //Div이나 button 처런 onClick 이벤트가 있을 경우 1.role 지정 role="button" 2. onFocus={() => 0} 3. tabIndex={0} -->A user should be able to reach this element by pressing the tab key on their keyboard.
+    "no-unused-expressions": 0,
+    "consistent-return": 0 //return () => clearInterval(interval);useEffect쓸때 clearInterval 해서 타이머 다시 맞쳐야함.
   },
   "settings": {
     "import/resolver": {

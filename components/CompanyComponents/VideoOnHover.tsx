@@ -1,6 +1,6 @@
-import { useRef, memo } from "react";
+import {useRef, memo} from "react";
 
-//STYLES
+// STYLES
 interface VideoOnHoverType {
   videoPath: string;
   isMiddle: boolean;
@@ -10,16 +10,16 @@ interface VideoOnHoverType {
   };
 }
 
-const VideoOnHover = ({ videoPath, isMiddle, type }: VideoOnHoverType) => {
+function VideoOnHover({videoPath, isMiddle, type}: VideoOnHoverType) {
   const videoRef = useRef<null | HTMLVideoElement>(null);
 
-  const textOnMouseEnter = (e: any) => {
+  const textOnMouseEnter = () => {
     if (videoRef && videoRef.current) {
       videoRef.current.play();
     }
   };
 
-  const textOnMouseLeave = (e: any) => {
+  const textOnMouseLeave = () => {
     if (videoRef && videoRef.current) {
       videoRef.current.currentTime = 0;
       videoRef.current.pause();
@@ -35,9 +35,14 @@ const VideoOnHover = ({ videoPath, isMiddle, type }: VideoOnHoverType) => {
         muted
         className=" relative w-[100%] transition-[width] ease-in-out delay-150 object-cover  h-[60vh]  flex-wrap  rounded-lg shadow-xl"
       />
-      <div className=" absolute inset-0 flex justify-start items-end  px-4 pb-2 " onMouseEnter={textOnMouseEnter} onMouseLeave={textOnMouseLeave}>
+      <div
+        className=" absolute inset-0 flex justify-start items-end  px-4 pb-2 "
+        onMouseEnter={textOnMouseEnter}
+        onMouseLeave={textOnMouseLeave}>
         <div>
-          <div className=" text-[2.5vw] text-white font-semibold mb-4 underline underline-offset-8">{type.title}</div>
+          <div className=" text-[2.5vw] text-white font-semibold mb-4 underline underline-offset-8">
+            {type.title}
+          </div>
           <ul className="text-[1vw] whitespace">
             {type.content.map((val: string) => (
               <li className="text-white my-1" key={val}>
@@ -49,6 +54,6 @@ const VideoOnHover = ({ videoPath, isMiddle, type }: VideoOnHoverType) => {
       </div>
     </div>
   );
-};
+}
 
 export default memo(VideoOnHover);

@@ -1,4 +1,4 @@
-import { memo, ReactNode } from "react";
+import {memo, ReactNode} from "react";
 import NavigationBar from "./LayoutComponents/NavigationBar";
 import Footer from "./LayoutComponents/Footer";
 
@@ -6,7 +6,7 @@ interface LayoutInterface {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutInterface) => {
+function Layout({children}: LayoutInterface) {
   return (
     <>
       <NavigationBar />
@@ -14,6 +14,6 @@ const Layout = ({ children }: LayoutInterface) => {
       <Footer />
     </>
   );
-};
+}
 
 export default memo(Layout);

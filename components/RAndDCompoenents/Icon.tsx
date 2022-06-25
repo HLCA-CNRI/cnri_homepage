@@ -1,24 +1,22 @@
-import { memo, useState } from "react";
-import { Transition } from "@tailwindui/react";
+import {memo, useState} from "react";
+import {Transition} from "@tailwindui/react";
 
 interface IconType {
   defaultIcon: any;
   coloredIcon: any;
   isCurrent: boolean;
-  hasMultiple: boolean;
-
 }
 
-const Icon = ({ defaultIcon, coloredIcon, isCurrent, hasMultiple }: IconType) => {
-  const [isColored, setIsColored] = useState(false);
-  const changeToColored = (e: any) => {
+function Icon({defaultIcon, coloredIcon, isCurrent}: IconType) {
+  const [, setIsColored] = useState(false);
+  const changeToColored = () => {
     setIsColored(true);
   };
-  const changeToDefault = (e: any) => {
+  const changeToDefault = () => {
     setIsColored(false);
   };
   return (
-    <div  onMouseOver={changeToColored} onMouseLeave={changeToDefault}>
+    <div onFocus={() => 0} onMouseOver={changeToColored} onMouseLeave={changeToDefault}>
       <Transition
         show={isCurrent}
         className={isCurrent ? "" : "hidden"}
@@ -43,6 +41,6 @@ const Icon = ({ defaultIcon, coloredIcon, isCurrent, hasMultiple }: IconType) =>
       </Transition>
     </div>
   );
-};
+}
 
 export default memo(Icon);

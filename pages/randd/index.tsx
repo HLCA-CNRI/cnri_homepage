@@ -1,23 +1,18 @@
-import { useState, useRef, useEffect, memo } from "react";
-import LCA from "../../components/RAndDCompoenents/LCA";
-import Partnership from "../../components/RAndDCompoenents/Partnership";
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
+import {useEffect, memo} from "react";
+import {useInView} from "react-intersection-observer";
+import {motion, useAnimation} from "framer-motion";
 import Head from "next/head";
-import PartnershipMobile from "../../components/mobileComponents/PartnershipMobile"
-import LCAMobile from "../../components/mobileComponents/LCAMobile"
+import Partnership from "../../components/RAndDCompoenents/Partnership";
+import LCA from "../../components/RAndDCompoenents/LCA";
+import PartnershipMobile from "../../components/mobileComponents/PartnershipMobile";
+import LCAMobile from "../../components/mobileComponents/LCAMobile";
 
 const TansitionVidLToR = {
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  hidden: { opacity: 0, x: -1000 },
+  visible: {opacity: 1, x: 0, transition: {duration: 0.8}},
+  hidden: {opacity: 0, x: -1000},
 };
 
-const TansitionVidRToL = {
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  hidden: { opacity: 0, x: 1000 },
-};
-
-const Randd = () => {
+function Randd() {
   const controlText = useAnimation();
   const controlVid = useAnimation();
   const [ref, inView] = useInView();
@@ -26,7 +21,6 @@ const Randd = () => {
     if (inView) {
       controlText.start("visible");
       controlVid.start("visible");
-    } else {
     }
   }, [controlVid, controlText, inView]);
 
@@ -45,20 +39,19 @@ const Randd = () => {
             className="h-[60vh] sm:h-[80vh]"
             animate={controlVid}
             initial="hidden"
-            variants={TansitionVidLToR}
-          >
+            variants={TansitionVidLToR}>
             <img
-              src={"/images/rAnddIntro.jpg"}
+              alt="rAnddIntro"
+              src="/images/rAnddIntro.jpg"
               className="object-cover h-full w-full rounded-lg shadow-lg"
-            ></img>
+            />
           </motion.div>
           <motion.div
             ref={ref}
             animate={controlText}
             initial="hidden"
             // variants={TansitionVidRToL}
-            className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white"
-          >
+            className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white">
             <div>
               <span>R</span>
               <span className="mx-2">&</span>
@@ -74,26 +67,25 @@ const Randd = () => {
             <LCA />
           </div>
           <div className=" sm:hidden">
-            <LCAMobile/>
+            <LCAMobile />
           </div>
 
-          <div className="grid grid-cols-2"></div>
+          <div className="grid grid-cols-2" />
         </div>
         <div className="w-[100%] mt-[6vh] sm:mt-[12vh]">
           <div className="text-[8vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
             Our Work and Partnership
           </div>
           <div className="hidden sm:flex">
-          <Partnership />
+            <Partnership />
           </div>
           <div className="sm:hidden">
-            <PartnershipMobile/>
+            <PartnershipMobile />
           </div>
-
         </div>
       </div>
     </>
   );
-};
+}
 
 export default memo(Randd);

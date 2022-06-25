@@ -1,25 +1,20 @@
-import { motion, useAnimation } from "framer-motion";
-import { useRef, useEffect, useState, memo } from "react";
+import {motion, useAnimation} from "framer-motion";
+import {useEffect, memo} from "react";
+import {useInView} from "react-intersection-observer";
+import Head from "next/head";
+import ScrollContainer from "react-indiana-drag-scroll";
 import VideoOnHover from "../../components/CompanyComponents/VideoOnHover";
 import Member from "../../components/CompanyComponents/Member";
 import History from "../../components/CompanyComponents/History";
-import { philosophy } from "../../functions/philosophy";
-import { useInView } from "react-intersection-observer";
+import philosophy from "../../functions/philosophy";
 import PhilosophyMobile from "../../components/mobileComponents/PhilosophyMobile";
-import Head from "next/head";
-import ScrollContainer from "react-indiana-drag-scroll";
 
 const TansitionVidLToR = {
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  hidden: { opacity: 0, x: -500 },
+  visible: {opacity: 1, x: 0, transition: {duration: 0.8}},
+  hidden: {opacity: 0, x: -500},
 };
 
-const TansitionVidRToL = {
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  hidden: { opacity: 0, x: 500 },
-};
-
-const Company: React.FC = () => {
+function Company() {
   const controlText = useAnimation();
   const controlVid = useAnimation();
   const [ref, inView] = useInView();
@@ -28,7 +23,6 @@ const Company: React.FC = () => {
     if (inView) {
       controlText.start("visible");
       controlVid.start("visible");
-    } else {
     }
   }, [controlVid, controlText, inView]);
 
@@ -43,31 +37,30 @@ const Company: React.FC = () => {
         <div className="my-[3vh] mb-[5vh] md:mb-[10vh]">
           <div className="relative mb-[5vh] md:mb-[10vh]">
             {/* md 싸이즈 이상일때 transition 적용  */}
-          
+
             <motion.div
               ref={ref}
               className="h-[80vh] flex "
               animate={controlVid}
               initial="hidden"
-              variants={TansitionVidLToR}
-            >
+              variants={TansitionVidLToR}>
               <img
-                src={"/images/companyIntro.jpg"}
+                alt="comapnyImg"
+                src="/images/companyIntro.jpg"
                 className="object-cover h-full w-full rounded-lg shadow-lg z-0 "
-              ></img>
+              />
             </motion.div>
             <motion.div
               ref={ref}
               animate={controlText}
               initial="hidden"
               // variants={TansitionVidRToL}
-              className="absolute inset-0 flex  justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white "
-            >
+              className="absolute inset-0 flex  justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white ">
               <div>COMPANY</div>
             </motion.div>
 
             {/* md 싸이즈 이하일때 transition 적용  */}
-{/* 
+            {/* 
             <motion.div
               ref={ref}
               className="h-[80vh]  md:hidden "
@@ -90,9 +83,6 @@ const Company: React.FC = () => {
               <div>COMPANY</div>
             </motion.div> */}
 
-            
-            
-
             {/* <SlideShow /> */}
           </div>
           <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh] ">
@@ -105,11 +95,7 @@ const Company: React.FC = () => {
               isMiddle={false}
               type={philosophy.mission}
             />
-            <VideoOnHover
-              videoPath="./video/philosophy2.mp4"
-              isMiddle={true}
-              type={philosophy.vision}
-            />
+            <VideoOnHover videoPath="./video/philosophy2.mp4" isMiddle type={philosophy.vision} />
             <VideoOnHover
               videoPath="./video/philosophy3.mp4"
               isMiddle={false}
@@ -119,14 +105,8 @@ const Company: React.FC = () => {
           {/* When display size is smaller than md  */}
           <div className=" md:hidden ">
             <ScrollContainer className="scroll-container flex cursor-pointer">
-              <PhilosophyMobile
-                imgPath="./images/philosophy1Pic.png"
-                type={philosophy.mission}
-              />
-              <PhilosophyMobile
-                imgPath="./images/philosophy2Pic.png"
-                type={philosophy.vision}
-              />
+              <PhilosophyMobile imgPath="./images/philosophy1Pic.png" type={philosophy.mission} />
+              <PhilosophyMobile imgPath="./images/philosophy2Pic.png" type={philosophy.vision} />
               <PhilosophyMobile
                 imgPath="./images/philosophy3Pic.png"
                 type={philosophy.coreValues}
@@ -160,6 +140,6 @@ const Company: React.FC = () => {
       </div>
     </>
   );
-};
+}
 
 export default memo(Company);

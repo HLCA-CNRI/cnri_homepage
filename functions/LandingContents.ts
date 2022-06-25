@@ -1,4 +1,4 @@
-export const LandingContents = {
+const LandingContents = {
   Measure: {
     title: "Measure",
     subtitle: "쉽고, 지속 가능한 모든 탄소의 측정",
@@ -86,3 +86,5 @@ export const LandingContents = {
     },
   },
 };
+
+export default LandingContents;

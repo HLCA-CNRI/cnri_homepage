@@ -1,27 +1,12 @@
-import { memo, useState } from "react";
-import styled from "styled-components";
-import { Button } from "flowbite-react";
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+import {memo, useState} from "react";
 import HistoryContent from "../../functions/HistoryContents";
-
-const Container = styled.div`
-  max-width: 600px;
-  width: 100%;
-  height: 100px;
-`;
-
-const BlackContainer = styled(Container)`
-  background-color: black;
-`;
-
-const RedContainer = styled(Container)`
-  background-color: red;
-`;
 
 interface HistoryType {
   year: number;
 }
 
-const History = ({ year }: HistoryType) => {
+function History({year}: HistoryType) {
   const [isActive, setIsActive] = useState(false);
 
   const clickButton = () => {
@@ -29,26 +14,45 @@ const History = ({ year }: HistoryType) => {
   };
 
   return (
-    <div className="relative  overflow-hidden  shadow-lg cursor-pointer rounded-lg " onClick={clickButton}>
+    <div
+      role="button"
+      className="relative  overflow-hidden  shadow-lg cursor-pointer rounded-lg "
+      onClick={clickButton}>
       {/* <BlackContainer /> */}
 
-      {year == 2021 ? (
-        <img src={"/images/historyimg2.png"} className="object-cover w-full " />
+      {year === 2021 ? (
+        <img alt="history1Img" src="/images/historyimg2.png" className="object-cover w-full " />
       ) : (
-        <img src={"/images/historyimg1.png"} className="object-cover w-full h-full" />
+        <img
+          alt="history2Img"
+          src="/images/historyimg1.png"
+          className="object-cover w-full h-full"
+        />
       )}
 
-      <div className={`${isActive ? "absolute top-0 left-0  w-[100%] h-[100%] bg-slate-600 opacity-60" : ""}`} />
+      <div
+        className={`${
+          isActive ? "absolute top-0 left-0  w-[100%] h-[100%] bg-slate-600 opacity-60" : ""
+        }`}
+      />
 
-      <div className={`absolute top-0 left-0 px-[2vw] w-[100%]`}>
-        <h4 className="text-[10vw] md:text-[6vw] font-extrabold tracking-tight text-white flex w-[100%] justify-center mt-[2vh]">{year}</h4>
+      <div className="absolute top-0 left-0 px-[2vw] w-[100%]">
+        <h4 className="text-[10vw] md:text-[6vw] font-extrabold tracking-tight text-white flex w-[100%] justify-center mt-[2vh]">
+          {year}
+        </h4>
 
         {isActive ? (
-          <button onClick={clickButton} className="mb-[1vh] text-[3vw] font-semibold tracking-tight text-white flex w-[100%] justify-center ">
+          <button
+            type="button"
+            onClick={clickButton}
+            className="mb-[1vh] text-[3vw] font-semibold tracking-tight text-white flex w-[100%] justify-center ">
             ×
           </button>
         ) : (
-          <button onClick={clickButton} className="mb-[1vh] text-[4vw] font-semibold tracking-tight text-white flex w-[100%] justify-center  ">
+          <button
+            type="button"
+            onClick={clickButton}
+            className="mb-[1vh] text-[4vw] font-semibold tracking-tight text-white flex w-[100%] justify-center  ">
             +
           </button>
         )}
@@ -72,6 +76,6 @@ const History = ({ year }: HistoryType) => {
       </div>
     </div>
   );
-};
+}
 
 export default memo(History);

@@ -33,30 +33,30 @@ function HorizontalTransitionVideoInfo({
   const controlText = useAnimation();
   const [ref, inView] = useInView();
 
-  const handleVidMouseEnter = () => {
+  const handleVidMouseEnter = async () => {
+    console.log("open");
     if (videoRef && videoRef.current) {
-      videoRef.current.play();
+      console.log("open2");
+      await videoRef.current.play();
+      await controlText.start("open");
     }
-    controlText.start("open");
   };
 
-  const handleVidMouseLeave = async () => {
+  const handleVidMouseLeave = () => {
     if (videoRef && videoRef.current) {
       // videoRef.current.muted = false
       videoRef.current.currentTime = 0;
       videoRef.current.pause();
     }
-    await controlText.start("close");
-    await controlText.start("close2");
+    controlText.start("close2");
   };
 
   const handleImgMouseEnter = () => {
     controlText.start("open");
   };
 
-  const handleImgMouseLeave = async () => {
-    await controlText.start("close");
-    await controlText.start("close2");
+  const handleImgMouseLeave = () => {
+    controlText.start("close2");
   };
 
   useEffect(() => {
@@ -84,11 +84,6 @@ function HorizontalTransitionVideoInfo({
         initial="initial"
         variants={moveContextFrom}
         style={{width: `${basisVal}`}}
-        onMouseEnter={() => controlText.start("open")}
-        onMouseLeave={async () => {
-          await controlText.start("close");
-          await controlText.start("close2");
-        }}
         className={`${colorType === "green" ? "bg-[#EEF7E9]" : "bg-[#FFF7E1]"} p-[2vw]  ${
           imagePosition === "right" ? "order-first" : "order-last"
         } -z-50`}>

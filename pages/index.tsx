@@ -7,8 +7,9 @@ import HorizontalTransitionVideoInfo from "../components/LandingComponents.tsx/H
 import LandingContents from "../functions/LandingContents";
 
 function Home() {
+  // TODO:Put these in a seperate file and call them accordingly. They appear in other files as well so try to budle them up
   const TansitionVidLToR = {
-    vidVisible: {z: 30, opacity: 1, x: 0, transition: {duration: 0.6}},
+    vidVisible: {opacity: 1, x: 0, transition: {duration: 0.6}},
     vidHidden: {opacity: 0, x: -150},
   };
 
@@ -23,24 +24,21 @@ function Home() {
   };
 
   const TransitionContextLToR = {
-    initial: {z: 30, opacity: 0, x: -100, transition: {duration: 0.6}},
-    open: {z: 30, opacity: 1, x: 0, transition: {duration: 0.6}},
-    close: {z: 30, opacity: 0, transition: {duration: 0.6}},
-    close2: {z: 30, x: -100, transition: {duration: 0}},
+    initial: {opacity: 1, x: -200, transition: {duration: 0.6}},
+    open: {opacity: 1, x: 0, transition: {duration: 0.6}},
+    close2: {x: -200, transition: {duration: 0.6}},
   };
 
   const TransitionContextRToL = {
-    initial: {opacity: 0, x: 200, transition: {duration: 0.6}},
+    initial: {opacity: 1, x: 200, transition: {duration: 0.6}},
     open: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    close: {opacity: 0, transition: {duration: 0.6}},
-    close2: {x: 200, transition: {duration: 0}},
+    close2: {x: 200, transition: {duration: 0.6}},
   };
 
   const TransitionContextTToB = {
-    initial: {z: 0, opacity: 0, y: -200, transition: {duration: 0.6}},
+    initial: {z: 0, opacity: 1, y: -200, transition: {duration: 0.6}},
     open: {z: 0, opacity: 1, y: 0, transition: {duration: 0.6}},
-    close: {z: 0, opacity: 0, transition: {duration: 0.6}},
-    close2: {z: 0, y: -200, transition: {duration: 0}},
+    close2: {z: 0, y: -200, transition: {duration: 0.6}},
   };
 
   return (
@@ -137,7 +135,7 @@ function Home() {
                 contentInfo={LandingContents.Measure.content2}
                 isTop
                 colorType="green"
-                basisVal="120%"
+                basisVal="fit-content"
               />
             </div>
             <div className=" h-[50%] flex flex-col justify-end">

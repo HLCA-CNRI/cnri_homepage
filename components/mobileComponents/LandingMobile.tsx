@@ -87,7 +87,7 @@ function LandingMobile({contentInfo, isVid, backgroundColor}: LandingMobileType)
           ))
         ) : (
           <div className="flex-shrink-0  snap-center  w-[100%]  relative">
-            <img alt="contentImg" src={contentInfo[0].videoPath} className="p-[2vw]" />
+            <img alt="" src={contentInfo[0].videoPath} className="p-[2vw]" />
             <div className="px-[3vw] text-[3.5vw] my-[2vh] font-bold">{contentInfo[0].title}</div>
             <div className="px-[3vw] pb-[3vh] text-[2.5vw]">{contentInfo[0].content}</div>
           </div>

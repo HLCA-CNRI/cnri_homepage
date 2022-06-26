@@ -31,14 +31,13 @@ function VerticalTansitionVideoInfo({
     controlText.start("open");
   };
 
-  const handleCardMouseLeave = async () => {
+  const handleCardMouseLeave = () => {
     if (videoRef && videoRef.current) {
       // videoRef.current.muted = false
       videoRef.current.currentTime = 0;
       videoRef.current.pause();
     }
-    await controlText.start("close");
-    await controlText.start("close2");
+    controlText.start("close2");
   };
 
   useEffect(() => {
@@ -83,12 +82,7 @@ function VerticalTansitionVideoInfo({
         animate={controlText}
         initial="initial"
         variants={moveContextFrom}
-        className={`${colorType === "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} -z-50 `}
-        onMouseEnter={() => controlText.start("open")}
-        onMouseLeave={async () => {
-          await controlText.start("close");
-          await controlText.start("close2");
-        }}>
+        className={`${colorType === "blue" ? "bg-[#EAF2FA]" : "bg-[#EEF7E9]"} -z-50 `}>
         <div className="p-[2vw] z-0 text-[1vw]">
           {contentInfo.content}
           {contentInfo.title === "포트폴리오 관리" ? (

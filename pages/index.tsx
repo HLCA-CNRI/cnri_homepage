@@ -75,6 +75,7 @@ function Home() {
           <div className="py-[3vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>
+
       {/* Measure Section */}
       <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
         <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">

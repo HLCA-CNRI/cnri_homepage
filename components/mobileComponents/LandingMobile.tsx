@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import {useRef, useEffect, useState} from "react";
 
+// 해상도 작아질때 카드에 스크로로보이게 하는 styled components
+// FIXME:scroll does not show on phone.
 const Container = styled.div`
-  background-color: ${(props) => props.color};
-  overflow-x: scroll;
   ::-webkit-scrollbar {
     -webkit-appearance: none;
     height: 0.5vh;
@@ -19,81 +18,51 @@ const Container = styled.div`
 `;
 
 interface LandingMobileType {
-  contentInfo: any;
-  isVid: boolean;
-  backgroundColor: string;
+  contentInfo: any; // 카드 내용 --> 배열로 받음
+  isVid: boolean; // 비디오인지 사진인지
+  backgroundColor: string; // 카드 색
 }
 
 function LandingMobile({contentInfo, isVid, backgroundColor}: LandingMobileType) {
-  const scroll = useRef<null | HTMLDivElement>(null);
-  const [scrollPos, setScrollPos] = useState(0);
-  useEffect(() => {
-    if (scroll && scroll.current) {
-      setScrollPos(scroll.current.scrollLeft);
-      // console.log(scroll.current.clientWidth)
-      // console.log(contentInfo,scroll.current.scrollLeft)
-      // console.log(scroll.current)
-    }
-  }, [scrollPos]);
-
-  const setScroller = (e: any) => {
-    if (scroll && scroll.current) {
-      console.log(
-        "scroll Left",
-        e.target.scrollLeft,
-        "clientWidth",
-        scroll.current.clientWidth,
-        "offsetWidth",
-        scroll.current.offsetWidth,
-        "scrollWidth",
-        scroll.current.scrollWidth
-      );
-      console.log(e.target.scrollLeft / scroll.current.scrollWidth);
-    }
-  };
   return (
-    <div>
-      <Container
-        ref={scroll}
-        color={backgroundColor}
-        className="snap-x flex snap-mandatory overflow-auto "
-        onScroll={setScroller}>
-        {isVid ? (
-          contentInfo.map((val: any) => (
-            <div key={val.title} className="flex-shrink-0  snap-center  w-[100%]  ">
-              <div className="p-[2vw]">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  src={val.videoPath}
-                  className=" object-cover   rounded-lg"
-                />
-              </div>
-
-              <div className="px-[3vw] text-[3.5vw] my-[2vh] font-bold">{val.title}</div>
-              <div className="px-[3vw] pb-[3vh] text-[2.5vw]">
-                {val.content}{" "}
-                {val.title === "포트폴리오 관리" ? (
-                  <a className="cursor-pointer text-blue-600 " href="#footer">
-                    Contact
-                  </a>
-                ) : (
-                  ""
-                )}
-              </div>
+    <Container style={{backgroundColor}} className="snap-x flex snap-mandatory overflow-auto ">
+      {/* video일때 배열을 map해서 하나식 나열 */}
+      {/* img일때 배열 길이 1 map안해도되서 바로 나열 */}
+      {isVid ? (
+        contentInfo.map((val: any) => (
+          <div key={val.title} className="flex-shrink-0  snap-center  w-[100%]  ">
+            <div className="p-[2vw]">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                src={val.videoPath}
+                className=" object-cover   rounded-lg"
+              />
             </div>
-          ))
-        ) : (
-          <div className="flex-shrink-0  snap-center  w-[100%]  relative">
-            <img alt="" src={contentInfo[0].videoPath} className="p-[2vw]" />
-            <div className="px-[3vw] text-[3.5vw] my-[2vh] font-bold">{contentInfo[0].title}</div>
-            <div className="px-[3vw] pb-[3vh] text-[2.5vw]">{contentInfo[0].content}</div>
+
+            <div className="px-[3vw] text-[3.5vw] my-[2vh] font-bold">{val.title}</div>
+            <div className="px-[3vw] pb-[3vh] text-[2.5vw]">
+              {val.content}{" "}
+              {val.title === "포트폴리오 관리" ? (
+                <a className="cursor-pointer text-blue-600 " href="#footer">
+                  Contact
+                </a>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
-        )}
-      </Container>
-    </div>
+        ))
+      ) : (
+        <div className="flex-shrink-0  snap-center  w-[100%]  relative">
+          <img alt="" src={contentInfo[0].videoPath} className="p-[2vw]" />
+          <div className="px-[3vw] text-[3.5vw] my-[2vh] font-bold">{contentInfo[0].title}</div>
+          <div className="px-[3vw] pb-[3vh] text-[2.5vw]">{contentInfo[0].content}</div>
+        </div>
+      )}
+    </Container>
   );
 }
 

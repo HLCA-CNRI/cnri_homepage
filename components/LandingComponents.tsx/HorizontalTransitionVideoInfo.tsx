@@ -73,16 +73,16 @@ function HorizontalTransitionVideoInfo({
         animate={controlText}
         initial="initial"
         variants={moveContextFrom}
-        style={{width: `${basisVal}`}}
-        className={`bg-[${bgColor}] p-[2vw]  ${
-          imagePosition === "right" ? "order-first" : "order-last"
-        } -z-50`}>
+        style={{width: `${basisVal}`, backgroundColor: bgColor}}
+        className={` p-[2vw]  ${imagePosition === "right" ? "order-first" : "order-last"} -z-50`}>
         <p className={classNames("flex items-center justify-center h-[100%] text-[1vw] py-[3vh]")}>
           {contentInfo.content}
         </p>
       </motion.div>
       {/* 카드 title + video or img  */}
-      <div className={`bg-[${bgColor}] p-[2vw] h-[100%] flex flex-col justify-center`}>
+      <div
+        className={` p-[2vw] h-[100%] flex flex-col justify-center`}
+        style={{backgroundColor: bgColor}}>
         <div
           className={`text-[1.8vw] font-bold  w-[100%] flex ${
             imagePosition === "right" ? "justify-end" : ""

@@ -2,45 +2,12 @@ import Head from "next/head";
 import Link from "next/link";
 import {memo} from "react";
 import LandingMobile from "@/components/mobileComponents/LandingMobile";
-import VerticalTansitionVideoInfo from "../components/LandingComponents.tsx/VerticalTransitionVideoInfo";
+import TransitionVariants from "@/functions/TransitionVariants";
+import VerticalSlidingCard from "@/components/LandingComponents.tsx/VerticalSlidingCard";
 import HorizontalTransitionVideoInfo from "../components/LandingComponents.tsx/HorizontalTransitionVideoInfo";
 import LandingContents from "../functions/LandingContents";
 
 function Home() {
-  // TODO:Put these in a seperate file and call them accordingly. They appear in other files as well so try to budle them up
-  const TansitionVidLToR = {
-    vidVisible: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    vidHidden: {opacity: 0, x: -150},
-  };
-
-  const TansitionVidRToL = {
-    vidVisible: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    vidHidden: {opacity: 0, x: 100},
-  };
-
-  const TansitionVidBToT = {
-    vidVisible: {opacity: 1, y: 0, transition: {duration: 0.6}},
-    vidHidden: {opacity: 0, y: 150},
-  };
-
-  const TransitionContextLToR = {
-    initial: {opacity: 0, x: -200, transition: {duration: 0.6}},
-    open: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    close2: {x: "-20vw", transition: {duration: 0.6}},
-  };
-
-  const TransitionContextRToL = {
-    initial: {opacity: 0, x: 200, transition: {duration: 0.6}},
-    open: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    close2: {x: "20vw", transition: {duration: 0.6}},
-  };
-
-  const TransitionContextTToB = {
-    initial: {z: 0, opacity: 0, y: -200, transition: {duration: 0.6}},
-    open: {z: 0, opacity: 1, y: 0, transition: {duration: 0.6}},
-    close2: {z: 0, y: "-40vh", transition: {duration: 0.6}},
-  };
-
   return (
     <>
       <Head>
@@ -51,7 +18,7 @@ function Home() {
         />
         <link rel="icon" href="/images/logo.png" />
       </Head>
-
+      {/* Welcoming Section */}
       <div className="">
         <div className="pt-[5vh]">
           <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] 2xl:text-[4vw]">
@@ -90,6 +57,7 @@ function Home() {
         </div>
       </div>
 
+      {/* Second Navbar  */}
       <section className="sticky inset-x-0 top-[9.5vh] md:top-[11.5vh] left-0 flex justify-center  w-[100%] bg-white z-40 opacity-90 border-2 text-[3.25vw] md:text-[1vw]">
         <Link href="#measure">
           <div className="py-[3vh] mx-[3vw]  cursor-pointer">측정</div>
@@ -107,7 +75,6 @@ function Home() {
           <div className="py-[3vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>
-
       {/* Measure Section */}
       <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
         <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
@@ -119,33 +86,30 @@ function Home() {
         {/* When display is greater than md */}
         <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <div className="col-span-1">
-            <VerticalTansitionVideoInfo
-              moveVidFrom={TansitionVidLToR}
-              moveContextFrom={TransitionContextTToB}
+            <VerticalSlidingCard
+              moveVidFrom={TransitionVariants.TansitionVidLToR}
               contentInfo={LandingContents.Measure.content1}
-              colorType="blue"
+              bgColor="#EAF2FA"
             />
           </div>
           <div className=" h-[100%] col-span-1">
             <div className=" h-[50%]">
               <HorizontalTransitionVideoInfo
                 imagePosition="right"
-                moveVidFrom={TansitionVidRToL}
-                moveContextFrom={TransitionContextRToL}
+                moveVidFrom={TransitionVariants.TansitionVidRToL}
+                moveContextFrom={TransitionVariants.TransitionContextRToL}
                 contentInfo={LandingContents.Measure.content2}
-                isTop
-                colorType="green"
+                bgColor="#EEF7E9"
                 basisVal="fit-content"
               />
             </div>
-            <div className=" h-[50%] flex flex-col justify-end">
+            <div className=" h-[50%]  mt-[6vh] mb-[3vh]">
               <HorizontalTransitionVideoInfo
                 imagePosition="left"
-                moveVidFrom={TansitionVidBToT}
-                moveContextFrom={TransitionContextLToR}
+                moveVidFrom={TransitionVariants.TansitionVidBToT}
+                moveContextFrom={TransitionVariants.TransitionContextLToR}
                 contentInfo={LandingContents.Measure.content3}
-                isTop={false}
-                colorType=""
+                bgColor="#FFF7E1"
                 basisVal="fit-content"
               />
             </div>
@@ -180,31 +144,28 @@ function Home() {
             <div className="h-[50%]">
               <HorizontalTransitionVideoInfo
                 imagePosition="left"
-                moveVidFrom={TansitionVidLToR}
-                moveContextFrom={TransitionContextLToR}
+                moveVidFrom={TransitionVariants.TansitionVidLToR}
+                moveContextFrom={TransitionVariants.TransitionContextLToR}
                 contentInfo={LandingContents.Reduce.content1}
-                isTop
-                colorType="green"
+                bgColor="#EEF7E9"
                 basisVal="fit-content"
               />
             </div>
-            <div className="h-[50%]">
+            <div className="h-[50%] mt-[6vh] mb-[3vh]">
               <HorizontalTransitionVideoInfo
                 imagePosition="right"
-                moveVidFrom={TansitionVidBToT}
-                moveContextFrom={TransitionContextRToL}
+                moveVidFrom={TransitionVariants.TansitionVidBToT}
+                moveContextFrom={TransitionVariants.TransitionContextRToL}
                 contentInfo={LandingContents.Reduce.content2}
-                isTop={false}
-                colorType=""
+                bgColor="#FFF7E1"
                 basisVal="fit-content"
               />
             </div>
           </div>
-          <VerticalTansitionVideoInfo
-            moveVidFrom={TansitionVidRToL}
-            moveContextFrom={TransitionContextTToB}
+          <VerticalSlidingCard
+            moveVidFrom={TransitionVariants.TansitionVidRToL}
             contentInfo={LandingContents.Reduce.content3}
-            colorType="blue"
+            bgColor="#EAF2FA"
           />
         </div>
         <div className="md:hidden">
@@ -229,18 +190,16 @@ function Home() {
         </div>
         {/* When display is greater than md */}
         <div className=" hidden md:grid grid-cols-2 gap-10 ">
-          <VerticalTansitionVideoInfo
-            moveVidFrom={TansitionVidLToR}
-            moveContextFrom={TransitionContextTToB}
+          <VerticalSlidingCard
+            moveVidFrom={TransitionVariants.TansitionVidLToR}
             contentInfo={LandingContents.Remove.content1}
-            colorType="blue"
+            bgColor="#EAF2FA"
           />
 
-          <VerticalTansitionVideoInfo
-            moveVidFrom={TansitionVidRToL}
-            moveContextFrom={TransitionContextTToB}
+          <VerticalSlidingCard
+            moveVidFrom={TransitionVariants.TansitionVidRToL}
             contentInfo={LandingContents.Remove.content2}
-            colorType=""
+            bgColor="#EEF7E9"
           />
         </div>
         <div className="md:hidden">
@@ -263,11 +222,10 @@ function Home() {
         <div className="hidden  md:grid">
           <HorizontalTransitionVideoInfo
             imagePosition="left"
-            moveVidFrom={TansitionVidLToR}
-            moveContextFrom={TransitionContextLToR}
+            moveVidFrom={TransitionVariants.TansitionVidLToR}
+            moveContextFrom={TransitionVariants.TransitionContextLToR2}
             contentInfo={LandingContents.Report.content1}
-            isTop
-            colorType=""
+            bgColor="#FFF7E1"
             basisVal="50%"
           />
         </div>

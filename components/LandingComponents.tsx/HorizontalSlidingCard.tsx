@@ -3,7 +3,7 @@ import {useInView} from "react-intersection-observer";
 import {memo, useEffect, useRef} from "react";
 import classNames from "classnames";
 
-interface HorizontalTransitionVideoInfoType {
+interface HorizontalSlidingCardType {
   imagePosition: string; // 비디오+제목이 왼쪽에 있는지 오릉쪽에 있는지
   moveVidFrom: any; // 카드 TransitionVariant --> 처음 view에 나올때 어디에서 나오는지 지정.
   moveContextFrom: any; // 내용 TransitionVariant --> 호버할때 애니메이션 지정해줌.
@@ -18,14 +18,14 @@ interface HorizontalTransitionVideoInfoType {
   basisVal: string; // flex-basis
 }
 
-function HorizontalTransitionVideoInfo({
+function HorizontalSlidingCard({
   imagePosition,
   moveVidFrom,
   moveContextFrom,
   contentInfo,
   bgColor,
   basisVal,
-}: HorizontalTransitionVideoInfoType) {
+}: HorizontalSlidingCardType) {
   const videoRef = useRef<null | HTMLVideoElement>(null);
   const controlVid = useAnimation(); // 카드 애니메이션 variant
   const controlText = useAnimation(); // 내용 애니메이션 variant
@@ -109,4 +109,4 @@ function HorizontalTransitionVideoInfo({
   );
 }
 
-export default memo(HorizontalTransitionVideoInfo);
+export default memo(HorizontalSlidingCard);

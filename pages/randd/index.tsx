@@ -2,15 +2,11 @@ import {useEffect, memo} from "react";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 import Head from "next/head";
+import TransitionVariants from "@/functions/TransitionVariants";
 import Partnership from "../../components/RAndDCompoenents/Partnership";
 import LCA from "../../components/RAndDCompoenents/LCA";
 import PartnershipMobile from "../../components/mobileComponents/PartnershipMobile";
 import LCAMobile from "../../components/mobileComponents/LCAMobile";
-
-const TansitionVidLToR = {
-  visible: {opacity: 1, x: 0, transition: {duration: 0.8}},
-  hidden: {opacity: 0, x: -1000},
-};
 
 function Randd() {
   const controlText = useAnimation();
@@ -39,7 +35,7 @@ function Randd() {
             className="h-[60vh] sm:h-[80vh]"
             animate={controlVid}
             initial="hidden"
-            variants={TansitionVidLToR}>
+            variants={TransitionVariants.TansitionVidLToR}>
             <img
               alt="rAnddIntro"
               src="/images/rAnddIntro.jpg"

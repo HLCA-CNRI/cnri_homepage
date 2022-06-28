@@ -31,6 +31,7 @@ function LandingMobile({contentInfo, isVid, backgroundColor}: LandingMobileType)
       {isVid ? (
         contentInfo.map((val: any) => (
           <div key={val.title} className="flex-shrink-0  snap-center  w-[100%]  ">
+            {/* 키드 비디오 */}
             <div className="p-[2vw]">
               <video
                 autoPlay
@@ -41,8 +42,9 @@ function LandingMobile({contentInfo, isVid, backgroundColor}: LandingMobileType)
                 className=" object-cover   rounded-lg"
               />
             </div>
-
+            {/* 키드 제목 */}
             <div className="px-[3vw] text-[3.5vw] my-[2vh] font-bold">{val.title}</div>
+            {/* 키드 내용: 포트폴리오 관리일때  tag 따로 있음 */}
             <div className="px-[3vw] pb-[3vh] text-[2.5vw]">
               {val.content}{" "}
               {val.title === "포트폴리오 관리" ? (
@@ -57,8 +59,11 @@ function LandingMobile({contentInfo, isVid, backgroundColor}: LandingMobileType)
         ))
       ) : (
         <div className="flex-shrink-0  snap-center  w-[100%]  relative">
+          {/* 키드 이미지 */}
           <img alt="" src={contentInfo[0].videoPath} className="p-[2vw]" />
+          {/* 키드 제목 */}
           <div className="px-[3vw] text-[3.5vw] my-[2vh] font-bold">{contentInfo[0].title}</div>
+          {/* 키드 내용 */}
           <div className="px-[3vw] pb-[3vh] text-[2.5vw]">{contentInfo[0].content}</div>
         </div>
       )}

@@ -2,24 +2,24 @@ import {useRef, memo} from "react";
 
 // STYLES
 interface VideoOnHoverType {
-  videoPath: string;
-  isMiddle: boolean;
+  // 카드 내용
   type: {
     title: string;
     content: string[];
+    videoPath: string;
   };
 }
 
-function VideoOnHover({videoPath, isMiddle, type}: VideoOnHoverType) {
+function PhilosophyComp({type}: VideoOnHoverType) {
   const videoRef = useRef<null | HTMLVideoElement>(null);
-
-  const textOnMouseEnter = () => {
+  // 사용자 마우스 앤터 이벤트 핸들러 --> 비디오 재생 기능
+  const videoMouseEnter = () => {
     if (videoRef && videoRef.current) {
       videoRef.current.play();
     }
   };
-
-  const textOnMouseLeave = () => {
+  // 사용자 마우스 아웃 이벤트 핸들러 --> 비디오 멈추기 기능
+  const videoMouseLeave = () => {
     if (videoRef && videoRef.current) {
       videoRef.current.currentTime = 0;
       videoRef.current.pause();
@@ -27,18 +27,20 @@ function VideoOnHover({videoPath, isMiddle, type}: VideoOnHoverType) {
   };
 
   return (
-    <div className={`mt-2 ${isMiddle ? "mx-[3vw]" : ""} one relative z-0`}>
+    <div className="mt-2 relative z-0">
+      {/* 비디오 */}
       <video
         ref={videoRef}
-        src={videoPath}
+        src={type.videoPath}
         loop
         muted
-        className=" relative w-[100%] transition-[width] ease-in-out delay-150 object-cover  h-[60vh]  flex-wrap  rounded-lg shadow-xl"
+        className=" relative w-[100%]  object-cover  h-[60vh]  flex-wrap  rounded-lg shadow-xl"
       />
+      {/* 내용 */}
       <div
         className=" absolute inset-0 flex justify-start items-end  px-4 pb-2 "
-        onMouseEnter={textOnMouseEnter}
-        onMouseLeave={textOnMouseLeave}>
+        onMouseEnter={videoMouseEnter}
+        onMouseLeave={videoMouseLeave}>
         <div>
           <div className=" text-[2.5vw] text-white font-semibold mb-4 underline underline-offset-8">
             {type.title}
@@ -56,4 +58,4 @@ function VideoOnHover({videoPath, isMiddle, type}: VideoOnHoverType) {
   );
 }
 
-export default memo(VideoOnHover);
+export default memo(PhilosophyComp);

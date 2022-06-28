@@ -9,19 +9,22 @@
 @font-face {
   font-family: "Noto Sans CJK KR";
   font-weight: 700;
-  src: url("/fonts/NotoSansKR-Bold.otf") format("otf"), url("/fonts/NotoSansKR-Bold.woff2") format("woff2");
+  src: url("/fonts/NotoSansKR-Bold.otf") format("otf"),
+    url("/fonts/NotoSansKR-Bold.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Noto Sans CJK KR";
   font-weight: 500;
-  src: url("/fonts/NotoSansKR-Medium.otf") format("otf"), url("/fonts/NotoSansKR-Medium.woff2") format("woff2");
+  src: url("/fonts/NotoSansKR-Medium.otf") format("otf"),
+    url("/fonts/NotoSansKR-Medium.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Noto Sans CJK KR";
   font-weight: 400;
-  src: url("/fonts/NotoSansKR-Regular.otf") format("otf"), url("/fonts/NotoSansKR-Regular.woff2") format("woff2");
+  src: url("/fonts/NotoSansKR-Regular.otf") format("otf"),
+    url("/fonts/NotoSansKR-Regular.woff2") format("woff2");
 }
 
 * {
@@ -37,25 +40,13 @@
   }
 }
 
-@layer utilities {
-  /* Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-}
-
-.one {
+.philosophyCard {
   width: 33%;
   transition-property: width;
   transition-duration: 1s, 1s;
 }
 
-.one:hover {
+.philosophyCard:hover {
   width: 50%;
   background-color: white;
 }
@@ -64,4 +55,3 @@ body {
   overflow-y: scroll; /* Show vertical scrollbar */
   overflow-x: scroll; /* Show horizontal scrollbar */
 }
-

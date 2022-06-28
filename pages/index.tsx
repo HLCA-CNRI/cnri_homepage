@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
 import {memo} from "react";
-import LandingMobile from "@/components/mobileComponents/LandingMobile";
+import LandingMobile from "@/components/LandingComponents.tsx/LandingMobile";
 import TransitionVariants from "@/functions/TransitionVariants";
 import VerticalSlidingCard from "@/components/LandingComponents.tsx/VerticalSlidingCard";
-import HorizontalTransitionVideoInfo from "../components/LandingComponents.tsx/HorizontalTransitionVideoInfo";
+import HorizontalSlidingCard from "../components/LandingComponents.tsx/HorizontalSlidingCard";
 import LandingContents from "../functions/LandingContents";
 
 function Home() {
@@ -95,7 +95,7 @@ function Home() {
           </div>
           <div className=" h-[100%] col-span-1">
             <div className=" h-[50%]">
-              <HorizontalTransitionVideoInfo
+              <HorizontalSlidingCard
                 imagePosition="right"
                 moveVidFrom={TransitionVariants.TansitionVidRToL}
                 moveContextFrom={TransitionVariants.TransitionContextRToL}
@@ -105,7 +105,7 @@ function Home() {
               />
             </div>
             <div className=" h-[50%]  mt-[6vh] mb-[3vh]">
-              <HorizontalTransitionVideoInfo
+              <HorizontalSlidingCard
                 imagePosition="left"
                 moveVidFrom={TransitionVariants.TansitionVidBToT}
                 moveContextFrom={TransitionVariants.TransitionContextLToR}
@@ -143,7 +143,7 @@ function Home() {
         <div className=" hidden md:grid grid-cols-2 gap-10 ">
           <div className="h-full">
             <div className="h-[50%]">
-              <HorizontalTransitionVideoInfo
+              <HorizontalSlidingCard
                 imagePosition="left"
                 moveVidFrom={TransitionVariants.TansitionVidLToR}
                 moveContextFrom={TransitionVariants.TransitionContextLToR}
@@ -153,7 +153,7 @@ function Home() {
               />
             </div>
             <div className="h-[50%] mt-[6vh] mb-[3vh]">
-              <HorizontalTransitionVideoInfo
+              <HorizontalSlidingCard
                 imagePosition="right"
                 moveVidFrom={TransitionVariants.TansitionVidBToT}
                 moveContextFrom={TransitionVariants.TransitionContextRToL}
@@ -221,7 +221,7 @@ function Home() {
         </div>
         {/* When display is greater than md */}
         <div className="hidden  md:grid">
-          <HorizontalTransitionVideoInfo
+          <HorizontalSlidingCard
             imagePosition="left"
             moveVidFrom={TransitionVariants.TansitionVidLToR}
             moveContextFrom={TransitionVariants.TransitionContextLToR2}

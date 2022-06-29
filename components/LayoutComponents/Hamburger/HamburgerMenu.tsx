@@ -104,6 +104,16 @@ function HamburgerMenu() {
                   </div>
                 </Link>
                 <hr />
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://cnri.notion.site/Front-End-Developer-e241e62124324011819d2890fa8523f7"
+                  className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"
+                  onClick={clickBurger}>
+                  <div>JOBS</div>
+                  <div> {">"} </div>
+                </a>
+                <hr />
 
                 <a
                   target="_blank"
@@ -116,16 +126,6 @@ function HamburgerMenu() {
                 </a>
 
                 <hr />
-
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://cnri.notion.site/Front-End-Developer-e241e62124324011819d2890fa8523f7"
-                  className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"
-                  onClick={clickBurger}>
-                  <div>JOBS</div>
-                  <div> {">"} </div>
-                </a>
               </div>
             </div>
             {/* <hr className = "mt-[72px]"></hr> */}

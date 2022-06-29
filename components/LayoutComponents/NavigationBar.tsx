@@ -61,8 +61,8 @@ function NavigationBar() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://brunch.co.kr/@cnrikorea">
-                    BLOG
+                    href="https://cnri.notion.site/Front-End-Developer-e241e62124324011819d2890fa8523f7">
+                    JOBS
                   </a>
                 </li>
 
@@ -70,8 +70,8 @@ function NavigationBar() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://cnri.notion.site/Front-End-Developer-e241e62124324011819d2890fa8523f7">
-                    JOBS
+                    href="https://brunch.co.kr/@cnrikorea">
+                    BLOG
                   </a>
                 </li>
               </ul>

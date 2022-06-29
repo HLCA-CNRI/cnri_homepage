@@ -2,7 +2,7 @@ import {useEffect, memo} from "react";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 import Head from "next/head";
-import TransitionVariants from "@/functions/TransitionVariants";
+import TransitionVariants from "../../functions/TransitionVariants";
 import Partnership from "../../components/RAndDCompoenents/Partnership";
 import LCA from "../../components/RAndDCompoenents/LCA";
 import PartnershipMobile from "../../components/mobileComponents/PartnershipMobile";

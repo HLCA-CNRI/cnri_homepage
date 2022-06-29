@@ -1,7 +1,7 @@
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {memo, useEffect, useRef} from "react";
-import TransitionVariants from "@/functions/TransitionVariants";
+import TransitionVariants from "../../functions/TransitionVariants";
 
 interface VerticalSlidingCardType {
   moveVidFrom: any; // 카드 TransitionVariant --> 처음 view에 나올때 어디에서 나오는지 지정.

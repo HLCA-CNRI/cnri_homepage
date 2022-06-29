@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import {memo} from "react";
-import LandingMobile from "@/components/LandingComponents.tsx/LandingMobile";
-import TransitionVariants from "@/functions/TransitionVariants";
-import VerticalSlidingCard from "@/components/LandingComponents.tsx/VerticalSlidingCard";
+import LandingMobile from "../components/LandingComponents.tsx/LandingMobile";
+import TransitionVariants from "../functions/TransitionVariants";
+import VerticalSlidingCard from "../components/LandingComponents.tsx/VerticalSlidingCard";
 import HorizontalSlidingCard from "../components/LandingComponents.tsx/HorizontalSlidingCard";
 import LandingContents from "../functions/LandingContents";
 

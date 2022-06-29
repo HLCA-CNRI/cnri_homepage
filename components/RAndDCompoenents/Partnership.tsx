@@ -20,7 +20,7 @@ function Partnership() {
           WorkAndPartnershipContent.posco,
           WorkAndPartnershipContent.ts,
         ];
-        await setCurrentObj(values[currentIdx + 1]);
+        setCurrentObj(values[currentIdx + 1]);
         currentIdx === values.length - 2 ? (currentIdx = 0) : (currentIdx += 1);
       }, 2000);
       return () => clearInterval(interval);

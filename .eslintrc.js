@@ -67,6 +67,8 @@ module.exports = {
     "react/jsx-props-no-spreading": 0, // spreading 사용해도된다고 판단. --> 경호님도 mute 시키심.
     "no-nested-ternary": 0, // nested ternary 사용해도된다고 생각함 --> 경호님도 mute 시키심.
     "no-param-reassign": ["warn", {props: false}], // no-param-reassign 사용해도된다고 생각함 --> 경호님도 mute 시키심.
+    "jsx-a11y/interactive-supports-focus":0,
+    "jsx-a11y/click-events-have-key-events":0,
     "no-unused-expressions": 0,
     "no-void": ["error", {allowAsStatement: true}],
     eqeqeq: 2, // ===, !== 만 쓰기

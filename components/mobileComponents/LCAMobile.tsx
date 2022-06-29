@@ -1,5 +1,5 @@
-import LCAContents from "@/functions/LCAContents";
 import {useState, useRef} from "react";
+import LCAContents from "../../functions/LCAContents";
 import Icon from "../RAndDCompoenents/Icon";
 
 function LCAMobile() {

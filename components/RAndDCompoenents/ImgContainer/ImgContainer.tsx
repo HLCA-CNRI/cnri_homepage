@@ -1,8 +1,8 @@
-interface imgContainerType {
+interface ImgContainerType {
   currentContent: string;
 }
 
-function ImgContainer({currentContent}: imgContainerType) {
+function ImgContainer({currentContent}: ImgContainerType) {
   return (
     <div>
       <img

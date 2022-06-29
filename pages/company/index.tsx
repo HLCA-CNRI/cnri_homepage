@@ -3,7 +3,7 @@ import {useEffect, memo} from "react";
 import {useInView} from "react-intersection-observer";
 import Head from "next/head";
 import ScrollContainer from "react-indiana-drag-scroll";
-import TransitionVariants from "@/functions/TransitionVariants";
+import TransitionVariants from "../../functions/TransitionVariants";
 import PhilosophyComp from "../../components/CompanyComponents/PhilosophyComp";
 import Member from "../../components/CompanyComponents/Member";
 import History from "../../components/CompanyComponents/HistoryComp";

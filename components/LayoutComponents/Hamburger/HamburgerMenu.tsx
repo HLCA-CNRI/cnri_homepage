@@ -120,7 +120,7 @@ function HamburgerMenu() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://brunch.co.kr/@cnrikorea"
+                  href="https://cnri.notion.site/Front-End-Developer-e241e62124324011819d2890fa8523f7"
                   className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"
                   onClick={clickBurger}>
                   <div>JOBS</div>

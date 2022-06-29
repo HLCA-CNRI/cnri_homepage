@@ -61,7 +61,7 @@ function NavigationBar() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://cnri.notion.site/Front-End-Developer-e241e62124324011819d2890fa8523f7">
+                    href="https://front-end-developer.oopy.io">
                     JOBS
                   </a>
                 </li>

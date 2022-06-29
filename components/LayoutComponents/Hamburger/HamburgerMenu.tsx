@@ -116,6 +116,16 @@ function HamburgerMenu() {
                 </a>
 
                 <hr />
+
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://brunch.co.kr/@cnrikorea"
+                  className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"
+                  onClick={clickBurger}>
+                  <div>JOBS</div>
+                  <div> {">"} </div>
+                </a>
               </div>
             </div>
             {/* <hr className = "mt-[72px]"></hr> */}

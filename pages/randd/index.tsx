@@ -15,8 +15,8 @@ function Randd() {
 
   useEffect(() => {
     if (inView) {
-      controlText.start("visible");
-      controlVid.start("visible");
+      controlText.start("vidVisible");
+      controlVid.start("vidVisible");
     }
   }, [controlVid, controlText, inView]);
 
@@ -34,7 +34,7 @@ function Randd() {
             ref={ref}
             className="h-[60vh] sm:h-[80vh]"
             animate={controlVid}
-            initial="hidden"
+            initial="vidHidden"
             variants={TransitionVariants.TansitionVidLToR}>
             <img
               alt="rAnddIntro"

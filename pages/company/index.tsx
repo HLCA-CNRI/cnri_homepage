@@ -18,8 +18,8 @@ function Company() {
   // 처음 뷰 접근할때 애니메이션 기능
   useEffect(() => {
     if (inView) {
-      controlText.start("visible");
-      controlPic.start("visible");
+      controlText.start("vidVisible");
+      controlPic.start("vidVisible");
     }
   }, [controlPic, controlText, inView]);
 
@@ -38,7 +38,7 @@ function Company() {
             ref={ref}
             className="h-[80vh] flex "
             animate={controlPic}
-            initial="hidden"
+            initial="vidHidden"
             variants={TransitionVariants.TansitionVidLToR}>
             <img
               alt="comapnyImg"

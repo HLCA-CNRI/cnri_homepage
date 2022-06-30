@@ -74,7 +74,9 @@ function HorizontalSlidingCard({
         initial="initial"
         variants={moveContextFrom}
         style={{width: `${basisVal}`, backgroundColor: bgColor}}
-        className={` p-[2vw]  ${imagePosition === "right" ? "order-first" : "order-last"} -z-50`}>
+        className={` ${imagePosition === "right" ? "pl-[2vw]" : "pr-[2vw]"} ${
+          imagePosition === "right" ? "order-first" : "order-last"
+        } -z-50`}>
         <p className={classNames("flex items-center justify-center h-[100%] text-[1vw] py-[3vh]")}>
           {contentInfo.content}
         </p>

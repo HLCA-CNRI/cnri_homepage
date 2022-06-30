@@ -86,7 +86,7 @@ function Home() {
             />
           </div>
           <div className=" h-[100%] col-span-1">
-            <div className=" h-[50%]">
+            <div className=" h-[55%]">
               <HorizontalSlidingCard
                 imagePosition="right"
                 moveVidFrom={TransitionVariants.TansitionVidRToL}
@@ -96,7 +96,7 @@ function Home() {
                 basisVal="fit-content"
               />
             </div>
-            <div className=" h-[50%]  mt-[6vh] mb-[3vh]">
+            <div className=" h-[45%]  mt-[6vh] mb-[3vh]">
               <HorizontalSlidingCard
                 imagePosition="left"
                 moveVidFrom={TransitionVariants.TansitionVidBToT}

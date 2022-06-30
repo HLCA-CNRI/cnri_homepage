@@ -4,7 +4,11 @@ function Footer() {
       <div className="h-fit w-screen py-12 flex justify-center border-2">
         <div className="w-full px-2 md:w-2/3 grid grid-rows-2 md:grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4 text-xs">
           <div className="relative flex flex-col space-y-2 justify-between">
-            <img alt="logo" className="w-1/2 md:w-5/12 h-auto" src="/images/logo.png" />
+            <img
+              alt="logo"
+              className="w-1/2 md:w-5/12 h-auto"
+              src="/images/CNRI_logo_black_under.svg"
+            />
             <span>
               Copyright © 2022 by carbon neutral research institute.
               <div className="hidden-block">All Rights Reserved</div>

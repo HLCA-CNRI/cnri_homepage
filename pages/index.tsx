@@ -10,14 +10,6 @@ import LandingContents from "../functions/LandingContents";
 function Home() {
   return (
     <>
-      <Head>
-        <title>Welcome to CNRIKOREA</title>
-        <meta
-          name="description"
-          content="기후변화와 탄소중립을 위한 최고의 파트너, 탄소중립연구원입니다!"
-        />
-        <link rel="icon" href="/images/logo.png" />
-      </Head>
       {/* Welcoming Section */}
       <div className="">
         <div className="pt-[5vh]">

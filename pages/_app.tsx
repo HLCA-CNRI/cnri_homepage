@@ -2,7 +2,9 @@ import "../styles/globals.css";
 import type {AppProps} from "next/app";
 import {memo, useEffect} from "react";
 import {useRouter} from "next/router";
+import {DefaultSeo} from "next-seo";
 import Layout from "../components/Layout";
+import SEO from "../next-seo.config";
 import * as ga from "../lib/gtag";
 
 function MyApp({Component, pageProps}: AppProps) {
@@ -23,6 +25,7 @@ function MyApp({Component, pageProps}: AppProps) {
   }, [router.events]);
   return (
     <Layout>
+      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </Layout>
   );

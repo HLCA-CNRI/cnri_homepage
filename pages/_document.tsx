@@ -22,6 +22,7 @@ class MyDocument extends Document {
           `,
             }}
           />
+          <link rel="icon" href="/images/CNRI_logo_white_under.svg" />
 
           {/* <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" /> */}
         </Head>

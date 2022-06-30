@@ -9,13 +9,17 @@ function NavigationBar() {
         <nav className="bg-white  px-2 sm:px-4 py-[2.5vh] rounded h-[10vh] md:h-[12vh] flex">
           <div className="container flex flex-wrap justify-between items-center mx-auto">
             <Link href="/" className="flex items-center my-4">
-              <img alt="logoImg" src="/images/logo.png" className="h-[3.5vh] md:h-[7vh]" />
+              <img
+                alt="logoImg"
+                src="/images/CNRI_logo_black_under.svg"
+                className="h-[3.5vh] md:h-[7vh] cursor-pointer"
+              />
             </Link>
 
             <div className="flex order-2">
               <button
                 type="button"
-                className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500 font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] sm:py-[1.4vh] my-[0.5vh] md:my-[0] md:py-[1vh] mr-[1vw]">
+                className="bg-white hover:bg-blue-500 hover:text-white border border-blue-500 font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] sm:py-[1.4vh] my-[0.5vh] md:my-[0] md:py-[1vh] mr-[1vw] ">
                 <a
                   className=""
                   target="_blank"
@@ -27,7 +31,7 @@ function NavigationBar() {
 
               <button
                 type="button"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] sm:py-[1.4vh] my-[0.5vh] md:my-[0] md:py-[1vh]">
+                className="bg-blue-500 hover:bg-blue-700 border-2 border-blue-500 text-white font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] sm:py-[1.4vh] my-[0.5vh] md:my-[0] md:py-[1vh]">
                 <a
                   className=""
                   target="_blank"

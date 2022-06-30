@@ -1,6 +1,5 @@
 import {useRef, memo} from "react";
 
-// STYLES
 interface VideoOnHoverType {
   // 카드 내용
   type: {

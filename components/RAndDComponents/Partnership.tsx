@@ -1,11 +1,11 @@
 import {useState, useRef, useEffect, memo} from "react";
-import WorkAndPartnershipContent from "../../functions/WorkAndResponsibilitiesPartnership";
+import PartnershipContent from "../../functions/PartnershipContent";
 import Icon from "./Icon";
-import Carousel from "../Carousel";
+import Carousel from "./Carousel";
 
 function Partnership() {
   const [userInteracted, setUserInteracted] = useState(true);
-  const [currentObj, setCurrentObj] = useState(WorkAndPartnershipContent.totalBusiness);
+  const [currentObj, setCurrentObj] = useState(PartnershipContent.totalBusiness);
   const picRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
@@ -13,12 +13,12 @@ function Partnership() {
       let currentIdx = 0;
       const interval = setInterval(async () => {
         const values = [
-          WorkAndPartnershipContent.ts,
-          WorkAndPartnershipContent.h2,
-          WorkAndPartnershipContent.snu,
-          WorkAndPartnershipContent.totalBusiness,
-          WorkAndPartnershipContent.posco,
-          WorkAndPartnershipContent.ts,
+          PartnershipContent.ts,
+          PartnershipContent.h2,
+          PartnershipContent.snu,
+          PartnershipContent.totalBusiness,
+          PartnershipContent.posco,
+          PartnershipContent.ts,
         ];
         setCurrentObj(values[currentIdx + 1]);
         currentIdx === values.length - 2 ? (currentIdx = 0) : (currentIdx += 1);
@@ -30,8 +30,8 @@ function Partnership() {
   const MouseOver = (e: any) => {
     setUserInteracted(false);
     const val = e.target.id;
-    if (WorkAndPartnershipContent[val] !== undefined) {
-      setCurrentObj(WorkAndPartnershipContent[val]);
+    if (PartnershipContent[val] !== undefined) {
+      setCurrentObj(PartnershipContent[val]);
     }
   };
 
@@ -57,8 +57,8 @@ function Partnership() {
           className="relative">
           <div className="absolute w-[150%] -bottom-[60%] left-[20%]">
             <Icon
-              defaultIcon={WorkAndPartnershipContent.ts.default}
-              coloredIcon={WorkAndPartnershipContent.ts.colored}
+              defaultIcon={PartnershipContent.ts.default}
+              coloredIcon={PartnershipContent.ts.colored}
               isCurrent={currentObj.title === "ts"}
             />
           </div>
@@ -74,8 +74,8 @@ function Partnership() {
           className="relative">
           <div className="absolute w-[150%] -bottom-[85%] -right-[40%]">
             <Icon
-              defaultIcon={WorkAndPartnershipContent.posco.default}
-              coloredIcon={WorkAndPartnershipContent.posco.colored}
+              defaultIcon={PartnershipContent.posco.default}
+              coloredIcon={PartnershipContent.posco.colored}
               isCurrent={currentObj.title === "posco"}
             />
           </div>
@@ -91,8 +91,8 @@ function Partnership() {
           className="relative">
           <div className="absolute w-[150%] -bottom-[85%] left-[40%]">
             <Icon
-              defaultIcon={WorkAndPartnershipContent.h2.default}
-              coloredIcon={WorkAndPartnershipContent.h2.colored}
+              defaultIcon={PartnershipContent.h2.default}
+              coloredIcon={PartnershipContent.h2.colored}
               isCurrent={currentObj.title === "h2"}
             />
           </div>
@@ -119,8 +119,8 @@ function Partnership() {
           className="relative">
           <div className="absolute w-[150%] bottom-[40%] -left-[20%]">
             <Icon
-              defaultIcon={WorkAndPartnershipContent.totalBusiness.default}
-              coloredIcon={WorkAndPartnershipContent.totalBusiness.colored}
+              defaultIcon={PartnershipContent.totalBusiness.default}
+              coloredIcon={PartnershipContent.totalBusiness.colored}
               isCurrent={currentObj.title === "totalBusiness"}
             />
           </div>
@@ -137,8 +137,8 @@ function Partnership() {
           className="relative">
           <div className="absolute w-[150%] bottom-[40%] -right-[120%]">
             <Icon
-              defaultIcon={WorkAndPartnershipContent.snu.default}
-              coloredIcon={WorkAndPartnershipContent.snu.colored}
+              defaultIcon={PartnershipContent.snu.default}
+              coloredIcon={PartnershipContent.snu.colored}
               isCurrent={currentObj.title === "snu"}
             />
           </div>

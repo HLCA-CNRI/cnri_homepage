@@ -1,18 +1,16 @@
 import {useState, useRef} from "react";
 import LCAContents from "../../functions/LCAContents";
-import Icon from "../RAndDCompoenents/Icon";
+import Icon from "./Icon";
 
 function LCAMobile() {
-  const [currentObj, setCurrentObj] = useState(LCAContents.resources);
+  const [currentObj, setCurrentObj] = useState(LCAContents.resources); // 현제  옵젝트/아이콘
   const videoRef = useRef<null | HTMLVideoElement>(null);
 
+  // ICON:사용자 아이콘 클릭 이벤트 핸들러 --> currentObj가 현제 오브젝트로 지정 + currentObj 비디오 play
   const userClick = (e: any) => {
     const val = e.target.id;
     if (LCAContents[val] !== undefined) {
       setCurrentObj(LCAContents[val]);
-    }
-    if (videoRef && videoRef.current) {
-      console.log(videoRef);
     }
   };
   return (

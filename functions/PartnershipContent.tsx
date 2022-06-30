@@ -1,4 +1,4 @@
-const WorkAndPartnershipContent: {[key: string]: any} = {
+const PartnershipContent: {[key: string]: any} = {
   totalBusiness: {
     title: "totalBusiness",
     kTitle: "LCA 기반의 자동차 환경성 분석",
@@ -141,4 +141,4 @@ const WorkAndPartnershipContent: {[key: string]: any} = {
     hasMultiple: false,
   },
 };
-export default WorkAndPartnershipContent;
+export default PartnershipContent;

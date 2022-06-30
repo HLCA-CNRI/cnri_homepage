@@ -6,17 +6,10 @@ interface IconType {
   coloredIcon: any;
   isCurrent: boolean;
 }
-
+// 아이콘 컴포넌트: 현제 아이콘이라면 colored 아니라면 deafult 애니메이션 까지 추가함
 function Icon({defaultIcon, coloredIcon, isCurrent}: IconType) {
-  const [, setIsColored] = useState(false);
-  const changeToColored = () => {
-    setIsColored(true);
-  };
-  const changeToDefault = () => {
-    setIsColored(false);
-  };
   return (
-    <div onFocus={() => 0} onMouseOver={changeToColored} onMouseLeave={changeToDefault}>
+    <div>
       <Transition
         show={isCurrent}
         className={isCurrent ? "" : "hidden"}

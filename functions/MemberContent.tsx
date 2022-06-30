@@ -1,4 +1,4 @@
-const Mem: {[key: string]: any} = {
+const MemberContent: {[key: string]: any} = {
   min: {
     name: "이민",
     position: "Co-Founder/CEO",
@@ -43,4 +43,4 @@ const Mem: {[key: string]: any} = {
   },
 };
 
-export default Mem;
+export default MemberContent;

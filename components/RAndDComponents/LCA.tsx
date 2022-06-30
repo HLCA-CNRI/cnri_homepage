@@ -4,12 +4,12 @@ import Icon from "./Icon";
 import VideoContainer from "./VideoContainer/VideoContainer";
 
 function LCA() {
-  const [userInteracted, setUserInteracted] = useState(false);
-  const [currentObj, setCurrentObj] = useState(LCAContents.resources);
+  const [userInteracted, setUserInteracted] = useState(false); // 유저가 비디오에 클릭을 하거나, 아이콘에 호버를 했는지 확인. 유저한테 인터랙션이 이뤄졌는지. --> 이뤄졌다면 setUserInteracted(true)
+  const [currentObj, setCurrentObj] = useState(LCAContents.resources); // 현제 옵젝트/아이콘
   const videoRef = useRef<null | HTMLVideoElement>();
+  //userInteracted state 감시, 유저 인터렉션이 없으면 2초마다 current옵젝트가 바뀜,그리고 비디오는 pause되있는 상태.
   useEffect(() => {
     if (!userInteracted) {
-      console.log("userInteracted");
       let currentIdx = 0;
       const interval = setInterval(() => {
         const values = [
@@ -29,10 +29,7 @@ function LCA() {
     if (videoRef && videoRef.current) videoRef.current.pause();
   }, [userInteracted]);
 
-  // useEffect(()=>{
-  //   console.log(userClicked)
-  // },[userClicked])
-
+  // ICON:사용자 마우스 앤터 이벤트 핸들러 --> userInteracted는 true + currentObj가 현제 오브젝트로 지정 + currentObj 비디오 play
   const MouseOver = (e: any) => {
     setUserInteracted(true);
     const val = e.target.id;
@@ -41,11 +38,11 @@ function LCA() {
       setCurrentObj(LCAContents[val]);
     }
     if (videoRef && videoRef.current) {
-      console.log(videoRef);
       videoRef.current.play();
     }
   };
 
+  // ICON:사용자 마우스 아웃 이벤트 핸들러 --> userInteracted는 false + currentObj 비디오 pause
   const MouseOut = () => {
     setUserInteracted(false);
     const videos = document.getElementsByClassName("videos");
@@ -55,26 +52,24 @@ function LCA() {
     });
   };
 
-  const clickIcon = () => {
+  // VIDEO:사용자 비디오 클릭 이벤트 핸들러 --> userInteracted는 true + currentObj 비디오 play
+  const clickVid = () => {
     setUserInteracted(true);
     if (videoRef && videoRef.current) {
-      console.log(videoRef.current);
-      console.log("통과");
       videoRef.current.play();
     }
   };
 
+  // VIDEO:사용자 마우스 앤터 이벤트 핸들러 --> userInteracted는 true + currentObj가 현제 오브젝트로 지정 + currentObj 비디오 play
   const mouseEnterVid = () => {
     setUserInteracted(true);
     if (videoRef && videoRef.current) {
-      console.log(videoRef.current);
-      console.log("통과");
       videoRef.current.play();
     }
   };
 
+  // VIDEO:사용자 마우스 앤터 이벤트 핸들러 --> userInteracted는 false + currentObj 비디오 pause
   const mouseLeaveVid = () => {
-    // console.log("leave")
     setUserInteracted(false);
     if (videoRef && videoRef.current) {
       videoRef.current.pause();
@@ -86,17 +81,20 @@ function LCA() {
       <div className="grid grid-cols-5">
         <div className="col-span-3">
           <div className="grid grid-cols-10 mr-12">
+            {/* 왼쪽 내용 부분 */}
             <div className="col-span-9 h-200">
-              {/* <video ref={videoRef} src={currentObj.videoPath} loop className={`pt-4`} /> */}
+              {/* //TODO: 버그 있음: mouse enter도 하고 클릭도 해야 비디오 재생이 가능함. mouse enter 지우면 클릭 두번해야함. */}
+              {/* FIXME : 아마 따로 컴퍼넌트로 빠져서 그렇다고 추정됨 FIX */}
               <div
                 role="button"
-                onMouseEnter={mouseEnterVid}
-                onClick={clickIcon}
+                onMouseEnter={MouseOver}
+                onClick={clickVid}
                 onFocus={() => 0}
-                onMouseLeave={mouseLeaveVid}
+                onMouseLeave={MouseOut}
                 className=" h-50">
+                {/* 제목 */}
                 <div className="text-4xl mb-[2vh] lg:text-[2.5vw] ">{currentObj.kTitle}</div>
-
+                {/* 비디오 VideoContainer 통해서 currentObj 보여주고 나머지 hidden으로 해놓음  */}
                 <VideoContainer
                   videoRef={videoRef}
                   currentContent={currentObj.title}
@@ -111,6 +109,7 @@ function LCA() {
                   ]}
                 />
               </div>
+              {/* 내용 */}
               <div className="pb-4 text-md xl:text-[1.2vw] mt-4 h-32 ">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
@@ -118,14 +117,15 @@ function LCA() {
             </div>
           </div>
         </div>
+        {/* 오른쪽 아이콘 부분 -->5X5 구성*/}
         <div className="grid grid-cols-5 col-span-2">
           <div className="col-span-2" />
+          {/* 원료 채굴 icon */}
           <div
             role="button"
             id="test"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
-            onClick={clickIcon}
             onFocus={() => 0}
             className="relative">
             <div className="absolute  w-[100%] bottom-[-50%]">
@@ -143,12 +143,11 @@ function LCA() {
             </div>
           </div>
           <div className="col-span-2" />
-
+          {/*폐기 icon */}
           <div
             role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
-            onClick={clickIcon}
             onFocus={() => 0}
             className="relative">
             <div className="absolute w-[100%] bottom-[-20%] left-[50%]">
@@ -167,12 +166,11 @@ function LCA() {
           </div>
 
           <div className=" col-span-3" />
-
+          {/* 원료 가공 icon */}
           <div
             role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
-            onClick={clickIcon}
             onFocus={() => 0}
             className="relative">
             <div className="absolute w-[100%] bottom-[-20%] right-[50%]">
@@ -191,23 +189,19 @@ function LCA() {
           </div>
 
           <div className=" col-span-2 " />
+          {/*MAIN LCA */}
           <div className="relative ">
             <div className="absolute w-[150%] -top-[30%] -left-[30%]">
               <img alt="lcaImg" src="/images/lca.png" />
             </div>
           </div>
 
-          {/* <div onMouseOver={MouseOver} onMouseLeave = {MouseOut} onClick = {clickIcon}>
-            <div>Hello</div>
-          </div> */}
-
           <div className=" col-span-2" />
-
+          {/* 제품 사용 icon */}
           <div
             role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
-            onClick={clickIcon}
             onFocus={() => 0}
             className="relative ">
             <div className="absolute w-[100%] bottom-[20%] left-[50%]">
@@ -226,12 +220,11 @@ function LCA() {
           </div>
 
           <div className=" col-span-3" />
-
+          {/* 제품 제조 icon */}
           <div
             role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
-            onClick={clickIcon}
             onFocus={() => 0}
             className="relative">
             <div className="absolute w-[100%] bottom-[20%] right-[50%]">
@@ -251,11 +244,11 @@ function LCA() {
 
           <div className="col-span-2" />
 
+          {/* 분배 icon */}
           <div
             role="button"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
-            onClick={clickIcon}
             onFocus={() => 0}
             className="relative">
             <div className="absolute  w-[100%] bottom-[50%] ">

@@ -7,7 +7,7 @@ function LCA() {
   const [userInteracted, setUserInteracted] = useState(false); // 유저가 비디오에 클릭을 하거나, 아이콘에 호버를 했는지 확인. 유저한테 인터랙션이 이뤄졌는지. --> 이뤄졌다면 setUserInteracted(true)
   const [currentObj, setCurrentObj] = useState(LCAContents.resources); // 현제 옵젝트/아이콘
   const videoRef = useRef<null | HTMLVideoElement>();
-  //userInteracted state 감시, 유저 인터렉션이 없으면 2초마다 current옵젝트가 바뀜,그리고 비디오는 pause되있는 상태.
+  // userInteracted state 감시, 유저 인터렉션이 없으면 2초마다 current옵젝트가 바뀜,그리고 비디오는 pause되있는 상태.
   useEffect(() => {
     if (!userInteracted) {
       let currentIdx = 0;
@@ -117,7 +117,7 @@ function LCA() {
             </div>
           </div>
         </div>
-        {/* 오른쪽 아이콘 부분 -->5X5 구성*/}
+        {/* 오른쪽 아이콘 부분 -->5X5 구성 */}
         <div className="grid grid-cols-5 col-span-2">
           <div className="col-span-2" />
           {/* 원료 채굴 icon */}
@@ -143,7 +143,7 @@ function LCA() {
             </div>
           </div>
           <div className="col-span-2" />
-          {/*폐기 icon */}
+          {/* 폐기 icon */}
           <div
             role="button"
             onMouseOver={MouseOver}
@@ -189,7 +189,7 @@ function LCA() {
           </div>
 
           <div className=" col-span-2 " />
-          {/*MAIN LCA */}
+          {/* MAIN LCA */}
           <div className="relative ">
             <div className="absolute w-[150%] -top-[30%] -left-[30%]">
               <img alt="lcaImg" src="/images/lca.png" />

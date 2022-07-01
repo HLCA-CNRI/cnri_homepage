@@ -23,7 +23,7 @@ const TransitionVariants = {
   TransitionContextLToR2: {
     initial: {opacity: 0, x: -200, transition: {duration: 0.6}},
     open: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    close2: {x: "-50vw", transition: {duration: 0.6}},
+    close2: {x: "-35vw", transition: {duration: 0.6}},
   },
 
   TransitionContextRToL: {

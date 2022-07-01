@@ -103,7 +103,7 @@ function HorizontalSlidingCard({
           <img
             src="/images/report1.png"
             alt="report1Img"
-            className="transition-[width] delay-150 object-cover rounded-lg shadow-xl  mt-[2vh]"
+            className="transition-[width] delay-150 object-cover rounded-lg   mt-[2vh] w-[100%] p-5"
           />
         )}
       </div>

@@ -4,12 +4,12 @@ import Icon from "./Icon";
 import Carousel from "./Carousel";
 
 function Partnership() {
-  const [userInteracted, setUserInteracted] = useState(true);
-  const [currentObj, setCurrentObj] = useState(PartnershipContent.totalBusiness);
+  const [userInteracted, setUserInteracted] = useState(false); // 유저가 이미지에 호버 하거나, 아이콘에 호버를 했는지 확인. 유저한테 인터랙션이 이뤄졌는지. --> 이뤄졌다면 setUserInteracted(true)
+  const [currentObj, setCurrentObj] = useState(PartnershipContent.h2); // 현제 옵젝트/아이콘
   const picRef = useRef<null | HTMLDivElement>(null);
-
+  // userInteracted state 감시, 유저 인터렉션이 없으면 2초마다 current옵젝트가 바뀜
   useEffect(() => {
-    if (userInteracted) {
+    if (!userInteracted) {
       let currentIdx = 0;
       const interval = setInterval(async () => {
         const values = [
@@ -27,34 +27,26 @@ function Partnership() {
     }
   }, [userInteracted]);
 
+  // ICON:사용자 마우스 앤터 이벤트 핸들러 --> userInteracted는 true + currentObj가 현제 오브젝트로 지정
   const MouseOver = (e: any) => {
-    setUserInteracted(false);
+    setUserInteracted(true);
     const val = e.target.id;
     if (PartnershipContent[val] !== undefined) {
       setCurrentObj(PartnershipContent[val]);
     }
   };
-
+  // ICON :사용자 마우스 아웃 이벤트 핸들러 --> userInteracted는 false
   const MouseOut = () => {
-    setUserInteracted(true);
-  };
-
-  const clickIcon = () => {
     setUserInteracted(false);
   };
 
   return (
     <div className="grid grid-cols-3 w-[100%] h-[75vh] py-4 ">
+      {/* 왼쪽 아이콘 부분 -->5X5 구성 */}
       <div className="grid grid-cols-5 h-[70vh]">
         <div className="col-span-2" />
-
-        <div
-          role="button"
-          onMouseOver={MouseOver}
-          onMouseLeave={MouseOut}
-          onClick={clickIcon}
-          onFocus={() => 0}
-          className="relative">
+        {/* ts icon */}
+        <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
           <div className="absolute w-[150%] -bottom-[60%] left-[20%]">
             <Icon
               defaultIcon={PartnershipContent.ts.default}
@@ -64,14 +56,8 @@ function Partnership() {
           </div>
         </div>
         <div className="col-span-2" />
-
-        <div
-          role="button"
-          onMouseOver={MouseOver}
-          onMouseLeave={MouseOut}
-          onClick={clickIcon}
-          onFocus={() => 0}
-          className="relative">
+        {/* posco icon */}
+        <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
           <div className="absolute w-[150%] -bottom-[85%] -right-[40%]">
             <Icon
               defaultIcon={PartnershipContent.posco.default}
@@ -82,13 +68,8 @@ function Partnership() {
         </div>
 
         <div className="col-span-3" />
-        <div
-          role="button"
-          onMouseOver={MouseOver}
-          onMouseLeave={MouseOut}
-          onClick={clickIcon}
-          onFocus={() => 0}
-          className="relative">
+        {/* h2 icon */}
+        <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
           <div className="absolute w-[150%] -bottom-[85%] left-[40%]">
             <Icon
               defaultIcon={PartnershipContent.h2.default}
@@ -99,6 +80,7 @@ function Partnership() {
         </div>
 
         <div className="col-span-2" />
+        {/* MAIN CNRI */}
         <div className="relative ">
           <div className="absolute w-[200%] top-[50%] -left-[20%]">
             <img alt="logoImg" src="/images/logo.png" />
@@ -109,14 +91,8 @@ function Partnership() {
 
         <div className="col-span-5  h-8" />
         <div className="col-span-1" />
-
-        <div
-          role="button"
-          onMouseOver={MouseOver}
-          onMouseLeave={MouseOut}
-          onClick={clickIcon}
-          onFocus={() => 0}
-          className="relative">
+        {/* totalBusiness icon */}
+        <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
           <div className="absolute w-[150%] bottom-[40%] -left-[20%]">
             <Icon
               defaultIcon={PartnershipContent.totalBusiness.default}
@@ -127,14 +103,8 @@ function Partnership() {
         </div>
 
         <div className="col-span-1" />
-
-        <div
-          role="button"
-          onMouseOver={MouseOver}
-          onMouseLeave={MouseOut}
-          onClick={clickIcon}
-          onFocus={() => 0}
-          className="relative">
+        {/* snu icon */}
+        <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
           <div className="absolute w-[150%] bottom-[40%] -right-[120%]">
             <Icon
               defaultIcon={PartnershipContent.snu.default}
@@ -145,8 +115,9 @@ function Partnership() {
         </div>
         <div className="col-span-1" />
       </div>
-
+      {/* 오른쪽 내용 부분 */}
       <div className="col-span-2 ml-40">
+        {/* 만야에 hasMultiple --> 내용이 1개 이상이면 Carousel 형태로 보여주기 아니면 그냥 currentObj 내용 보내주기 */}
         <div
           ref={picRef}
           onMouseEnter={MouseOver}

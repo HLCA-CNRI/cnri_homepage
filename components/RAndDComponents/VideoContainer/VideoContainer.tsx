@@ -2,10 +2,12 @@ import classNames from "classnames";
 import {memo} from "react";
 
 type VideoContainerProps = {
-  videoPaths: string[];
-  currentContent: string;
-  videoRef: any;
+  videoPaths: string[]; // 비디오 격로들 나열
+  currentContent: string; // 현제 보여줄 옵젝트
+  videoRef: any; // 비디오를 dom을 조정할 수 있는 useRef
 };
+
+// 비디오는 currentContent이면 보여지고, 아니면 hidden
 function VideoContainer({videoPaths, currentContent, videoRef}: VideoContainerProps) {
   return (
     <div>

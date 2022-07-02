@@ -5,21 +5,19 @@ import Carousel from "./Carousel";
 
 function PartnershipMobile() {
   const [currentObj, setCurrentObj] = useState(PartnershipContent.totalBusiness);
-  const picRef = useRef<null | HTMLVideoElement>(null);
-
+  // ICON:사용자 아이콘 클릭 이벤트 핸들러 --> currentObj가 현제 오브젝트로 지정
   const userClick = (e: any) => {
     const val = e.target.id;
     if (PartnershipContent[val] !== undefined) {
       setCurrentObj(PartnershipContent[val]);
     }
-    if (picRef && picRef.current) {
-      console.log(picRef);
-    }
   };
 
   return (
     <div>
+      {/* 위에 아이콘 부분 -->위에 3칸 grid 구성 */}
       <div className="border grid grid-cols-3">
+        {/* ts */}
         <div
           role="button"
           id="ts"
@@ -35,6 +33,7 @@ function PartnershipMobile() {
             />
           </div>
         </div>
+        {/* posco */}
         <div
           role="button"
           id="posco"
@@ -50,6 +49,7 @@ function PartnershipMobile() {
             />
           </div>
         </div>
+        {/* h2 */}
         <div
           id="h2"
           className={`border flex justify-center ${
@@ -64,7 +64,9 @@ function PartnershipMobile() {
           </div>
         </div>
       </div>
+      {/* 위에 아이콘 부분 -->밑에 2칸 grid 구성 */}
       <div className="border grid grid-cols-2">
+        {/* totalBusiness */}
         <div
           id="totalBusiness"
           className={`border flex justify-center ${
@@ -78,6 +80,7 @@ function PartnershipMobile() {
             />
           </div>
         </div>
+        {/* snu */}
         <div
           id="snu"
           className={`border flex justify-center ${
@@ -92,7 +95,8 @@ function PartnershipMobile() {
           </div>
         </div>
       </div>
-
+      {/* 밑에 내용 부분 --> 사진 + 내용 */}
+      {/* 만야에 hasMultiple --> 내용이 1개 이상이면 Carousel 형태로 보여주기 아니면 그냥 currentObj 내용 보내주기 */}
       <div className="mt-[2vh] border-2 p-[3vw] mb-[3vh] h-[65vh] iphone12Pro:h-[48vh] xxxs:h-[65vh] xxs:h-[85vh] ">
         <div>
           {currentObj.hasMultiple ? (

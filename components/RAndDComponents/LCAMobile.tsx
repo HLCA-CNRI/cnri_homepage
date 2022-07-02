@@ -15,7 +15,9 @@ function LCAMobile() {
   };
   return (
     <div>
+      {/* 위에 아이콘 부분 -->3X2 grid 구성 */}
       <div className="border grid grid-cols-3 ">
+        {/* 원료 채굴 */}
         <div
           role="button"
           id="resources"
@@ -40,7 +42,7 @@ function LCAMobile() {
             </div>
           </div>
         </div>
-
+        {/* 원료 가공 */}
         <div
           role="button"
           id="processing"
@@ -63,7 +65,7 @@ function LCAMobile() {
             />
           </div>
         </div>
-
+        {/* 제품 제조  */}
         <div
           role="button"
           id="manufacturing"
@@ -86,6 +88,7 @@ function LCAMobile() {
             />
           </div>
         </div>
+        {/* 분배  */}
         <div
           role="button"
           id="distribution"
@@ -108,6 +111,7 @@ function LCAMobile() {
             />
           </div>
         </div>
+        {/* 제품 사용  */}
         <div
           role="button"
           id="use"
@@ -130,7 +134,7 @@ function LCAMobile() {
             />
           </div>
         </div>
-
+        {/* 폐기  */}
         <div
           role="button"
           id="endOfLife"
@@ -154,6 +158,7 @@ function LCAMobile() {
           </div>
         </div>
       </div>
+      {/* 밑에 내용 부분 -->영상 + 내용 */}
       <div className="mt-[2vh] border-2 p-[3vw] h-[48vh]  xxxs:h-[55vh]  xxs:h-[70vh]">
         <video ref={videoRef} autoPlay loop muted playsInline src={currentObj.videoPath} />
         <div className="text-[5.5vw]  font-semibold pb-[1vh] pt-[2vh]">{currentObj.kTitle}</div>

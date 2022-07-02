@@ -48,6 +48,7 @@ module.exports = {
       2,
       {namedComponents: ["function-declaration", "arrow-function"]},
     ],
+    "jsx-a11y/mouse-events-have-key-events":0,
     "react/require-default-props": [1, {forbidDefaultForRequired: true}],
     "no-underscore-dangle": [2, {allowAfterThis: true, allowFunctionParams: false}],
     "import/extensions": [2, "never"],

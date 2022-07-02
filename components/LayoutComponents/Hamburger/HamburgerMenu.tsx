@@ -28,8 +28,8 @@ const MenuContainer = styled.div`
 `;
 
 function HamburgerMenu() {
-  const [open, setOpen] = useState(false);
-
+  const [open, setOpen] = useState(false); // 햄버거 메뉴가 open되있는지 보는 state.
+  // 사용자 온클릭 이벤트 핸들러 --> 클릭하면 open state 토글
   const clickBurger = () => {
     setOpen(!open);
   };
@@ -38,9 +38,11 @@ function HamburgerMenu() {
     <div>
       <HamburgerMenuContainer>
         <HamburgerIcon>
+          {/* 아이콘 부분 open state이 true 면 --> X 아이콘 인니면 햄버거 아이콘 */}
           <motion.div
             className="ml-[3vw] flex flex-col justify-center h-[100%]"
             onClick={clickBurger}>
+            {/* 햄버거 아이콘,x아이콘 */}
             {open === false ? (
               <svg viewBox="0 0 100 80" width="30" height="30" className=" h-[100%] mt-[0.8vh]">
                 <rect width="100" height="11" />
@@ -54,6 +56,7 @@ function HamburgerMenu() {
             )}
           </motion.div>
         </HamburgerIcon>
+        {/* 매뉴에 들어가는 목록들, open이 true 일때만 보여짐 */}
         {open === true ? (
           <MenuContainer>
             <div

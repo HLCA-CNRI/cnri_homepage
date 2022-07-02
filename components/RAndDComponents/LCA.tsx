@@ -29,11 +29,10 @@ function LCA() {
     if (videoRef && videoRef.current) videoRef.current.pause();
   }, [userInteracted]);
 
-  // ICON:사용자 마우스 앤터 이벤트 핸들러 --> userInteracted는 true + currentObj가 현제 오브젝트로 지정 + currentObj 비디오 play
+  // ICON + VIDEO:사용자 마우스 앤터 이벤트 핸들러 --> userInteracted는 true + currentObj가 현제 오브젝트로 지정 + currentObj 비디오 play
   const MouseOver = (e: any) => {
     setUserInteracted(true);
     const val = e.target.id;
-
     if (LCAContents[val] !== undefined) {
       setCurrentObj(LCAContents[val]);
     }
@@ -42,7 +41,7 @@ function LCA() {
     }
   };
 
-  // ICON:사용자 마우스 아웃 이벤트 핸들러 --> userInteracted는 false + currentObj 비디오 pause
+  // ICON + VIDEO:사용자 마우스 아웃 이벤트 핸들러 --> userInteracted는 false + currentObj 비디오 pause
   const MouseOut = () => {
     setUserInteracted(false);
     const videos = document.getElementsByClassName("videos");
@@ -83,13 +82,12 @@ function LCA() {
           <div className="grid grid-cols-10 mr-12">
             {/* 왼쪽 내용 부분 */}
             <div className="col-span-9 h-200">
-              {/* //TODO: 버그 있음: mouse enter도 하고 클릭도 해야 비디오 재생이 가능함. mouse enter 지우면 클릭 두번해야함. */}
+              {/* TODO: 버그 있음: mouse enter도 하고 클릭도 해야 비디오 재생이 가능함. mouse enter 지우면 클릭 두번해야함. */}
               {/* FIXME : 아마 따로 컴퍼넌트로 빠져서 그렇다고 추정됨 FIX */}
               <div
                 role="button"
                 onMouseEnter={MouseOver}
                 onClick={clickVid}
-                onFocus={() => 0}
                 onMouseLeave={MouseOut}
                 className=" h-50">
                 {/* 제목 */}
@@ -126,7 +124,6 @@ function LCA() {
             id="test"
             onMouseOver={MouseOver}
             onMouseLeave={MouseOut}
-            onFocus={() => 0}
             className="relative">
             <div className="absolute  w-[100%] bottom-[-50%]">
               <div
@@ -144,12 +141,7 @@ function LCA() {
           </div>
           <div className="col-span-2" />
           {/* 폐기 icon */}
-          <div
-            role="button"
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onFocus={() => 0}
-            className="relative">
+          <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
             <div className="absolute w-[100%] bottom-[-20%] left-[50%]">
               <div
                 className={`flex w-[100%] justify-center ${
@@ -167,12 +159,7 @@ function LCA() {
 
           <div className=" col-span-3" />
           {/* 원료 가공 icon */}
-          <div
-            role="button"
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onFocus={() => 0}
-            className="relative">
+          <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
             <div className="absolute w-[100%] bottom-[-20%] right-[50%]">
               <div
                 className={`flex w-[100%] justify-center ${
@@ -198,12 +185,7 @@ function LCA() {
 
           <div className=" col-span-2" />
           {/* 제품 사용 icon */}
-          <div
-            role="button"
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onFocus={() => 0}
-            className="relative ">
+          <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative ">
             <div className="absolute w-[100%] bottom-[20%] left-[50%]">
               <Icon
                 defaultIcon={LCAContents.use.default}
@@ -221,12 +203,7 @@ function LCA() {
 
           <div className=" col-span-3" />
           {/* 제품 제조 icon */}
-          <div
-            role="button"
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onFocus={() => 0}
-            className="relative">
+          <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
             <div className="absolute w-[100%] bottom-[20%] right-[50%]">
               <Icon
                 defaultIcon={LCAContents.manufacturing.default}
@@ -245,12 +222,7 @@ function LCA() {
           <div className="col-span-2" />
 
           {/* 분배 icon */}
-          <div
-            role="button"
-            onMouseOver={MouseOver}
-            onMouseLeave={MouseOut}
-            onFocus={() => 0}
-            className="relative">
+          <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
             <div className="absolute  w-[100%] bottom-[50%] ">
               <Icon
                 defaultIcon={LCAContents.distribution.default}

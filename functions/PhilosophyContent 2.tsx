@@ -6,7 +6,8 @@ const PhilosophyContent = {
       "탄소중립 실현을 통해",
       "지속 가능한 지구를 실현해내겠습니다.",
     ],
-    videoPath: "./video/philosophy1.mp4",
+    videoPath:
+      "https://user-images.githubusercontent.com/66363530/176815028-a9c44f1c-4aa6-4dfa-90a7-db4364dade6d.mp4",
     imgPath: "./images/philosophy1Pic.png",
   },
   vision: {

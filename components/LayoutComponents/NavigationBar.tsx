@@ -23,7 +23,7 @@ function NavigationBar() {
                 className=""
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://lc.cnrikorea.net/">
+                href="https://lc.cnrikorea.com/">
                 체험하기
               </a>
             </button>
@@ -35,7 +35,7 @@ function NavigationBar() {
                 className=""
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://cis.cnrikorea.net/register">
+                href="https://cis.cnrikorea.com/register">
                 데모신청
               </a>
             </button>
@@ -47,7 +47,7 @@ function NavigationBar() {
           <div className="order-1  hidden sm:flex">
             <ul className="flex ">
               <li className="mx-[0.3vw]  px-[1vw] py-[1vh] text-[1vw] font-medium">
-                <a target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.net">
+                <a target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.com">
                   PRODUCT
                 </a>
               </li>

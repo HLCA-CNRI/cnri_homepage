@@ -22,7 +22,7 @@ function Partnership() {
         ];
         setCurrentObj(values[currentIdx + 1]);
         currentIdx === values.length - 2 ? (currentIdx = 0) : (currentIdx += 1);
-      }, 2000);
+      }, 3000);
       return () => clearInterval(interval);
     }
   }, [userInteracted]);

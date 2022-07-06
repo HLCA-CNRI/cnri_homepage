@@ -23,7 +23,7 @@ function LCA() {
         ];
         setCurrentObj(values[currentIdx + 1]);
         currentIdx === values.length - 2 ? (currentIdx = 0) : (currentIdx += 1);
-      }, 2000);
+      }, 3000);
       return () => clearInterval(interval);
     }
     if (videoRef && videoRef.current) videoRef.current.pause();

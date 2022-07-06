@@ -48,7 +48,7 @@ function LandingMobile({contentInfo, isVid, backgroundColor}: LandingMobileType)
             <div className="px-[3vw] pb-[3vh] text-[2.5vw]">
               {val.content}{" "}
               {val.title === "포트폴리오 관리" ? (
-                <a className="cursor-pointer text-blue-600 " href="#footer">
+                <a className="cursor-pointer text-blue-600" href="#footer">
                   Contact
                 </a>
               ) : (

@@ -39,9 +39,7 @@ function HamburgerMenu() {
       <HamburgerMenuContainer>
         <HamburgerIcon>
           {/* 아이콘 부분 open state이 true 면 --> X 아이콘 인니면 햄버거 아이콘 */}
-          <motion.div
-            className="ml-[3vw] flex flex-col justify-center h-[100%]"
-            onClick={clickBurger}>
+          <motion.div className="flex flex-col justify-center h-[100%]" onClick={clickBurger}>
             {/* 햄버거 아이콘,x아이콘 */}
             {open === false ? (
               <svg viewBox="0 0 100 80" width="30" height="30" className=" h-[100%] mt-[0.8vh]">

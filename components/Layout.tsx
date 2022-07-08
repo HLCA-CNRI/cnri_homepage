@@ -1,6 +1,6 @@
 import {memo, ReactNode} from "react";
-import NavigationBar from "./LayoutComponents/NavigationBar";
 import Footer from "./LayoutComponents/Footer";
+import NavBar from "./LayoutComponents/NavBar";
 
 interface LayoutInterface {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface LayoutInterface {
 function Layout({children}: LayoutInterface) {
   return (
     <>
-      <NavigationBar />
+      <NavBar />
       {children}
       <Footer />
     </>

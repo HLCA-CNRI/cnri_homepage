@@ -42,10 +42,10 @@ function HamburgerMenu() {
           <motion.div className="flex flex-col justify-center h-[100%]" onClick={clickBurger}>
             {/* 햄버거 아이콘,x아이콘 */}
             {open === false ? (
-              <svg viewBox="0 0 100 80" width="30" height="30" className=" h-[100%] mt-[0.8vh]">
-                <rect width="100" height="11" />
-                <rect y="30" width="100" height="11" />
-                <rect y="60" width="100" height="11" />
+              <svg viewBox="0 0 100 80" width="30" height="30" className=" h-[100%]">
+                <rect width="100" height="10" />
+                <rect y="30" width="100" height="10" />
+                <rect y="60" width="100" height="10" />
               </svg>
             ) : (
               <svg className="mt-[0.8vh]" width="24" height="24" viewBox="0 0 24 24">

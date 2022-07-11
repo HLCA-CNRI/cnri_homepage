@@ -5,7 +5,7 @@ import HamburgerMenu from "./Hamburger/HamburgerMenu";
 function NavigationBar() {
   return (
     <div className="sticky z-50  inset-x-0 top-0">
-      <nav className="px-[6vw] flex place-items-center justify-between min-w-[100%] bg-white border-b-2 h-[12vh]">
+      <nav className="px-[6vw] flex place-items-center justify-between min-w-[100%] bg-white border-b-2 h-[10vh] sm:h-[12vh]">
         <Link href="/" className="flex items-center my-4">
           <img
             alt="logoImg"
@@ -40,30 +40,32 @@ function NavigationBar() {
             </a>
           </li>
         </ul>
-        <div>
-          <button
-            type="button"
-            className="bg-white hover:bg-blue-500 hover:text-white border border-blue-500 font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] sm:py-[1.4vh] my-[0.5vh] md:my-[0] md:py-[1vh] mr-[1vw] ">
-            <a
-              className=""
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://lc.cnrikorea.com/">
-              체험하기
-            </a>
-          </button>
+        <div className="flex">
+          <div>
+            <button
+              type="button"
+              className="bg-white hover:bg-blue-500 hover:text-white border border-blue-500 font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] py-[0.8vh] sm:py-[1.2vh]  mr-[1.5vw] md:my-[0] md:py-[1vh] ">
+              <a
+                className=""
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://lc.cnrikorea.com/">
+                체험하기
+              </a>
+            </button>
 
-          <button
-            type="button"
-            className="bg-blue-500 hover:bg-blue-700 border-2 border-blue-500 text-white font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] sm:py-[1.4vh] my-[0.5vh] md:my-[0] md:py-[1vh] mr-[1vw]">
-            <a
-              className=""
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://cis.cnrikorea.com/register">
-              데모신청
-            </a>
-          </button>
+            <button
+              type="button"
+              className="bg-blue-500 hover:bg-blue-700 text-white border border-blue-500 font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] py-[0.8vh] sm:py-[1.2vh]  mr-[1.5vw] md:my-[0] md:py-[1vh] ">
+              <a
+                className=""
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://cis.cnrikorea.com/register">
+                데모신청
+              </a>
+            </button>
+          </div>
           <button type="button" className="sm:hidden">
             <HamburgerMenu />
           </button>

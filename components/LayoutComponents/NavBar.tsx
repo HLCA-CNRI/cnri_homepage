@@ -44,7 +44,7 @@ function NavigationBar() {
           <div>
             <button
               type="button"
-              className="bg-white hover:bg-blue-500 hover:text-white border border-blue-500 font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] py-[0.8vh] sm:py-[1.2vh]  mr-[1.5vw] md:my-[0] md:py-[1vh] ">
+              className="bg-white hover:bg-blue-500 hover:text-white border border-blue-500 font-medium text-[2.5vw] md:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] py-[0.8vh] sm:py-[1.2vh]  mr-[1.5vw] sm:mr-[0.8vw] md:my-[0] md:py-[1vh] ">
               <a
                 className=""
                 target="_blank"

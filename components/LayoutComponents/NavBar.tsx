@@ -15,7 +15,7 @@ function NavigationBar() {
         </Link>
         <ul className="hidden sm:flex ">
           <li className="mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
-            <a target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.com">
+            <a target="_blank" rel="noopener noreferrer" href="https://ciet.cnrikorea.com">
               PRODUCT
             </a>
           </li>

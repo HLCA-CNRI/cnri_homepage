@@ -36,7 +36,7 @@ function Footer() {
             <div className="grid grid-cols-4 ">
               <span className="font-semibold">본사</span>
               <span className="col-span-3">
-                서울특별시 관악구 관악로1(서울대학교), 32-1동 203호
+                서울특별시 관악구 남부순환로 1793(백광빌딩), 9층 CNRIKOREA
               </span>
             </div>
             <div className="grid grid-cols-4 ">

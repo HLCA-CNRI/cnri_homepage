@@ -45,6 +45,10 @@ module.exports = {
       cnri_light_blue: "#DEF3FD",
       cnri_dark_green: "#49b949",
       cnri_light_green: "#e8f4ea",
+      constant: {
+        CIET_MINT: "#00D8CD",
+        CIET_BACK: "#eff2f6",
+      },
     }),
     columns: {
       auto: "auto",

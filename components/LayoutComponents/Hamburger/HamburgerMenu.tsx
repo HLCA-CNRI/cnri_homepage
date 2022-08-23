@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import {motion} from "framer-motion";
 import Link from "next/link";
+import classNames from "classnames";
 
 const HamburgerMenuContainer = styled.div`
   display: flex;
@@ -27,11 +28,32 @@ const MenuContainer = styled.div`
   user-select: none;
 `;
 
+const ProductListStyle = styled.div`
+  width: 100%;
+
+  ul {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  ul.active {
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+`;
+
 function HamburgerMenu() {
   const [open, setOpen] = useState(false); // 햄버거 메뉴가 open되있는지 보는 state.
+  const [prodListIsOpen, setProdListIsOpen] = useState(false);
   // 사용자 온클릭 이벤트 핸들러 --> 클릭하면 open state 토글
   const clickBurger = () => {
     setOpen(!open);
+  };
+
+  const clickProdList = () => {
+    setProdListIsOpen(!prodListIsOpen);
   };
 
   return (
@@ -57,12 +79,7 @@ function HamburgerMenu() {
         {/* 매뉴에 들어가는 목록들, open이 true 일때만 보여짐 */}
         {open === true ? (
           <MenuContainer>
-            <div
-              role="button"
-              className="w-[100%] flex justify-end "
-              onClick={() => {
-                setOpen(false);
-              }}>
+            <div role="button" className="w-[100%] flex justify-end">
               <div className=" pt-[72px] w-[60%] bg-white shadow-lg border h-[100vh] ">
                 <Link href="/">
                   <div
@@ -74,16 +91,25 @@ function HamburgerMenu() {
                   </div>
                 </Link>
                 <hr />
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://ciet-test.cnrikorea.com"
-                  className="  py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"
-                  onClick={clickBurger}>
-                  <div>PRODUCT</div>
-                  <div> {">"} </div>
-                </a>
-
+                <ProductListStyle onClick={clickProdList}>
+                  <div className="py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]">
+                    <div>PRODUCT</div>
+                    <div> {">"} </div>
+                  </div>
+                  <ul
+                    className={classNames("w-[100%] text-left text-[3vw]", {
+                      active: prodListIsOpen,
+                    })}>
+                    <li className="py-[2vh] px-[5vw] hover:text-blue-600">
+                      <a href="https://cis.cnrikorea.com" target="_blank" rel="noopener noreferrer">
+                        CIS
+                      </a>
+                    </li>
+                    <li className="py-[2vh] px-[5vw] hover:text-blue-600">
+                      <Link href="/product/ciet">CIET</Link>
+                    </li>
+                  </ul>
+                </ProductListStyle>
                 <hr />
                 <Link href="/company">
                   <div

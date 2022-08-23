@@ -25,15 +25,14 @@ function Home() {
             className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://lc.cnrikorea.com/">
-            체험하기
+            href="https://cis.cnrikorea.com">
+            CIS
           </a>
           <a
             className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
-            target="_blank"
             rel="noopener noreferrer"
-            href="https://cis.cnrikorea.com/register">
-            데모신청
+            href="/product/ciet">
+            CIET
           </a>
         </div>
         <div className="flex justify-center ">
@@ -69,7 +68,7 @@ function Home() {
       </section>
 
       {/* Measure Section */}
-      <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
+      <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
         <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
           {LandingContents.Measure.title}
         </div>
@@ -124,7 +123,7 @@ function Home() {
         </div>
       </section>
       {/* Reduce Section */}
-      <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
+      <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
         <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
           {LandingContents.Reduce.title}
         </div>
@@ -174,7 +173,7 @@ function Home() {
         </div>
       </section>
       {/* Remove Section */}
-      <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start">
+      <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
         <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
           {LandingContents.Remove.title}
         </div>
@@ -204,7 +203,7 @@ function Home() {
         </div>
       </section>
       {/* Report Section */}
-      <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28 snap-start mb-[3vh]">
+      <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28  mb-[3vh]">
         <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
           {LandingContents.Report.title}
         </div>
@@ -212,7 +211,7 @@ function Home() {
           {LandingContents.Report.subtitle}
         </div>
         {/* When display is greater than md */}
-        <div className="hidden  md:grid">
+        <div className="hidden md:grid overflow-hidden">
           <HorizontalSlidingCard
             imagePosition="left"
             moveVidFrom={TransitionVariants.TansitionVidLToR}

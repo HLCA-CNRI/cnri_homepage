@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {memo} from "react";
+import styled from "styled-components";
 import HamburgerMenu from "./Hamburger/HamburgerMenu";
 
 function NavigationBar() {
@@ -14,11 +15,21 @@ function NavigationBar() {
           />
         </Link>
         <ul className="hidden sm:flex ">
-          <li className="mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
-            <a target="_blank" rel="noopener noreferrer" href="https://ciet-test.cnrikorea.com">
+          <ProductListStyle className="mx-[0.3vw] px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+            <a rel="noopener noreferrer" href="#">
               PRODUCT
             </a>
-          </li>
+            <div className="list">
+              <span className="hover:text-blue-700">
+                <a href="https://cis.cnrikorea.com" target="_blank" rel="noopener noreferrer">
+                  CIS
+                </a>
+              </span>
+              <Link href="/product/ciet">
+                <span className="hover:text-blue-700">CIET</span>
+              </Link>
+            </div>
+          </ProductListStyle>
 
           <li className=" mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
             <Link href="/company">COMPANY</Link>
@@ -49,20 +60,16 @@ function NavigationBar() {
                 className=""
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://lc.cnrikorea.com/">
-                체험하기
+                href="https://cis.cnrikorea.com">
+                CIS
               </a>
             </button>
 
             <button
               type="button"
               className="bg-blue-500 hover:bg-blue-700 text-white border border-blue-500 font-medium text-[2.5vw] sm:text-[1.2vw] rounded-lg px-[2vw] md:px-[1.3vw] py-[0.8vh]  mr-[1.5vw] md:my-[0] md:py-[1vh]">
-              <a
-                className=""
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://cis.cnrikorea.com/register">
-                데모신청
+              <a className="" target="_blank" rel="noopener noreferrer" href="/product/ciet">
+                CIET
               </a>
             </button>
           </div>
@@ -76,3 +83,33 @@ function NavigationBar() {
 }
 
 export default memo(NavigationBar);
+
+const ProductListStyle = styled.li`
+  position: relative;
+
+  .list {
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: -13vh;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+  }
+
+  &:hover .list {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .list span {
+    padding: 0.8vw 1vw;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease-in;
+  }
+`;

@@ -4,7 +4,7 @@ import {GA_TRACKING_ID} from "../lib/gtag";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="ko">
+      <Html lang="ko" className="scroll-smooth snap-y snap-mandatory">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />

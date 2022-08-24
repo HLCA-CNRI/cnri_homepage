@@ -231,7 +231,7 @@ const ImageStyle = styled.div`
     height: 25vw !important;
   }
 
-  &.dashboard * {
+  &.dashboard span {
     height: 25vw !important;
   }
 
@@ -242,12 +242,8 @@ const ImageStyle = styled.div`
       height: 80vw !important;
     }
 
-    &.dashboard {
-      height: 50vw !important;
-      margin-top: -3rem;
-    }
-
-    &.dashboard * {
+    &.dashboard span {
+      width: 100vw !important;
       height: 60vw !important;
     }
   }
@@ -261,8 +257,9 @@ const CardStyle = styled.div`
   gap: 0.5rem;
 
   @media screen and (max-width: 640px) {
-    flex-shrink: 1;
-    margin-right: 1.5rem;
+    /* flex-shrink: 1; */
+    /* margin-right: 1.5rem; */
+    padding-right: 1.5rem;
   }
 `;
 
@@ -275,8 +272,8 @@ const CardImageStyle = styled.div`
 
   @media screen and (max-width: 640px) {
     & * {
-      width: 75vw !important;
-      height: 65vw !important;
+      width: 70vw !important;
+      height: 50vw !important;
     }
   }
 `;

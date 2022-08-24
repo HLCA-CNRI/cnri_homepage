@@ -185,7 +185,7 @@ function CietPage() {
             감축 시나리오 제공
           </strong>
         </h3>
-        <ScrollContainer className="scroll-container flex md:justify-center w-full pl-10 pr-3 md:pl-0 md:pr-0 gap-0 md:gap-10">
+        <ScrollContainer className="scroll-container flex md:justify-center w-full pl-14 md:pl-0 gap-10 md:gap-10">
           {cietCardContent.map((item) => (
             <CardStyle>
               <div>
@@ -257,9 +257,9 @@ const CardStyle = styled.div`
   gap: 0.5rem;
 
   @media screen and (max-width: 640px) {
-    /* flex-shrink: 1; */
-    /* margin-right: 1.5rem; */
-    padding-right: 1.5rem;
+    &:last-child {
+      padding-right: 12vw;
+    }
   }
 `;
 

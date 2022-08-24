@@ -22,14 +22,14 @@ function Home() {
         </div>
         <div className="flex justify-center my-[3.2vh]  ">
           <a
-            className="bg-white hover:bg-blue-500 hover:text-white border-2 border-blue-500  text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
+            className="bg-white text-constant-CIET_MINT hover:bg-constant-CIET_MINT hover:text-white border-2 border-constant-CIET_MINT transition-all duration-300 ease-in  text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
             target="_blank"
             rel="noopener noreferrer"
             href="https://cis.cnrikorea.com">
             CIS
           </a>
           <a
-            className="bg-blue-500 hover:bg-blue-700 border-blue-500  border-2 text-white text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
+            className="text-white bg-constant-CIET_MINT hover:bg-white hover:text-constant-CIET_MINT border-2 border-constant-CIET_MINT transition-all  ease-in text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
             rel="noopener noreferrer"
             href="/product/ciet">
             CIET

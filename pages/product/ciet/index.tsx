@@ -34,14 +34,14 @@ function CietPage() {
         </div>
         <div className="flex justify-center my-[3.2vh]">
           <a
-            className="bg-white text-green-500 hover:bg-green-500 hover:text-white border-2 border-green-500  text-[3vw] md:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
+            className="bg-white text-constant-CIET_MINT hover:bg-constant-CIET_MINT hover:text-white border-2 border-constant-CIET_MINT transition-all duration-300 ease-in text-[3vw] md:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
             target="_blank"
             rel="noopener noreferrer"
             href="https://ciet-test.cnrikorea.com">
             바로가기
           </a>
           <a
-            className="scroll-smooth text-green-500 bg-white hover:bg-green-500 hover:text-white border-2 border-green-500  text-[3vw] md:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
+            className="scroll-smooth text-white bg-constant-CIET_MINT hover:bg-white hover:text-constant-CIET_MINT border-2 border-constant-CIET_MINT transition-all  ease-in text-[3vw] md:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
             rel="noopener noreferrer"
             href="#footer">
             문의하기
@@ -185,7 +185,7 @@ function CietPage() {
             감축 시나리오 제공
           </strong>
         </h3>
-        <ScrollContainer className="scroll-container flex md:justify-center w-full px-8 gap-5 md:gap-10">
+        <ScrollContainer className="scroll-container flex md:justify-center w-full pl-10 pr-3 md:pl-0 md:pr-0 gap-0 md:gap-10">
           {cietCardContent.map((item) => (
             <CardStyle>
               <div>
@@ -206,7 +206,7 @@ function CietPage() {
       <section>
         <div className="flex justify-center my-[10vh]">
           <a
-            className="scroll-smooth bg-green-500 text-white hover:bg-white hover:text-green-500 border-2 border-green-500  text-[3vw] md:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
+            className="scroll-smooth text-white bg-constant-CIET_MINT hover:bg-white hover:text-constant-CIET_MINT border-2 border-constant-CIET_MINT transition-all  ease-in  text-[3vw] md:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
             rel="noopener noreferrer"
             href="#footer">
             문의하기
@@ -262,6 +262,7 @@ const CardStyle = styled.div`
 
   @media screen and (max-width: 640px) {
     flex-shrink: 1;
+    margin-right: 1.5rem;
   }
 `;
 
@@ -275,7 +276,7 @@ const CardImageStyle = styled.div`
   @media screen and (max-width: 640px) {
     & * {
       width: 75vw !important;
-      height: 70vw !important;
+      height: 65vw !important;
     }
   }
 `;

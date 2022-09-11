@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import {memo} from "react";
+import styled from "styled-components";
 import LandingMobile from "../components/LandingComponents.tsx/LandingMobile";
 import TransitionVariants from "../functions/TransitionVariants";
 import VerticalSlidingCard from "../components/LandingComponents.tsx/VerticalSlidingCard";
@@ -13,23 +14,23 @@ function Home() {
       {/* Welcoming Section */}
       <div className="">
         <div className="pt-[5vh]">
-          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] 2xl:text-[4vw]">
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] 2xl:text-[77px]">
             넷제로 달성을 위해 필요한
           </div>
-          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw]  2xl:text-[4vw]">
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw]  2xl:text-[77px]">
             Actionable Plan의 모든 것
           </div>
         </div>
-        <div className="flex justify-center my-[3.2vh]  ">
+        <div className="flex justify-center my-[34.56px]  ">
           <a
-            className="bg-white text-constant-CIET_MINT hover:bg-constant-CIET_MINT hover:text-white border-2 border-constant-CIET_MINT transition-all duration-300 ease-in  text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
+            className="bg-white text-constant-CIET_MINT hover:bg-constant-CIET_MINT hover:text-white border-2 border-constant-CIET_MINT transition-all duration-300 ease-in  text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[16.2px] 2xl:px-[96px] 2xl:text-[40px] mx-[1.5vw] font-bold"
             target="_blank"
             rel="noopener noreferrer"
             href="https://cis.cnrikorea.com">
             CIS
           </a>
           <a
-            className="text-white bg-constant-CIET_MINT hover:bg-white hover:text-constant-CIET_MINT border-2 border-constant-CIET_MINT transition-all  ease-in text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
+            className="text-white bg-constant-CIET_MINT hover:bg-white hover:text-constant-CIET_MINT border-2 border-constant-CIET_MINT transition-all  ease-in text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[16.2px] 2xl:px-[96px] 2xl:text-[40px] mx-[1.5vw] font-bold"
             rel="noopener noreferrer"
             href="/product/ciet">
             CIET
@@ -41,7 +42,7 @@ function Home() {
             loop
             muted
             playsInline
-            className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6"
+            className="md:w-[80vw] 2xl:w-[1500px]  mt-[2vh] shadow-lg rounded-lg mb-6"
             src="/video/LandingIntro.mp4"
           />
           {/* <img src={"/images/landingMain.gif"} className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" /> */}
@@ -66,171 +67,183 @@ function Home() {
           <div className="py-[3vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>
-
-      {/* Measure Section */}
-      <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
-          {LandingContents.Measure.title}
-        </div>
-        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">
-          {LandingContents.Measure.subtitle}
-        </div>
-        {/* When display is greater than md */}
-        <div className=" hidden md:grid grid-cols-2 gap-10 ">
-          <div className="col-span-1">
+      <section className="flex-col justify-center items-center 2xl:w-[1900px] mx-auto">
+        {/* Measure Section */}
+        <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
+          <LandingContentsTitle>{LandingContents.Measure.title}</LandingContentsTitle>
+          <LandingContentsSubTitle>{LandingContents.Measure.subtitle}</LandingContentsSubTitle>
+          {/* When display is greater than md */}
+          <div className=" hidden md:grid grid-cols-2 gap-10 ">
+            <div className="col-span-1">
+              <VerticalSlidingCard
+                moveVidFrom={TransitionVariants.TansitionVidLToR}
+                contentInfo={LandingContents.Measure.content1}
+                bgColor="#EAF2FA"
+              />
+            </div>
+            <div className=" h-[100%] col-span-1">
+              <div className=" h-[55%]">
+                <HorizontalSlidingCard
+                  imagePosition="right"
+                  moveVidFrom={TransitionVariants.TansitionVidRToL}
+                  moveContextFrom={TransitionVariants.TransitionContextRToL}
+                  contentInfo={LandingContents.Measure.content2}
+                  bgColor="#EEF7E9"
+                  basisVal="fit-content"
+                />
+              </div>
+              <div className=" h-[45%]  mt-[6vh] mb-[3vh]">
+                <HorizontalSlidingCard
+                  imagePosition="left"
+                  moveVidFrom={TransitionVariants.TansitionVidBToT}
+                  moveContextFrom={TransitionVariants.TransitionContextLToR}
+                  contentInfo={LandingContents.Measure.content3}
+                  bgColor="#FFF7E1"
+                  basisVal="fit-content"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="md:hidden">
+            <div className="relative ">
+              <LandingMobile
+                contentInfo={[
+                  LandingContents.Measure.content1,
+                  LandingContents.Measure.content2,
+                  LandingContents.Measure.content3,
+                  LandingContents.Measure.content4,
+                ]}
+                isVid
+                backgroundColor="#EAF2FA"
+              />
+            </div>
+          </div>
+        </section>
+        {/* Reduce Section */}
+        <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
+          <LandingContentsTitle>{LandingContents.Reduce.title}</LandingContentsTitle>
+          <LandingContentsSubTitle>{LandingContents.Reduce.subtitle}</LandingContentsSubTitle>
+          {/* When display is greater than md */}
+          <div className=" hidden md:grid grid-cols-2 gap-10 ">
+            <div className="h-full">
+              <div className="h-[50%]">
+                <HorizontalSlidingCard
+                  imagePosition="left"
+                  moveVidFrom={TransitionVariants.TansitionVidLToR}
+                  moveContextFrom={TransitionVariants.TransitionContextLToR}
+                  contentInfo={LandingContents.Reduce.content1}
+                  bgColor="#EEF7E9"
+                  basisVal="fit-content"
+                />
+              </div>
+              <div className="h-[50%] mt-[6vh] mb-[3vh]">
+                <HorizontalSlidingCard
+                  imagePosition="right"
+                  moveVidFrom={TransitionVariants.TansitionVidBToT}
+                  moveContextFrom={TransitionVariants.TransitionContextRToL}
+                  contentInfo={LandingContents.Reduce.content2}
+                  bgColor="#FFF7E1"
+                  basisVal="fit-content"
+                />
+              </div>
+            </div>
             <VerticalSlidingCard
-              moveVidFrom={TransitionVariants.TansitionVidLToR}
-              contentInfo={LandingContents.Measure.content1}
+              moveVidFrom={TransitionVariants.TansitionVidRToL}
+              contentInfo={LandingContents.Reduce.content3}
               bgColor="#EAF2FA"
             />
           </div>
-          <div className=" h-[100%] col-span-1">
-            <div className=" h-[55%]">
-              <HorizontalSlidingCard
-                imagePosition="right"
-                moveVidFrom={TransitionVariants.TansitionVidRToL}
-                moveContextFrom={TransitionVariants.TransitionContextRToL}
-                contentInfo={LandingContents.Measure.content2}
-                bgColor="#EEF7E9"
-                basisVal="fit-content"
-              />
-            </div>
-            <div className=" h-[45%]  mt-[6vh] mb-[3vh]">
-              <HorizontalSlidingCard
-                imagePosition="left"
-                moveVidFrom={TransitionVariants.TansitionVidBToT}
-                moveContextFrom={TransitionVariants.TransitionContextLToR}
-                contentInfo={LandingContents.Measure.content3}
-                bgColor="#FFF7E1"
-                basisVal="fit-content"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="md:hidden">
-          <div className="relative ">
+          <div className="md:hidden">
             <LandingMobile
               contentInfo={[
-                LandingContents.Measure.content1,
-                LandingContents.Measure.content2,
-                LandingContents.Measure.content3,
-                LandingContents.Measure.content4,
+                LandingContents.Reduce.content1,
+                LandingContents.Reduce.content2,
+                LandingContents.Reduce.content3,
               ]}
               isVid
-              backgroundColor="#EAF2FA"
+              backgroundColor="#EEF7E9"
             />
           </div>
-        </div>
-      </section>
-      {/* Reduce Section */}
-      <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
-          {LandingContents.Reduce.title}
-        </div>
-        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">
-          {LandingContents.Reduce.subtitle}
-        </div>
-        {/* When display is greater than md */}
-        <div className=" hidden md:grid grid-cols-2 gap-10 ">
-          <div className="h-full">
-            <div className="h-[50%]">
-              <HorizontalSlidingCard
-                imagePosition="left"
-                moveVidFrom={TransitionVariants.TansitionVidLToR}
-                moveContextFrom={TransitionVariants.TransitionContextLToR}
-                contentInfo={LandingContents.Reduce.content1}
-                bgColor="#EEF7E9"
-                basisVal="fit-content"
-              />
-            </div>
-            <div className="h-[50%] mt-[6vh] mb-[3vh]">
-              <HorizontalSlidingCard
-                imagePosition="right"
-                moveVidFrom={TransitionVariants.TansitionVidBToT}
-                moveContextFrom={TransitionVariants.TransitionContextRToL}
-                contentInfo={LandingContents.Reduce.content2}
-                bgColor="#FFF7E1"
-                basisVal="fit-content"
-              />
-            </div>
-          </div>
-          <VerticalSlidingCard
-            moveVidFrom={TransitionVariants.TansitionVidRToL}
-            contentInfo={LandingContents.Reduce.content3}
-            bgColor="#EAF2FA"
-          />
-        </div>
-        <div className="md:hidden">
-          <LandingMobile
-            contentInfo={[
-              LandingContents.Reduce.content1,
-              LandingContents.Reduce.content2,
-              LandingContents.Reduce.content3,
-            ]}
-            isVid
-            backgroundColor="#EEF7E9"
-          />
-        </div>
-      </section>
-      {/* Remove Section */}
-      <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
-          {LandingContents.Remove.title}
-        </div>
-        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">
-          {LandingContents.Remove.subtitle}
-        </div>
-        {/* When display is greater than md */}
-        <div className=" hidden md:grid grid-cols-2 gap-10 ">
-          <VerticalSlidingCard
-            moveVidFrom={TransitionVariants.TansitionVidLToR}
-            contentInfo={LandingContents.Remove.content1}
-            bgColor="#EAF2FA"
-          />
+        </section>
+        {/* Remove Section */}
+        <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
+          <LandingContentsTitle>{LandingContents.Remove.title}</LandingContentsTitle>
+          <LandingContentsSubTitle>{LandingContents.Remove.subtitle}</LandingContentsSubTitle>
+          {/* When display is greater than md */}
+          <div className=" hidden md:grid grid-cols-2 gap-10 ">
+            <VerticalSlidingCard
+              moveVidFrom={TransitionVariants.TansitionVidLToR}
+              contentInfo={LandingContents.Remove.content1}
+              bgColor="#EAF2FA"
+            />
 
-          <VerticalSlidingCard
-            moveVidFrom={TransitionVariants.TansitionVidRToL}
-            contentInfo={LandingContents.Remove.content2}
-            bgColor="#EEF7E9"
-          />
-        </div>
-        <div className="md:hidden">
-          <LandingMobile
-            contentInfo={[LandingContents.Remove.content1, LandingContents.Remove.content2]}
-            isVid
-            backgroundColor="#FFF7E1"
-          />
-        </div>
-      </section>
-      {/* Report Section */}
-      <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28  mb-[3vh]">
-        <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold ">
-          {LandingContents.Report.title}
-        </div>
-        <div className="text-[4.5vw] sm:text-[2vw] mb-[2vh] md:mb-[5vh]">
-          {LandingContents.Report.subtitle}
-        </div>
-        {/* When display is greater than md */}
-        <div className="hidden md:grid overflow-hidden">
-          <HorizontalSlidingCard
-            imagePosition="left"
-            moveVidFrom={TransitionVariants.TansitionVidLToR}
-            moveContextFrom={TransitionVariants.TransitionContextLToR2}
-            contentInfo={LandingContents.Report.content1}
-            bgColor="#FFF7E1"
-            basisVal="50%"
-          />
-        </div>
-        <div className="md:hidden">
-          <LandingMobile
-            contentInfo={[LandingContents.Report.content1]}
-            isVid={false}
-            backgroundColor="#FDF0E7"
-          />
-        </div>
+            <VerticalSlidingCard
+              moveVidFrom={TransitionVariants.TansitionVidRToL}
+              contentInfo={LandingContents.Remove.content2}
+              bgColor="#EEF7E9"
+            />
+          </div>
+          <div className="md:hidden">
+            <LandingMobile
+              contentInfo={[LandingContents.Remove.content1, LandingContents.Remove.content2]}
+              isVid
+              backgroundColor="#FFF7E1"
+            />
+          </div>
+        </section>
+        {/* Report Section */}
+        <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28  mb-[3vh]">
+          <LandingContentsTitle>{LandingContents.Report.title}</LandingContentsTitle>
+          <LandingContentsSubTitle>{LandingContents.Report.subtitle}</LandingContentsSubTitle>
+          {/* When display is greater than md */}
+          <div className="hidden md:grid overflow-hidden">
+            <HorizontalSlidingCard
+              imagePosition="left"
+              moveVidFrom={TransitionVariants.TansitionVidLToR}
+              moveContextFrom={TransitionVariants.TransitionContextLToR2}
+              contentInfo={LandingContents.Report.content1}
+              bgColor="#FFF7E1"
+              basisVal="50%"
+            />
+          </div>
+          <div className="md:hidden">
+            <LandingMobile
+              contentInfo={[LandingContents.Report.content1]}
+              isVid={false}
+              backgroundColor="#FDF0E7"
+            />
+          </div>
+        </section>
       </section>
     </>
   );
 }
 
 export default memo(Home);
+
+const LandingContentsTitle = styled.div`
+  font-weight: 600;
+  @media only screen and (min-width: 640px) {
+    font-size: 5vw;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 4vw;
+  }
+  @media only screen and (min-width: 1536px) {
+    font-size: 80px;
+  }
+`;
+
+const LandingContentsSubTitle = styled.div`
+  margin-bottom: 2vh;
+  @media only screen and (min-width: 640px) {
+    font-size: 2vw;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 3vw;
+    margin-bottom: 5vh;
+  }
+  @media only screen and (min-width: 1536px) {
+    font-size: 40px;
+  }
+`;

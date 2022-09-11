@@ -67,7 +67,7 @@ function Home() {
           <div className="py-[3vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>
-      <section className="flex-col justify-center items-center 2xl:w-[1900px] mx-auto">
+      <section className="flex-col justify-center items-center lg:w-[900px] xl:w-[1100px] 2xl:w-[1900px]  mx-auto">
         {/* Measure Section */}
         <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
           <LandingContentsTitle>{LandingContents.Measure.title}</LandingContentsTitle>

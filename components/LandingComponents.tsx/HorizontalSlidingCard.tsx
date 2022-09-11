@@ -77,7 +77,10 @@ function HorizontalSlidingCard({
         className={` ${imagePosition === "right" ? "pl-[2vw]" : "pr-[2vw]"} ${
           imagePosition === "right" ? "order-first" : "order-last"
         } -z-50`}>
-        <p className={classNames("flex items-center justify-center h-[100%] text-[1vw] py-[3vh]")}>
+        <p
+          className={classNames(
+            "flex items-center justify-center h-[100%] text-[1vw] 2xl:text-[19.2px] py-[3vh]"
+          )}>
           {contentInfo.content}
         </p>
       </motion.div>
@@ -86,7 +89,7 @@ function HorizontalSlidingCard({
         className={` p-[2vw] h-[100%] flex flex-col justify-center`}
         style={{backgroundColor: bgColor}}>
         <div
-          className={`text-[1.8vw] font-bold  w-[100%] flex ${
+          className={`text-[1.8vw] 2xl:text-[33px] font-bold  w-[100%] flex ${
             imagePosition === "right" ? "justify-end" : ""
           }`}>
           {contentInfo.title}

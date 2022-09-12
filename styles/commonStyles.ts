@@ -24,6 +24,9 @@ export const SectionSubTitleStyle = styled.div`
     font-size: 3vw;
     margin-bottom: 5vh;
   }
+  @media only screen and (min-width: 1024px) {
+    font-size: 30px;
+  }
   @media only screen and (min-width: 1536px) {
     font-size: 40px;
   }

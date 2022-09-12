@@ -7,6 +7,7 @@ import TransitionVariants from "../functions/TransitionVariants";
 import VerticalSlidingCard from "../components/LandingComponents.tsx/VerticalSlidingCard";
 import HorizontalSlidingCard from "../components/LandingComponents.tsx/HorizontalSlidingCard";
 import LandingContents from "../functions/LandingContents";
+import {SectionTitleStyle, SectionSubTitleStyle} from "../styles/commonStyles";
 
 function Home() {
   return (
@@ -70,8 +71,8 @@ function Home() {
       <section className="flex-col justify-center items-center lg:w-[900px] xl:w-[1100px] 2xl:w-[1900px]  mx-auto">
         {/* Measure Section */}
         <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
-          <LandingContentsTitle>{LandingContents.Measure.title}</LandingContentsTitle>
-          <LandingContentsSubTitle>{LandingContents.Measure.subtitle}</LandingContentsSubTitle>
+          <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
+          <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
           <div className=" hidden md:grid grid-cols-2 gap-10 ">
             <div className="col-span-1">
@@ -121,8 +122,8 @@ function Home() {
         </section>
         {/* Reduce Section */}
         <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
-          <LandingContentsTitle>{LandingContents.Reduce.title}</LandingContentsTitle>
-          <LandingContentsSubTitle>{LandingContents.Reduce.subtitle}</LandingContentsSubTitle>
+          <SectionTitleStyle>{LandingContents.Reduce.title}</SectionTitleStyle>
+          <SectionSubTitleStyle>{LandingContents.Reduce.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
           <div className=" hidden md:grid grid-cols-2 gap-10 ">
             <div className="h-full">
@@ -167,8 +168,8 @@ function Home() {
         </section>
         {/* Remove Section */}
         <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
-          <LandingContentsTitle>{LandingContents.Remove.title}</LandingContentsTitle>
-          <LandingContentsSubTitle>{LandingContents.Remove.subtitle}</LandingContentsSubTitle>
+          <SectionTitleStyle>{LandingContents.Remove.title}</SectionTitleStyle>
+          <SectionSubTitleStyle>{LandingContents.Remove.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
           <div className=" hidden md:grid grid-cols-2 gap-10 ">
             <VerticalSlidingCard
@@ -193,8 +194,8 @@ function Home() {
         </section>
         {/* Report Section */}
         <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28  mb-[3vh]">
-          <LandingContentsTitle>{LandingContents.Report.title}</LandingContentsTitle>
-          <LandingContentsSubTitle>{LandingContents.Report.subtitle}</LandingContentsSubTitle>
+          <SectionTitleStyle>{LandingContents.Report.title}</SectionTitleStyle>
+          <SectionSubTitleStyle>{LandingContents.Report.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
           <div className="hidden md:grid overflow-hidden">
             <HorizontalSlidingCard
@@ -220,30 +221,3 @@ function Home() {
 }
 
 export default memo(Home);
-
-const LandingContentsTitle = styled.div`
-  font-weight: 600;
-  @media only screen and (min-width: 640px) {
-    font-size: 5vw;
-  }
-  @media only screen and (min-width: 768px) {
-    font-size: 4vw;
-  }
-  @media only screen and (min-width: 1536px) {
-    font-size: 80px;
-  }
-`;
-
-const LandingContentsSubTitle = styled.div`
-  margin-bottom: 2vh;
-  @media only screen and (min-width: 640px) {
-    font-size: 2vw;
-  }
-  @media only screen and (min-width: 768px) {
-    font-size: 3vw;
-    margin-bottom: 5vh;
-  }
-  @media only screen and (min-width: 1536px) {
-    font-size: 40px;
-  }
-`;

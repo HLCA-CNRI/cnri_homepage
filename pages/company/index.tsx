@@ -10,6 +10,7 @@ import Member from "../../components/CompanyComponents/Member";
 import History from "../../components/CompanyComponents/HistoryComp";
 import PhilosophyContent from "../../functions/PhilosophyContent";
 import PhilosophyMobile from "../../components/CompanyComponents/PhilosophyMobile";
+import {SectionTitleStyle} from "../../styles/commonStyles";
 
 // Company Page seo 내용
 const companySeo = {
@@ -66,9 +67,7 @@ function Company() {
         <div className="mx-auto  lg:w-[900px] xl:w-[1100px] 2xl:w-[1700px]">
           {/* Philosophy Section */}
           <section className="mb-[5vh] md:mb-[10vh] ">
-            <SectionTitle className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh] ">
-              Philosophy
-            </SectionTitle>
+            <SectionTitleStyle>Philosophy</SectionTitleStyle>
             {/* When display size is greater than md  */}
             <div className=" hidden md:flex ">
               {/* philosophyCard는 css file에 지정해놓음 --> 애니메이션 기능 따로 css으로 구현함 */}
@@ -94,9 +93,7 @@ function Company() {
           </section>
           {/* Member Section */}
           <section className="mb-[5vh] md:mb-[10vh]">
-            <SectionTitle className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
-              Members
-            </SectionTitle>
+            <SectionTitleStyle>Members</SectionTitleStyle>
             {/* indiana-drag-scroll 사용해서 마우스로 스크롤 가능하게 만듬 */}
             <ScrollContainer className="scroll-container flex cursor-pointer">
               <Member name="min" />
@@ -109,9 +106,7 @@ function Company() {
           </section>
           {/* History Section */}
           <section className="my-4">
-            <SectionTitle className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
-              History
-            </SectionTitle>
+            <SectionTitleStyle>History</SectionTitleStyle>
             <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10">
               <History year={2022} />
               <History year={2021} />
@@ -124,18 +119,3 @@ function Company() {
 }
 
 export default memo(Company);
-
-const SectionTitle = styled.div`
-  font-size: 10vw;
-  font-weight: 600;
-  margin-bottom: 2vh;
-  @media only screen and (min-width: 640px) {
-    font-size: 5vw;
-  }
-  @media only screen and (min-width: 768px) {
-    font-size: 4vw;
-  }
-  @media only screen and (min-width: 1536px) {
-    font-size: 80px;
-  }
-`;

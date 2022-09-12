@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect, memo} from "react";
 import LCAContents from "../../functions/LCAContents";
+import {SectionSubTitleStyle} from "../../styles/commonStyles";
 import Icon from "./Icon";
 import VideoContainer from "./VideoContainer/VideoContainer";
 
@@ -91,7 +92,9 @@ function LCA() {
                 onMouseLeave={MouseOut}
                 className=" h-50">
                 {/* 제목 */}
-                <div className="text-4xl mb-[2vh] lg:text-[2.5vw] ">{currentObj.kTitle}</div>
+                <SectionSubTitleStyle className="text-4xl mb-[2vh] lg:text-[2.5vw] ">
+                  {currentObj.kTitle}
+                </SectionSubTitleStyle>
                 {/* 비디오 VideoContainer 통해서 currentObj 보여주고 나머지 hidden으로 해놓음  */}
                 <VideoContainer
                   videoRef={videoRef}
@@ -108,7 +111,7 @@ function LCA() {
                 />
               </div>
               {/* 내용 */}
-              <div className="pb-4 text-md xl:text-[1.2vw] mt-4 h-32 ">
+              <div className="pb-4 text-md xl:text-[19px] 2xl:text-[23px] mt-4 h-32 ">
                 <div>{currentObj.content1}</div>
                 <div>{currentObj.content2}</div>
               </div>

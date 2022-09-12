@@ -2,6 +2,7 @@ import {useState, useRef, useEffect, memo} from "react";
 import PartnershipContent from "../../functions/PartnershipContent";
 import Icon from "./Icon";
 import Carousel from "./Carousel";
+import {SectionSubTitleStyle} from "../../styles/commonStyles";
 
 function Partnership() {
   const [userInteracted, setUserInteracted] = useState(false); // 유저가 이미지에 호버 하거나, 아이콘에 호버를 했는지 확인. 유저한테 인터랙션이 이뤄졌는지. --> 이뤄졌다면 setUserInteracted(true)
@@ -122,16 +123,16 @@ function Partnership() {
           ref={picRef}
           onMouseEnter={MouseOver}
           onMouseLeave={MouseOut}
-          className="flex flex-col px-4 h-[70vh]">
+          className="flex flex-col px-4 h-[70vh] xl:text-[15px] 2xl:text-[20px] ">
           {currentObj.hasMultiple ? (
             <Carousel currentObj={currentObj} />
           ) : (
             <>
-              <div className="text-4xl pb-4 h-20  flex justify-start ml-8">{currentObj.kTitle}</div>
+              <SectionSubTitleStyle>{currentObj.kTitle}</SectionSubTitleStyle>
               <div className="h-[80%] w-[90%] flex justify-center self-center xl:h-[60%] ">
                 {currentObj.img}
               </div>
-              <div className="text-md pt-4 px-8 ">
+              <div className="text-md pt-4 px-8 xl:text-[15px] 2xl:text-[20px]">
                 <ul>
                   {currentObj.content.map((note: string) => (
                     <li key={note}>{note}</li>

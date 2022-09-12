@@ -59,7 +59,7 @@ function VerticalSlidingCard({moveVidFrom, contentInfo, bgColor}: VerticalSlidin
       {/* 카드 title + video  */}
       <div>
         <div
-          className={`text-[1.8vw] font-bold  w-[100%]  pt-[5vh] px-[2vw] `}
+          className={`text-[1.8vw] 2xl:text-[33px] font-bold  w-[100%]  pt-[5vh] px-[2vw] `}
           style={{backgroundColor: bgColor}}>
           {contentInfo.title}
         </div>
@@ -79,7 +79,9 @@ function VerticalSlidingCard({moveVidFrom, contentInfo, bgColor}: VerticalSlidin
         initial="initial"
         variants={TransitionVariants.TransitionContextTToB}
         className={`-z-50 `}>
-        <div className={` p-[2vw] z-0 text-[1vw] `} style={{backgroundColor: bgColor}}>
+        <div
+          className={` p-[2vw] z-0 text-[1vw] 2xl:text-[19.2px]`}
+          style={{backgroundColor: bgColor}}>
           {contentInfo.content}
           {/* 포트폴리오관리에 밑에 a tag  */}
           {contentInfo.title === "포트폴리오 관리" ? (

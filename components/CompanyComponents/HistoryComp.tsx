@@ -34,7 +34,7 @@ function HistoryComp({year}: HistoryCompType) {
       />
 
       <div className="absolute top-0 left-0 px-[2vw] w-[100%]">
-        <h4 className="text-[10vw] md:text-[6vw] font-extrabold tracking-tight text-white flex w-[100%] justify-center mt-[2vh]">
+        <h4 className="text-[10vw] md:text-[6vw] lg:text-[110px] font-extrabold tracking-tight text-white flex w-[100%] justify-center mt-[2vh]">
           {year}
         </h4>
         {/* 카드 펼쳐져있지 않으면 + 펼쳐져있으면 X */}
@@ -58,7 +58,9 @@ function HistoryComp({year}: HistoryCompType) {
         {isActive ? (
           <div className="text-white  mx-[6vw] ">
             {HistoryContent[year].content.map((note: any) => (
-              <div key={note.month} className="flex my-[2vh] text-[2.5vw] md:text-[1vw]">
+              <div
+                key={note.month}
+                className="flex my-[2vh] text-[2.5vw] md:text-[1vw] lg:text-[22px]">
                 <div key={note.month} className="mr-4 font-semibold">
                   {note.month}
                 </div>

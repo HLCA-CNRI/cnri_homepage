@@ -33,7 +33,7 @@ function PhilosophyComp({type}: VideoOnHoverType) {
         src={type.videoPath}
         loop
         muted
-        className=" relative w-[100%]  object-cover  h-[60vh]  flex-wrap  rounded-lg shadow-xl"
+        className=" relative w-[100%]  object-cover  h-[60vh] 2xl:h-[550px]  flex-wrap  rounded-lg shadow-xl"
       />
       {/* 내용 */}
       <div

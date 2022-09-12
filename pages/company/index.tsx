@@ -1,4 +1,5 @@
 import {motion, useAnimation} from "framer-motion";
+import styled from "styled-components";
 import {useEffect, memo} from "react";
 import {useInView} from "react-intersection-observer";
 import {NextSeo} from "next-seo";
@@ -9,6 +10,7 @@ import Member from "../../components/CompanyComponents/Member";
 import History from "../../components/CompanyComponents/HistoryComp";
 import PhilosophyContent from "../../functions/PhilosophyContent";
 import PhilosophyMobile from "../../components/CompanyComponents/PhilosophyMobile";
+import {SectionTitleStyle} from "../../styles/commonStyles";
 
 // Company Page seo 내용
 const companySeo = {
@@ -39,7 +41,7 @@ function Company() {
       <div className="mx-[6vw] ">
         {/* Welcoming Section */}
         {/* TODO:md 싸이즈 이상일때 transition 적용 */}
-        <section className="relative my-[3vh] mb-[5vh] md:mb-[10vh]">
+        <section className="relative my-[3vh] mb-[5vh] md:mb-[10vh] lg:w-[750px] xl:w-[900px] 2xl:w-[1600px] mx-auto">
           <motion.div
             ref={ref}
             className="h-[80vh] flex "
@@ -58,63 +60,59 @@ function Company() {
             animate={controlText}
             // initial="hidden"
             // variants={TansitionVidRToL}
-            className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] font-bold text-white ">
+            className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] 2xl:text-[200px] font-bold text-white ">
             <div>COMPANY</div>
           </motion.div>
         </section>
-        {/* Philosophy Section */}
-        <section className="mb-[5vh] md:mb-[10vh]">
-          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh] ">
-            Philosophy
-          </div>
-          {/* When display size is greater than md  */}
-          <div className=" hidden md:flex ">
-            {/* philosophyCard는 css file에 지정해놓음 --> 애니메이션 기능 따로 css으로 구현함 */}
-            <div className="philosophyCard">
-              <PhilosophyComp type={PhilosophyContent.mission} />
+        <div className="mx-auto  lg:w-[900px] xl:w-[1100px] 2xl:w-[1700px]">
+          {/* Philosophy Section */}
+          <section className="mb-[5vh] md:mb-[10vh] ">
+            <SectionTitleStyle>Philosophy</SectionTitleStyle>
+            {/* When display size is greater than md  */}
+            <div className=" hidden md:flex ">
+              {/* philosophyCard는 css file에 지정해놓음 --> 애니메이션 기능 따로 css으로 구현함 */}
+              <div className="philosophyCard">
+                <PhilosophyComp type={PhilosophyContent.mission} />
+              </div>
+              <div className="philosophyCard mx-[3vw]">
+                <PhilosophyComp type={PhilosophyContent.vision} />
+              </div>
+              <div className="philosophyCard">
+                <PhilosophyComp type={PhilosophyContent.coreValues} />
+              </div>
             </div>
-            <div className="philosophyCard mx-[3vw]">
-              <PhilosophyComp type={PhilosophyContent.vision} />
+            {/* When display size is smaller than md  */}
+            <div className=" md:hidden ">
+              {/* indiana-drag-scroll 사용해서 마우스로 스크롤 가능하게 만듬 */}
+              <ScrollContainer className="scroll-container flex cursor-pointer">
+                <PhilosophyMobile type={PhilosophyContent.mission} />
+                <PhilosophyMobile type={PhilosophyContent.vision} />
+                <PhilosophyMobile type={PhilosophyContent.coreValues} />
+              </ScrollContainer>
             </div>
-            <div className="philosophyCard">
-              <PhilosophyComp type={PhilosophyContent.coreValues} />
-            </div>
-          </div>
-          {/* When display size is smaller than md  */}
-          <div className=" md:hidden ">
+          </section>
+          {/* Member Section */}
+          <section className="mb-[5vh] md:mb-[10vh]">
+            <SectionTitleStyle>Members</SectionTitleStyle>
             {/* indiana-drag-scroll 사용해서 마우스로 스크롤 가능하게 만듬 */}
             <ScrollContainer className="scroll-container flex cursor-pointer">
-              <PhilosophyMobile type={PhilosophyContent.mission} />
-              <PhilosophyMobile type={PhilosophyContent.vision} />
-              <PhilosophyMobile type={PhilosophyContent.coreValues} />
+              <Member name="min" />
+              <Member name="jonghoh" />
+              <Member name="prof" />
+              <Member name="minhyeok" />
+              <Member name="kyunghoh" />
+              <Member name="cherin" />
             </ScrollContainer>
-          </div>
-        </section>
-        {/* Member Section */}
-        <section className="mb-[5vh] md:mb-[10vh]">
-          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
-            Members
-          </div>
-          {/* indiana-drag-scroll 사용해서 마우스로 스크롤 가능하게 만듬 */}
-          <ScrollContainer className="scroll-container flex cursor-pointer">
-            <Member name="min" />
-            <Member name="jonghoh" />
-            <Member name="prof" />
-            <Member name="minhyeok" />
-            <Member name="kyunghoh" />
-            <Member name="cherin" />
-          </ScrollContainer>
-        </section>
-        {/* History Section */}
-        <section className="my-4">
-          <div className="text-[10vw] sm:text-[5vw] md:text-[4vw] font-semibold  mb-[2vh]">
-            History
-          </div>
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10">
-            <History year={2022} />
-            <History year={2021} />
-          </div>
-        </section>
+          </section>
+          {/* History Section */}
+          <section className="my-4">
+            <SectionTitleStyle>History</SectionTitleStyle>
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10">
+              <History year={2022} />
+              <History year={2021} />
+            </div>
+          </section>
+        </div>
       </div>
     </>
   );

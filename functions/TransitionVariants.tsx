@@ -17,25 +17,25 @@ const TransitionVariants = {
   TransitionContextLToR: {
     initial: {opacity: 0, x: -200, transition: {duration: 0.6}},
     open: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    close2: {x: "-20vw", transition: {duration: 0.6}},
+    close2: {x: -400, opacity: 0, transition: {duration: 0.6}},
   },
 
   TransitionContextLToR2: {
     initial: {opacity: 0, x: -200, transition: {duration: 0.6}},
     open: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    close2: {x: "-46vw", transition: {duration: 0.6}},
+    close2: {x: -400, opacity: 0, transition: {duration: 0.6}},
   },
 
   TransitionContextRToL: {
     initial: {opacity: 0, x: 200, transition: {duration: 0.6}},
     open: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    close2: {x: "20vw", transition: {duration: 0.6}},
+    close2: {x: 400, opacity: 0, transition: {duration: 0.6}},
   },
 
   TransitionContextTToB: {
     initial: {z: 0, opacity: 0, y: -200, transition: {duration: 0.6}},
     open: {z: 0, opacity: 1, y: 0, transition: {duration: 0.6}},
-    close2: {z: 0, y: "-40vh", transition: {duration: 0.6}},
+    close2: {z: 0, opacity: 0, y: -400, transition: {duration: 0.6}},
   },
 };
 

@@ -11,7 +11,7 @@ export const SectionTitleStyle = styled.div`
     font-size: 4vw;
   }
   @media only screen and (min-width: 1536px) {
-    font-size: 80px;
+    font-size: 60px;
   }
 `;
 
@@ -25,9 +25,9 @@ export const SectionSubTitleStyle = styled.div`
     margin-bottom: 5vh;
   }
   @media only screen and (min-width: 1024px) {
-    font-size: 30px;
+    font-size: 20px;
   }
   @media only screen and (min-width: 1536px) {
-    font-size: 40px;
+    font-size: 30px;
   }
 `;

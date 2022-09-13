@@ -41,7 +41,7 @@ function Company() {
       <div className="mx-[6vw] ">
         {/* Welcoming Section */}
         {/* TODO:md 싸이즈 이상일때 transition 적용 */}
-        <section className="relative my-[3vh] mb-[5vh] md:mb-[10vh] lg:w-[750px] xl:w-[900px] 2xl:w-[1600px] mx-auto">
+        <section className="relative my-[3vh] mb-[5vh] md:mb-[10vh] lg:w-[750px] xl:w-[900px] 2xl:w-[1200px] mx-auto">
           <motion.div
             ref={ref}
             className="h-[80vh] flex "
@@ -60,11 +60,11 @@ function Company() {
             animate={controlText}
             // initial="hidden"
             // variants={TansitionVidRToL}
-            className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] 2xl:text-[200px] font-bold text-white ">
+            className="absolute inset-0 flex justify-center items-center z-10 text-[15vw] md:text-[10vw] 2xl:text-[180px] font-bold text-white ">
             <div>COMPANY</div>
           </motion.div>
         </section>
-        <div className="mx-auto  lg:w-[900px] xl:w-[1100px] 2xl:w-[1700px]">
+        <div className="mx-auto  lg:w-[700px] xl:w-[900px] 2xl:w-[1300px]">
           {/* Philosophy Section */}
           <section className="mb-[5vh] md:mb-[10vh] ">
             <SectionTitleStyle>Philosophy</SectionTitleStyle>

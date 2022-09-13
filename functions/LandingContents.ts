@@ -10,7 +10,7 @@ const LandingContents = {
       isVideo: true,
     },
     content2: {
-      title: "어렵지만 중요한 \n 공급망에서의 탄소 관리",
+      title: "어렵지만 중요한\n공급망에서의 탄소 관리",
       content:
         "최근 CDP 보고서에 의하면 공급망에서의 탄소 배출이 평균 11.3배나 될 만큼 많은 비중을 차지하고 있지만 규제 부재, 필요성 인지 부족 등으로 오랫동안 블랙박스였습니다. 그렇지만 국가별 기후 공시 의무화, 글로벌 기업들의 연이은 Net-Zero 선언으로 인해 공급망에서의 탄소 감축이 어느 때보다 중요한 시점입니다. 탄소중립연구원은 산업 평균 데이터가 아닌 구체적인 현장 데이터의 적용을 도울 수 있으며, 공급망에서의 구체적인 탄소 감축 방안을 제시합니다. ",
       videoPath: "./video/measure2.mp4",
@@ -35,14 +35,14 @@ const LandingContents = {
     title: "Reduce",
     subtitle: "감축 방안 제시부터 실제 실행까지 All-in-One",
     content1: {
-      title: "감축 목표 수립과 구체적인 이행 방안 제시",
+      title: "감축 목표 수립과\n구체적인 이행 방안 제시",
       content:
         "측정된 결과를 기반으로 귀사 모든 영역에서의 탄소 배출을 줄일 수 있게 도와드립니다. 글로벌 표준인 Science-Based Targets initiative(SBTi)를 준수하여 귀사의 Net-Zero 목표를 수립하고 이를 이행하기 위한 구체적인 감축 목표를 세워드립니다. 귀사의 내부 감축과 더불어 측정된 공급망의 탄소를 기반으로 실행 가능한 감축 방안을 제시합니다.",
       videoPath: "./video/reduce1.mp4",
       isVideo: true,
     },
     content2: {
-      title: "전력의 탈탄소를 위한 신재생 에너지로의 전환",
+      title: "전력의 탈탄소를 위한\n신재생 에너지로의 전환",
       content:
         "귀사의 건물, 데이터 센터, 공장에 신재생 에너지 보급을 할 수 있도록 탄소중립연구원이 a-z까지 도와드립니다. 태양광 패널 설치부터 REC 구매까지 맞춤형 방안을 제시합니다.",
       videoPath: "./video/reduce2.mp4",

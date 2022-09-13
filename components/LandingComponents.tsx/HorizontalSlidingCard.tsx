@@ -79,7 +79,7 @@ function HorizontalSlidingCard({
         } -z-50`}>
         <p
           className={classNames(
-            "flex items-center justify-center h-[100%] text-[1vw] 2xl:text-[19.2px] py-[3vh]"
+            "flex items-center justify-center h-[100%] text-[1vw] lg:text-[11px] xl:text-[14px] py-[3em]"
           )}>
           {contentInfo.content}
         </p>
@@ -89,8 +89,8 @@ function HorizontalSlidingCard({
         className={` p-[2vw] h-[100%] flex flex-col justify-center`}
         style={{backgroundColor: bgColor}}>
         <div
-          className={`text-[1.8vw] 2xl:text-[33px] font-bold  w-[100%] flex ${
-            imagePosition === "right" ? "justify-end" : ""
+          className={`text-[1.8vw]  lg:text-[18px] xl:text-[24px] font-bold  w-[100%] flex whitespace-pre-line  ${
+            imagePosition === "right" ? "justify-end text-right" : ""
           }`}>
           {contentInfo.title}
         </div>
@@ -100,7 +100,7 @@ function HorizontalSlidingCard({
             src={contentInfo.videoPath}
             muted
             loop
-            className="w-[100%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-[2vh] "
+            className="w-[99%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-[2vh] "
           />
         ) : (
           <img

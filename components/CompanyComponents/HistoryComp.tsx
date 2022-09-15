@@ -45,7 +45,10 @@ function HistoryComp({year}: HistoryCompType) {
         </h4>
         {/* 카드 펼쳐져있지 않으면 + 펼쳐져있으면 X */}
         <Button onClick={clickButton}>
-          <motion.div animate={controlHistoryBtn} variants={TransitionVariants.RotateHistoryIcon}>
+          <motion.div
+            animate={controlHistoryBtn}
+            initial="rotateCW"
+            variants={TransitionVariants.RotateHistoryIcon}>
             ×
           </motion.div>
         </Button>

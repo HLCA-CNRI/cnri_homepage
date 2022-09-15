@@ -38,10 +38,10 @@ function Company() {
   return (
     <>
       <NextSeo {...companySeo} />
-      <div className="mx-[6vw] ">
+      <div className="mx-[6vw] lg:mx-20">
         {/* Welcoming Section */}
         {/* TODO:md 싸이즈 이상일때 transition 적용 */}
-        <section className="relative my-[3vh] mb-[5vh] md:mb-[10vh] lg:w-[750px] xl:w-[900px] 2xl:w-[1200px] mx-auto">
+        <section className="relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1200px] mx-auto">
           <motion.div
             ref={ref}
             className="h-[80vh] flex "
@@ -74,7 +74,7 @@ function Company() {
               <div className="philosophyCard">
                 <PhilosophyComp type={PhilosophyContent.mission} />
               </div>
-              <div className="philosophyCard mx-[3vw]">
+              <div className="philosophyCard mx-10">
                 <PhilosophyComp type={PhilosophyContent.vision} />
               </div>
               <div className="philosophyCard">

@@ -97,7 +97,7 @@ function PartnershipMobile() {
       </div>
       {/* 밑에 내용 부분 --> 사진 + 내용 */}
       {/* 만야에 hasMultiple --> 내용이 1개 이상이면 Carousel 형태로 보여주기 아니면 그냥 currentObj 내용 보내주기 */}
-      <div className="mt-[2vh] border-2 p-[3vw] mb-[3vh] h-[65vh] iphone12Pro:h-[48vh] xxxs:h-[65vh] xxs:h-[85vh] ">
+      <div className="mt-[2vh] border-2 p-[20px] mb-[3vh] ">
         <div>
           {currentObj.hasMultiple ? (
             <Carousel currentObj={currentObj} />

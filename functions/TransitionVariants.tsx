@@ -37,6 +37,11 @@ const TransitionVariants = {
     open: {z: 0, opacity: 1, y: 0, transition: {duration: 0.6}},
     close2: {z: 0, opacity: 0, y: -400, transition: {duration: 0.6}},
   },
+
+  RotateHistoryIcon: {
+    rotateCW: {rotate: 45, transition: {duration: 0.3}},
+    initial: {rotate: 0, transition: {duration: 0.3}},
+  },
 };
 
 export default TransitionVariants;

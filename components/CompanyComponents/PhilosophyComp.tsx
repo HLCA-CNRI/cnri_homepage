@@ -41,10 +41,10 @@ function PhilosophyComp({type}: VideoOnHoverType) {
         onMouseEnter={videoMouseEnter}
         onMouseLeave={videoMouseLeave}>
         <div>
-          <div className=" text-[2.5vw] text-white font-semibold mb-4 underline underline-offset-8">
+          <div className=" text-[2.5vw] text-white font-semibold mb-4 underline underline-offset-8 lg:text-[50px]">
             {type.title}
           </div>
-          <ul className="text-[1vw] whitespace">
+          <ul className="text-[1vw] whitespace lg:text-[15px]">
             {type.content.map((val: string) => (
               <li className="text-white my-1" key={val}>
                 {val}

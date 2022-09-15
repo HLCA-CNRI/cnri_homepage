@@ -10,10 +10,10 @@ interface PhilosophyMobileType {
 function PhilosophyMobile({type}: PhilosophyMobileType) {
   return (
     // 구조: 이미지 위에 내용
-    <section className="flex-shrink-1 xs: w-80  mr-[3vw]  scroll-x rounded-lg border-[0.5px] ">
-      <div className={` h-[100%] flex rounded-lg`}>
+    <section className="flex-shrink-1 xs: w-80  mr-[3vw]  rounded-lg  ">
+      <div className={` h-[100%] flex `}>
         {/* 이미지 */}
-        <div className="relative bg-gray-100 w-[500px] rounded-r-lg  shadow-md text-gray-700">
+        <div className="relative w-[500px] rounded-r-lg  ">
           <img
             alt="philImg"
             src={type.imgPath}

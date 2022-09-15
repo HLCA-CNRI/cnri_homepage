@@ -38,7 +38,7 @@ function Company() {
   return (
     <>
       <NextSeo {...companySeo} />
-      <div className="mx-[6vw] lg:mx-20">
+      <div className="mx-[3vw] 2xl:mx-20">
         {/* Welcoming Section */}
         {/* TODO:md 싸이즈 이상일때 transition 적용 */}
         <section className="relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1200px] mx-auto">
@@ -64,7 +64,7 @@ function Company() {
             <div>COMPANY</div>
           </motion.div>
         </section>
-        <div className="mx-auto  lg:w-[700px] xl:w-[900px] 2xl:w-[1300px]">
+        <div className="mx-auto  2xl:w-[1300px]">
           {/* Philosophy Section */}
           <section className="mb-[5vh] md:mb-[10vh] ">
             <SectionTitleStyle>Philosophy</SectionTitleStyle>

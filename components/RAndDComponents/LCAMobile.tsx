@@ -159,7 +159,7 @@ function LCAMobile() {
         </div>
       </div>
       {/* 밑에 내용 부분 -->영상 + 내용 */}
-      <div className="mt-[2vh] border-2 p-[3vw] h-[48vh]  xxxs:h-[55vh]  xxs:h-[70vh]">
+      <div className="mt-[2vh] border-2 p-[20px] ">
         <video ref={videoRef} autoPlay loop muted playsInline src={currentObj.videoPath} />
         <div className="text-[5.5vw]  font-semibold pb-[1vh] pt-[2vh]">{currentObj.kTitle}</div>
         <div className="text-[3vw] ">

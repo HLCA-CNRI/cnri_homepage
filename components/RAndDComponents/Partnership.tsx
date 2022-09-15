@@ -129,7 +129,7 @@ function Partnership() {
           ) : (
             <>
               <SectionSubTitleStyle>{currentObj.kTitle}</SectionSubTitleStyle>
-              <div className="h-[80%] w-[90%] flex justify-center self-center xl:h-[60%] ">
+              <div className="h-auto w-[90%] flex justify-center self-center xl:h-[60%] ">
                 {currentObj.img}
               </div>
               <div className="text-md pt-4 px-8 xl:text-[15px] 2xl:text-[20px]">

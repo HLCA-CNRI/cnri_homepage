@@ -74,7 +74,7 @@ function Company() {
               <div className="philosophyCard">
                 <PhilosophyComp type={PhilosophyContent.mission} />
               </div>
-              <div className="philosophyCard mx-[3vw]">
+              <div className="philosophyCard mx-10">
                 <PhilosophyComp type={PhilosophyContent.vision} />
               </div>
               <div className="philosophyCard">

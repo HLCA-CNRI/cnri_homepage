@@ -37,7 +37,7 @@ function CietPage() {
             className="bg-white text-constant-CIET_MINT hover:bg-constant-CIET_MINT hover:text-white border-2 border-constant-CIET_MINT transition-all duration-300 ease-in text-[3vw] md:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://ciet-test.cnrikorea.com">
+            href="https://ciet.cnrikorea.com">
             바로가기
           </a>
           <a

@@ -28,7 +28,7 @@ const MemberContent: {[key: string]: any} = {
     pic: "/images/members/minhyeok.jpg",
   },
   kyunghoh: {
-    name: "인경호",
+    name: "안경호",
     position: "Software Developer",
     description:
       "웹, 모바일, 서버 등 다양한 IT 개발 경험을 바탕으로 기후 변화와 탄소 중립 해결을 위한 클라우드 SaaS를 만들어가는 개발자입니다.",

@@ -15,10 +15,10 @@ function Home() {
       {/* Welcoming Section */}
       <div className="">
         <div className="pt-[5vh]">
-          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] lg:text-[60px]">
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] 2xl:text-[60px]">
             넷제로 달성을 위해 필요한
           </div>
-          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw]  lg:text-[60px]">
+          <div className="flex justify-center font-bold text-[7vw] md:text-[5vw]  2xl:text-[60px]">
             Actionable Plan의 모든 것
           </div>
         </div>
@@ -43,7 +43,7 @@ function Home() {
             loop
             muted
             playsInline
-            className="md:w-[80vw] lg:w-[1200px]  mt-[2vh] shadow-lg rounded-lg mb-6"
+            className="md:w-[80vw] 2xl:w-[1200px]  mt-[2vh] shadow-lg rounded-lg mb-6"
             src="/video/LandingIntro.mp4"
           />
           {/* <img src={"/images/landingMain.gif"} className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" /> */}
@@ -68,7 +68,7 @@ function Home() {
           <div className="py-[3vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>
-      <section className="flex-col justify-center items-center lg:w-[700px] xl:w-[900px] 2xl:w-[1500px]  mx-auto">
+      <section className="flex-col justify-center items-center 2xl:w-[1500px]  mx-auto">
         {/* Measure Section */}
         <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>

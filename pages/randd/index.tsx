@@ -75,21 +75,21 @@ function Randd() {
               <LCA />
             </div>
             {/* When display size is smaller than md  */}
-            <div className=" sm:hidden">
+            <div className=" md:hidden">
               <LCAMobile />
             </div>
 
             <div className="grid grid-cols-2" />
           </div>
           {/* Partnership Section */}
-          <div className="w-[100%] mt-[6vh] sm:mt-[12vh]">
+          <div className="w-[100%] mt-[6vh] md:mt-[12vh]">
             <SectionTitleStyle>Our Work and Partnership</SectionTitleStyle>
             {/* When display size is greater than md  */}
-            <div className="hidden sm:flex">
+            <div className="hidden md:flex">
               <Partnership />
             </div>
             {/* When display size is smaller than md  */}
-            <div className="sm:hidden">
+            <div className="md:hidden">
               <PartnershipMobile />
             </div>
           </div>

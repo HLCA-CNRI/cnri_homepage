@@ -42,9 +42,9 @@ function Partnership() {
   };
 
   return (
-    <div className="grid grid-cols-3 w-[100%] h-[75vh] py-4 ">
+    <div className="grid grid-cols-3 w-[100%] h-[600px] py-4 mb-[10vh]">
       {/* 왼쪽 아이콘 부분 -->5X5 구성 */}
-      <div className="grid grid-cols-5 h-[70vh]">
+      <div className="grid grid-cols-5 h-full">
         <div className="col-span-2" />
         {/* ts icon */}
         <div role="button" onMouseOver={MouseOver} onMouseLeave={MouseOut} className="relative">
@@ -123,7 +123,7 @@ function Partnership() {
           ref={picRef}
           onMouseEnter={MouseOver}
           onMouseLeave={MouseOut}
-          className="flex flex-col px-4 h-[70vh] xl:text-[15px] 2xl:text-[20px] ">
+          className="flex flex-col px-4 h-full xl:text-[15px] 2xl:text-[20px] ">
           {currentObj.hasMultiple ? (
             <Carousel currentObj={currentObj} />
           ) : (

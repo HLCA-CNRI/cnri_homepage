@@ -9,7 +9,7 @@ interface VerticalSlidingCardType {
   contentInfo: {
     title: string;
     content: string;
-    videoPath: string;
+    srcPath: string;
   };
   bgColor: string; // 카드 색
 }
@@ -66,7 +66,7 @@ function VerticalSlidingCard({moveVidFrom, contentInfo, bgColor}: VerticalSlidin
         <div className={` px-[2vw] pt-[2vh] pb-[3vh] z-30 `} style={{backgroundColor: bgColor}}>
           <video
             ref={videoRef}
-            src={contentInfo.videoPath}
+            src={contentInfo.srcPath}
             muted
             loop
             className="w-[100%] transition-[width] delay-150 object-cover shadow-xl  rounded-lg  z-30"

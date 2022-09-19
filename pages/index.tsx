@@ -1,13 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
 import {memo} from "react";
-import styled from "styled-components";
 import LandingMobile from "../components/LandingComponents.tsx/LandingMobile";
 import TransitionVariants from "../functions/TransitionVariants";
 import VerticalSlidingCard from "../components/LandingComponents.tsx/VerticalSlidingCard";
 import HorizontalSlidingCard from "../components/LandingComponents.tsx/HorizontalSlidingCard";
 import LandingContents from "../functions/LandingContents";
 import {SectionTitleStyle, SectionSubTitleStyle, LinkButton} from "../styles/commonStyles";
+import ReduceCard from "../components/LandingComponents.tsx/ReduceCard";
+import colors from "../constants/colors";
+import ReduceCards from "../components/LandingComponents.tsx/ReduceCards";
 
 function Home() {
   return (
@@ -68,7 +70,7 @@ function Home() {
       </section>
       <section className="flex-col justify-center items-center 2xl:w-[1500px]  mx-auto">
         {/* Measure Section */}
-        <section id="measure" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
+        <section id="measure" className="mx-[2vw]  pt-[7vh] scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
@@ -119,13 +121,36 @@ function Home() {
           </div>
         </section>
         {/* Reduce Section */}
-        <section id="reduce" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
+        <section id="reduce" className="mx-[3vw]  pt-[7vh] scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Reduce.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Reduce.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
-          <div className=" hidden md:grid grid-cols-2 gap-10 ">
-            <div className="h-full">
-              <div className="h-[50%]">
+          <ReduceCards />
+          {/* <div className="flex flex-row w-full mb-8">
+            <ReduceCard
+              width={700}
+              height={300}
+              contents={LandingContents.Reduce.content1}
+              bgColor={colors.CNRI_LIGHT_GREEN}
+            />
+            <ReduceCard
+              width={700}
+              height={300}
+              contents={LandingContents.Reduce.content2}
+              bgColor={colors.CNRI_DARK_GREEN}
+            />
+          </div>
+          <div className="flex">
+            <ReduceCard
+              width={1400}
+              height={300}
+              contents={LandingContents.Reduce.content3}
+              bgColor={colors.CNRI_DARK_BLUE}
+            />
+          </div> */}
+          <div className=" hidden md:grid grid-cols-2 gap-10 w-full">
+            <div className="h-full flex flex-row w-full">
+              {/* <div className="h-[50%]">
                 <HorizontalSlidingCard
                   imagePosition="left"
                   moveVidFrom={TransitionVariants.TansitionVidLToR}
@@ -134,8 +159,8 @@ function Home() {
                   bgColor="#EEF7E9"
                   basisVal="fit-content"
                 />
-              </div>
-              <div className="h-[50%] mt-[6vh] mb-[3vh]">
+              </div> */}
+              {/* <div className="h-[50%] mt-[6vh] mb-[3vh]">
                 <HorizontalSlidingCard
                   imagePosition="right"
                   moveVidFrom={TransitionVariants.TansitionVidBToT}
@@ -144,13 +169,13 @@ function Home() {
                   bgColor="#FFF7E1"
                   basisVal="fit-content"
                 />
-              </div>
+              </div> */}
             </div>
-            <VerticalSlidingCard
+            {/* <VerticalSlidingCard
               moveVidFrom={TransitionVariants.TansitionVidRToL}
               contentInfo={LandingContents.Reduce.content3}
               bgColor="#EAF2FA"
-            />
+            /> */}
           </div>
           <div className="md:hidden">
             <LandingMobile
@@ -219,3 +244,23 @@ function Home() {
 }
 
 export default memo(Home);
+
+// text-white
+//   bg-constant-CIET_MINT
+//   hover:bg-white
+//   hover:text-constant-ciet_mint
+//   border-2
+//   border-constant-CIET_MINT
+//   transition-all
+//   ease-in
+//   text-[3vw]
+//   md:text-[2vw]
+//   rounded-lg
+//   px-[7vw]
+//   py-[1vh]
+//   md:py-[2vh]
+//   2xl:py-[16.2px]
+//   2xl:px-[80px]
+//   2xl:text-[30px]
+//   mx-[1.5vw]
+//   font-bold

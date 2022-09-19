@@ -2,6 +2,7 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 import {memo} from "react";
 import styled from "styled-components";
+import {HeaderLinkButton, LinkButton} from "../../styles/commonStyles";
 import HamburgerMenu from "./Hamburger/HamburgerMenu";
 
 function NavigationBar() {
@@ -63,28 +64,17 @@ function NavigationBar() {
             </a>
           </li>
         </ul>
-        <div className="flex gap-2">
-          <div>
-            <button
-              type="button"
-              className="bg-white text-constant-CIET_MINT hover:bg-constant-CIET_MINT hover:text-white border-2 border-constant-CIET_MINT transition-all duration-300 ease-in font-medium text-[2.5vw] sm:text-[1.2vw] rounded-lg w-10 md:w-auto px-[1vw] md:px-[1.6vw] py-[0.8vh] mr-[1.5vw] sm:mr-[0.8vw] md:my-[0] md:py-[1vh] text-center">
-              <a
-                className=""
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://cis.cnrikorea.com">
-                CIS
-              </a>
-            </button>
 
-            <button
-              type="button"
-              className="text-white bg-constant-CIET_MINT hover:bg-white hover:text-constant-CIET_MINT border-2 border-constant-CIET_MINT transition-all  ease-in font-medium text-[2.5vw] sm:text-[1.2vw] rounded-lg w-10 md:w-auto px-[1vw] md:px-[1.3vw] py-[0.8vh] mr-[1.5vw] md:my-[0] md:py-[1vh] text-center">
-              <a className="" target="_blank" rel="noopener noreferrer" href="/product/ciet">
-                CIET
-              </a>
-            </button>
-          </div>
+        <div className="flex">
+          <HeaderLinkButton
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://cis.cnrikorea.com">
+            CIS
+          </HeaderLinkButton>
+          <HeaderLinkButton rel="noopener noreferrer" href="/product/ciet">
+            CIET
+          </HeaderLinkButton>
           <button type="button" className="sm:hidden">
             <HamburgerMenu />
           </button>

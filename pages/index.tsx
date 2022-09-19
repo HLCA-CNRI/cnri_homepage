@@ -10,6 +10,7 @@ import {SectionTitleStyle, SectionSubTitleStyle, LinkButton} from "../styles/com
 import ReduceCard from "../components/LandingComponents.tsx/ReduceCard";
 import colors from "../constants/colors";
 import ReduceCards from "../components/LandingComponents.tsx/ReduceCards";
+import RemoveCards from "../components/LandingComponents.tsx/RemoveCards";
 
 function Home() {
   return (
@@ -190,11 +191,14 @@ function Home() {
           </div>
         </section>
         {/* Remove Section */}
-        <section id="remove" className="mx-[6vw]  pt-[7vh] scroll-mt-28 ">
+        <section id="remove" className="mx-[3vw]  pt-[7vh] scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Remove.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Remove.subtitle}</SectionSubTitleStyle>
+          <div>
+            <RemoveCards />
+          </div>
           {/* When display is greater than md */}
-          <div className=" hidden md:grid grid-cols-2 gap-10 ">
+          {/* <div className=" hidden md:grid grid-cols-2 gap-10 ">
             <VerticalSlidingCard
               moveVidFrom={TransitionVariants.TansitionVidLToR}
               contentInfo={LandingContents.Remove.content1}
@@ -213,7 +217,7 @@ function Home() {
               isVid
               backgroundColor="#FFF7E1"
             />
-          </div>
+          </div> */}
         </section>
         {/* Report Section */}
         <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28  mb-[3vh]">

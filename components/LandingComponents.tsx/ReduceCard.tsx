@@ -19,7 +19,7 @@ const ReduceCard = ({
   <Wrapper
     width={width}
     height={height}
-    className="relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-4 ">
+    className="relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-4 grayscale hover:grayscale-0 hover:transition-all hover:duration-500">
     <div
       className={`${
         isOpened ? "" : "drop-shadow-md goDown"
@@ -38,7 +38,7 @@ const ReduceCard = ({
     <ImageCover
       clicked={isOpened}
       bgColor={bgColor}
-      className={`w-full h-full absolute rounded-[2.5rem]  z-4  
+      className={`w-full h-full absolute rounded-[2.5rem]  z-4 
         ${isOpened ? `` : " mix-blend-multiply"} 
         `}
     />
@@ -46,7 +46,7 @@ const ReduceCard = ({
       src={contents.srcPath}
       alt="reduce img"
       layout="fill"
-      className={`w-full h-full object-cover rounded-[2.5rem] z-1 mix-blend-multiply ${
+      className={`w-full h-full object-cover rounded-[2.5rem] z-1 mix-blend-multiply   ${
         isOpened ? "animate-fadeout" : "animate-fadein"
       }`}
     />

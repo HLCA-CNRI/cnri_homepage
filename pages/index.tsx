@@ -48,7 +48,6 @@ function Home() {
             className="md:w-[80vw] 2xl:w-[1200px]  mt-[2vh] shadow-lg rounded-lg mb-6"
             src="/video/LandingIntro.mp4"
           />
-          {/* <img src={"/images/landingMain.gif"} className="w-[80vw] mt-[2vh] shadow-lg rounded-lg mb-6" /> */}
         </div>
       </div>
 
@@ -75,38 +74,7 @@ function Home() {
         <section id="measure" className="mx-[2vw]  pt-[7vh] scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
-          {/* When display is greater than md */}
-          {/* <div className=" hidden md:grid grid-cols-2 gap-10 ">
-            <div className="col-span-1">
-              <VerticalSlidingCard
-                moveVidFrom={TransitionVariants.TansitionVidLToR}
-                contentInfo={LandingContents.Measure.content1}
-                bgColor="#EAF2FA"
-              />
-            </div>
-            <div className=" h-[100%] col-span-1">
-              <div className=" h-[55%]">
-                <HorizontalSlidingCard
-                  imagePosition="right"
-                  moveVidFrom={TransitionVariants.TansitionVidRToL}
-                  moveContextFrom={TransitionVariants.TransitionContextRToL}
-                  contentInfo={LandingContents.Measure.content2}
-                  bgColor="#EEF7E9"
-                  basisVal="fit-content"
-                />
-              </div>
-              <div className=" h-[45%]  mt-[6vh] mb-[3vh]">
-                <HorizontalSlidingCard
-                  imagePosition="left"
-                  moveVidFrom={TransitionVariants.TansitionVidBToT}
-                  moveContextFrom={TransitionVariants.TransitionContextLToR}
-                  contentInfo={LandingContents.Measure.content3}
-                  bgColor="#FFF7E1"
-                  basisVal="fit-content"
-                />
-              </div> */}
-          {/* </div> */}
-          {/* </div> */}
+
           <div className="md:hidden">
             <div className="relative ">
               <LandingMobile
@@ -128,57 +96,8 @@ function Home() {
           <SectionSubTitleStyle>{LandingContents.Reduce.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
           <ReduceCards />
-          {/* <div className="flex flex-row w-full mb-8">
-            <ReduceCard
-              width={700}
-              height={300}
-              contents={LandingContents.Reduce.content1}
-              bgColor={colors.CNRI_LIGHT_GREEN}
-            />
-            <ReduceCard
-              width={700}
-              height={300}
-              contents={LandingContents.Reduce.content2}
-              bgColor={colors.CNRI_DARK_GREEN}
-            />
-          </div>
-          <div className="flex">
-            <ReduceCard
-              width={1400}
-              height={300}
-              contents={LandingContents.Reduce.content3}
-              bgColor={colors.CNRI_DARK_BLUE}
-            />
-          </div> */}
-          <div className=" hidden md:grid grid-cols-2 gap-10 w-full">
-            <div className="h-full flex flex-row w-full">
-              {/* <div className="h-[50%]">
-                <HorizontalSlidingCard
-                  imagePosition="left"
-                  moveVidFrom={TransitionVariants.TansitionVidLToR}
-                  moveContextFrom={TransitionVariants.TransitionContextLToR}
-                  contentInfo={LandingContents.Reduce.content1}
-                  bgColor="#EEF7E9"
-                  basisVal="fit-content"
-                />
-              </div> */}
-              {/* <div className="h-[50%] mt-[6vh] mb-[3vh]">
-                <HorizontalSlidingCard
-                  imagePosition="right"
-                  moveVidFrom={TransitionVariants.TansitionVidBToT}
-                  moveContextFrom={TransitionVariants.TransitionContextRToL}
-                  contentInfo={LandingContents.Reduce.content2}
-                  bgColor="#FFF7E1"
-                  basisVal="fit-content"
-                />
-              </div> */}
-            </div>
-            {/* <VerticalSlidingCard
-              moveVidFrom={TransitionVariants.TansitionVidRToL}
-              contentInfo={LandingContents.Reduce.content3}
-              bgColor="#EAF2FA"
-            /> */}
-          </div>
+
+          {/* When display is small than md */}
           <div className="md:hidden">
             <LandingMobile
               contentInfo={[
@@ -198,27 +117,6 @@ function Home() {
           <div>
             <RemoveCards />
           </div>
-          {/* When display is greater than md */}
-          {/* <div className=" hidden md:grid grid-cols-2 gap-10 ">
-            <VerticalSlidingCard
-              moveVidFrom={TransitionVariants.TansitionVidLToR}
-              contentInfo={LandingContents.Remove.content1}
-              bgColor="#EAF2FA"
-            />
-
-            <VerticalSlidingCard
-              moveVidFrom={TransitionVariants.TansitionVidRToL}
-              contentInfo={LandingContents.Remove.content2}
-              bgColor="#EEF7E9"
-            />
-          </div>
-          <div className="md:hidden">
-            <LandingMobile
-              contentInfo={[LandingContents.Remove.content1, LandingContents.Remove.content2]}
-              isVid
-              backgroundColor="#FFF7E1"
-            />
-          </div> */}
         </section>
         {/* Report Section */}
         <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28  mb-[3vh]">
@@ -226,16 +124,8 @@ function Home() {
           <SectionSubTitleStyle>{LandingContents.Report.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
           <ReportCard content={LandingContents.Report.content1} />
-          {/* <div className="hidden md:grid overflow-hidden">
-            <HorizontalSlidingCard
-              imagePosition="left"
-              moveVidFrom={TransitionVariants.TansitionVidLToR}
-              moveContextFrom={TransitionVariants.TransitionContextLToR2}
-              contentInfo={LandingContents.Report.content1}
-              bgColor="#FFF7E1"
-              basisVal="50%"
-            />
-          </div> */}
+
+          {/* When display is smaller than md */}
           <div className="md:hidden">
             <LandingMobile
               contentInfo={[LandingContents.Report.content1]}
@@ -250,23 +140,3 @@ function Home() {
 }
 
 export default memo(Home);
-
-// text-white
-//   bg-constant-CIET_MINT
-//   hover:bg-white
-//   hover:text-constant-ciet_mint
-//   border-2
-//   border-constant-CIET_MINT
-//   transition-all
-//   ease-in
-//   text-[3vw]
-//   md:text-[2vw]
-//   rounded-lg
-//   px-[7vw]
-//   py-[1vh]
-//   md:py-[2vh]
-//   2xl:py-[16.2px]
-//   2xl:px-[80px]
-//   2xl:text-[30px]
-//   mx-[1.5vw]
-//   font-bold

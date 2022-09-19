@@ -11,12 +11,12 @@ const ReduceCards = () => {
   };
   return (
     <div>
-      <div className="flex flex-row w-full mx-[10px]">
+      <div className="flex flex-row w-full">
         <div
           role="button"
           data-key={LandingContents.Reduce.content1.key}
           onClick={onCardClick}
-          className="mx-[20px]">
+          className="mr-[40px] flex-1">
           <ReduceCard
             isOpened={curKey === LandingContents.Reduce.content1.key}
             width={660}
@@ -29,7 +29,7 @@ const ReduceCards = () => {
           role="button"
           data-key={LandingContents.Reduce.content2.key}
           onClick={onCardClick}
-          className="mx-[20px]">
+          className=" flex-1">
           <ReduceCard
             isOpened={curKey === LandingContents.Reduce.content2.key}
             width={660}
@@ -43,7 +43,7 @@ const ReduceCards = () => {
         role="button"
         data-key={LandingContents.Reduce.content3.key}
         onClick={onCardClick}
-        className="flex mx-[20px] mt-[40px]">
+        className="flex  mt-[40px] flex-1">
         <ReduceCard
           isOpened={curKey === LandingContents.Reduce.content3.key}
           width={1400}

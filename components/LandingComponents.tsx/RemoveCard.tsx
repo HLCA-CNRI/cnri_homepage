@@ -9,11 +9,9 @@ const RemoveCard = ({
   contents: LandingSubContentsType;
   isOpened: boolean;
 }) => (
-  <div className=" mx-[20px]">
+  <div className="w-full">
     <div
-      className={`w-[670px] h-[400px] relative ${
-        isOpened ? "drop-shadow-lg transition-shadow" : ""
-      }`}>
+      className={`w-full h-[400px] relative ${isOpened ? "drop-shadow-lg transition-shadow" : ""}`}>
       <Image
         src={contents.srcPath}
         alt="remove img"

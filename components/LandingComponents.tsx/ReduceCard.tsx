@@ -57,7 +57,7 @@ const ReduceCard = ({
 
 export default ReduceCard;
 const Wrapper = styled.div<{width: number; height: number}>`
-  width: ${({width}) => width}px;
+  width: 100%;
   height: ${({height}) => height}px;
 
   .goDown {

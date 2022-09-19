@@ -69,9 +69,9 @@ function Home() {
           <div className="py-[3vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>
-      <section className="flex-col justify-center items-center 2xl:w-[1500px]  mx-auto">
+      <section className="flex-col justify-center items-center 2xl:w-[1450px]  mx-auto px-[30px] pb-[130px] ">
         {/* Measure Section */}
-        <section id="measure" className="mx-[2vw]  pt-[7vh] scroll-mt-28 ">
+        <section id="measure" className="scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
 
@@ -90,8 +90,9 @@ function Home() {
             </div>
           </div>
         </section>
+
         {/* Reduce Section */}
-        <section id="reduce" className="mx-[3vw]  pt-[7vh] scroll-mt-28 ">
+        <section id="reduce" className="scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Reduce.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Reduce.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
@@ -110,16 +111,16 @@ function Home() {
             />
           </div>
         </section>
+
         {/* Remove Section */}
-        <section id="remove" className="mx-[3vw]  pt-[7vh] scroll-mt-28 ">
+        <section id="remove" className=" scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Remove.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Remove.subtitle}</SectionSubTitleStyle>
-          <div>
-            <RemoveCards />
-          </div>
+          <RemoveCards />
         </section>
+
         {/* Report Section */}
-        <section id="report" className="mx-[6vw]  pt-[7vh] scroll-mt-28  mb-[3vh]">
+        <section id="report" className="scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Report.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Report.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}

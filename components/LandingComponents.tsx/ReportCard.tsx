@@ -27,14 +27,14 @@ const ReportCard = ({content}: IReportCard) => {
     // 카드 전체.
     <div
       role="button"
-      className="w-[1400px] h-[400px] flex flex-row cursor-pointer flex justify-center "
+      className="w-full h-[400px] flex flex-row cursor-pointer flex justify-center relative"
       onClick={onCardClick}>
       {/* 이미지 */}
       <motion.div
         animate={controlText}
         initial="initial"
         variants={TransitionVariants.TransitionContextRToL}
-        className="absolute w-[700px] h-[400px] border-2 rounded-forImg z-10">
+        className="absolute w-[53%] h-[400px] border-2 rounded-forImg z-10">
         <div className="relative w-full h-full">
           <Image
             src={content.srcPath}

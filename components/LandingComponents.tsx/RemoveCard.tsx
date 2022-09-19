@@ -10,7 +10,10 @@ const RemoveCard = ({
   isOpened: boolean;
 }) => (
   <div className=" mx-[20px]">
-    <div className="w-[670px] h-[300px] relative">
+    <div
+      className={`w-[670px] h-[400px] relative ${
+        isOpened ? "drop-shadow-lg transition-shadow" : ""
+      }`}>
       <Image
         src={contents.srcPath}
         alt="remove img"

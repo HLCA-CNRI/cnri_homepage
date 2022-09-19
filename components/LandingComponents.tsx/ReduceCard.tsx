@@ -19,7 +19,9 @@ const ReduceCard = ({
   <Wrapper
     width={width}
     height={height}
-    className="relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-4 grayscale hover:grayscale-0 hover:transition-all hover:duration-500">
+    className={`relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-4 ${
+      isOpened ? "" : "grayscale hover:grayscale-0 hover:transition-all hover:duration-500"
+    }  `}>
     <div
       className={`${
         isOpened ? "" : "drop-shadow-md goDown"

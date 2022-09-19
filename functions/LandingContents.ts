@@ -36,6 +36,7 @@ const LandingContents = {
     subtitle: "감축 방안 제시부터 실제 실행까지 All-in-One",
     content1: {
       title: "감축 목표 수립과\n구체적인 이행 방안 제시",
+      key: "reduce1",
       content:
         "측정된 결과를 기반으로 귀사 모든 영역에서의 탄소 배출을 줄일 수 있게 도와드립니다. 글로벌 표준인 Science-Based Targets initiative(SBTi)를 준수하여 귀사의 Net-Zero 목표를 수립하고 이를 이행하기 위한 구체적인 감축 목표를 세워드립니다. 귀사의 내부 감축과 더불어 측정된 공급망의 탄소를 기반으로 실행 가능한 감축 방안을 제시합니다.",
       srcPath: "/images/reduce1.png",
@@ -43,6 +44,7 @@ const LandingContents = {
     },
     content2: {
       title: "전력의 탈탄소를 위한\n신재생 에너지로의 전환",
+      key: "reduce2",
       content:
         "귀사의 건물, 데이터 센터, 공장에 신재생 에너지 보급을 할 수 있도록 탄소중립연구원이 a-z까지 도와드립니다. 태양광 패널 설치부터 REC 구매까지 맞춤형 방안을 제시합니다.",
       srcPath: "/images/reduce2.png",
@@ -50,6 +52,7 @@ const LandingContents = {
     },
     content3: {
       title: "한 번의 클릭으로 감축 방안 실행",
+      key: "reduce3",
       content:
         "많은 업체들이 감축 방안에 대해서 조사하고 고민하더라도 실제 실행까지 어려움을 겪고 있습니다. 감축 방안 실행을 위해 어떤 업체를 선택해야 하는지, 투자 대비 감축 효과가 뛰어난 것인지, 설비 등의 교체가 현 사업에 지장이 있지 않을지 등 실제 실행까지 결정함에 있어 판단하기 어려운 요소가 많이 존재하기 때문입니다. 이를 해결하기 위해 탄소중립연구원은 신재생 에너지로의 전환뿐만 아니라 여러 감축 방안 적용 시나리오를 비교하여 귀사에게 가장 적합한 방안을 제시하고 제공된 감축 방안의 실행을 한 번의 클릭으로 가능하게 합니다.",
       srcPath: "/images/reduce3.png",
@@ -61,16 +64,18 @@ const LandingContents = {
     subtitle: "탄소 감축을 위한 오프셋 펀딩",
     content1: {
       title: "탄소 감축 사업에 펀딩",
+      key: "remove1",
       content:
         "탄소중립연구원은 국내 탄소 감축을 선도하고 있는 파트너들과 협업하고 있으며, 마켓플레이스를 통해 그들에게 쉽게 펀딩할 수 있습니다. 펀딩으로 끝나지 않고 탄소중립연구원의 전문가 팀이 프로젝트를 트래킹하여 실질적인 기후 임팩트를 만들어내는지 확인합니다.",
-      srcPath: "./video/remove1.mp4",
+      srcPath: "/images/remove1.png",
       isVideo: true,
     },
     content2: {
       title: "포트폴리오 관리",
+      key: "remove2",
       content:
         "탄소 감축에 기여할 수 있는 최신 기술/사업에 참여할 수 있게 도와드립니다. 다양한 종류의 사업에 참여하면서 포트폴리오를 구성해보세요. 탄소중립연구원과 협업을 원하는 감축사업자이신가요? ",
-      srcPath: "./video/remove2.mp4",
+      srcPath: "/images/remove2.png",
       isVideo: true,
     },
   },
@@ -94,4 +99,5 @@ export type LandingSubContentsType = {
   content: string;
   srcPath: string;
   isVideo: boolean;
+  key: string;
 };

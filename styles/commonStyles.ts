@@ -92,6 +92,7 @@ export const LinkButton = styled.a<{height: number; fontSize: number}>`
     margin: 0 ${({fontSize}) => fontSize / 4}px;
   }
 `;
+
 export const SectionTitleStyle = styled.div`
   font-size: 10vw;
   font-weight: 600;
@@ -104,6 +105,8 @@ export const SectionTitleStyle = styled.div`
   }
   @media only screen and (min-width: 1536px) {
     font-size: 60px;
+    margin-bottom: 0px;
+    margin-top: 80px;
   }
 `;
 
@@ -121,5 +124,6 @@ export const SectionSubTitleStyle = styled.div`
   }
   @media only screen and (min-width: 1536px) {
     font-size: 30px;
+    margin-bottom: 70px;
   }
 `;

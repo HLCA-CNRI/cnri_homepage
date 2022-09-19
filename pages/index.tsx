@@ -11,6 +11,7 @@ import ReduceCard from "../components/LandingComponents.tsx/ReduceCard";
 import colors from "../constants/colors";
 import ReduceCards from "../components/LandingComponents.tsx/ReduceCards";
 import RemoveCards from "../components/LandingComponents.tsx/RemoveCards";
+import ReportCard from "../components/LandingComponents.tsx/ReportCard";
 
 function Home() {
   return (
@@ -75,7 +76,7 @@ function Home() {
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
-          <div className=" hidden md:grid grid-cols-2 gap-10 ">
+          {/* <div className=" hidden md:grid grid-cols-2 gap-10 ">
             <div className="col-span-1">
               <VerticalSlidingCard
                 moveVidFrom={TransitionVariants.TansitionVidLToR}
@@ -103,9 +104,9 @@ function Home() {
                   bgColor="#FFF7E1"
                   basisVal="fit-content"
                 />
-              </div>
-            </div>
-          </div>
+              </div> */}
+          {/* </div> */}
+          {/* </div> */}
           <div className="md:hidden">
             <div className="relative ">
               <LandingMobile
@@ -224,7 +225,8 @@ function Home() {
           <SectionTitleStyle>{LandingContents.Report.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Report.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
-          <div className="hidden md:grid overflow-hidden">
+          <ReportCard content={LandingContents.Report.content1} />
+          {/* <div className="hidden md:grid overflow-hidden">
             <HorizontalSlidingCard
               imagePosition="left"
               moveVidFrom={TransitionVariants.TansitionVidLToR}
@@ -233,7 +235,7 @@ function Home() {
               bgColor="#FFF7E1"
               basisVal="50%"
             />
-          </div>
+          </div> */}
           <div className="md:hidden">
             <LandingMobile
               contentInfo={[LandingContents.Report.content1]}

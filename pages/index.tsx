@@ -7,7 +7,7 @@ import TransitionVariants from "../functions/TransitionVariants";
 import VerticalSlidingCard from "../components/LandingComponents.tsx/VerticalSlidingCard";
 import HorizontalSlidingCard from "../components/LandingComponents.tsx/HorizontalSlidingCard";
 import LandingContents from "../functions/LandingContents";
-import {SectionTitleStyle, SectionSubTitleStyle} from "../styles/commonStyles";
+import {SectionTitleStyle, SectionSubTitleStyle, LinkButton} from "../styles/commonStyles";
 
 function Home() {
   return (
@@ -23,19 +23,17 @@ function Home() {
           </div>
         </div>
         <div className="flex justify-center my-[34.56px]  ">
-          <a
-            className="bg-white text-constant-CIET_MINT hover:bg-constant-CIET_MINT hover:text-white border-2 border-constant-CIET_MINT transition-all duration-300 ease-in  text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[16.2px] 2xl:px-[80px] lg:text-[30px] mx-[1.5vw] font-bold"
+          <LinkButton
+            height={70}
+            fontSize={37}
             target="_blank"
             rel="noopener noreferrer"
             href="https://cis.cnrikorea.com">
             CIS
-          </a>
-          <a
-            className="text-white bg-constant-CIET_MINT hover:bg-white hover:text-constant-CIET_MINT border-2 border-constant-CIET_MINT transition-all  ease-in text-[3vw] md:text-[2vw] rounded-lg px-[7vw] py-[1vh] md:py-[2vh] 2xl:py-[16.2px] 2xl:px-[80px] 2xl:text-[30px] mx-[1.5vw] font-bold"
-            rel="noopener noreferrer"
-            href="/product/ciet">
+          </LinkButton>
+          <LinkButton height={70} fontSize={37} rel="noopener noreferrer" href="/product/ciet">
             CIET
-          </a>
+          </LinkButton>
         </div>
         <div className="flex justify-center ">
           <video

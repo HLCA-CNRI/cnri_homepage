@@ -15,21 +15,21 @@ const TransitionVariants = {
   },
 
   TransitionContextLToR: {
-    initial: {opacity: 0, x: 0, transition: {duration: 0.6}},
-    open: {opacity: 1, x: "45%", transition: {duration: 0.6}},
-    close2: {x: 0, opacity: 0, transition: {duration: 0.6}},
+    initial: {opacity: 0, x: 0, transition: {duration: 0.2}},
+    open: {opacity: 1, x: "48%", transition: {duration: 0.2}},
+    close2: {x: 0, opacity: 0, transition: {duration: 0.2}},
   },
 
   TransitionContextLToR2: {
-    initial: {opacity: 0, x: -200, transition: {duration: 0.6}},
-    open: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    close2: {x: -400, opacity: 0, transition: {duration: 0.6}},
+    initial: {opacity: 0, x: -200, transition: {duration: 0.2}},
+    open: {opacity: 1, x: 0, transition: {duration: 0.2}},
+    close2: {x: -400, opacity: 0, transition: {duration: 0.2}},
   },
 
   TransitionContextRToL: {
-    initial: {opacity: 1, x: 0, transition: {duration: 0.6}},
-    open: {opacity: 1, x: "-40%", transition: {duration: 0.6}},
-    close2: {x: 0, opacity: 1, transition: {duration: 0.6}},
+    initial: {opacity: 1, x: 0, transition: {duration: 0.2}},
+    open: {opacity: 1, x: "-42%", transition: {duration: 0.2}},
+    close2: {x: 0, opacity: 1, transition: {duration: 0.2}},
   },
   TransitionContextTToB: {
     initial: {z: 0, opacity: 0, y: -200, transition: {duration: 0.6}},

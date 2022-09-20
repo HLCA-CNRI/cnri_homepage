@@ -45,6 +45,7 @@ module.exports = {
       cnri_light_blue: "#DEF3FD",
       cnri_dark_green: "#73A66E",
       cnri_light_green: "#C7CEA7",
+      cnri_report_bg: "#F3F3F3",
       gradiation_green: "#45BA9A",
       gradiation_skyblue: "#85D7F5",
       btn_mint: " #60D5CC",
@@ -215,6 +216,7 @@ module.exports = {
       xl: "0.75rem",
       "2xl": "1rem",
       "3xl": "1.5rem",
+      forImg: "2.5rem",
       full: "9999px",
     },
     borderSpacing: ({theme}) => ({

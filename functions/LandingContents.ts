@@ -4,23 +4,26 @@ const LandingContents = {
     subtitle: "쉽고, 지속 가능한 모든 탄소의 측정",
     content1: {
       title: "국내 최고 수준의 연구 역량이 뒷받침된 탄소 회계",
+      key: "measure1",
       content:
         "탄소중립연구원의 데이터 엔진은 귀사의 전방위적인 탄소 측정을 가능하게 합니다. 글로벌 표준으로 자리잡은 World Resources Institute의 Greenhouse Gas Protocol를 준수하여 Scope1(직접 배출), Scope2(전기와 열 생산으로 인한 간접 배출), Scope3(모든 간접 배출)를 측정하며, 주요 정부기관(국토교통부, 산업통상자원부 등)과 서울대학교 연구실과의 공동 연구를 통해 도출된 방법론으로 전기차로의 전환, 재택 근무, 클라우드 등 다양한 배출원을 놓치지 않고 정교하게 측정합니다. 배출권 거래제의 국가 고유 배출계수뿐만 아니라 글로벌 수치(IPCC, EPA, 등), LCA(국가 LCI DB, Gabi, Ecoinvent, GREET), 주요 연구 결과, 파트너사의 고유 배출계수 등 수많은 배출계수를 활용하여 귀사에게 가장 적합한 측정을 제공합니다.",
-      srcPath: "./video/measure1.mp4",
-      isVideo: true,
+      srcPath: "/images/measure1.png",
+      isVideo: false,
     },
     content2: {
-      title: "어렵지만 중요한\n공급망에서의 탄소 관리",
+      title: "어렵지만 중요한 공급망에서의 탄소 관리",
+      key: "measure2",
       content:
         "최근 CDP 보고서에 의하면 공급망에서의 탄소 배출이 평균 11.3배나 될 만큼 많은 비중을 차지하고 있지만 규제 부재, 필요성 인지 부족 등으로 오랫동안 블랙박스였습니다. 그렇지만 국가별 기후 공시 의무화, 글로벌 기업들의 연이은 Net-Zero 선언으로 인해 공급망에서의 탄소 감축이 어느 때보다 중요한 시점입니다. 탄소중립연구원은 산업 평균 데이터가 아닌 구체적인 현장 데이터의 적용을 도울 수 있으며, 공급망에서의 구체적인 탄소 감축 방안을 제시합니다. ",
-      srcPath: "./video/measure2.mp4",
-      isVideo: true,
+      srcPath: "/images/measure2.png",
+      isVideo: false,
     },
     content3: {
       title: "쉽고, 지속 가능한 고객 경험",
+      key: "measure3",
       content:
         "매뉴얼에 명시된 Raw Data를 한 번만 수집하시고, 나머지는 탄소중립연구원이 처리해드립니다. Drag-and-Drop을 통해 쉽게 파일(엑셀, 이미지 등)을 업로드하고, 개발팀과의 소통을 통해 제공된 API로 데이터 수집도 자동화가 가능합니다. 탄소중립연구원과 한 번의 작업으로 탄소 회계의 모든 작업을 직접 관리하실 수 있습니다.",
-      srcPath: "./video/measure3.mp4",
+      srcPath: "/images/measure3.png",
       isVideo: false,
     },
     content4: {

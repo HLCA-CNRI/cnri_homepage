@@ -12,6 +12,7 @@ import colors from "../constants/colors";
 import ReduceCards from "../components/LandingComponents.tsx/ReduceCards";
 import RemoveCards from "../components/LandingComponents.tsx/RemoveCards";
 import ReportCard from "../components/LandingComponents.tsx/ReportCard";
+import MeasureCard from "../components/LandingComponents.tsx/MeasureCard";
 
 function Home() {
   return (
@@ -74,6 +75,7 @@ function Home() {
         <section id="measure" className="scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
+          <MeasureCard />
 
           <div className="md:hidden">
             <div className="relative ">

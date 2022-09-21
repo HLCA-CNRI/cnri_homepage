@@ -60,7 +60,7 @@ const PopUp = () => {
           </div>
 
           {/* Moblie version */}
-          <MobliePopUp className="md:hidden landscape:hidden relative overflow-clip m-auto w-[77vw] h-[68vh] bg-popup-img-moblie bg-cover pt-[1.7vh]">
+          <MobliePopUp className="md:hidden landscape:hidden relative  overflow-hidden m-auto w-[77vw] h-[68vh] bg-popup-img-moblie bg-cover pt-[1.7vh]">
             <div
               role="button"
               id={delBtnId.current}

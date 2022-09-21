@@ -13,6 +13,7 @@ const PopUp = () => {
   };
   return (
     <>
+
       <div> </div>
       {isOpened ? (
         <div
@@ -58,11 +59,12 @@ const PopUp = () => {
           </div>
 
           {/* Moblie version */}
-          <MobliePopUp className="md:hidden landscape:hidden relative overflow-clip m-auto w-[77vw] h-[68vh] bg-popup-img-moblie bg-cover pt-[1.7vh]">
+          <MobliePopUp className="md:hidden landscape:hidden relative overflow-clip m-auto w-[77vw] h-[68vh] bg-popup-img-moblie bg-cover pt-[1.7vh]"
             <div
               role="button"
               id={delBtnId.current}
               onClick={onDelbtnClick}
+
               className="relative text-1vw] font-normal text-light_gray  hover:cursor-pointer left-[4vw]">
               ×
             </div>

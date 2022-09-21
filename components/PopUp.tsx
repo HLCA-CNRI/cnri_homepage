@@ -9,6 +9,8 @@ const PopUp = () => {
     const {id} = e.target;
     if (id === delBtnId.current) {
       setIsOpened(false);
+    } else {
+      window.location.href = "https://lca.oopy.io/";
     }
   };
   return (

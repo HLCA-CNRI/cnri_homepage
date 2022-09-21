@@ -11,7 +11,7 @@ interface HorizontalSlidingCardType {
   contentInfo: {
     title: string;
     content: string;
-    videoPath: string;
+    srcPath: string;
     isVideo: boolean;
   };
   bgColor: string; // 카드 색
@@ -97,7 +97,7 @@ function HorizontalSlidingCard({
         {contentInfo.isVideo ? (
           <video
             ref={videoRef}
-            src={contentInfo.videoPath}
+            src={contentInfo.srcPath}
             muted
             loop
             className="w-[99%] transition-[width] delay-150 object-cover  rounded-lg shadow-xl mt-[2vh] "

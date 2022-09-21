@@ -50,6 +50,7 @@ module.exports = {
       gradiation_skyblue: "#85D7F5",
       light_gray: "#BDBDBD",
       popup_text: "#7ccec0",
+      popup_btn: "#5ED1C0",
       btn_mint: " #60D5CC",
       btn_bg: "#F0F0F0",
       btn_inner_shadow: "rgba(0, 0, 0, 0.25)",

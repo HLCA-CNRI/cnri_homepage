@@ -9,6 +9,8 @@ const PopUp = () => {
     const {id} = e.target;
     if (id === delBtnId.current) {
       setIsOpened(false);
+    } else {
+      window.location.href = "https://lca.oopy.io/";
     }
   };
   return (
@@ -58,7 +60,7 @@ const PopUp = () => {
           </div>
 
           {/* Moblie version */}
-          <MobliePopUp className="md:hidden landscape:hidden relative overflow-clip m-auto w-[77vw] h-[68vh] bg-popup-img-moblie bg-cover pt-[1.7vh]">
+          <MobliePopUp className="md:hidden landscape:hidden relative  overflow-hidden m-auto w-[77vw] h-[68vh] bg-popup-img-moblie bg-cover pt-[1.7vh]">
             <div
               role="button"
               id={delBtnId.current}
@@ -99,13 +101,20 @@ const PopUp = () => {
             <div className="absolute bottom-[7vh] text-[2.8vw] text-[gray] left-[19vw]">
               예상 결과물
             </div>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://lca.oopy.io/"
-              className="bottom-0 absolute w-full text-center text-[18px] h-[6.5vh] text-white  leading-[6.5vh]">
-              안내 바로가기{" "}
-            </a>
+            <div className="bottom-0 absolute w-full text-white text-center text-[18px] h-[9vh] bg-popup_btn">
+              <div className="h-[75%] flex items-center">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://lca.oopy.io/"
+                  className="block w-full m-0">
+                  안내 바로가기
+                </a>
+              </div>
+              <div className=" bottom-0 w-full h-[25%] z-[999] text-[4px] border-t-[1px] py-[0.3vh] border-dashed ">
+                CNRI KOREA
+              </div>
+            </div>
           </MobliePopUp>
         </div>
       ) : null}

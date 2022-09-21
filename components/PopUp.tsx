@@ -111,7 +111,7 @@ const PopUp = () => {
                   안내 바로가기
                 </a>
               </div>
-              <div className=" bottom-0 w-full h-[25%] z-[999] text-[4px] border-t-[1px] py-[0.3vh] border-dashed ">
+              <div className=" bottom-0 w-full h-[25%] z-[999] text-[2vw] border-t-[0.1vh] py-[0.3vh] border-dashed ">
                 CNRI KOREA
               </div>
             </div>

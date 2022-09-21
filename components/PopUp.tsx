@@ -1,11 +1,11 @@
-import React, {memo, useState, useRef} from "react";
+import React, {useState, useRef} from "react";
 import styled from "styled-components";
 import {PopUpContents} from "../functions/PopUpContents";
 
-const PopUp = memo(() => {
+const PopUp = () => {
   const [isOpened, setIsOpened] = useState(true);
   const delBtnId = useRef("delete");
-  const onDelbtnClick = (e) => {
+  const onDelbtnClick = (e: any) => {
     const {id} = e.target;
     if (id === delBtnId.current) {
       setIsOpened(false);
@@ -23,7 +23,7 @@ const PopUp = memo(() => {
           className={`hidden md:block landscape:block absolute w-[880px] h-[490px] bg-popup-img bg-cover z-[200] rounded-forPopup  shadow-md `}>
           <div className="px-[34px] py-[37px]">
             <div
-              role={"button"}
+              role="button"
               id={delBtnId.current}
               onClick={onDelbtnClick}
               className="relative text-[28px] font-semibold text-light_gray top-[-20px] hover:cursor-pointer">
@@ -58,7 +58,7 @@ const PopUp = memo(() => {
         {/* Moblie version */}
         <MobliePopUp className="md:hidden landscape:hidden relative overflow-clip m-auto w-[77vw] h-[68vh] bg-popup-img-moblie bg-cover pt-[1.7vh]">
           <div
-            role={"button"}
+            role="button"
             id={delBtnId.current}
             onClick={onDelbtnClick}
             className="relative text-1vw] font-normal text-light_gray  hover:cursor-pointer left-[4vw]">
@@ -100,7 +100,7 @@ const PopUp = memo(() => {
       </div>
     )
   );
-});
+};
 
 export default PopUp;
 

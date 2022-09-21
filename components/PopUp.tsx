@@ -13,7 +13,7 @@ const PopUp = () => {
   };
   return (
     <>
-      <div className="absolute"> </div>
+      <div> </div>
       {isOpened ? (
         <div
           role="button"

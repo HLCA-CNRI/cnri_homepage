@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, memo} from "react";
 import styled from "styled-components";
 import {PopUpContents} from "../functions/PopUpContents";
 
@@ -12,7 +12,8 @@ const PopUp = () => {
     }
   };
   return (
-    isOpened && (
+    <>
+      isOpened && (
       <div
         role="button"
         id={delBtnId.current}
@@ -98,11 +99,12 @@ const PopUp = () => {
           </a>
         </MobliePopUp>
       </div>
-    )
+      )
+    </>
   );
 };
 
-export default PopUp;
+export default memo(PopUp);
 
 const MobliePopUp = styled.div`
   .dummyList {

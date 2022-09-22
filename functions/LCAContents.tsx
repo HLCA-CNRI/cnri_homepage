@@ -7,8 +7,8 @@ const LCAContents: {[key: string]: any} = {
       "휘발유의 원료인 원유를 채굴하기 위해 메탄과 경유를 연소시키는 과정에서 온실가스를 배출합니다.",
     default: (
       <svg
-        width="125"
-        height="119"
+        width="100%"
+        height="100%"
         viewBox="0 0 125 119"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -64,8 +64,8 @@ const LCAContents: {[key: string]: any} = {
     ),
     colored: (
       <svg
-        width="120"
-        height="112"
+        width="100%"
+        height="100%"
         viewBox="0 0 120 112"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -114,8 +114,8 @@ const LCAContents: {[key: string]: any} = {
       "천연가스를 한국으로 수입하기 위해서는 액화천연가스(LNG, Liquefied Natural Gas) 형태로 액화시키는 과정에서 온실가스를 배출합니다.",
     default: (
       <svg
-        width="169"
-        height="138"
+        width="100%"
+        height="100%"
         viewBox="0 0 169 138"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -136,8 +136,8 @@ const LCAContents: {[key: string]: any} = {
             id="filter0_d_341_1161"
             x="6"
             y="10"
-            width="157"
-            height="126"
+            width="100%"
+            height="100%"
             filterUnits="userSpaceOnUse"
             color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix" />
@@ -164,8 +164,8 @@ const LCAContents: {[key: string]: any} = {
     ),
     colored: (
       <svg
-        width="169"
-        height="138"
+        width="100%"
+        height="100%"
         viewBox="0 0 169 138"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -202,8 +202,8 @@ const LCAContents: {[key: string]: any} = {
     content2: "21세기 문명을 지탱하는 철강을 생산하기 위해서는 다량의 온실가스를 배출하게 됩니다.",
     default: (
       <svg
-        width="120"
-        height="120"
+        width="100%"
+        height="100%"
         viewBox="0 0 120 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -217,8 +217,8 @@ const LCAContents: {[key: string]: any} = {
     ),
     colored: (
       <svg
-        width="120"
-        height="120"
+        width="100%"
+        height="100%"
         viewBox="0 0 120 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -252,8 +252,8 @@ const LCAContents: {[key: string]: any} = {
       "해외에서 생산된 제품 중 일부는 항공 화물을 통해 운송되며 경유를 연소시키는 과정에서 온실가스를 배출합니다.",
     default: (
       <svg
-        width="130"
-        height="98"
+        width="100%"
+        height="100%"
         viewBox="0 0 130 98"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -267,8 +267,8 @@ const LCAContents: {[key: string]: any} = {
     ),
     colored: (
       <svg
-        width="130"
-        height="98"
+        width="100%"
+        height="100%"
         viewBox="0 0 130 98"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -302,8 +302,8 @@ const LCAContents: {[key: string]: any} = {
       "휘발유 차량을 통해 목적지에 도달하는 과정에서 휘발유를 연소시키게 되며 온실가스를 배출합니다.",
     default: (
       <svg
-        width="98"
-        height="98"
+        width="100%"
+        height="100%"
         viewBox="0 0 98 98"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -316,8 +316,8 @@ const LCAContents: {[key: string]: any} = {
     ),
     colored: (
       <svg
-        width="98"
-        height="98"
+        width="100%"
+        height="100%"
         viewBox="0 0 98 98"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -359,8 +359,8 @@ const LCAContents: {[key: string]: any} = {
     content2: "대부분의 쓰레기는 소각 처리되며 소각 과정에서 온실가스를 배출합니다.",
     default: (
       <svg
-        width="98"
-        height="103"
+        width="100%"
+        height="100%"
         viewBox="0 0 98 103"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -373,8 +373,8 @@ const LCAContents: {[key: string]: any} = {
     ),
     colored: (
       <svg
-        width="98"
-        height="103"
+        width="100%"
+        height="100%"
         viewBox="0 0 98 103"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">

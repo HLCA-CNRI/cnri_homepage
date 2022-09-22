@@ -17,7 +17,7 @@ const Members = memo(() => {
     MemberContent.cherin,
   ]);
 
-  const onArrowClick = (e) => {
+  const onArrowClick = (e: any) => {
     const {id} = e.currentTarget;
     switch (id) {
       case ArrowDirection.LEFT:

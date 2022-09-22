@@ -1,16 +1,16 @@
 import {motion, useAnimation} from "framer-motion";
-import styled from "styled-components";
-import {useEffect, memo} from "react";
+import {useEffect, memo, useRef} from "react";
 import {useInView} from "react-intersection-observer";
 import {NextSeo} from "next-seo";
 import ScrollContainer from "react-indiana-drag-scroll";
 import TransitionVariants from "../../functions/TransitionVariants";
 import PhilosophyComp from "../../components/CompanyComponents/PhilosophyComp";
-import Member from "../../components/CompanyComponents/Member";
-import History from "../../components/CompanyComponents/HistoryComp";
 import PhilosophyContent from "../../functions/PhilosophyContent";
 import PhilosophyMobile from "../../components/CompanyComponents/PhilosophyMobile";
 import {SectionTitleStyle} from "../../styles/commonStyles";
+import Members from "../../components/CompanyComponents/Members";
+import HistoryCard from "../../components/CompanyComponents/HistoryCard";
+import HistoryContent from "../../functions/HistoryContents";
 
 // Company Page seo 내용
 const companySeo = {
@@ -94,22 +94,19 @@ function Company() {
           {/* Member Section */}
           <section className="mb-[5vh] md:mb-[10vh]">
             <SectionTitleStyle>Members</SectionTitleStyle>
-            {/* indiana-drag-scroll 사용해서 마우스로 스크롤 가능하게 만듬 */}
-            <ScrollContainer className="scroll-container flex cursor-pointer">
-              <Member name="min" />
-              <Member name="jonghoh" />
-              <Member name="prof" />
-              <Member name="minhyeok" />
-              <Member name="kyunghoh" />
-              <Member name="cherin" />
-            </ScrollContainer>
+            {/* PC ver & Mobile ver */}
+            <Members />
           </section>
+
           {/* History Section */}
           <section className="my-4">
             <SectionTitleStyle>History</SectionTitleStyle>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-10">
-              <History year={2022} />
-              <History year={2021} />
+            {/* PC ver & Mobile ver */}
+            <div className="flex items-center">
+              <div className="flex flex-wrap">
+                <HistoryCard content={HistoryContent?.[2022]} />
+                <HistoryCard content={HistoryContent?.[2021]} />
+              </div>
             </div>
           </section>
         </div>

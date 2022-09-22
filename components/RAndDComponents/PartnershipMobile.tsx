@@ -108,11 +108,12 @@ function PartnershipMobile() {
                 {currentObj.kTitle}
               </div>
               <div className="text-[3vw]   ">
-                <ul>
+                <div>{currentObj.content}</div>
+                {/* <ul>
                   {currentObj.content.map((note: string) => (
                     <li key={note}>{note}</li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
             </>
           )}

@@ -27,7 +27,7 @@ const PartnershipCard = ({
     <div>
       <div
         className={`relative w-[260px] h-[420px] bg-partnership_bg flex justify-center items-center transition-all duration-[0.5s] ${
-          isOpened ? "bg-[white] shadow-partnership  animate-fadein scale-105 z-10 " : ""
+          isOpened ? "bg-white shadow-partnership  animate-fadein scale-105 z-10 " : ""
         } ${!isLast && !isOpened ? "border-r-2" : " "}
           
           `}>
@@ -35,10 +35,12 @@ const PartnershipCard = ({
           {content.colored}
         </div>
 
-        {/* <div
+        <div
           className={`absolute bottom-0 w-full bg-rnd_mint  h-[40px] ${
             isOpened ? "visible" : "hidden"
-          } `}></div> */}
+          } `}>
+          {" "}
+        </div>
       </div>
       {/* contents 부분 */}
       <div className="relative mt-7 pb-[230px]">

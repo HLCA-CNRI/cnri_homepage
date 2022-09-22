@@ -48,24 +48,26 @@ function Carousel({currentObj}: CarouselType) {
         </button>
       </div>
       {/* When display is smaller than sm:밑에 제목 부분 */}
-      <div className="  sm:hidden text-[5.5vw]  font-semibold  sm:pb-4 sm:h-20  justify-start pb-[1vh] pt-[2vh]">
+      <div className="  sm:hidden text-[5.5vw]  font-bold  sm:pb-4 sm:h-20  justify-start pb-[1vh] pt-[2vh]">
         {currentObj.kTitle[current]}
       </div>
       {/* When display is greater than md:내용 */}
       <div className="  hidden md:flex md:text-md  pt-4">
-        <ul>
+        <div>{currentObj.content[current]}</div>
+        {/* <ul>
           {currentObj.content[current].map((note: string) => (
             <li key={note}>{note}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
       {/* hen display is smaller than sm::내용 */}
       <div className=" md:hidden text-[3vw]">
-        <ul>
+        <div>{currentObj.content[current]}</div>
+        {/* <ul>
           {currentObj.content[current].map((note: string) => (
             <li key={note}>{note}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </>
   );

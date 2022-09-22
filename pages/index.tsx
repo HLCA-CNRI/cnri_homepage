@@ -75,7 +75,10 @@ function Home() {
         <section id="measure" className="scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
-          <MeasureCard />
+
+          <div className="hidden md:block">
+            <MeasureCard />
+          </div>
 
           <div className="md:hidden">
             <div className="relative ">
@@ -84,7 +87,6 @@ function Home() {
                   LandingContents.Measure.content1,
                   LandingContents.Measure.content2,
                   LandingContents.Measure.content3,
-                  LandingContents.Measure.content4,
                 ]}
                 isVid
                 backgroundColor="#EAF2FA"
@@ -98,7 +100,11 @@ function Home() {
           <SectionTitleStyle>{LandingContents.Reduce.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Reduce.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
-          <ReduceCards />
+
+          <div className="hidden md:block">
+            <ReduceCards />
+          </div>
+
 
           {/* When display is small than md */}
           <div className="md:hidden">
@@ -118,7 +124,19 @@ function Home() {
         <section id="remove" className=" scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Remove.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Remove.subtitle}</SectionSubTitleStyle>
-          <RemoveCards />
+
+          <div className="hidden md:block">
+            <RemoveCards />
+          </div>
+
+          {/* When display is smaller than md */}
+          <div className="md:hidden">
+            <LandingMobile
+              contentInfo={[LandingContents.Remove.content1, LandingContents.Remove.content2]}
+              isVid
+              backgroundColor="#FDF0E7"
+            />
+          </div>
         </section>
 
         {/* Report Section */}
@@ -126,7 +144,10 @@ function Home() {
           <SectionTitleStyle>{LandingContents.Report.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Report.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
-          <ReportCard content={LandingContents.Report.content1} />
+
+          <div className="hidden md:block">
+            <ReportCard content={LandingContents.Report.content1} />
+          </div>
 
           {/* When display is smaller than md */}
           <div className="md:hidden">

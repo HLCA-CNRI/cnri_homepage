@@ -49,11 +49,16 @@ module.exports = {
       partnership_bg: "#F8F8F8",
       gradiation_green: "#45BA9A",
       gradiation_skyblue: "#85D7F5",
+      light_gray: "#BDBDBD",
+      popup_text: "#7ccec0",
+      popup_btn: "#5ED1C0",
       btn_mint: " #60D5CC",
       btn_bg: "#F0F0F0",
       btn_inner_shadow: "rgba(0, 0, 0, 0.25)",
       btn_drop_shadow: "rgba(252, 252, 252, 0.25)",
       rnd_mint: "#8AD0C4",
+      ciet_mint: "#00D8CD",
+      ciet_back: "#eff2f6",
       constant: {
         CIET_MINT: "#00D8CD",
         CIET_BACK: "#eff2f6",
@@ -153,6 +158,8 @@ module.exports = {
     backgroundColor: ({theme}) => theme("colors"),
     backgroundImage: {
       none: "none",
+      "popup-img": "url('/images/popup_background.png')",
+      "popup-img-moblie": "url('/images/mobile_popup_background.png')",
       "gradient-to-t": "linear-gradient(to top, var(--tw-gradient-stops))",
       "gradient-to-tr": "linear-gradient(to top right, var(--tw-gradient-stops))",
       "gradient-to-r": "linear-gradient(to right, var(--tw-gradient-stops))",
@@ -218,6 +225,7 @@ module.exports = {
       "2xl": "1rem",
       "3xl": "1.5rem",
       forImg: "2.5rem",
+      forPopup: "50px",
       full: "9999px",
     },
     borderSpacing: ({theme}) => ({

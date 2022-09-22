@@ -33,14 +33,16 @@ function LandingMobile({contentInfo, isVid, backgroundColor}: LandingMobileType)
           <div key={val.title} className="flex-shrink-0  snap-center  w-[100%]  ">
             {/* 키드 비디오 */}
             <div className="p-[2vw]">
-              <video
+              {/* 키드 이미지 */}
+              <img alt="" src={val.srcPath} className="p-[2vw]" />
+              {/* <video
                 autoPlay
                 loop
                 muted
                 playsInline
                 src={val.videoPath}
                 className=" object-cover   rounded-lg"
-              />
+              /> */}
             </div>
             {/* 키드 제목 */}
             <div className="px-[3vw] text-[3.5vw] my-[2vh] font-bold">{val.title}</div>
@@ -60,7 +62,7 @@ function LandingMobile({contentInfo, isVid, backgroundColor}: LandingMobileType)
       ) : (
         <div className="flex-shrink-0  snap-center  w-[100%]  relative">
           {/* 키드 이미지 */}
-          <img alt="" src={contentInfo[0].videoPath} className="p-[2vw]" />
+          <img alt="" src={contentInfo[0].srcPath} className="p-[2vw]" />
           {/* 키드 제목 */}
           <div className="px-[3vw] text-[3.5vw] my-[2vh] font-bold">{contentInfo[0].title}</div>
           {/* 키드 내용 */}

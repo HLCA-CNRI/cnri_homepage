@@ -9,7 +9,7 @@ import PhilosophyContent from "../../functions/PhilosophyContent";
 import PhilosophyMobile from "../../components/CompanyComponents/PhilosophyMobile";
 import {SectionTitleStyle} from "../../styles/commonStyles";
 import Members from "../../components/CompanyComponents/Members";
-import HistoryCard from "../../components/HistoryCard";
+import HistoryCard from "../../components/CompanyComponents/HistoryCard";
 import HistoryContent from "../../functions/HistoryContents";
 
 // Company Page seo 내용

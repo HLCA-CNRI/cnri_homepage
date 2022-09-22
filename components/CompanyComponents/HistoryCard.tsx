@@ -1,5 +1,5 @@
 import React, {memo, useState} from "react";
-import {HistoryContentType} from "../functions/HistoryContents";
+import {HistoryContentType} from "../../functions/HistoryContents";
 
 const HistoryCard = memo(({content}: {content: HistoryContentType}) => {
   const [isOpened, setIsOpened] = useState(false);

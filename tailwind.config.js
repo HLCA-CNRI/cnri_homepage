@@ -137,6 +137,8 @@ module.exports = {
       pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       bounce: "bounce 1s infinite",
       fadein: "fadeIn 1s ease-out 1",
+      brighter: "brighter 0.5s ease-out 1 forwards",
+      darker: "darker 0.5s ease-out 1 forwards",
       fadeout: "fadeOut 1s ease-out 1 forwards",
       titleGoUp: "titleGoUp 1s ease-out 1 forwards",
       titleGoDown: "titleGoDown 1s ease-out 1 forwards",
@@ -625,6 +627,14 @@ module.exports = {
         "0%": {opacity: "1"},
         "30%": {opacity: "0"},
         "100%": {opacity: "0"},
+      },
+      brighter: {
+        "0%": {opacity: "0.4"},
+        "100%": {opacity: "0.2"},
+      },
+      darker: {
+        "0%": {opacity: "0.2"},
+        "100%": {opacity: "0.4"},
       },
     },
     letterSpacing: {

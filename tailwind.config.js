@@ -139,6 +139,8 @@ module.exports = {
       fadein: "fadeIn 1s ease-out 1",
       brighter: "brighter 0.5s ease-out 1 forwards",
       darker: "darker 0.5s ease-out 1 forwards",
+      shadow_larger: "shadow_larger 0.2s ease-out 1 forwards",
+      shadow_smaller: "shadow_smaller 0.2s ease-out 1 forwards",
       fadeout: "fadeOut 1s ease-out 1 forwards",
       titleGoUp: "titleGoUp 1s ease-out 1 forwards",
       titleGoDown: "titleGoDown 1s ease-out 1 forwards",
@@ -630,11 +632,19 @@ module.exports = {
       },
       brighter: {
         "0%": {opacity: "0.4"},
-        "100%": {opacity: "0.2"},
+        "100%": {opacity: "0.1"},
       },
       darker: {
-        "0%": {opacity: "0.2"},
+        "0%": {opacity: "0.1"},
         "100%": {opacity: "0.4"},
+      },
+      shadow_larger: {
+        "0%": {boxShadow: " 0 0 0 rgba(0 0 0 / 0)"},
+        "100%": {boxShadow: "3px 4px 10px rgba(0 0 0 /0.4)"},
+      },
+      shadow_smaller: {
+        "0%": {boxShadow: " 3px 4px 10px rgba(0 0 0 /0.4) "},
+        "100%": {boxShadow: "0 0 0 rgba(0 0 0 / 0)"},
       },
     },
     letterSpacing: {

@@ -85,33 +85,33 @@ function LCA() {
       {/* new LCA */}
       <div className="flex items-center justify-around">
         <LCACard content={LCAContents.resources} />
-        <ArrowCover>
+        <ArrowCover className="w-[30px]">
           <Arrow direction={ArrowDirection.RIGHT} />
         </ArrowCover>
         <LCACard content={LCAContents.processing} />
-        <ArrowCover>
+        <ArrowCover className="w-[30px]">
           <Arrow direction={ArrowDirection.RIGHT} />
         </ArrowCover>
         <LCACard content={LCAContents.manufacturing} />
       </div>
       <div className="flex justify-around items-center w-full my-[5px] h-[40px] ">
-        <ArrowCover width="48px">
+        <ArrowCover className="w-[48px]">
           <Arrow direction={ArrowDirection.UP} />
         </ArrowCover>
         <div className="w-[200px]">
           <Arrow direction={ArrowDirection.NONE} />
         </div>
-        <ArrowCover width="48px">
+        <ArrowCover className="w-[48px]">
           <Arrow direction={ArrowDirection.DOWN} />
         </ArrowCover>
       </div>
       <div className="flex items-center justify-around">
         <LCACard content={LCAContents.distribution} />
-        <ArrowCover>
+        <ArrowCover className="w-[30px]">
           <Arrow direction={ArrowDirection.LEFT} />
         </ArrowCover>
         <LCACard content={LCAContents.use} />
-        <ArrowCover>
+        <ArrowCover className="w-[30px]">
           <Arrow direction={ArrowDirection.LEFT} />
         </ArrowCover>
         <LCACard content={LCAContents.endOfLife} />
@@ -289,8 +289,6 @@ function LCA() {
 
 export default memo(LCA);
 
-const ArrowCover = styled.div<{width: string; height: string}>`
-  width: ${({width}) => width || "30px"};
-  height: ${({height}) => height || "auto"};
+const ArrowCover = styled.div<{height: string}>`
   margin: 5px;
 `;

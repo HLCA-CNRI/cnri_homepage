@@ -80,7 +80,7 @@ function PartnershipMobile() {
         ) : (
           /* 사진 여러개일때 */
           <Container className={`snap-x flex   overflow-auto pl-10 `}>
-            {contents.current[curIdx].kTitle.map((t, idx) => (
+            {contents.current[curIdx].kTitle.map((t: string, idx: number) => (
               <div className="flex-shrink-0  snap-center mx-[2vw]">
                 <PartenershipMobileContentCard
                   heightAuto={false}

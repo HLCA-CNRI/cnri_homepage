@@ -54,42 +54,32 @@ export const HeaderLinkButton = styled.a`
   }
 `;
 
-export const LinkButton = styled.a<{height: number; fontSize: number}>`
+export const LinkButton = styled.a`
   ${ButtonCSS}
-
-  // 모바일인 경우
-  height: 4.7vh;
-  padding: 1vh 5.3vw;
-  border-radius: 4vh;
-  font-size: 4.7vw;
-  margin: 0 ${({fontSize}) => fontSize / 4}px;
-
+  display:inline-block;
+  width: 20vw;
+  height: auto;
+  padding: 1vh;
+  border-radius: 100vw;
+  margin: 0 2vw;
+  font-size: 5vw;
   // 중간 크기 화면인 경우
   @media only screen and (min-width: ${mediaQuery.MD}) {
-    height: 5vh;
-    padding: 1vh 4.5vw;
-    border-radius: 4vh;
-    font-size: 3vw;
-    margin: 0 ${({fontSize}) => fontSize / 4}px;
   }
 
   // 확대 + 컴퓨터 화면인 경우
-  @media screen and (orientation: landscape) and (max-width: ${mediaQuery.XXL}) {
-    height: 10vh;
-    padding: 1vh 4.5vw;
-    border-radius: 7vh;
-    font-size: 3vw;
-    margin: 0 3vh;
-    box-shadow: inset 0px 0.3vw 0.3vw ${colors.BTN_INNER_SHADOW};
-  }
+  // @media screen and (orientation: landscape) and (max-width: ${mediaQuery.XXL}) {
+  // }
 
-  @media only screen and (min-width: ${mediaQuery.XXL}) {
-    padding: 1px ${({fontSize}) => fontSize * 1.1}px;
-    height: ${({height}) => height}px;
-    border-radius: ${({height}) => height / 2}px;
-    font-size: ${({fontSize}) => fontSize}px;
-    line-height: ${({height}) => height}px;
-    margin: 0 ${({fontSize}) => fontSize / 4}px;
+  @media only screen and (min-width: ${mediaQuery.MD}) {
+    width: 150px;
+    text-align: center;
+    height: auto;
+    line-height: 40px;
+    border-radius: 100px;
+    font-size: 35px;
+    padding: 10px;
+    margin: 0 10px;
   }
 `;
 

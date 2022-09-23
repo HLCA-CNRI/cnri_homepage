@@ -4,6 +4,7 @@ import {memo, useCallback, useEffect, useState} from "react";
 import classNames from "classnames";
 import {LandingSubContentsType} from "../../functions/LandingContents";
 import TransitionVariants from "../../functions/TransitionVariants";
+import useHover from "../../hooks/useHover";
 
 interface IReportCard {
   // 카드 내용
@@ -22,19 +23,25 @@ const ReportCard = ({content}: IReportCard) => {
   const onCardClick = useCallback(() => {
     setIsOpened((cur) => !cur);
   }, [isOpened]);
+  const [isHover, onMouseOver, onMouseLeave] = useHover();
 
   return (
     // 카드 전체.
     <div
       role="button"
-      className="w-full h-[400px] flex flex-row cursor-pointer flex justify-center relative"
+      className={`w-full h-[400px] flex flex-row cursor-pointer flex justify-center relative 
+      }`}
       onClick={onCardClick}>
       {/* 이미지 */}
       <motion.div
+        onMouseEnter={onMouseOver}
+        onMouseLeave={onMouseLeave}
         animate={controlText}
         initial="initial"
         variants={TransitionVariants.TransitionContextRToL}
-        className="absolute w-[53%] h-[400px] border-2 rounded-forImg z-10">
+        className={`absolute w-[53%] h-[400px] border-2 rounded-forImg z-10 ${
+          isOpened ? "" : isHover ? "animate-shadow_larger" : "animate-shadow_smaller"
+        }`}>
         <div className="relative w-full h-full">
           <Image
             src={content.srcPath}

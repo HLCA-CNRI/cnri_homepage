@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import {useState, useRef} from "react";
 import PartnershipContent from "../../functions/PartnershipContent";
 import Icon from "./Icon";
@@ -5,7 +6,6 @@ import Carousel from "./Carousel";
 import PartenershipMobileContentCard from "./PartenershipMobileContentCard";
 import {ArrowDirection} from "../../constants/enum/arrow_direction.enum";
 import Arrow from "./Arrow";
-import styled from "styled-components";
 
 function PartnershipMobile() {
   const [currentObj, setCurrentObj] = useState(PartnershipContent.totalBusiness);

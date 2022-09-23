@@ -46,6 +46,7 @@ module.exports = {
       cnri_dark_green: "#73A66E",
       cnri_light_green: "#C7CEA7",
       cnri_report_bg: "#F3F3F3",
+      partnership_bg: "#F8F8F8",
       gradiation_green: "#45BA9A",
       gradiation_skyblue: "#85D7F5",
       light_gray: "#BDBDBD",
@@ -167,6 +168,8 @@ module.exports = {
       "gradient-to-bl": "linear-gradient(to bottom left, var(--tw-gradient-stops))",
       "gradient-to-l": "linear-gradient(to left, var(--tw-gradient-stops))",
       "gradient-to-tl": "linear-gradient(to top left, var(--tw-gradient-stops))",
+      history_gradient: "linear-gradient(180deg, #55D9BA 0%, #78E1E5 100%)",
+      lca_mobile_gradient: "linear-gradient(180deg, #44B58C 0%, #4AD3DC 100%)",
     },
     backgroundOpacity: ({theme}) => theme("opacity"),
     backgroundPosition: {
@@ -245,6 +248,7 @@ module.exports = {
       xl: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
       "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.25)",
       inner: "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+      partnership: "0 1px 10px rgb(0 0 0 / 0.25)",
       none: "none",
       shadowB: "0 20px 25px 0px rgb(0 0 0 / 0.1), 0 8px 10px 0px rgb(0 0 0 / 0.1)",
     },
@@ -316,6 +320,7 @@ module.exports = {
       xl: ["0 20px 13px rgb(0 0 0 / 0.03)", "0 8px 5px rgb(0 0 0 / 0.08)"],
       "2xl": "0 25px 25px rgb(0 0 0 / 0.15)",
       none: "0 0 #0000",
+      history_text: "0px 1px 2px rgba(0 0 0 / 0.5)",
     },
     fill: ({theme}) => theme("colors"),
     grayscale: {

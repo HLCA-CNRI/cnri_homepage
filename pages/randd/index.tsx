@@ -8,6 +8,8 @@ import LCA from "../../components/RAndDComponents/LCA";
 import PartnershipMobile from "../../components/RAndDComponents/PartnershipMobile";
 import LCAMobile from "../../components/RAndDComponents/LCAMobile";
 import {SectionTitleStyle} from "../../styles/commonStyles";
+import LCAIcon from "../../components/RAndDComponents/LCAIcon";
+import LCAContents from "../../functions/LCAContents";
 // R&D Page seo 내용
 const randdSeo = {
   title: "R&D",
@@ -67,17 +69,21 @@ function Randd() {
           </motion.div>
         </section>
         {/* LCA Section */}
-        <div className="2xl:mx-auto 2xl:w-[1300px] ">
+
+        <div className="2xl:mx-auto 2xl:w-[1300px] text-center md:text-left ">
           <div className="w-[100%] ">
             <SectionTitleStyle>What is LCA?</SectionTitleStyle>
             {/* When display size is greater than md  */}
-            <div className="hidden sm:flex">
+
+            <div className="hidden md:flex">
               <LCA />
             </div>
+
             {/* When display size is smaller than md  */}
             <div className=" md:hidden">
               <LCAMobile />
             </div>
+            <div className="md:hidden"></div>
 
             <div className="grid grid-cols-2" />
           </div>
@@ -85,11 +91,11 @@ function Randd() {
           <div className="w-[100%] mt-[6vh] md:mt-[12vh]">
             <SectionTitleStyle>Our Work and Partnership</SectionTitleStyle>
             {/* When display size is greater than md  */}
-            <div className="hidden md:flex">
+            <div className="hidden xl:flex">
               <Partnership />
             </div>
             {/* When display size is smaller than md  */}
-            <div className="md:hidden">
+            <div className="xl:hidden">
               <PartnershipMobile />
             </div>
           </div>

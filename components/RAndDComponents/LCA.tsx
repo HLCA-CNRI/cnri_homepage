@@ -289,6 +289,6 @@ function LCA() {
 
 export default memo(LCA);
 
-const ArrowCover = styled.div<{height: string}>`
+const ArrowCover = styled.div`
   margin: 5px;
 `;

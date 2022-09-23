@@ -39,7 +39,9 @@ const Members = memo(() => {
           className={`mt-[200px] ${curFirstIdx === 0 ? "invisible" : ""} `}
           onClick={onArrowClick}
           id={ArrowDirection.LEFT}>
-          <Arrow direction={ArrowDirection.LEFT} />
+          <div className="w-[30px]">
+            <Arrow direction={ArrowDirection.LEFT} />
+          </div>
         </div>
         <div className=" flex overflow-hidden">
           {members.current.map(
@@ -56,7 +58,9 @@ const Members = memo(() => {
           className={`mt-[200px] ${curFirstIdx === members.current.length - 3 ? "invisible" : ""} `}
           onClick={onArrowClick}
           id={ArrowDirection.RIGHT}>
-          <Arrow direction={ArrowDirection.RIGHT} />
+          <div className="w-[30px]">
+            <Arrow direction={ArrowDirection.RIGHT} />
+          </div>
         </div>
       </div>
 

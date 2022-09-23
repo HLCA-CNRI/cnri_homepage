@@ -270,7 +270,7 @@ from{
   margin-right:5%;
 }to{
   width:600px;
-  margin-right:5%;
+  margin-right:0%;
 }
 `;
 

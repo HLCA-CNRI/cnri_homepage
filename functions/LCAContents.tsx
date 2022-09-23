@@ -18,8 +18,8 @@ const LCAContents: {[key: string]: any} = {
             maskUnits="userSpaceOnUse"
             x="4"
             y="3"
-            width="117"
-            height="108"
+            width="100%"
+            height="100%"
             fill="black">
             <rect fill="white" x="4" y="3" width="117" height="108" />
             <path d="M68.4129 39.4428C70.4685 38.7454 71.3216 40.9799 69.4966 42.1551C49.82 54.8258 25.3212 76.774 13.4589 98.8224C12.7586 100.124 13.7219 101.667 15.1998 101.667H22.8983C23.7129 101.667 24.4394 101.172 24.7839 100.434C28.3707 92.7506 36.6708 83.8685 42.0289 78.3338C42.6125 77.731 43.5194 77.5693 44.2938 77.8922C78.7775 92.2673 112 65.0717 112 29.8125C112 24.4987 111.131 18.995 109.361 13.4162C108.885 11.9168 106.906 11.6304 105.758 12.7054C96.1519 21.6964 82.9142 14.5731 62.9542 16.7708C32.3753 20.1414 17.689 43.0677 25.3191 62.3672C25.8156 63.6229 27.4199 63.8991 28.42 62.9917C39.823 52.6455 56.3338 43.5408 68.4129 39.4428Z" />
@@ -74,8 +74,8 @@ const LCAContents: {[key: string]: any} = {
           maskUnits="userSpaceOnUse"
           x="2"
           y="3"
-          width="117"
-          height="108"
+          width="100%"
+          height="100%"
           fill="black">
           <rect fill="white" x="2" y="3" width="117" height="108" />
           <path d="M66.4129 39.4428C68.4685 38.7454 69.3216 40.9799 67.4966 42.1551C47.82 54.8258 23.3212 76.774 11.4589 98.8224C10.7586 100.124 11.7219 101.667 13.1998 101.667H20.8983C21.7129 101.667 22.4394 101.172 22.7839 100.434C26.3707 92.7506 34.6708 83.8685 40.0289 78.3338C40.6125 77.731 41.5194 77.5693 42.2938 77.8922C76.7775 92.2673 110 65.0717 110 29.8125C110 24.4987 109.131 18.995 107.361 13.4162C106.885 11.9168 104.906 11.6304 103.758 12.7054C94.1519 21.6964 80.9142 14.5731 60.9542 16.7708C30.3753 20.1414 15.689 43.0677 23.3191 62.3672C23.8156 63.6229 25.4199 63.8991 26.42 62.9917C37.823 52.6455 54.3338 43.5408 66.4129 39.4428Z" />
@@ -104,6 +104,8 @@ const LCAContents: {[key: string]: any} = {
         </defs>
       </svg>
     ),
+    svg_colored: "/images/LCAsvg/resource.svg",
+    svg_white: "/images/LCAsvg/resource_white.svg",
     videoPath: "./video/LCAvids/resources.mp4",
   },
   processing: {
@@ -193,6 +195,8 @@ const LCAContents: {[key: string]: any} = {
         </defs>
       </svg>
     ),
+    svg_colored: "/images/LCAsvg/processing.svg",
+    svg_white: "/images/LCAsvg/processing_white.svg",
     videoPath: "./video/LCAvids/processing.mp4",
   },
   manufacturing: {
@@ -242,6 +246,9 @@ const LCAContents: {[key: string]: any} = {
         </defs>
       </svg>
     ),
+    svg_colored: "/images/LCAsvg/manufacturing.svg",
+    svg_white: "/images/LCAsvg/manufacturing_white.svg",
+
     // videoPath: "./video/LCAvids/manufacturing.mp4",
   },
   distribution: {
@@ -292,6 +299,8 @@ const LCAContents: {[key: string]: any} = {
         </defs>
       </svg>
     ),
+    svg_colored: "/images/LCAsvg/distribution.svg",
+    svg_white: "/images/LCAsvg/distribution_white.svg",
     // videoPath: "./video/LCAvids/distribution.mp4",
   },
   use: {
@@ -350,6 +359,8 @@ const LCAContents: {[key: string]: any} = {
         </defs>
       </svg>
     ),
+    svg_colored: "/images/LCAsvg/use.svg",
+    svg_white: "/images/LCAsvg/use_white.svg",
     // videoPath: "./video/LCAvids/use.mp4",
   },
   endOfLife: {
@@ -407,6 +418,9 @@ const LCAContents: {[key: string]: any} = {
         </defs>
       </svg>
     ),
+    svg_colored: "/images/LCAsvg/endOfLife.svg",
+    svg_white: "/images/LCAsvg/endOfLife_white.svg",
+
     // videoPath: "./video/LCAvids/endOfLife.mp4",
   },
 };
@@ -420,4 +434,6 @@ export type LCAContentsType = {
   content2: string;
   default: any;
   colored: any;
+  svg_colored: string;
+  svg_white: string;
 };

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled, {keyframes, css} from "styled-components";
 import Image from "next/image";
 import {LandingSubContentsType} from "../../functions/LandingContents";
+import useHover from "../../hooks/useHover";
 
 const ReduceCard = ({
   contents,
@@ -16,15 +17,7 @@ const ReduceCard = ({
   bgColor: string;
   isOpened: boolean;
 }) => {
-  const [isHover, setIsHover] = useState(false);
-  const onMouseOver = () => {
-    setIsHover(true);
-  };
-
-  const onMouseLeave = () => {
-    setIsHover(false);
-  };
-
+  const [isHover, onMouseOver, onMouseLeave] = useHover();
   return (
     <Wrapper
       width={width}
@@ -53,8 +46,8 @@ const ReduceCard = ({
         clicked={isOpened}
         bgColor={bgColor}
         className={`w-full h-full absolute rounded-[2.5rem]  z-4 
-        ${isOpened ? `` : " mix-blend-multiply"} 
-        ${isHover ? "animate-brighter" : "animate-darker "} 
+        ${isOpened ? "" : " mix-blend-multiply"} 
+        ${isOpened ? "" : isHover ? "animate-brighter" : "animate-darker "} 
         `}
       />
       <Image

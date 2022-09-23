@@ -1,11 +1,30 @@
-import {useState, useRef} from "react";
-import LCAContents from "../../functions/LCAContents";
+import {useState, useRef, useEffect} from "react";
+import LCAContents, {LCAContentsType} from "../../functions/LCAContents";
 import Icon from "./Icon";
+import LCAIcon from "./LCAIcon";
 
 function LCAMobile() {
   const [currentObj, setCurrentObj] = useState(LCAContents.resources); // 현제  옵젝트/아이콘
   const videoRef = useRef<null | HTMLVideoElement>(null);
+  const [curContentTitle, setCurContentTitle] = useState("");
+  const [curContentText, setCurContentText] = useState("");
+  const contents = useRef([
+    LCAContents.resources,
+    LCAContents.processing,
+    LCAContents.manufacturing,
+    LCAContents.distribution,
+    LCAContents.use,
+    LCAContents.endOfLife,
+  ]);
 
+  useEffect(() => {
+    if (curContentTitle) {
+      const content: LCAContentsType = contents.current.filter(
+        (c) => c.title === curContentTitle
+      )[0];
+      setCurContentText(`${content?.content1} ${content?.content2}`);
+    }
+  }, [curContentTitle]);
   // ICON:사용자 아이콘 클릭 이벤트 핸들러 --> currentObj가 현제 오브젝트로 지정 + currentObj 비디오 play
   const userClick = (e: any) => {
     const val = e.target.id;
@@ -13,12 +32,54 @@ function LCAMobile() {
       setCurrentObj(LCAContents[val]);
     }
   };
+
+  const iconClick = (e: any) => {
+    const {id} = e.currentTarget;
+    setCurContentTitle(!id || id === curContentTitle ? "" : id);
+  };
   return (
     <div>
+      <div className="flex justify-evenly my-[1vh]">
+        {contents.current.map(
+          (c, idx) =>
+            idx < 3 && (
+              <div role="button" className="m-auto" onClick={iconClick} id={c.title} key={c.title}>
+                <LCAIcon content={c} isOpened={c.title === curContentTitle} />
+              </div>
+            )
+        )}
+      </div>
+      {curContentText &&
+        (curContentTitle === contents.current[0].title ||
+          curContentTitle === contents.current[1].title ||
+          curContentTitle === contents.current[2].title) && (
+          <div className=" text-[3vw] text-left leading-[3vh] px-[6vw] py-[3vh]">
+            {curContentText}
+          </div>
+        )}
+      <div className="flex  flex-row-reverse justify-evenly my-[0.3vh]">
+        {contents.current.map(
+          (c, idx) =>
+            idx >= 3 && (
+              <div role="button" className="m-auto" onClick={iconClick} id={c.title} key={c.title}>
+                <LCAIcon content={c} isOpened={c.title === curContentTitle} />
+              </div>
+            )
+        )}
+      </div>
+      {curContentText &&
+        (curContentTitle === contents.current[3].title ||
+          curContentTitle === contents.current[4].title ||
+          curContentTitle === contents.current[5].title) && (
+          <div className=" text-[3vw] text-left leading-[3vh] px-[6vw] py-[3vh]">
+            {curContentText}
+          </div>
+        )}
+
       {/* 위에 아이콘 부분 -->3X2 grid 구성 */}
-      <div className="border grid grid-cols-3 ">
-        {/* 원료 채굴 */}
-        <div
+      {/* <div className="border grid grid-cols-3 "> */}
+      {/* 원료 채굴 */}
+      {/* <div
           role="button"
           id="resources"
           className={`border flex justify-center py-[1vh] ${
@@ -41,9 +102,9 @@ function LCAMobile() {
               />
             </div>
           </div>
-        </div>
-        {/* 원료 가공 */}
-        <div
+        </div> */}
+      {/* 원료 가공 */}
+      {/* <div
           role="button"
           id="processing"
           className={`border flex justify-center py-[1vh] ${
@@ -64,9 +125,9 @@ function LCAMobile() {
               isCurrent={currentObj.title === "processing"}
             />
           </div>
-        </div>
-        {/* 제품 제조  */}
-        <div
+        </div> */}
+      {/* 제품 제조  */}
+      {/* <div
           role="button"
           id="manufacturing"
           className={`border flex justify-center py-[1vh] ${
@@ -87,9 +148,9 @@ function LCAMobile() {
               isCurrent={currentObj.title === "manufacturing"}
             />
           </div>
-        </div>
-        {/* 분배  */}
-        <div
+        </div> */}
+      {/* 분배  */}
+      {/* <div
           role="button"
           id="distribution"
           className={`border flex justify-center py-[1vh] ${
@@ -110,9 +171,9 @@ function LCAMobile() {
               isCurrent={currentObj.title === "distribution"}
             />
           </div>
-        </div>
-        {/* 제품 사용  */}
-        <div
+        </div> */}
+      {/* 제품 사용  */}
+      {/* <div
           role="button"
           id="use"
           className={`border flex justify-center py-[1vh] ${
@@ -133,9 +194,9 @@ function LCAMobile() {
               isCurrent={currentObj.title === "use"}
             />
           </div>
-        </div>
-        {/* 폐기  */}
-        <div
+        </div> */}
+      {/* 폐기  */}
+      {/* <div
           role="button"
           id="endOfLife"
           className={`border flex justify-center py-[1vh] ${
@@ -157,16 +218,16 @@ function LCAMobile() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       {/* 밑에 내용 부분 -->영상 + 내용 */}
-      <div className="mt-[2vh] border-2 p-[20px] ">
+      {/* <div className="mt-[2vh] border-2 p-[20px] ">
         <video ref={videoRef} autoPlay loop muted playsInline src={currentObj.videoPath} />
         <div className="text-[5.5vw]  font-semibold pb-[1vh] pt-[2vh]">{currentObj.kTitle}</div>
         <div className="text-[3vw] ">
           {" "}
           {currentObj.content1} {currentObj.content2}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

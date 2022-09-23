@@ -28,15 +28,10 @@ function Home() {
           </div>
         </div>
         <div className="flex justify-center my-[34.56px]  ">
-          <LinkButton
-            height={70}
-            fontSize={37}
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://cis.cnrikorea.com">
+          <LinkButton target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.com">
             CIS
           </LinkButton>
-          <LinkButton height={70} fontSize={37} rel="noopener noreferrer" href="/product/ciet">
+          <LinkButton rel="noopener noreferrer" href="/product/ciet">
             CIET
           </LinkButton>
         </div>

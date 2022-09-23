@@ -53,7 +53,7 @@ function LCAMobile() {
         (curContentTitle === contents.current[0].title ||
           curContentTitle === contents.current[1].title ||
           curContentTitle === contents.current[2].title) && (
-          <div className=" text-[3vw] text-left leading-[3vh] px-[6vw] py-[3vh]">
+          <div className=" text-[3vw] text-left leading-[150%] px-[6vw] py-[3vh]">
             {curContentText}
           </div>
         )}
@@ -71,7 +71,7 @@ function LCAMobile() {
         (curContentTitle === contents.current[3].title ||
           curContentTitle === contents.current[4].title ||
           curContentTitle === contents.current[5].title) && (
-          <div className=" text-[3vw] text-left leading-[3vh] px-[6vw] py-[3vh]">
+          <div className=" text-[3vw] text-left leading-[150%] px-[6vw] py-[3vh]">
             {curContentText}
           </div>
         )}

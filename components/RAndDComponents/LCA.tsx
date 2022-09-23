@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect, memo} from "react";
+import styled from "styled-components";
 import {ArrowDirection} from "../../constants/enum/arrow_direction.enum";
 import LCAContents from "../../functions/LCAContents";
 import {SectionSubTitleStyle} from "../../styles/commonStyles";
@@ -84,23 +85,35 @@ function LCA() {
       {/* new LCA */}
       <div className="flex items-center justify-around">
         <LCACard content={LCAContents.resources} />
-        <Arrow direction={ArrowDirection.RIGHT} />
+        <ArrowCover className="w-[30px]">
+          <Arrow direction={ArrowDirection.RIGHT} />
+        </ArrowCover>
         <LCACard content={LCAContents.processing} />
-        <Arrow direction={ArrowDirection.RIGHT} />
+        <ArrowCover className="w-[30px]">
+          <Arrow direction={ArrowDirection.RIGHT} />
+        </ArrowCover>
         <LCACard content={LCAContents.manufacturing} />
       </div>
-      <div className="flex justify-around w-full my-[10px]  ">
-        <Arrow direction={ArrowDirection.UP} />
+      <div className="flex justify-around items-center w-full my-[5px] h-[40px] ">
+        <ArrowCover className="w-[48px]">
+          <Arrow direction={ArrowDirection.UP} />
+        </ArrowCover>
         <div className="w-[200px]">
           <Arrow direction={ArrowDirection.NONE} />
         </div>
-        <Arrow direction={ArrowDirection.DOWN} />
+        <ArrowCover className="w-[48px]">
+          <Arrow direction={ArrowDirection.DOWN} />
+        </ArrowCover>
       </div>
       <div className="flex items-center justify-around">
         <LCACard content={LCAContents.distribution} />
-        <Arrow direction={ArrowDirection.LEFT} />
+        <ArrowCover className="w-[30px]">
+          <Arrow direction={ArrowDirection.LEFT} />
+        </ArrowCover>
         <LCACard content={LCAContents.use} />
-        <Arrow direction={ArrowDirection.LEFT} />
+        <ArrowCover className="w-[30px]">
+          <Arrow direction={ArrowDirection.LEFT} />
+        </ArrowCover>
         <LCACard content={LCAContents.endOfLife} />
       </div>
       {/* old one */}
@@ -275,3 +288,7 @@ function LCA() {
 }
 
 export default memo(LCA);
+
+const ArrowCover = styled.div`
+  margin: 5px;
+`;

@@ -5,8 +5,8 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
   <div>
     {direction === ArrowDirection.UP ? (
       <svg
-        width="45"
-        height="28"
+        width="100%"
+        height="100%"
         viewBox="0 0 45 28"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -20,8 +20,8 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
       </svg>
     ) : direction === ArrowDirection.DOWN ? (
       <svg
-        width="45"
-        height="28"
+        width="100%"
+        height="100%"
         viewBox="0 0 45 28"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -35,8 +35,8 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
       </svg>
     ) : direction === ArrowDirection.RIGHT ? (
       <svg
-        width="28"
-        height="45"
+        width="100%"
+        height="100%"
         viewBox="0 0 28 45"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -50,8 +50,8 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
       </svg>
     ) : direction === ArrowDirection.LEFT ? (
       <svg
-        width="28"
-        height="45"
+        width="100%"
+        height="100%"
         viewBox="0 0 28 45"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -66,8 +66,8 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
     ) : (
       <svg
         className="invisible"
-        width="45"
-        height="28"
+        width="100%"
+        height="100%"
         viewBox="0 0 45 28"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">

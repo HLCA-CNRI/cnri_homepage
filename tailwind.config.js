@@ -169,6 +169,7 @@ module.exports = {
       "gradient-to-l": "linear-gradient(to left, var(--tw-gradient-stops))",
       "gradient-to-tl": "linear-gradient(to top left, var(--tw-gradient-stops))",
       history_gradient: "linear-gradient(180deg, #55D9BA 0%, #78E1E5 100%)",
+      lca_mobile_gradient: "linear-gradient(180deg, #44B58C 0%, #4AD3DC 100%)",
     },
     backgroundOpacity: ({theme}) => theme("opacity"),
     backgroundPosition: {

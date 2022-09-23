@@ -10,14 +10,15 @@ const LCACard = memo(({content}: {content: LCAContentsType}) => {
       className="w-[400px] h-[410px] rounded-forImg flex flex-col items-center border-2 hover:cursor-pointer"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}>
-      <div className="child  h-[50%] flex items-center p-[18px] pt-[60px] ">
+      <div className="w-[50%] h-[35%] xl:h-[50%] flex items-center p-[10px] xl:p-[18px] pt-[20px] xl:pt-[60px] ">
         {!isHover ? content.colored : content.default}
       </div>
       <div className={`px-[60px] ${isHover ? "text-white" : ""}`}>
-        <h2 className={`h-[20px] text-center text-[20px] font-bold mb-[30px] mt-[10px] `}>
+        <h2
+          className={`h-[20px] text-center text-[16px] xl:text-[20px]  font-bold  mb-[10px] xl:mb-[30px] mt-[10px] `}>
           {content.kTitle}
         </h2>
-        <div className="texts text-[14.5px] font-medium leading-6 ">{`${content.content1} ${content.content2}`}</div>
+        <div className="texts text-[12px] xl:text-[14.5px] font-medium leading-6 ">{`${content.content1} ${content.content2}`}</div>
       </div>
     </Wrapper>
   );
@@ -45,12 +46,5 @@ const Wrapper = styled.div`
 
   &:hover > .texts {
     color: white;
-  }
-
-  .child {
-  }
-
-  svg {
-    // filter: drop-shadow(0px 4px 4px rgb(0, 0, 0, 0.25));
   }
 `;

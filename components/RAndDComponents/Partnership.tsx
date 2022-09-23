@@ -115,7 +115,7 @@ function Partnership() {
       {curImgs && (
         <div className="flex items-center justify-center mb-10 animate-fadein">
           {curImgs.length !== 1 && (
-            <div id={ArrowDirection.LEFT} role="button" onClick={onArrowClick}>
+            <div className="w-[40px]" id={ArrowDirection.LEFT} role="button" onClick={onArrowClick}>
               <Arrow direction={ArrowDirection.LEFT} />
             </div>
           )}
@@ -125,7 +125,11 @@ function Partnership() {
             {curImgs[curImgIdx]}
           </div>
           {curImgs.length !== 1 && (
-            <div id={ArrowDirection.RIGHT} role="button" onClick={onArrowClick}>
+            <div
+              id={ArrowDirection.RIGHT}
+              role="button"
+              onClick={onArrowClick}
+              className="w-[40px]">
               <Arrow direction={ArrowDirection.RIGHT} />
             </div>
           )}

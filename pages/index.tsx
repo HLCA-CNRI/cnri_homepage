@@ -118,17 +118,8 @@ function Home() {
           <SectionSubTitleStyle>{LandingContents.Report.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
 
-          <div className="hidden md:block">
+          <div>
             <ReportCard content={LandingContents.Report.content1} />
-          </div>
-
-          {/* When display is smaller than md */}
-          <div className="md:hidden">
-            <LandingMobile
-              contentInfo={[LandingContents.Report.content1]}
-              isVid={false}
-              backgroundColor="#FDF0E7"
-            />
           </div>
         </section>
       </section>

@@ -10,8 +10,8 @@ import Arrow from "./Arrow";
 function Partnership() {
   const [userInteracted, setUserInteracted] = useState(false); // 유저가 이미지에 호버 하거나, 아이콘에 호버를 했는지 확인. 유저한테 인터랙션이 이뤄졌는지. --> 이뤄졌다면 setUserInteracted(true)
   const [currentObj, setCurrentObj] = useState(PartnershipContent.h2); // 현제 옵젝트/아이콘
-  const [curContentTitle, setCurContentTitle] = useState<string>("");
-  const [curImgs, setCurImgs] = useState([]);
+  const [curContentTitle, setCurContentTitle] = useState<string>(PartnershipContent.snu.title);
+  const [curImgs, setCurImgs] = useState(PartnershipContent.snu.img);
   const [curImgIdx, setCurImgIdx] = useState(0);
   const contents = useRef([
     PartnershipContent.snu,
@@ -20,8 +20,6 @@ function Partnership() {
     PartnershipContent.totalBusiness,
     PartnershipContent.ts,
   ]);
-
-  const scrollRef = useRef();
 
   const onCompanyClick = (e: any) => {
     const {id} = e.currentTarget;

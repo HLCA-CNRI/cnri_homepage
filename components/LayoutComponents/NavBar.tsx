@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {useRouter} from "next/router";
 import {memo} from "react";
 import styled from "styled-components";
@@ -13,7 +14,12 @@ function NavigationBar() {
     <div className="sticky z-50  inset-x-0 top-0">
       <nav className="px-[6vw] flex place-items-center justify-between min-w-[100%] bg-white border-b-2 h-[10vh] lg:h-[12vh]">
         <Link href="/" className="flex items-center my-4">
-          {router.pathname === "/product/ciet" ? (
+          <img
+            alt="logoImg"
+            src="/images/CNRI_logo_black_under.svg"
+            className="md:h-[6.5vh] h-[4.5vh] cursor-pointer"
+          />
+          {/* {router.pathname === "/product/ciet" ? (
             <img
               alt="logoImg"
               src="/images/CIET_signature.svg"
@@ -25,10 +31,13 @@ function NavigationBar() {
               src="/images/CNRI_logo_black_under.svg"
               className="md:h-[6.5vh] h-[4.5vh] cursor-pointer"
             />
-          )}
+          )} */}
         </Link>
         <ul className="hidden sm:flex ">
-          <ProductListStyle className="mx-[0.3vw] px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+          <li className=" mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+            <Link href="/product/ciet">PRODUCT</Link>
+          </li>
+          {/* <ProductListStyle className="mx-[0.3vw] px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
             <a rel="noopener noreferrer" href="#">
               PRODUCT
             </a>
@@ -42,7 +51,7 @@ function NavigationBar() {
                 <span className="hover:text-constant-CIET_MINT">CIET</span>
               </Link>
             </div>
-          </ProductListStyle>
+          </ProductListStyle> */}
 
           <li className=" mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
             <Link href="/company">COMPANY</Link>

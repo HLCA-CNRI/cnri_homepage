@@ -55,7 +55,7 @@ const PopUp = () => {
               </div>
             </div>
             <footer className=" absolute w-full text-center text-white text-[13px]  leading-[50px] bottom-0 transform:transition w-full h-[40px]">
-              CNRI KOREA
+              CNRIKOREA
             </footer>
           </div>
 
@@ -112,7 +112,7 @@ const PopUp = () => {
                 </a>
               </div>
               <div className=" bottom-0 w-full h-[25%] z-[999] text-[2vw] border-t-[0.1vh] py-[0.3vh] border-dashed ">
-                CNRI KOREA
+                CNRIKOREA
               </div>
             </div>
           </MobliePopUp>

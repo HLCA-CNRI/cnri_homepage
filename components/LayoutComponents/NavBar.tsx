@@ -28,7 +28,10 @@ function NavigationBar() {
           )}
         </Link>
         <ul className="hidden sm:flex ">
-          <ProductListStyle className="mx-[0.3vw] px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+          <li className=" mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+            <Link href="/product/ciet">PRODUCT</Link>
+          </li>
+          {/* <ProductListStyle className="mx-[0.3vw] px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
             <a rel="noopener noreferrer" href="#">
               PRODUCT
             </a>
@@ -42,7 +45,7 @@ function NavigationBar() {
                 <span className="hover:text-constant-CIET_MINT">CIET</span>
               </Link>
             </div>
-          </ProductListStyle>
+          </ProductListStyle> */}
 
           <li className=" mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
             <Link href="/company">COMPANY</Link>

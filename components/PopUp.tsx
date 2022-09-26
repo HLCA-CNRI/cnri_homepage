@@ -1,10 +1,26 @@
-import React, {useState, useRef, memo} from "react";
+import React, {useState, useRef, memo, useEffect} from "react";
 import styled from "styled-components";
+import {setCookie} from "cookies-next";
 import {PopUpContents} from "../functions/PopUpContents";
+import {CookieKey} from "../constants/enum/cookie_key.enum";
 
 const PopUp = () => {
   const [isOpened, setIsOpened] = useState(true);
+  const [doesHideToday, setDoesHideToday] = useState(false);
   const delBtnId = useRef("delete");
+
+  // 팝업 오늘 하루 안보기 쿠키 설정
+  useEffect(() => {
+    if (!doesHideToday) return;
+    const expireDate = new Date();
+    // expireDate.setDate(expireDate.getMinutes() + 10);
+    expireDate.setDate(expireDate.getDate() + 1);
+
+    const options = {path: "/", expires: expireDate};
+
+    setCookie(CookieKey.NOT_SHOW_TODAY, true, options);
+  }, [doesHideToday]);
+
   const onDelbtnClick = (e: any) => {
     const {id} = e.target;
     if (id === delBtnId.current) {
@@ -13,6 +29,12 @@ const PopUp = () => {
       window.location.href = "https://lca.oopy.io/";
     }
   };
+
+  const onNotOpenPopup = (e: any) => {
+    e.stopPropagation();
+    setDoesHideToday((cur) => !cur);
+  };
+
   return (
     <>
       <div> </div>
@@ -55,7 +77,14 @@ const PopUp = () => {
               </div>
             </div>
             <footer className=" absolute w-full text-center text-white text-[13px]  leading-[50px] bottom-0 transform:transition w-full h-[40px]">
-              CNRI KOREA
+              CNRIKOREA
+              <div
+                role="button"
+                className="absolute text-right w-full top-10 right-4"
+                onClick={onNotOpenPopup}>
+                <input type="checkbox" id="checkbox" checked={doesHideToday} />
+                <span> 하루동안 열지 않기</span>
+              </div>
             </footer>
           </div>
 
@@ -98,7 +127,7 @@ const PopUp = () => {
               </div>
             </div>
 
-            <div className="absolute bottom-[7vh] text-[2.8vw] text-[gray] left-[19vw]">
+            <div className="absolute bottom-[10vh] text-[2.8vw] text-[gray] left-[19vw]">
               예상 결과물
             </div>
             <div className="bottom-0 absolute w-full text-white text-center text-[18px] h-[9vh] bg-popup_btn">
@@ -112,10 +141,17 @@ const PopUp = () => {
                 </a>
               </div>
               <div className=" bottom-0 w-full h-[25%] z-[999] text-[2vw] border-t-[0.1vh] py-[0.3vh] border-dashed ">
-                CNRI KOREA
+                CNRIKOREA
               </div>
             </div>
           </MobliePopUp>
+          <div
+            role="button"
+            className=" md:hidden landscape:hidden text-right absolute text-white text-[3vw] w-full bottom-[12vh] mr-[25vw] z-[30]"
+            onClick={onNotOpenPopup}>
+            <input type="checkbox" id="checkbox" checked={doesHideToday} />
+            <span> 하루동안 열지 않기</span>
+          </div>
         </div>
       ) : null}
     </>

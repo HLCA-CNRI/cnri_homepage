@@ -2,7 +2,7 @@ import React, {memo} from "react";
 import {ArrowDirection} from "../../constants/enum/arrow_direction.enum";
 
 const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
-  <div>
+  <div className="hover:drop-shadow-xl transition-all duration-[0.2s]">
     {direction === ArrowDirection.UP ? (
       <svg
         width="100%"
@@ -13,9 +13,8 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
         <path
           d="M5 22.5L22.5 5L40 22.5"
           stroke="#A8A8A8"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ) : direction === ArrowDirection.DOWN ? (
@@ -28,9 +27,9 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
         <path
           d="M40 5L22.5 22.5L5 5"
           stroke="#A8A8A8"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ) : direction === ArrowDirection.RIGHT ? (
@@ -43,9 +42,9 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
         <path
           d="M5 5L22.5 22.5L5 40"
           stroke="#A8A8A8"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ) : direction === ArrowDirection.LEFT ? (
@@ -58,9 +57,9 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
         <path
           d="M22.5 40L5 22.5L22.5 5"
           stroke="#A8A8A8"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     ) : (
@@ -74,9 +73,9 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
         <path
           d="M5 22.5L22.5 5L40 22.5"
           stroke="#A8A8A8"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     )}

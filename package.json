@@ -17,6 +17,7 @@
   "dependencies": {
     "@tailwindui/react": "^0.1.1",
     "classnames": "^2.3.1",
+    "cookies-next": "^2.1.1",
     "flowbite": "^1.4.7",
     "flowbite-react": "^0.0.25",
     "framer-motion": "^6.3.10",

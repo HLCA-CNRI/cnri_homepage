@@ -34,8 +34,18 @@ function NavigationBar() {
           )} */}
         </Link>
         <ul className="hidden sm:flex ">
-          <li className=" mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+          <li
+            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
+              router.pathname === "/product/ciet" || router.pathname === "/"
+                ? "font-bold text-black"
+                : "text-[gray]"
+            }`}>
             <Link href="/product/ciet">PRODUCT</Link>
+            {router.pathname === "/product/ciet" && (
+              <div className="absolute w-[6%] mx-auto border-2  border-black top-[11.8vh] bg-black ">
+                {" "}
+              </div>
+            )}
           </li>
           {/* <ProductListStyle className="mx-[0.3vw] px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
             <a rel="noopener noreferrer" href="#">
@@ -53,21 +63,47 @@ function NavigationBar() {
             </div>
           </ProductListStyle> */}
 
-          <li className=" mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+          <li
+            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
+              router.pathname === "/company" || router.pathname === "/"
+                ? "font-bold text-black"
+                : "text-[gray]"
+            }`}>
             <Link href="/company">COMPANY</Link>
+            {router.pathname === "/company" && (
+              <div className="absolute w-[6%] mx-auto border-2 border-black top-[11.8vh] bg-black ">
+                {" "}
+              </div>
+            )}
           </li>
 
-          <li className=" mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+          <li
+            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
+              router.pathname === "/randd" || router.pathname === "/"
+                ? "font-bold text-black"
+                : "text-[gray]"
+            }`}>
             <Link href="/randd">R&D</Link>
+            {router.pathname === "/randd" && (
+              <div className="absolute w-[6%] mx-auto border-2  border-black top-[11.8vh] bg-black ">
+                {" "}
+              </div>
+            )}
           </li>
 
-          <li className=" mx-[0.3vw] px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+          <li
+            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
+              router.pathname === "/" ? "font-bold text-black" : "text-[gray]"
+            }`}>
             <a target="_blank" rel="noopener noreferrer" href="https://front-end-developer.oopy.io">
               JOBS
             </a>
           </li>
 
-          <li className=" mx-[0.3vw] px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
+          <li
+            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
+              router.pathname === "/" ? "font-bold text-black" : "text-[gray]"
+            }`}>
             <a target="_blank" rel="noopener noreferrer" href="https://brunch.co.kr/@cnrikorea">
               BLOG
             </a>

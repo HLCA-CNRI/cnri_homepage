@@ -233,7 +233,7 @@ module.exports = {
       forImg: "2.5rem",
       forPopup: "50px",
       full: "9999px",
-      landing_mobile: "8vw",
+      landing_mobile: "4vw",
     },
     borderSpacing: ({theme}) => ({
       ...theme("spacing"),

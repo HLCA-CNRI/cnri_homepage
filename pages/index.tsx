@@ -72,6 +72,7 @@ function Home() {
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
 
           <div>
+            {/* PC ver & Mobile ver  */}
             <MeasureCard />
           </div>
         </section>
@@ -105,6 +106,7 @@ function Home() {
           {/* When display is greater than md */}
 
           <div>
+            {/* PC ver & Mobile ver  */}
             <ReportCard content={LandingContents.Report.content1} />
           </div>
         </section>

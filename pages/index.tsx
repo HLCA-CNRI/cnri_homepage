@@ -94,6 +94,7 @@ function Home() {
         <section id="reduce" className="scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Reduce.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Reduce.subtitle}</SectionSubTitleStyle>
+
           {/* PC ver & Mobile ver  */}
           <div>
             <ReduceCards />
@@ -105,17 +106,9 @@ function Home() {
           <SectionTitleStyle>{LandingContents.Remove.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Remove.subtitle}</SectionSubTitleStyle>
 
-          <div className="hidden md:block">
+          {/* PC ver & Mobile ver  */}
+          <div>
             <RemoveCards />
-          </div>
-
-          {/* When display is smaller than md */}
-          <div className="md:hidden">
-            <LandingMobile
-              contentInfo={[LandingContents.Remove.content1, LandingContents.Remove.content2]}
-              isVid
-              backgroundColor="#FDF0E7"
-            />
           </div>
         </section>
 

@@ -5,7 +5,6 @@ import {memo} from "react";
 import styled from "styled-components";
 import {HeaderLinkButton, LinkButton} from "../../styles/commonStyles";
 import HamburgerMenu from "./Hamburger/HamburgerMenu";
-import Layout from "../Layout";
 
 function NavigationBar() {
   const router = useRouter();

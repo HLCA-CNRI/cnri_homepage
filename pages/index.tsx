@@ -71,22 +71,8 @@ function Home() {
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
 
-          <div className="hidden md:block">
+          <div>
             <MeasureCard />
-          </div>
-
-          <div className="md:hidden">
-            <div className="relative ">
-              <LandingMobile
-                contentInfo={[
-                  LandingContents.Measure.content1,
-                  LandingContents.Measure.content2,
-                  LandingContents.Measure.content3,
-                ]}
-                isVid
-                backgroundColor="#EAF2FA"
-              />
-            </div>
           </div>
         </section>
 

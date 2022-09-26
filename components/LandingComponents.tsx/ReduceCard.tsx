@@ -18,7 +18,7 @@ const ReduceCard = ({
     <Wrapper
       onMouseEnter={onMouseOver}
       onMouseLeave={onMouseLeave}
-      className={`mx-[1vw] w-[90vw] h-[25vh] landscape:h-[80vh] landscape:md:h-[17.5rem] md:w-full md:h-[17.5rem] md:mx-0 relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-4 ${
+      className={`mx-landing_mobile w-landing_mobile h-landing_mobile landscape:h-[80vh] landscape:md:h-[17.5rem] md:w-full md:h-[17.5rem] md:mx-0 relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-4 ${
         isOpened ? "" : ""
       }  `}>
       {/* 제목 */}
@@ -41,7 +41,7 @@ const ReduceCard = ({
       <ImageCover
         clicked={isOpened}
         bgColor={bgColor}
-        className={`rounded-[8vw] w-full h-full  md:rounded-[2.5rem]  absolute  z-4 
+        className={`rounded-landing_mobile w-full h-full  md:rounded-[2.5rem]  absolute  z-4 
         ${isOpened ? "" : " mix-blend-multiply"} 
         ${isOpened ? "" : isHover ? "animate-brighter" : "animate-darker "} 
         `}
@@ -50,7 +50,7 @@ const ReduceCard = ({
         src={contents.srcPath}
         alt="reduce img"
         layout="fill"
-        className={`rounded-[8vw] md:rounded-[2.5rem] w-full h-full object-cover  z-1 mix-blend-multiply   ${
+        className={`rounded-landing_mobile md:rounded-[2.5rem] w-full h-full object-cover  z-1 mix-blend-multiply   ${
           isOpened ? "animate-fadeout" : "animate-fadein"
         }`}
       />

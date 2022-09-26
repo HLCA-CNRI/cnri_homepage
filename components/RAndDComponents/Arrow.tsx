@@ -13,6 +13,7 @@ const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
         <path
           d="M5 22.5L22.5 5L40 22.5"
           stroke="#A8A8A8"
+          strokeWidth="10"
           strokeLinecap="round"
           strokeLinejoin="round"
         />

@@ -71,47 +71,17 @@ function Home() {
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
 
-          <div className="hidden md:block">
-            <MeasureCard />
-          </div>
-
-          <div className="md:hidden">
-            <div className="relative ">
-              <LandingMobile
-                contentInfo={[
-                  LandingContents.Measure.content1,
-                  LandingContents.Measure.content2,
-                  LandingContents.Measure.content3,
-                ]}
-                isVid
-                backgroundColor="#EAF2FA"
-              />
-            </div>
-          </div>
+          {/* PC ver & Mobile ver  */}
+          <MeasureCard />
         </section>
 
         {/* Reduce Section */}
         <section id="reduce" className="scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Reduce.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Reduce.subtitle}</SectionSubTitleStyle>
-          {/* When display is greater than md */}
 
-          <div className="hidden md:block">
-            <ReduceCards />
-          </div>
-
-          {/* When display is small than md */}
-          <div className="md:hidden">
-            <LandingMobile
-              contentInfo={[
-                LandingContents.Reduce.content1,
-                LandingContents.Reduce.content2,
-                LandingContents.Reduce.content3,
-              ]}
-              isVid
-              backgroundColor="#EEF7E9"
-            />
-          </div>
+          {/* PC ver & Mobile ver  */}
+          <ReduceCards />
         </section>
 
         {/* Remove Section */}
@@ -119,18 +89,8 @@ function Home() {
           <SectionTitleStyle>{LandingContents.Remove.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Remove.subtitle}</SectionSubTitleStyle>
 
-          <div className="hidden md:block">
-            <RemoveCards />
-          </div>
-
-          {/* When display is smaller than md */}
-          <div className="md:hidden">
-            <LandingMobile
-              contentInfo={[LandingContents.Remove.content1, LandingContents.Remove.content2]}
-              isVid
-              backgroundColor="#FDF0E7"
-            />
-          </div>
+          {/* PC ver & Mobile ver  */}
+          <RemoveCards />
         </section>
 
         {/* Report Section */}
@@ -139,18 +99,8 @@ function Home() {
           <SectionSubTitleStyle>{LandingContents.Report.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
 
-          <div className="hidden md:block">
-            <ReportCard content={LandingContents.Report.content1} />
-          </div>
-
-          {/* When display is smaller than md */}
-          <div className="md:hidden">
-            <LandingMobile
-              contentInfo={[LandingContents.Report.content1]}
-              isVid={false}
-              backgroundColor="#FDF0E7"
-            />
-          </div>
+          {/* PC ver & Mobile ver  */}
+          <ReportCard content={LandingContents.Report.content1} />
         </section>
       </section>
     </>

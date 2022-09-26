@@ -125,3 +125,18 @@ export const SectionSubTitleStyle = styled.div`
     margin-bottom: 70px;
   }
 `;
+
+export const ScrollContainer = styled.div`
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 0.5vh;
+    width: 0.5vw;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: ${(props) => props.color}; */
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+`;

@@ -1,51 +1,47 @@
-import React, {useState} from "react";
-import styled, {keyframes, css} from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import Image from "next/image";
 import {LandingSubContentsType} from "../../functions/LandingContents";
 import useHover from "../../hooks/useHover";
 
 const ReduceCard = ({
   contents,
-  width,
-  height,
   bgColor,
   isOpened,
 }: {
   contents: LandingSubContentsType;
-  width: number;
-  height: number;
   bgColor: string;
   isOpened: boolean;
 }) => {
   const [isHover, onMouseOver, onMouseLeave] = useHover();
   return (
     <Wrapper
-      width={width}
-      height={height}
       onMouseEnter={onMouseOver}
       onMouseLeave={onMouseLeave}
-      className={`relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-4 ${
+      className={`mx-landing_mobile w-landing_mobile h-landing_mobile landscape:h-[80vh] landscape:md:h-[17.5rem] md:w-full md:h-[17.5rem] md:mx-0 relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-4 ${
         isOpened ? "" : ""
       }  `}>
+      {/* 제목 */}
       <div
-        className={`${
+        className={` text-[5vw] my-[1vh] md:text-[30px] md:px-[4rem] md:my-3 z-10 text-white font-bold  whitespace-pre text-center leading-slug  ${
           isOpened ? "" : "drop-shadow-md goDown"
-        }   text-[30px] z-10 text-white font-bold  whitespace-pre text-center leading-slug my-3`}>
+        }  `}>
         {contents.title}
       </div>
-      <Content
-        width={width * 0.7}
-        className={` ${
-          isOpened ? "animate-fadein" : "animate-fadeout"
-        }  text-white z-10 text-[16px] `}>
-        {contents.content}
-      </Content>
 
-      {/* 이미지 관련 */}
+      {/* 내용 */}
+      <div
+        className={`text-[1vw] md:text-[16px] text-white z-10   ${
+          isOpened ? "animate-fadein" : "animate-fadeout"
+        }   `}>
+        {contents.content}
+      </div>
+
+      {/* 이미지 */}
       <ImageCover
         clicked={isOpened}
         bgColor={bgColor}
-        className={`w-full h-full absolute rounded-[2.5rem]  z-4 
+        className={`rounded-landing_mobile w-full h-full  md:rounded-[2.5rem]  absolute  z-4 
         ${isOpened ? "" : " mix-blend-multiply"} 
         ${isOpened ? "" : isHover ? "animate-brighter" : "animate-darker "} 
         `}
@@ -54,7 +50,7 @@ const ReduceCard = ({
         src={contents.srcPath}
         alt="reduce img"
         layout="fill"
-        className={`w-full h-full object-cover rounded-[2.5rem] z-1 mix-blend-multiply   ${
+        className={`rounded-landing_mobile md:rounded-[2.5rem] w-full h-full object-cover  z-1 mix-blend-multiply   ${
           isOpened ? "animate-fadeout" : "animate-fadein"
         }`}
       />
@@ -63,19 +59,12 @@ const ReduceCard = ({
 };
 
 export default ReduceCard;
-const Wrapper = styled.div<{width: number; height: number}>`
-  width: 100%;
-  height: ${({height}) => height}px;
-
+const Wrapper = styled.div`
   .goDown {
     offset: 0% 50%;
     position: absolute;
     margin: auto;
   }
-`;
-
-const Content = styled.div<{width: number}>`
-  width: ${({width}) => width}px;
 `;
 
 const ImageCover = styled.div<{bgColor: string; clicked: boolean}>`

@@ -4,6 +4,7 @@ import {motion, useAnimation} from "framer-motion";
 import {memo, useCallback, useEffect, useState, useRef} from "react";
 import LandingContents, {LandingSubContentsType} from "../../functions/LandingContents";
 import TransitionVariants from "../../functions/TransitionVariants";
+import {ScrollContainer} from "../../styles/commonStyles";
 
 // interface IReportCard {
 //   // 카드 내용
@@ -13,8 +14,8 @@ import TransitionVariants from "../../functions/TransitionVariants";
 const MeasureCard = () => {
   const controlText = useAnimation(); // 내용 애니메이션 variant
   const [curContent, setCurContent] = useState<LandingSubContentsType>();
-  const [pastKey, setPastKey] = useState("0");
-  const [curKey, setCurKey] = useState("0");
+  const [pastKey, setPastKey] = useState("");
+  const [curKey, setCurKey] = useState("");
   const contentArr = useRef([
     LandingContents.Measure.content1,
     LandingContents.Measure.content2,
@@ -28,7 +29,7 @@ const MeasureCard = () => {
       const {key} = e.target.dataset;
       // console.log(key);
       if (!key || key === curKey) {
-        setCurKey("0");
+        setCurKey("");
         return;
       }
 
@@ -38,7 +39,7 @@ const MeasureCard = () => {
   );
   useEffect(() => {
     // set contents to show
-    if (curKey === "0") {
+    if (curKey === "") {
       controlText.start("close2");
       return;
     }
@@ -60,131 +61,165 @@ const MeasureCard = () => {
 
   return (
     // 카드 전체.
-    <Wrapper
-      role="button"
-      className="w-full h-[460px] flex flex-row cursor-pointer flex justify-center relative"
-      onClick={onCardClick}>
-      {/* Images */}
-      <div className="absolute w-full h-full rounded-forImg ">
-        {/* first container */}
-        <div
-          className={`absolute w-[62%]  h-full  right-0 mr-[38%] z-10  ${
-            curKey === "0" ? "unClicked" : "clicked"
-          }`}>
-          {/* image wrapper */}
+    <>
+      {/* PC ver */}
+      <Wrapper
+        role="button"
+        onClick={onCardClick}
+        className="hidden md:flex  w-full h-[460px]  flex-row cursor-pointer flex justify-center relative">
+        {/* Images */}
+        <div className="absolute w-full h-full rounded-forImg ">
+          {/* first container */}
           <div
-            className={`relative w-[600px]  h-full  ${
-              curKey === "0" ? "unClicked" : curKey === contentArr.current[0].key ? "" : "clicked"
+            className={`absolute w-[62%]  h-full  right-0 mr-[38%] z-10  ${
+              curKey === "" ? "unClicked" : "clicked"
             }`}>
-            <Image
-              src={contentArr.current[0].srcPath}
-              data-key={contentArr.current[0].key}
-              alt="measure img"
-              layout="fill"
-              className={`h-full object-cover rounded-forImg  `}
-            />
-            {curKey === "0" ? (
-              <ImageCover width="600px" z={10} data-key={contentArr.current[0].key} />
-            ) : curKey !== contentArr.current[0].key ? (
-              <ImageCover width="200px" z={10} data-key={contentArr.current[0].key} />
-            ) : null}
+            {/* image wrapper */}
+            <div
+              className={`relative w-[600px]  h-full  ${
+                curKey === "" ? "unClicked" : curKey === contentArr.current[0].key ? "" : "clicked"
+              }`}>
+              <Image
+                src={contentArr.current[0].srcPath}
+                data-key={contentArr.current[0].key}
+                alt="measure img"
+                layout="fill"
+                className={`h-full object-cover rounded-forImg  `}
+              />
+              {curKey === "" ? (
+                <ImageCover width="600px" z={10} data-key={contentArr.current[0].key} />
+              ) : curKey !== contentArr.current[0].key ? (
+                <ImageCover width="200px" z={10} data-key={contentArr.current[0].key} />
+              ) : null}
+            </div>
           </div>
-        </div>
 
-        {/* second containter */}
-        <div
-          className={`absolute w-[40%]  h-full  right-0 mr-[32%]   ${
-            curKey === "0"
-              ? "unClicked"
-              : curKey === contentArr.current[0].key && pastKey === "0"
-              ? "firstOneClicked"
-              : curKey === contentArr.current[0].key && pastKey !== "0"
-              ? "firstOneClickedWhenOpened"
-              : curKey === contentArr.current[1].key && pastKey !== "0"
-              ? "secondOneClickedWhenOpened"
-              : curKey === contentArr.current[2].key && pastKey !== "0"
-              ? "thirdOneClickedWhenOpened"
-              : "clicked"
-          }`}>
+          {/* second containter */}
           <div
-            className={`relative w-[600px]  h-full z-20 ${
-              curKey === "0" ? "unClicked" : curKey === contentArr.current[1].key ? "" : "clicked"
-            }`}>
-            <Image
-              src={contentArr.current[1].srcPath}
-              data-key={contentArr.current[1].key}
-              alt="measure img"
-              width="600px"
-              height="400px"
-              layout="fill"
-              className={`h-full object-cover rounded-forImg z-3 `}
-            />
-            {curKey === "0" ? (
-              <ImageCover width="600px" z={20} data-key={contentArr.current[1].key} />
-            ) : curKey !== contentArr.current[1].key ? (
-              <ImageCover width="200px" z={20} data-key={contentArr.current[1].key} />
-            ) : null}
-          </div>
-        </div>
-
-        {/* third containter */}
-        <div
-          className={`absolute w-[520px]  h-full  right-0 z-30 ${
-            curKey === "0"
-              ? ""
-              : curKey === contentArr.current[2].key && pastKey === "0"
-              ? "selected"
-              : curKey === contentArr.current[2].key && pastKey !== "0"
-              ? "selectedWhenOpened"
-              : "clicked"
-          }`}>
-          <div
-            className={`relative w-[520px]  h-full right-0 ${
-              curKey === "0" && pastKey === contentArr.current[2].key
-                ? "unClickedWhenSelected"
-                : curKey === "0" && pastKey !== contentArr.current[2].key
+            className={`absolute w-[40%]  h-full  right-0 mr-[32%]   ${
+              curKey === ""
                 ? "unClicked"
-                : curKey === contentArr.current[2].key && pastKey === "0"
+                : curKey === contentArr.current[0].key && pastKey === ""
+                ? "firstOneClicked"
+                : curKey === contentArr.current[0].key && pastKey !== ""
+                ? "firstOneClickedWhenOpened"
+                : curKey === contentArr.current[1].key && pastKey !== ""
+                ? "secondOneClickedWhenOpened"
+                : curKey === contentArr.current[2].key && pastKey !== ""
+                ? "thirdOneClickedWhenOpened"
+                : "clicked"
+            }`}>
+            <div
+              className={`relative w-[600px]  h-full z-20 ${
+                curKey === "" ? "unClicked" : curKey === contentArr.current[1].key ? "" : "clicked"
+              }`}>
+              <Image
+                src={contentArr.current[1].srcPath}
+                data-key={contentArr.current[1].key}
+                alt="measure img"
+                width="600px"
+                height="400px"
+                layout="fill"
+                className={`h-full object-cover rounded-forImg z-3 `}
+              />
+              {curKey === "" ? (
+                <ImageCover width="600px" z={20} data-key={contentArr.current[1].key} />
+              ) : curKey !== contentArr.current[1].key ? (
+                <ImageCover width="200px" z={20} data-key={contentArr.current[1].key} />
+              ) : null}
+            </div>
+          </div>
+
+          {/* third containter */}
+          <div
+            className={`absolute w-[520px]  h-full  right-0 z-30 ${
+              curKey === ""
+                ? ""
+                : curKey === contentArr.current[2].key && pastKey === ""
                 ? "selected"
-                : curKey === contentArr.current[2].key && pastKey !== "0"
+                : curKey === contentArr.current[2].key && pastKey !== ""
                 ? "selectedWhenOpened"
                 : "clicked"
             }`}>
-            <Image
-              src={contentArr.current[2].srcPath}
-              data-key={contentArr.current[2].key}
-              alt="measure img"
-              layout="fill"
-              className={`h-full object-cover rounded-forImg  `}
-            />
-            {curKey === "0" ? (
-              <ImageCover width="520px" z={30} data-key={contentArr.current[2].key} />
-            ) : curKey !== contentArr.current[2].key ? (
-              <ImageCover width="200px" z={30} data-key={contentArr.current[2].key} />
-            ) : null}
+            <div
+              className={`relative w-[520px]  h-full right-0 ${
+                curKey === "" && pastKey === contentArr.current[2].key
+                  ? "unClickedWhenSelected"
+                  : curKey === "" && pastKey !== contentArr.current[2].key
+                  ? "unClicked"
+                  : curKey === contentArr.current[2].key && pastKey === ""
+                  ? "selected"
+                  : curKey === contentArr.current[2].key && pastKey !== ""
+                  ? "selectedWhenOpened"
+                  : "clicked"
+              }`}>
+              <Image
+                src={contentArr.current[2].srcPath}
+                data-key={contentArr.current[2].key}
+                alt="measure img"
+                layout="fill"
+                className={`h-full object-cover rounded-forImg  `}
+              />
+              {curKey === "" ? (
+                <ImageCover width="520px" z={30} data-key={contentArr.current[2].key} />
+              ) : curKey !== contentArr.current[2].key ? (
+                <ImageCover width="200px" z={30} data-key={contentArr.current[2].key} />
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
-      {/* 내용 */}
-      <motion.div
-        animate={controlText}
-        initial="initial"
-        variants={TransitionVariants.TransitionContextRToL}
-        className={`w-[55%] border-2 rounded-forImg p-10 h-full `}>
-        <div className="pl-[2%] mb-[4px] mr-[120px] flex flex-col justify-center items-center h-full">
-          <h2
-            className={`text-[28px] font-bold mb-8 whitespace-pre ${
-              curKey !== pastKey ? "animate-fadein" : ""
-            }`}>
-            {curContent?.title}
-          </h2>
-          {/* motion.div로 대체하기 클릭할때마다 작동하도록 */}
-          <p className={`text-[16px] leading-7 ${curKey !== pastKey ? "animate-fadein" : ""}`}>
-            {curContent?.content}
-          </p>
-        </div>
-      </motion.div>
-    </Wrapper>
+        {/* 내용 */}
+        <motion.div
+          animate={controlText}
+          initial="initial"
+          variants={TransitionVariants.TransitionContextRToL}
+          className={`w-[55%] border-2 rounded-forImg p-10 h-full `}>
+          <div className="pl-[2%] mb-[4px] mr-[120px] flex flex-col justify-center items-center h-full">
+            <h2
+              className={`text-[28px] font-bold mb-8 whitespace-pre ${
+                curKey !== pastKey ? "animate-fadein" : ""
+              }`}>
+              {curContent?.title}
+            </h2>
+            {/* motion.div로 대체하기 클릭할때마다 작동하도록 */}
+            <p className={`text-[16px] leading-7 ${curKey !== pastKey ? "animate-fadein" : ""}`}>
+              {curContent?.content}
+            </p>
+          </div>
+        </motion.div>
+      </Wrapper>
+
+      {/* Mobile ver */}
+      <ScrollContainer
+        role="button"
+        onClick={onCardClick}
+        className={`flex md:hidden snap-x snap-mandatory  overflow-auto  `}>
+        {contentArr.current.map((c) => (
+          <div className={`snap-center `}>
+            <div
+              className={`relative w-landing_mobile h-landing_mobile rounded-landing_mobile mx-landing_mobile ${
+                c.key === curContent?.key && c.key !== pastKey ? "drop-shadow-xl" : ""
+              }`}>
+              <Image
+                src={c.srcPath}
+                data-key={c.key}
+                alt={c.title}
+                layout="fill"
+                className={`h-full object-cover rounded-landing_mobile  `}
+              />
+            </div>
+            {c.key === curContent?.key && c.key !== pastKey && (
+              <div className="relative mx-[0.7vw] border-[0.5vw] rounded-b-landing_mobile border-t-0 top-[-5vh] z-[-10] animate-fadein">
+                <div className="text-[4vw] py-[1vh] pt-[8vh] font-bold text-center  ">
+                  {curContent?.title}
+                </div>
+                <div className="text-[2.8vw] px-[5vw] mb-[1.5vh]">{curContent?.content}</div>
+              </div>
+            )}
+          </div>
+        ))}
+      </ScrollContainer>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import React, {memo} from "react";
 import {ArrowDirection} from "../../constants/enum/arrow_direction.enum";
 
 const Arrow = memo(({direction}: {direction: ArrowDirection}) => (
-  <div>
+  <div className="hover:drop-shadow-xl transition-all duration-[0.2s]">
     {direction === ArrowDirection.UP ? (
       <svg
         width="100%"

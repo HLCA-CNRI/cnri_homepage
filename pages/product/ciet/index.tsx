@@ -25,6 +25,9 @@ function CietPage() {
       <NextSeo {...cietSeo} />
       <div className="snap-center snap-always pb-[5vh] md:pb-[25vh]">
         <div className="pt-[15vh] md:pt-[25vh]">
+          <div className="md:h-[4.5vh] h-[2.5vh] relative cursor-pointer  m-3 mb-4">
+            <Image alt="logoImg" src="/images/CIET_signature.svg" layout="fill" />
+          </div>
           <div className="flex justify-center font-bold text-[5vw] md:text-[4vw] 2xl:text-[3vw]">
             기후변화 대응,
           </div>

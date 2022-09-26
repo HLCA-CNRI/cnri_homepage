@@ -71,10 +71,8 @@ function Home() {
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
 
-          <div>
-            {/* PC ver & Mobile ver  */}
-            <MeasureCard />
-          </div>
+          {/* PC ver & Mobile ver  */}
+          <MeasureCard />
         </section>
 
         {/* Reduce Section */}
@@ -83,9 +81,7 @@ function Home() {
           <SectionSubTitleStyle>{LandingContents.Reduce.subtitle}</SectionSubTitleStyle>
 
           {/* PC ver & Mobile ver  */}
-          <div>
-            <ReduceCards />
-          </div>
+          <ReduceCards />
         </section>
 
         {/* Remove Section */}
@@ -94,9 +90,7 @@ function Home() {
           <SectionSubTitleStyle>{LandingContents.Remove.subtitle}</SectionSubTitleStyle>
 
           {/* PC ver & Mobile ver  */}
-          <div>
-            <RemoveCards />
-          </div>
+          <RemoveCards />
         </section>
 
         {/* Report Section */}
@@ -105,10 +99,8 @@ function Home() {
           <SectionSubTitleStyle>{LandingContents.Report.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}
 
-          <div>
-            {/* PC ver & Mobile ver  */}
-            <ReportCard content={LandingContents.Report.content1} />
-          </div>
+          {/* PC ver & Mobile ver  */}
+          <ReportCard content={LandingContents.Report.content1} />
         </section>
       </section>
     </>

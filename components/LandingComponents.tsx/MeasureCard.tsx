@@ -176,7 +176,7 @@ const MeasureCard = () => {
           className={`w-[55%] border-2 rounded-forImg p-10 h-full `}>
           <div className="pl-[2%] mb-[4px] mr-[120px] flex flex-col justify-center items-center h-full">
             <h2
-              className={`text-[28px] font-bold mb-8 whitespace-pre ${
+              className={`text-[25px] font-bold mb-8 whitespace-pre ${
                 curKey !== pastKey ? "animate-fadein" : ""
               }`}>
               {curContent?.title}
@@ -252,6 +252,7 @@ const unClicked = keyframes`
   from{
     width:200px;
   }to{
+    
   }
 
 `;

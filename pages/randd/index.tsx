@@ -39,7 +39,7 @@ function Randd() {
 
       <div className="mx-[3vw] 2xl:mx-20">
         {/* Welcoming Section */}
-        <section className="relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1300px] mx-auto">
+        <section className="block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1300px] mx-auto">
           {/* Welcoming Section */}
           {/* TODO:md 싸이즈 이상일때 transition 적용 */}
           <motion.div

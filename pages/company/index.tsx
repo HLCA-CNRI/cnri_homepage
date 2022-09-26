@@ -41,7 +41,7 @@ function Company() {
       <div className="mx-[3vw] 2xl:mx-20">
         {/* Welcoming Section */}
         {/* TODO:md 싸이즈 이상일때 transition 적용 */}
-        <section className="relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1200px] mx-auto">
+        <section className="block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1200px] mx-auto">
           <motion.div
             ref={ref}
             className="h-[80vh] flex "

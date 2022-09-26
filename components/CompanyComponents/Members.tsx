@@ -1,7 +1,8 @@
 import React, {memo, useRef, useState} from "react";
-import ScrollContainer from "react-indiana-drag-scroll";
+// import ScrollContainer from "react-indiana-drag-scroll";
 import {ArrowDirection} from "../../constants/enum/arrow_direction.enum";
 import MemberContent from "../../functions/MemberContent";
+import {ScrollContainer} from "../../styles/commonStyles";
 import Arrow from "../RAndDComponents/Arrow";
 import MemberCard from "./MemberCard";
 
@@ -65,11 +66,9 @@ const Members = memo(() => {
       </div>
 
       {/* mobile ver */}
-      <ScrollContainer
-        hideScrollbars={false}
-        className=" xl:hidden scroll-container flex overflow-hidden cursor-pointer pb-[3vh]">
-        {members.current.map((m, idx) => (
-          <div key={m.name} className="mx-10 ">
+      <ScrollContainer className="snap-x snap-mandatory xl:hidden scroll-container flex overflow-auto cursor-pointer pb-[3vh]">
+        {members.current.map((m) => (
+          <div key={m.name} className="mx-10 snap-center">
             <MemberCard member={m} />
           </div>
         ))}

@@ -233,6 +233,7 @@ module.exports = {
       forImg: "2.5rem",
       forPopup: "50px",
       full: "9999px",
+      landing_mobile: "4vw",
     },
     borderSpacing: ({theme}) => ({
       ...theme("spacing"),
@@ -431,6 +432,8 @@ module.exports = {
       "7xl": ["4.5rem", {lineHeight: "1"}],
       "8xl": ["6rem", {lineHeight: "1"}],
       "9xl": ["8rem", {lineHeight: "1"}],
+      landing_mobile_title: ["5vw", {lineHeight: "1"}],
+      landing_mobile_content: ["3vw", {lineHeight: "150%"}],
     },
     fontWeight: {
       thin: "100",
@@ -582,6 +585,7 @@ module.exports = {
       min: "min-content",
       max: "max-content",
       fit: "fit-content",
+      landing_mobile: "25vh",
     }),
     inset: ({theme}) => ({
       auto: "auto",
@@ -678,6 +682,7 @@ module.exports = {
     },
     margin: ({theme}) => ({
       auto: "auto",
+      landing_mobile: "1vw",
       ...theme("spacing"),
     }),
     maxHeight: ({theme}) => ({
@@ -707,6 +712,7 @@ module.exports = {
       max: "max-content",
       fit: "fit-content",
       prose: "65ch",
+
       ...breakpoints(theme("screens")),
     }),
     minHeight: {
@@ -983,6 +989,7 @@ module.exports = {
       min: "min-content",
       max: "max-content",
       fit: "fit-content",
+      landing_mobile: "90vw",
     }),
     willChange: {
       auto: "auto",

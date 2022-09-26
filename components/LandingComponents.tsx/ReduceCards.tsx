@@ -62,8 +62,8 @@ const ReduceCards = () => {
       </div>
 
       {/* Mobile Ver */}
-      <ScrollContainer className="block md:hidden ">
-        <div className=" flex overflow-auto md:hidden snap-x snap-mandatory pb-[2vh]">
+      <div className="block md:hidden ">
+        <ScrollContainer className=" flex overflow-auto md:hidden snap-x snap-mandatory pb-[2vh]">
           {contents.current.map((c, idx) => (
             <div role="button" data-key={c.key} onClick={onCardClick} className="snap-center  ">
               <ReduceCard
@@ -73,8 +73,8 @@ const ReduceCards = () => {
               />
             </div>
           ))}
-        </div>
-      </ScrollContainer>
+        </ScrollContainer>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, {memo} from "react";
-import {MemberType} from "../../functions/MemberContent";
 import Image from "next/image";
+import {MemberType} from "../../functions/MemberContent";
 
 const MemberCard = memo(({member}: {member: MemberType}) => {
   return (

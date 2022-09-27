@@ -64,13 +64,13 @@ function HamburgerMenu() {
           <motion.div className="flex flex-col justify-center h-[100%]" onClick={clickBurger}>
             {/* 햄버거 아이콘,x아이콘 */}
             {open === false ? (
-              <svg viewBox="0 0 100 80" width="30" height="30" className=" h-[100%]">
+              <svg viewBox="0 0 100 80" width="30" height="30" className="h-[5vh]">
                 <rect width="100" height="10" />
                 <rect y="30" width="100" height="10" />
                 <rect y="60" width="100" height="10" />
               </svg>
             ) : (
-              <svg className="mt-[0.8vh]" width="24" height="24" viewBox="0 0 24 24">
+              <svg className="mt-[0.8vh] h-[5vh]" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
               </svg>
             )}

@@ -23,7 +23,7 @@ const ReduceCard = ({
       }  `}>
       {/* 제목 */}
       <div
-        className={` text-[5vw] my-[1vh] md:text-[30px] md:px-[4rem] md:my-3 z-10 text-white font-bold  whitespace-pre text-center leading-slug  ${
+        className={` text-landing_mobile_title leading-[4vh] my-[1vh] md:text-[30px] md:leading-slug md:px-[4rem] md:my-3 z-10 text-white font-bold  whitespace-pre text-center   ${
           isOpened ? "" : "drop-shadow-md goDown"
         }  `}>
         {contents.title}
@@ -31,7 +31,7 @@ const ReduceCard = ({
 
       {/* 내용 */}
       <div
-        className={`text-[1vw] md:text-[16px] text-white z-10   ${
+        className={`text-[2.5vw] md:text-[16px] text-white z-10   ${
           isOpened ? "animate-fadein" : "animate-fadeout"
         }   `}>
         {contents.content}

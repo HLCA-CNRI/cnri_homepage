@@ -91,7 +91,16 @@ function HamburgerMenu() {
                   </div>
                 </Link>
                 <hr />
-                <ProductListStyle onClick={clickProdList}>
+                <Link href="/product/ciet">
+                  <div
+                    role="button"
+                    className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]"
+                    onClick={clickBurger}>
+                    <div>PRODUCT</div>
+                    <div> {">"} </div>
+                  </div>
+                </Link>
+                {/* <ProductListStyle onClick={clickProdList}>
                   <div className="py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]">
                     <div>PRODUCT</div>
                     <div> {">"} </div>
@@ -109,7 +118,7 @@ function HamburgerMenu() {
                       <Link href="/product/ciet">CIET</Link>
                     </li>
                   </ul>
-                </ProductListStyle>
+                </ProductListStyle> */}
                 <hr />
                 <Link href="/company">
                   <div

@@ -18,12 +18,12 @@ const ReduceCard = ({
     <Wrapper
       onMouseEnter={onMouseOver}
       onMouseLeave={onMouseLeave}
-      className={`mx-landing_mobile w-landing_mobile h-landing_mobile landscape:h-[80vh] landscape:md:h-[17.5rem] md:w-full md:h-[17.5rem] md:mx-0 relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-4 ${
+      className={`mx-landing_mobile w-landing_mobile h-landing_mobile landscape:h-[80vh] landscape:md:h-[12rem] md:w-full md:h-[17.5rem] md:mx-0 relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-10 ${
         isOpened ? "" : ""
       }  `}>
       {/* 제목 */}
       <div
-        className={` text-landing_mobile_title leading-[4vh] my-[1vh] md:text-[30px] md:leading-slug md:px-[4rem] md:my-3 z-10 text-white font-bold  whitespace-pre text-center   ${
+        className={` text-landing_mobile_title leading-[4vh] my-[1vh] md:text-[25px] md:leading-[2rem] md:px-[4rem] md:my-2 z-10 text-white font-bold  whitespace-pre text-center   ${
           isOpened ? "" : "drop-shadow-md goDown"
         }  `}>
         {contents.title}
@@ -31,7 +31,7 @@ const ReduceCard = ({
 
       {/* 내용 */}
       <div
-        className={`text-[2.5vw] md:text-[16px] text-white z-10   ${
+        className={`text-[2.5vw] md:text-[13.5px] text-white z-10   ${
           isOpened ? "animate-fadein" : "animate-fadeout"
         }   `}>
         {contents.content}

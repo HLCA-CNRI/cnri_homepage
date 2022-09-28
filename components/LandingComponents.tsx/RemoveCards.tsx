@@ -48,7 +48,7 @@ const RemoveCards = () => {
             data-key={c.key}
             onClick={onCardClick}
             className="snap-center mx-[2vw]">
-            <RemoveCard contents={c} isOpened={curKey === c.key} />
+            <RemoveCard contents={c} isOpened />
           </div>
         ))}
       </ScrollContainer>

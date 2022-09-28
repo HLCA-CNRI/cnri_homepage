@@ -192,7 +192,7 @@ const MeasureCard = () => {
       {/* Mobile ver */}
       <ScrollContainer
         role="button"
-        onClick={onCardClick}
+        // onClick={onCardClick}
         className={`flex md:hidden snap-x snap-mandatory  overflow-auto  `}>
         {contentArr.current.map((c) => (
           <div className={`snap-center `}>
@@ -208,14 +208,18 @@ const MeasureCard = () => {
                 className={`h-full object-cover rounded-landing_mobile  `}
               />
             </div>
-            {c.key === curContent?.key && c.key !== pastKey && (
+            <div className="relative mx-[0.7vw] border-[0.5vw] rounded-b-landing_mobile border-t-0 top-[-5vh] z-[-10] animate-fadein">
+              <div className="text-[4vw] py-[1vh] pt-[8vh] font-bold text-center  ">{c.title}</div>
+              <div className="text-[2.8vw] px-[5vw] mb-[1.5vh]">{c.content}</div>
+            </div>
+            {/* {c.key === curContent?.key && c.key !== pastKey && (
               <div className="relative mx-[0.7vw] border-[0.5vw] rounded-b-landing_mobile border-t-0 top-[-5vh] z-[-10] animate-fadein">
                 <div className="text-[4vw] py-[1vh] pt-[8vh] font-bold text-center  ">
                   {curContent?.title}
                 </div>
                 <div className="text-[2.8vw] px-[5vw] mb-[1.5vh]">{curContent?.content}</div>
               </div>
-            )}
+            )} */}
           </div>
         ))}
       </ScrollContainer>

@@ -18,7 +18,7 @@ const ReduceCard = ({
     <Wrapper
       onMouseEnter={onMouseOver}
       onMouseLeave={onMouseLeave}
-      className={`mx-landing_mobile w-landing_mobile h-landing_mobile landscape:h-[80vh] landscape:md:h-[12rem] md:w-full md:h-[17.5rem] md:mx-0 relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-10 ${
+      className={`mx-landing_mobile w-landing_mobile h-landing_mobile landscape:h-[80vh] landscape:md:h-[12.8rem] md:w-full md:h-[18.5rem] md:mx-0 relative flex flex-col flex-auto justify-center items-center hover:cursor-pointer p-10 ${
         isOpened ? "" : ""
       }  `}>
       {/* 제목 */}

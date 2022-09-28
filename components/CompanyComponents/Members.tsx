@@ -14,8 +14,11 @@ const Members = memo(() => {
     MemberContent.jonghoh,
     MemberContent.prof,
     MemberContent.minhyeok,
+    MemberContent.seungbum,
     MemberContent.kyunghoh,
-    MemberContent.cherin,
+    MemberContent.minhee,
+    MemberContent.jeongyun,
+    MemberContent.hyelim,
   ]);
 
   const onArrowClick = (e: any) => {

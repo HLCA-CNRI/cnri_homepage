@@ -49,19 +49,19 @@ function Home() {
 
       {/* Second Navbar  */}
       <section className="sticky inset-x-0 top-[9.5vh] md:top-[11.5vh] left-0 flex justify-center  w-[100%] bg-white z-40 opacity-90 border-2 text-[3.25vw] md:text-[1vw]">
-        <Link href="#measure">
+        <Link href="#measure" passHref>
           <div className="py-[1.7vh] mx-[3vw]  cursor-pointer">측정</div>
         </Link>
 
-        <Link href="#reduce">
+        <Link href="#reduce" passHref>
           <div className="py-[1.7vh] mx-[3vw]  cursor-pointer">감축</div>
         </Link>
 
-        <Link href="#remove">
+        <Link href="#remove" passHref>
           <div className="py-[1.7vh] mx-[3vw]  cursor-pointer">오프셋</div>
         </Link>
 
-        <Link href="#report">
+        <Link href="#report" passHref>
           <div className="py-[1.7vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>

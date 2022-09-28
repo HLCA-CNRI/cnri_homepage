@@ -5,8 +5,8 @@ import {MemberType} from "../../functions/MemberContent";
 const MemberCard = memo(({member}: {member: MemberType}) => (
   <div className="flex flex-col justify-center items-center">
     <div
-      className={`w-[200px] h-[200px] rounded-[50%] translate-y-2/4 border-2 relative overflow-hidden  `}>
-      <Image layout="fill" src={member.pic_square} />
+      className={`w-[200px] h-[200px] rounded-[50%] translate-y-2/4 border-2 relative overflow-hidden bg-white  `}>
+      <Image layout="fill" src={member.pic_square} sizes="200px" />
     </div>
     <div className=" w-[330px] h-[350px] border-2 rounded-forImg pt-[100px] px-10 ">
       <div className="flex flex-col justify-center items-center ">

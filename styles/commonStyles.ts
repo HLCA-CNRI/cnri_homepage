@@ -102,7 +102,7 @@ export const SectionTitleStyle = styled.div`
     font-size: 4vw;
   }
   @media only screen and (min-width: 1536px) {
-    font-size: 50px;
+    font-size: 45px;
     margin-bottom: 0px;
     margin-top: 80px;
   }

@@ -1,4 +1,5 @@
 import {useEffect, memo} from "react";
+import Image from "next/image";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 import {NextSeo} from "next-seo";
@@ -44,14 +45,16 @@ function Randd() {
           {/* TODO:md 싸이즈 이상일때 transition 적용 */}
           <motion.div
             ref={ref}
-            className="h-[60vh] sm:h-[80vh]"
+            className="h-[60vh] sm:h-[80vh] relative"
             animate={controlVid}
             initial="vidHidden"
             variants={TransitionVariants.TansitionVidLToR}>
-            <img
+            <Image
               alt="rAnddIntro"
               src="/images/rAnddIntro.jpg"
-              className="object-cover h-full w-full rounded-lg shadow-lg"
+              layout="fill"
+              priority
+              className="object-cover  rounded-lg shadow-lg"
             />
           </motion.div>
           {/* FIXME:애니메이션 기능 적용하면 모바일에서 깨짐.. */}

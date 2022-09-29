@@ -1,5 +1,6 @@
 import {motion, useAnimation} from "framer-motion";
 import {useEffect, memo, useRef} from "react";
+import Image from "next/image";
 import {useInView} from "react-intersection-observer";
 import {NextSeo} from "next-seo";
 import ScrollContainer from "react-indiana-drag-scroll";
@@ -44,13 +45,15 @@ function Company() {
         <section className="block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1200px] mx-auto">
           <motion.div
             ref={ref}
-            className="h-[80vh] flex "
+            className="h-[80vh] flex relative "
             animate={controlPic}
             initial="vidHidden"
             variants={TransitionVariants.TansitionVidLToR}>
-            <img
+            <Image
               alt="comapnyImg"
               src="/images/companyIntro.jpg"
+              layout="fill"
+              priority
               className="object-cover h-full w-full rounded-lg shadow-lg z-0 "
             />
           </motion.div>

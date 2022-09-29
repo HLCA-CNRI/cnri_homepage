@@ -1,4 +1,5 @@
 import React, {memo, useEffect, useRef} from "react";
+import Image from "next/image";
 import {PartnershipContentType} from "../../functions/PartnershipContent";
 
 type PropsType = {
@@ -22,7 +23,15 @@ const PartnershipCard = ({
       } ${!isLast && !isOpened ? "border-r-2" : " "}
           
           `}>
-      <div className="w-[140px]">{content.colored}</div>
+      <div className="w-[140px] h-[140px] relative">
+        <Image
+          src={content.colored.src}
+          alt={content.colored.alt}
+          layout="fill"
+          className="object-cover w-full h-full"
+          sizes="200px"
+        />
+      </div>
 
       <div
         className={`absolute bottom-0 w-full bg-rnd_mint  h-[40px] ${

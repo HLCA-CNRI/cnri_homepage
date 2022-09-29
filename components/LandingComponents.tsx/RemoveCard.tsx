@@ -6,9 +6,11 @@ import useHover from "../../hooks/useHover";
 const RemoveCard = ({
   contents,
   isOpened,
+  sizes,
 }: {
   contents: LandingSubContentsType;
   isOpened: boolean;
+  sizes: string;
 }) => {
   const [isHover, onMouseEnter, onMouseLeave] = useHover();
 
@@ -24,6 +26,7 @@ const RemoveCard = ({
             src={contents.srcPath}
             alt="remove img"
             layout="fill"
+            sizes={sizes}
             className={` rounded-landing_mobile w-full h-full object-cover md:rounded-forImg  `}
           />
         </div>

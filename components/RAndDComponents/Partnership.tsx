@@ -1,4 +1,5 @@
 import {useState, useRef, useEffect, memo} from "react";
+import Image from "next/image";
 import PartnershipContent, {PartnershipContentType} from "../../functions/PartnershipContent";
 import Icon from "./Icon";
 import Carousel from "./Carousel";
@@ -118,9 +119,15 @@ function Partnership() {
             </div>
           )}
           <div
-            className="w-[800px] h-[400px] mx-8 flex justify-center animate-fadein"
+            className="w-[800px] h-[400px] mx-8 flex justify-center animate-fadein relative"
             key={`curImg_${curImgIdx}_${curContentTitle}`}>
-            {curImgs[curImgIdx]}
+            <Image
+              src={curImgs[curImgIdx].src}
+              alt={curImgs[curImgIdx].alt}
+              className="object-cover"
+              layout="fill"
+              sizes="800px"
+            />
           </div>
           {curImgs.length !== 1 && (
             <div

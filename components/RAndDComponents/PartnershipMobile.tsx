@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 import {useState, useRef} from "react";
 import PartnershipContent from "../../functions/PartnershipContent";
 import Icon from "./Icon";
@@ -33,12 +34,12 @@ function PartnershipMobile() {
         break;
     }
   };
-  const userClick = (e: any) => {
-    const val = e.target.id;
-    if (PartnershipContent[val] !== undefined) {
-      setCurrentObj(PartnershipContent[val]);
-    }
-  };
+  // const userClick = (e: any) => {
+  //   const val = e.target.id;
+  //   if (PartnershipContent[val] !== undefined) {
+  //     setCurrentObj(PartnershipContent[val]);
+  //   }
+  // };
 
   return (
     <div>
@@ -48,7 +49,15 @@ function PartnershipMobile() {
           <Arrow direction={ArrowDirection.LEFT} />
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="w-[25vw]">{contents.current[curIdx].colored}</div>
+          <div className="w-[25vw] relative h-[25vw]">
+            <Image
+              src={contents.current[curIdx].colored.src}
+              alt={contents.current[curIdx].colored.alt}
+              layout="fill"
+              sizes="25vw"
+              className="object-cover"
+            />{" "}
+          </div>
           <div className="flex w-[15vw] justify-around">
             {contents.current.map((c, idx) => (
               <div

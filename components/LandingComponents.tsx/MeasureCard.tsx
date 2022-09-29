@@ -76,7 +76,7 @@ const MeasureCard = () => {
             }`}>
             {/* image wrapper */}
             <div
-              className={`relative w-[600px]  h-full  ${
+              className={`relative w-[500px]  h-full  ${
                 curKey === "" ? "unClicked" : curKey === contentArr.current[0].key ? "" : "clicked"
               }`}>
               <Image
@@ -84,7 +84,8 @@ const MeasureCard = () => {
                 data-key={contentArr.current[0].key}
                 alt="measure img"
                 layout="fill"
-                className={`h-full object-cover rounded-forImg  `}
+                sizes="500px"
+                className={` object-cover rounded-forImg  `}
               />
               {curKey === "" ? (
                 <ImageCover width="500px" z={10} data-key={contentArr.current[0].key} />
@@ -117,9 +118,8 @@ const MeasureCard = () => {
                 src={contentArr.current[1].srcPath}
                 data-key={contentArr.current[1].key}
                 alt="measure img"
-                width="600px"
-                height="400px"
                 layout="fill"
+                sizes="500px"
                 className={`h-full object-cover rounded-forImg z-3 `}
               />
               {curKey === "" ? (
@@ -158,6 +158,7 @@ const MeasureCard = () => {
                 data-key={contentArr.current[2].key}
                 alt="measure img"
                 layout="fill"
+                sizes="520px"
                 className={`h-full object-cover rounded-forImg  `}
               />
               {curKey === "" ? (
@@ -208,6 +209,7 @@ const MeasureCard = () => {
                 data-key={c.key}
                 alt={c.title}
                 layout="fill"
+                sizes="90vw"
                 className={`h-full object-cover rounded-landing_mobile  `}
               />
             </div>

@@ -49,6 +49,7 @@ const ReportCard = ({content}: IReportCard) => {
           }`}>
           <div className="relative w-full h-full">
             <Image
+              sizes="600px"
               src={content.srcPath}
               alt="report img"
               layout="fill"
@@ -81,6 +82,7 @@ const ReportCard = ({content}: IReportCard) => {
             isOpened ? "drop-shadow-md" : ""
           }`}>
           <Image
+            sizes="90vw"
             src={content.srcPath}
             alt="report img"
             layout="fill"

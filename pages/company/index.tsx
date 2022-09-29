@@ -64,7 +64,7 @@ function Company() {
             <div>COMPANY</div>
           </motion.div>
         </section>
-        <div className="mx-auto  2xl:w-[1450px]  mx-auto 2xl:px-[200px]">
+        <div className="mx-auto  2xl:w-[1450px]  2xl:px-[200px]">
           {/* Philosophy Section */}
           <section className="mb-[5vh] md:mb-[10vh] ">
             <SectionTitleStyle>Philosophy</SectionTitleStyle>

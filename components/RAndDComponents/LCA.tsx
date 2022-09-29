@@ -81,40 +81,42 @@ function LCA() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex justify-center  ">
       {/* new LCA */}
-      <div className="flex items-center justify-around">
-        <LCACard content={LCAContents.resources} />
-        <ArrowCover className="w-[30px]">
-          <Arrow direction={ArrowDirection.RIGHT} />
-        </ArrowCover>
-        <LCACard content={LCAContents.processing} />
-        <ArrowCover className="w-[30px]">
-          <Arrow direction={ArrowDirection.RIGHT} />
-        </ArrowCover>
-        <LCACard content={LCAContents.manufacturing} />
-      </div>
-      <div className="flex justify-around items-center w-full my-[5px] h-[40px] ">
-        <ArrowCover className="w-[48px]">
-          <Arrow direction={ArrowDirection.UP} />
-        </ArrowCover>
-        <div className="w-[200px]">
-          <Arrow direction={ArrowDirection.NONE} />
+      <div>
+        <div className="flex items-center justify-around">
+          <LCACard content={LCAContents.resources} />
+          <ArrowCover className="w-[18px]">
+            <Arrow direction={ArrowDirection.RIGHT} />
+          </ArrowCover>
+          <LCACard content={LCAContents.processing} />
+          <ArrowCover className="w-[18px]">
+            <Arrow direction={ArrowDirection.RIGHT} />
+          </ArrowCover>
+          <LCACard content={LCAContents.manufacturing} />
         </div>
-        <ArrowCover className="w-[48px]">
-          <Arrow direction={ArrowDirection.DOWN} />
-        </ArrowCover>
-      </div>
-      <div className="flex items-center justify-around">
-        <LCACard content={LCAContents.distribution} />
-        <ArrowCover className="w-[30px]">
-          <Arrow direction={ArrowDirection.LEFT} />
-        </ArrowCover>
-        <LCACard content={LCAContents.use} />
-        <ArrowCover className="w-[30px]">
-          <Arrow direction={ArrowDirection.LEFT} />
-        </ArrowCover>
-        <LCACard content={LCAContents.endOfLife} />
+        <div className="flex justify-around items-center w-full my-[2px] h-[35px] ">
+          <ArrowCover className="w-[30px]">
+            <Arrow direction={ArrowDirection.UP} />
+          </ArrowCover>
+          <div className="w-[200px]">
+            <Arrow direction={ArrowDirection.NONE} />
+          </div>
+          <ArrowCover className="w-[30px]">
+            <Arrow direction={ArrowDirection.DOWN} />
+          </ArrowCover>
+        </div>
+        <div className="flex items-center justify-around">
+          <LCACard content={LCAContents.distribution} />
+          <ArrowCover className="w-[18px]">
+            <Arrow direction={ArrowDirection.LEFT} />
+          </ArrowCover>
+          <LCACard content={LCAContents.use} />
+          <ArrowCover className="w-[18px]">
+            <Arrow direction={ArrowDirection.LEFT} />
+          </ArrowCover>
+          <LCACard content={LCAContents.endOfLife} />
+        </div>
       </div>
       {/* old one */}
       {/* <div className="grid grid-cols-5">
@@ -290,5 +292,5 @@ function LCA() {
 export default memo(LCA);
 
 const ArrowCover = styled.div`
-  margin: 5px;
+  margin: 15px;
 `;

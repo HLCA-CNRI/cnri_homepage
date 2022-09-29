@@ -67,7 +67,7 @@ function Company() {
             <div>COMPANY</div>
           </motion.div>
         </section>
-        <div className="mx-auto  2xl:w-[1300px]">
+        <div className="mx-auto  2xl:w-[1450px]  2xl:px-[200px]">
           {/* Philosophy Section */}
           <section className="mb-[5vh] md:mb-[10vh] ">
             <SectionTitleStyle>Philosophy</SectionTitleStyle>
@@ -77,7 +77,7 @@ function Company() {
               <div className="philosophyCard">
                 <PhilosophyComp type={PhilosophyContent.mission} />
               </div>
-              <div className="philosophyCard mx-10">
+              <div className="philosophyCard mx-5">
                 <PhilosophyComp type={PhilosophyContent.vision} />
               </div>
               <div className="philosophyCard">

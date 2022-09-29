@@ -7,18 +7,18 @@ const LCACard = memo(({content}: {content: LCAContentsType}) => {
   const [isHover, setIsHover] = useState(false);
   return (
     <Wrapper
-      className="w-[400px] h-[410px] rounded-forImg flex flex-col items-center border-2 hover:cursor-pointer"
+      className="w-[290px] h-[260px] rounded-forImg flex flex-col items-center border-2 hover:cursor-pointer"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}>
-      <div className="w-[50%] h-[35%] xl:h-[50%] flex items-center p-[10px] xl:p-[18px] pt-[20px] xl:pt-[60px] ">
+      <div className="w-[50%] h-[35%] xl:h-[23%] flex items-center p-[10px] xl:p-[0px] pt-[20px] xl:mt-[30px] ">
         {!isHover ? content.colored : content.default}
       </div>
-      <div className={`px-[60px] ${isHover ? "text-white" : ""}`}>
+      <div className={`px-[25px] ${isHover ? "text-white" : ""}`}>
         <h2
-          className={`h-[20px] text-center text-[16px] xl:text-[20px]  font-bold  mb-[10px] xl:mb-[30px] mt-[10px] `}>
+          className={` text-center text-[16px] xl:text-[16px]  font-bold  mb-[10px] xl:mb-[8px] mt-[15px] `}>
           {content.kTitle}
         </h2>
-        <div className="texts text-[12px] xl:text-[14.5px] font-medium leading-6 ">{`${content.content1} ${content.content2}`}</div>
+        <div className="texts text-[12px] xl:text-[13px] font-medium leading-[1.2rem] ">{`${content.content1} ${content.content2}`}</div>
       </div>
     </Wrapper>
   );

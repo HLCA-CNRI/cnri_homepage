@@ -38,9 +38,9 @@ function Randd() {
     <>
       <NextSeo {...randdSeo} />
 
-      <div className="mx-[3vw] 2xl:mx-20">
+      <div className="mx-[3vw]  2xl:w-[1450px] 2xl:px-[200px]">
         {/* Welcoming Section */}
-        <section className="block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1300px] mx-auto">
+        <section className="block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh]  mx-auto">
           {/* Welcoming Section */}
           {/* TODO:md 싸이즈 이상일때 transition 적용 */}
           <motion.div
@@ -73,12 +73,12 @@ function Randd() {
         </section>
         {/* LCA Section */}
 
-        <div className="2xl:mx-auto 2xl:w-[1300px] text-center md:text-left ">
+        <div className="] text-center md:text-left ">
           <div className="w-[100%] ">
             <SectionTitleStyle>What is LCA?</SectionTitleStyle>
             {/* When display size is greater than md  */}
 
-            <div className="hidden md:flex">
+            <div className="hidden md:flex md:mt-[10px]">
               <LCA />
             </div>
 
@@ -86,7 +86,7 @@ function Randd() {
             <div className=" md:hidden">
               <LCAMobile />
             </div>
-            <div className="md:hidden"></div>
+            {/* <div className="md:hidden"></div> */}
 
             <div className="grid grid-cols-2" />
           </div>
@@ -94,7 +94,7 @@ function Randd() {
           <div className="w-[100%] mt-[6vh] md:mt-[12vh]">
             <SectionTitleStyle>Our Work and Partnership</SectionTitleStyle>
             {/* When display size is greater than md  */}
-            <div className="hidden xl:flex">
+            <div className="hidden xl:flex xl:justify-center xl:mt-[10px]">
               <Partnership />
             </div>
             {/* When display size is smaller than md  */}

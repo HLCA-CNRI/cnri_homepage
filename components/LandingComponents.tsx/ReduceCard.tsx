@@ -8,10 +8,12 @@ const ReduceCard = ({
   contents,
   bgColor,
   isOpened,
+  sizes,
 }: {
   contents: LandingSubContentsType;
   bgColor: string;
   isOpened: boolean;
+  sizes: string;
 }) => {
   const [isHover, onMouseOver, onMouseLeave] = useHover();
   return (
@@ -50,6 +52,7 @@ const ReduceCard = ({
         src={contents.srcPath}
         alt="reduce img"
         layout="fill"
+        sizes={sizes}
         className={`rounded-landing_mobile md:rounded-[2.5rem] w-full h-full object-cover  z-1 mix-blend-multiply   ${
           isOpened ? "animate-fadeout" : "animate-fadein"
         }`}

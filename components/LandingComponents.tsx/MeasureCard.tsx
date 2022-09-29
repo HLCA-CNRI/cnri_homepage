@@ -66,7 +66,7 @@ const MeasureCard = () => {
       <Wrapper
         role="button"
         onClick={onCardClick}
-        className="hidden md:flex  w-full h-[460px]  flex-row cursor-pointer flex justify-center relative">
+        className="hidden md:flex  w-full h-[360px]  flex-row cursor-pointer flex justify-center relative">
         {/* Images */}
         <div className="absolute w-full h-full rounded-forImg ">
           {/* first container */}
@@ -87,7 +87,7 @@ const MeasureCard = () => {
                 className={`h-full object-cover rounded-forImg  `}
               />
               {curKey === "" ? (
-                <ImageCover width="600px" z={10} data-key={contentArr.current[0].key} />
+                <ImageCover width="500px" z={10} data-key={contentArr.current[0].key} />
               ) : curKey !== contentArr.current[0].key ? (
                 <ImageCover width="200px" z={10} data-key={contentArr.current[0].key} />
               ) : null}
@@ -110,7 +110,7 @@ const MeasureCard = () => {
                 : "clicked"
             }`}>
             <div
-              className={`relative w-[600px]  h-full z-20 ${
+              className={`relative w-[500px]  h-full z-20 ${
                 curKey === "" ? "unClicked" : curKey === contentArr.current[1].key ? "" : "clicked"
               }`}>
               <Image
@@ -123,7 +123,7 @@ const MeasureCard = () => {
                 className={`h-full object-cover rounded-forImg z-3 `}
               />
               {curKey === "" ? (
-                <ImageCover width="600px" z={20} data-key={contentArr.current[1].key} />
+                <ImageCover width="500px" z={20} data-key={contentArr.current[1].key} />
               ) : curKey !== contentArr.current[1].key ? (
                 <ImageCover width="200px" z={20} data-key={contentArr.current[1].key} />
               ) : null}
@@ -132,7 +132,7 @@ const MeasureCard = () => {
 
           {/* third containter */}
           <div
-            className={`absolute w-[520px]  h-full  right-0 z-30 ${
+            className={`absolute w-[500px]  h-full  right-0 z-30 ${
               curKey === ""
                 ? ""
                 : curKey === contentArr.current[2].key && pastKey === ""
@@ -176,13 +176,16 @@ const MeasureCard = () => {
           className={`w-[55%] border-2 rounded-forImg p-10 h-full `}>
           <div className="pl-[2%] mb-[4px] mr-[120px] flex flex-col justify-center items-center h-full">
             <h2
-              className={`text-[25px] font-bold mb-8 whitespace-pre ${
+              className={`text-[21.5px] font-bold mb-2 whitespace-pre ${
                 curKey !== pastKey ? "animate-fadein" : ""
               }`}>
               {curContent?.title}
             </h2>
             {/* motion.div로 대체하기 클릭할때마다 작동하도록 */}
-            <p className={`text-[16px] leading-7 ${curKey !== pastKey ? "animate-fadein" : ""}`}>
+            <p
+              className={`text-[13.5px] leading-[160%] ${
+                curKey !== pastKey ? "animate-fadein" : ""
+              }`}>
               {curContent?.content}
             </p>
           </div>
@@ -265,15 +268,15 @@ const selected = keyframes`
 from{
  
 }to{
-  width:600px;
+  width:550px;
 }
 `;
 
 const unClickedWhenSelected = keyframes`
   from{
-    width:600px;
+    width:550px;
   }to{
-    width:520px;
+    width:500px;
   }
 
 `;
@@ -282,7 +285,7 @@ const selectedWhenOpened = keyframes`
 from{
   width:100px;
 }to{
-  width:600px;
+  width:550px;
 }
 `;
 
@@ -309,7 +312,7 @@ from{
   width:40%;
   margin-right:5%;
 }to{
-  width:600px;
+  width:550px;
   margin-right:0%;
 }
 `;

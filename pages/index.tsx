@@ -49,23 +49,23 @@ function Home() {
 
       {/* Second Navbar  */}
       <section className="sticky inset-x-0 top-[9.5vh] md:top-[11.5vh] left-0 flex justify-center  w-[100%] bg-white z-40 opacity-90 border-2 text-[3.25vw] md:text-[1vw]">
-        <Link href="#measure">
-          <div className="py-[3vh] mx-[3vw]  cursor-pointer">측정</div>
+        <Link href="#measure" passHref>
+          <div className="py-[1.7vh] mx-[3vw]  cursor-pointer">측정</div>
         </Link>
 
-        <Link href="#reduce">
-          <div className="py-[3vh] mx-[3vw]  cursor-pointer">감축</div>
+        <Link href="#reduce" passHref>
+          <div className="py-[1.7vh] mx-[3vw]  cursor-pointer">감축</div>
         </Link>
 
-        <Link href="#remove">
-          <div className="py-[3vh] mx-[3vw]  cursor-pointer">오프셋</div>
+        <Link href="#remove" passHref>
+          <div className="py-[1.7vh] mx-[3vw]  cursor-pointer">오프셋</div>
         </Link>
 
-        <Link href="#report">
-          <div className="py-[3vh] mx-[3vw]  cursor-pointer">보고서</div>
+        <Link href="#report" passHref>
+          <div className="py-[1.7vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>
-      <section className="flex-col justify-center items-center 2xl:w-[1450px]  mx-auto 2xl:px-[120px] px-[3vw] pb-[130px] ">
+      <section className="flex-col justify-center items-center 2xl:w-[1450px]  mx-auto 2xl:px-[200px] px-[3vw] pb-[130px] ">
         {/* Measure Section */}
         <section id="measure" className="scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>

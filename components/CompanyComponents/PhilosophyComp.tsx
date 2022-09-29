@@ -33,7 +33,7 @@ function PhilosophyComp({type}: VideoOnHoverType) {
         src={type.videoPath}
         loop
         muted
-        className=" relative w-[100%]  object-cover  h-[60vh] 2xl:h-[550px]  flex-wrap  rounded-lg shadow-xl"
+        className=" relative w-[100%]  object-cover  h-[60vh] 2xl:h-[480px]  flex-wrap  rounded-lg shadow-xl"
       />
       {/* 내용 */}
       <div
@@ -41,10 +41,10 @@ function PhilosophyComp({type}: VideoOnHoverType) {
         onMouseEnter={videoMouseEnter}
         onMouseLeave={videoMouseLeave}>
         <div>
-          <div className=" text-[2.5vw] text-white font-semibold mb-4 underline underline-offset-8 2xl:text-[50px]">
+          <div className=" text-[2.5vw] text-white font-semibold mb-4 underline underline-offset-8 2xl:text-[40px]">
             {type.title}
           </div>
-          <ul className="text-[1vw] whitespace 2xl:text-[15px]">
+          <ul className="text-[1vw] whitespace 2xl:text-[14px]">
             {type.content.map((val: string) => (
               <li className="text-white my-1" key={val}>
                 {val}

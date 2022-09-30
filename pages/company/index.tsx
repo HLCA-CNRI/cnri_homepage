@@ -112,7 +112,7 @@ function Company() {
           </section>
 
           {/* History Section */}
-          <section className="snap-center my-4">
+          <section className="snap-end my-4">
             <SectionTitleStyle>History</SectionTitleStyle>
             {/* PC ver & Mobile ver */}
             <div className="flex items-center justify-center">

@@ -28,6 +28,10 @@ function Company() {
   const controlPic = useAnimation(); // Welcoming section에서 배경 애니메이션
   const [ref, inView] = useInView(); // react-intersection-observer 쓰이는 hook.사용자가 view안에 접근했는지 확인.
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // 처음 뷰 접근할때 애니메이션 기능
   useEffect(() => {
     if (inView) {

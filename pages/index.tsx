@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import {memo} from "react";
+import {memo, useEffect} from "react";
 import LandingMobile from "../components/LandingComponents.tsx/LandingMobile";
 import TransitionVariants from "../functions/TransitionVariants";
 import VerticalSlidingCard from "../components/LandingComponents.tsx/VerticalSlidingCard";
@@ -15,6 +15,9 @@ import ReportCard from "../components/LandingComponents.tsx/ReportCard";
 import MeasureCard from "../components/LandingComponents.tsx/MeasureCard";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       {/* Welcoming Section */}

@@ -63,7 +63,7 @@ const ReportCard = ({content}: IReportCard) => {
           animate={controlText}
           initial="initial"
           variants={TransitionVariants.TransitionContextLToR}
-          className={`w-[50%] bg-cnri_report_bg p-10 h-full `}>
+          className={`w-[50%] bg-cnri_report_bg p-10 h-full rounded-forImg `}>
           <div className="pl-[10%] mx-[40px] flex flex-col justify-center items-center h-full">
             <h2 className="text-[1.8rem] font-bold mb-4">{content.title}</h2>
             <p className=" text-[14px] leading-7">{content.content}</p>

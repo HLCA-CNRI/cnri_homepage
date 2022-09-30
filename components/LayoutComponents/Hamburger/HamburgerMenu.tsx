@@ -91,7 +91,7 @@ function HamburgerMenu() {
                   </div>
                 </Link>
                 <hr />
-                <Link href="/product/ciet">
+                {/* <Link href="/product/ciet">
                   <div
                     role="button"
                     className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]"
@@ -99,9 +99,9 @@ function HamburgerMenu() {
                     <div>PRODUCT</div>
                     <div> {">"} </div>
                   </div>
-                </Link>
-                {/* <ProductListStyle onClick={clickProdList}>
-                  <div className="py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]">
+                </Link> */}
+                <ProductListStyle onClick={clickProdList}>
+                  <div className="py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw] ">
                     <div>PRODUCT</div>
                     <div> {">"} </div>
                   </div>
@@ -109,16 +109,28 @@ function HamburgerMenu() {
                     className={classNames("w-[100%] text-left text-[3vw]", {
                       active: prodListIsOpen,
                     })}>
-                    <li className="py-[2vh] px-[5vw] hover:text-blue-600">
+                    <li className="w-full h-[5vh] border-t-[0.3vh] border-dashed ">
                       <a href="https://cis.cnrikorea.com" target="_blank" rel="noopener noreferrer">
-                        CIS
+                        <div
+                          role="button"
+                          onClick={clickBurger}
+                          className=" w-full h-full px-[5vw] flex items-center text-right">
+                          CIS
+                        </div>
                       </a>
                     </li>
-                    <li className="py-[2vh] px-[5vw] hover:text-blue-600">
-                      <Link href="/product/ciet">CIET</Link>
+                    <li className="w-full h-[5vh] ">
+                      <Link href="/product/ciet" passHref>
+                        <div
+                          role="button"
+                          onClick={clickBurger}
+                          className=" w-full h-full px-[5vw] flex items-center">
+                          CIET
+                        </div>
+                      </Link>
                     </li>
                   </ul>
-                </ProductListStyle> */}
+                </ProductListStyle>
                 <hr />
                 <Link href="/company">
                   <div

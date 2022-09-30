@@ -142,7 +142,7 @@ const MeasureCard = () => {
                 : "clicked"
             }`}>
             <div
-              className={`relative w-[520px]  h-full right-0 ${
+              className={`relative w-[500px]  h-full right-0 ${
                 curKey === "" && pastKey === contentArr.current[2].key
                   ? "unClickedWhenSelected"
                   : curKey === "" && pastKey !== contentArr.current[2].key
@@ -158,11 +158,11 @@ const MeasureCard = () => {
                 data-key={contentArr.current[2].key}
                 alt="measure img"
                 layout="fill"
-                sizes="520px"
+                sizes="500px"
                 className={`h-full object-cover rounded-forImg  `}
               />
               {curKey === "" ? (
-                <ImageCover width="520px" z={30} data-key={contentArr.current[2].key} />
+                <ImageCover width="500px" z={30} data-key={contentArr.current[2].key} />
               ) : curKey !== contentArr.current[2].key ? (
                 <ImageCover width="200px" z={30} data-key={contentArr.current[2].key} />
               ) : null}

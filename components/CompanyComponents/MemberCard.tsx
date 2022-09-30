@@ -6,7 +6,7 @@ const MemberCard = memo(({member}: {member: MemberType}) => (
   <div className="flex flex-col justify-center items-center">
     <div
       className={`w-[180px] h-[180px] rounded-[50%] translate-y-2/4 border-2 relative overflow-hidden bg-white mt-[-50px]  `}>
-      <Image layout="fill" src={member.pic_square} sizes="200px" />
+      <Image layout="fixed" src={member.pic_square} width="180px" height="180px" />
     </div>
     <div className=" w-[280px] h-[320px] border-2 rounded-forImg pt-[100px] px-10 ">
       <div className="flex flex-col justify-center items-center ">

@@ -14,7 +14,7 @@ const PartenershipMobileContentCard = memo(({title, content, img, heightAuto = t
     className={`w-[80vw] flex flex-col justify-center items-center bg-partnership_bg rounded-[3vw] px-[3vw] py-[2vh] ${
       heightAuto ? "h-auto" : "h-[50vh] landscape:h-auto"
     }`}>
-    <div className="h-[30vh] relative w-full">
+    <div className="h-[20vh] relative w-full">
       <Image src={img.src} alt={img.alt} layout="fill" className="object-contain" sizes="80vw" />
     </div>
     <div className="px-[2vw] text-left">

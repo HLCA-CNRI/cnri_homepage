@@ -24,9 +24,9 @@ function CietPage() {
     <div>
       <NextSeo {...cietSeo} />
       <div className="snap-center snap-always pb-[5vh] md:pb-[25vh]">
-        <div className="pt-[15vh] md:pt-[25vh]">
-          <div className="md:h-[4.5vh] h-[2.5vh] relative cursor-pointer  m-3 mb-4">
-            <Image alt="logoImg" src="/images/CIET_signature.svg" layout="fill" />
+        <div className="pt-[15vh] md:pt-[25vh] flex flex-col items-center">
+          <div className="h-[2.5vh] w-[30vw] md:h-[4.5vh] md:w-[10vw]   relative cursor-pointer  m-3 mb-4">
+            <Image alt="logoImg" src="/images/CIET_signature.svg" layout="fill" sizes="300px" />
           </div>
           <div className="flex justify-center font-bold text-[5vw] md:text-[4vw] 2xl:text-[3vw]">
             기후변화 대응,
@@ -79,14 +79,22 @@ function CietPage() {
           </p>
         </div>
         <ImageStyle>
-          <Image src="/images/ciet/section-1.png" layout="fill" />
+          <Image
+            src="/images/ciet/section-1.png"
+            layout="fill"
+            sizes="(max-width: 768px) 80vw, 30vw"
+          />
         </ImageStyle>
       </section>
 
       {/* section 2 */}
       <section className="w-full flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10 h-screen scroll-mt-28 snap-center snap-always bg-constant-CIET_BACK">
         <ImageStyle className="puzzle order-2 md:order-1 md:mt-3">
-          <Image src="/images/ciet/section-2.png" layout="fill" />
+          <Image
+            src="/images/ciet/section-2.png"
+            layout="fill"
+            sizes="(max-width: 768px) 100vw, 80vw"
+          />
         </ImageStyle>
         <div className="flex flex-col justify-center md:justify-start order-1 md:order-2">
           <h3 className="flex flex-col justify-center  md:justify-start mb-5">
@@ -142,14 +150,18 @@ function CietPage() {
           </p>
         </div>
         <ImageStyle>
-          <Image src="/images/ciet/section-3.png" layout="fill" />
+          <Image
+            src="/images/ciet/section-3.png"
+            layout="fill"
+            sizes="(max-width: 768px) 80vw, 30vw"
+          />
         </ImageStyle>
       </section>
 
       {/* section 4 */}
       <section className="w-full flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10 h-screen scroll-mt-28 snap-center snap-always bg-constant-CIET_MINT">
         <ImageStyle className="dashboard order-2 md:order-1 md:mt-8">
-          <Image src="/images/ciet/section-4.png" layout="fill" />
+          <Image src="/images/ciet/section-4.png" layout="fill" sizes="80vw" />
         </ImageStyle>
         <div className="flex flex-col justify-center md:justify-start order-1 md:order-2">
           <h3 className="flex flex-col justify-center  md:justify-start mb-5">
@@ -196,7 +208,11 @@ function CietPage() {
               </div>
               <span className="text-xl mb-2">{item.title}</span>
               <CardImageStyle>
-                <Image src={`/images/ciet/card-${item.id}.png`} layout="fill" />
+                <Image
+                  src={`/images/ciet/card-${item.id}.png`}
+                  layout="fill"
+                  sizes="(max-width : 640px) 70vw, 15vw "
+                />
               </CardImageStyle>
               <p className="font-medium hidden md:block text-center leading-8 whitespace-pre">
                 {item.description}

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 interface PhilosophyMobileType {
   // 카드 내용
@@ -16,9 +17,10 @@ function PhilosophyMobile({type}: PhilosophyMobileType) {
       <div className={` h-full  flex `}>
         {/* 이미지 */}
         <div className="relative w-[80vw] rounded-r-lg  ">
-          <img
+          <Image
             alt="philImg"
             src={type.imgPath}
+            layout="fill"
             className=" object-cover h-full w-full flex-wrap  rounded-lg shadow-xl"
           />
           {/* 내용 */}

@@ -75,10 +75,10 @@ function Randd() {
 
         <div className="snap-start md:snap-align-none text-center md:text-left  ">
           <div className=" w-[100%] ">
-            <SectionTitleStyle className="snap-center">What is LCA?</SectionTitleStyle>
+            <SectionTitleStyle>What is LCA?</SectionTitleStyle>
             {/* When display size is greater than md  */}
 
-            <div className="md:snap-start hidden md:flex md:mt-[10px]">
+            <div className="md:snap-end hidden md:flex md:mt-[10px]">
               <LCA />
             </div>
 

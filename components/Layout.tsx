@@ -15,12 +15,13 @@ function Layout({children}: LayoutInterface) {
   const [doesHidePopup, setDoesHidePopup] = useState(true);
   useEffect(() => {
     // deleteCookie(CookieKey.NOT_SHOW_TODAY);
+    if (router.pathname !== "/") return;
     if (!hasCookie(CookieKey.NOT_SHOW_TODAY)) {
       setDoesHidePopup(false);
       return;
     }
     setDoesHidePopup(true);
-  }, []);
+  }, [router.pathname]);
 
   return (
     <>

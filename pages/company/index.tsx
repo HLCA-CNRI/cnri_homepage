@@ -3,12 +3,12 @@ import {useEffect, memo, useRef} from "react";
 import Image from "next/image";
 import {useInView} from "react-intersection-observer";
 import {NextSeo} from "next-seo";
-import ScrollContainer from "react-indiana-drag-scroll";
+// import ScrollContainer from "react-indiana-drag-scroll";
 import TransitionVariants from "../../functions/TransitionVariants";
 import PhilosophyComp from "../../components/CompanyComponents/PhilosophyComp";
 import PhilosophyContent from "../../functions/PhilosophyContent";
 import PhilosophyMobile from "../../components/CompanyComponents/PhilosophyMobile";
-import {SectionTitleStyle} from "../../styles/commonStyles";
+import {ScrollContainer, SectionTitleStyle} from "../../styles/commonStyles";
 import Members from "../../components/CompanyComponents/Members";
 import HistoryCard from "../../components/CompanyComponents/HistoryCard";
 import HistoryContent from "../../functions/HistoryContents";
@@ -87,10 +87,16 @@ function Company() {
             {/* When display size is smaller than md  */}
             <div className="snap-center md:hidden ">
               {/* indiana-drag-scroll 사용해서 마우스로 스크롤 가능하게 만듬 */}
-              <ScrollContainer className="scroll-container flex cursor-pointer">
-                <PhilosophyMobile type={PhilosophyContent.mission} />
-                <PhilosophyMobile type={PhilosophyContent.vision} />
-                <PhilosophyMobile type={PhilosophyContent.coreValues} />
+              <ScrollContainer className="scroll-container flex cursor-pointer snap-x overflow-auto pb-3">
+                <div className="snap-center">
+                  <PhilosophyMobile type={PhilosophyContent.mission} />
+                </div>
+                <div className="snap-center">
+                  <PhilosophyMobile type={PhilosophyContent.vision} />
+                </div>
+                <div className="snap-center">
+                  <PhilosophyMobile type={PhilosophyContent.coreValues} />
+                </div>
               </ScrollContainer>
             </div>
           </section>

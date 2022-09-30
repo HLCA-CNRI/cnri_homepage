@@ -111,8 +111,8 @@ function Company() {
           <section className="snap-center my-4">
             <SectionTitleStyle>History</SectionTitleStyle>
             {/* PC ver & Mobile ver */}
-            <div className="flex items-center">
-              <div className="flex flex-wrap">
+            <div className="flex items-center justify-center">
+              <div className="flex flex-wrap justify-center">
                 <HistoryCard content={HistoryContent?.[2022]} />
                 <HistoryCard content={HistoryContent?.[2021]} />
               </div>

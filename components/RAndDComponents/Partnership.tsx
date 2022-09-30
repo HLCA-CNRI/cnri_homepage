@@ -92,7 +92,7 @@ function Partnership() {
   return (
     <div>
       {/* 카드 부분 */}
-      <div className="flex">
+      <div className="flex snap-center">
         {contents.current.map((c, idx) => (
           <div
             className=" hover:cursor-pointer  snap-end"
@@ -112,7 +112,7 @@ function Partnership() {
       </div>
       {/* 사진 + 화살표 */}
       {curImgs && (
-        <div className="snap-end flex items-center justify-center mb-10 animate-fadein">
+        <div className="flex items-center justify-center mb-10 animate-fadein">
           {curImgs.length !== 1 && (
             <div className="w-[20px]" id={ArrowDirection.LEFT} role="button" onClick={onArrowClick}>
               <Arrow direction={ArrowDirection.LEFT} />

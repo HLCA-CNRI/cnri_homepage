@@ -92,7 +92,7 @@ function PartnershipMobile() {
             {contents.current[curIdx].kTitle.map((t: string, idx: number) => (
               <div className="flex-shrink-0  snap-center mx-[2vw]">
                 <PartenershipMobileContentCard
-                  heightAuto={false}
+                  heightAuto
                   content={contents.current[curIdx].content[idx]}
                   title={t}
                   img={contents.current[curIdx].img[idx]}

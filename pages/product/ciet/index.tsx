@@ -25,7 +25,7 @@ function CietPage() {
       <NextSeo {...cietSeo} />
       <div className="snap-center snap-always pb-[5vh] md:pb-[25vh]">
         <div className="pt-[15vh] md:pt-[25vh] flex flex-col items-center">
-          <div className="md:h-[4.5vh] h-[2.5vh] w-[10vw] relative cursor-pointer  m-3 mb-4">
+          <div className="h-[2.5vh] w-[30vw] md:h-[4.5vh] md:w-[10vw]   relative cursor-pointer  m-3 mb-4">
             <Image alt="logoImg" src="/images/CIET_signature.svg" layout="fill" sizes="300px" />
           </div>
           <div className="flex justify-center font-bold text-[5vw] md:text-[4vw] 2xl:text-[3vw]">

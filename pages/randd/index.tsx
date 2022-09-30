@@ -38,7 +38,7 @@ function Randd() {
     <>
       <NextSeo {...randdSeo} />
 
-      <div className="mx-[3vw]  2xl:w-[1450px] 2xl:px-[200px]">
+      <div className="mx-[3vw] 2xl:mx-auto  2xl:w-[1450px] 2xl:px-[200px]">
         {/* Welcoming Section */}
         <section className="block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh]  mx-auto">
           {/* Welcoming Section */}
@@ -73,7 +73,7 @@ function Randd() {
         </section>
         {/* LCA Section */}
 
-        <div className="] text-center md:text-left ">
+        <div className="text-center md:text-left ">
           <div className="w-[100%] ">
             <SectionTitleStyle>What is LCA?</SectionTitleStyle>
             {/* When display size is greater than md  */}

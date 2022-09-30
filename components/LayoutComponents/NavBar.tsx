@@ -5,9 +5,11 @@ import {memo} from "react";
 import styled from "styled-components";
 import {HeaderLinkButton, LinkButton} from "../../styles/commonStyles";
 import HamburgerMenu from "./Hamburger/HamburgerMenu";
+import useHover from "../../hooks/useHover";
 
 function NavigationBar() {
   const router = useRouter();
+  const [isHover, onMouseEnter, onMouseLeave] = useHover();
   console.log(router.pathname);
 
   return (
@@ -34,7 +36,41 @@ function NavigationBar() {
           )} */}
         </Link>
         <ul className="hidden sm:flex ">
-          <li
+          {/* <li
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
+              router.pathname === "/product/ciet" || router.pathname === "/"
+                ? "font-bold text-black"
+                : "text-[gray]"
+            }`}>
+            <Link href="/product/ciet">PRODUCT</Link>
+            <div
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              className={`list flex absolute flex-col bg-white text-center top-[10vh] border-2 w-[8vw] z-20 hover:cursor-pointer ${
+                isHover ? "" : "opacity-0"
+              }`}>
+              <a
+                href="https://cis.cnrikorea.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-constant-CIET_MINT border-b-2 inline-block h-[5vh] leading-[5vh]">
+                CIS
+              </a>
+              <Link href="/product/ciet" passHref>
+                <span className="hover:text-constant-CIET_MINT inline-block h-[5vh] leading-[5vh] ">
+                  CIET
+                </span>
+              </Link>
+            </div>
+            {router.pathname === "/product/ciet" && (
+              <div className="absolute w-[6%] mx-auto border-2  border-black top-[11.8vh] bg-black ">
+                {" "}
+              </div>
+            )}
+          </li> */}
+          <ProductListStyle
             className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
               router.pathname === "/product/ciet" || router.pathname === "/"
                 ? "font-bold text-black"
@@ -42,15 +78,10 @@ function NavigationBar() {
             }`}>
             <Link href="/product/ciet">PRODUCT</Link>
             {router.pathname === "/product/ciet" && (
-              <div className="absolute w-[6%] mx-auto border-2  border-black top-[11.8vh] bg-black ">
+              <div className="absolute w-full mx-auto border-2  border-black top-[8.3vh] bg-black ">
                 {" "}
               </div>
             )}
-          </li>
-          {/* <ProductListStyle className="mx-[0.3vw] px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium">
-            <a rel="noopener noreferrer" href="#">
-              PRODUCT
-            </a>
             <div className="list">
               <span className="hover:text-constant-CIET_MINT">
                 <a href="https://cis.cnrikorea.com" target="_blank" rel="noopener noreferrer">
@@ -61,7 +92,7 @@ function NavigationBar() {
                 <span className="hover:text-constant-CIET_MINT">CIET</span>
               </Link>
             </div>
-          </ProductListStyle> */}
+          </ProductListStyle>
 
           <li
             className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${

@@ -3,12 +3,12 @@ import {useEffect, memo, useRef} from "react";
 import Image from "next/image";
 import {useInView} from "react-intersection-observer";
 import {NextSeo} from "next-seo";
-import ScrollContainer from "react-indiana-drag-scroll";
+// import ScrollContainer from "react-indiana-drag-scroll";
 import TransitionVariants from "../../functions/TransitionVariants";
 import PhilosophyComp from "../../components/CompanyComponents/PhilosophyComp";
 import PhilosophyContent from "../../functions/PhilosophyContent";
 import PhilosophyMobile from "../../components/CompanyComponents/PhilosophyMobile";
-import {SectionTitleStyle} from "../../styles/commonStyles";
+import {ScrollContainer, SectionTitleStyle} from "../../styles/commonStyles";
 import Members from "../../components/CompanyComponents/Members";
 import HistoryCard from "../../components/CompanyComponents/HistoryCard";
 import HistoryContent from "../../functions/HistoryContents";
@@ -39,10 +39,10 @@ function Company() {
   return (
     <>
       <NextSeo {...companySeo} />
-      <div className="mx-[3vw] 2xl:mx-20">
+      <div className="mx-[3vw] 2xl:mx-20 snap-mandatory">
         {/* Welcoming Section */}
         {/* TODO:md 싸이즈 이상일때 transition 적용 */}
-        <section className="block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1200px] mx-auto">
+        <section className="snap-center block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1200px] mx-auto">
           <motion.div
             ref={ref}
             className="h-[80vh] flex relative "
@@ -67,9 +67,9 @@ function Company() {
             <div>COMPANY</div>
           </motion.div>
         </section>
-        <div className="mx-auto  2xl:w-[1450px]  2xl:px-[200px]">
+        <div className=" mx-auto  2xl:w-[1450px]  2xl:px-[200px]">
           {/* Philosophy Section */}
-          <section className="mb-[5vh] md:mb-[10vh] ">
+          <section className="snap-center mb-[5vh] md:mb-[10vh] ">
             <SectionTitleStyle>Philosophy</SectionTitleStyle>
             {/* When display size is greater than md  */}
             <div className=" hidden md:flex ">
@@ -85,24 +85,30 @@ function Company() {
               </div>
             </div>
             {/* When display size is smaller than md  */}
-            <div className=" md:hidden ">
+            <div className="snap-center md:hidden ">
               {/* indiana-drag-scroll 사용해서 마우스로 스크롤 가능하게 만듬 */}
-              <ScrollContainer className="scroll-container flex cursor-pointer">
-                <PhilosophyMobile type={PhilosophyContent.mission} />
-                <PhilosophyMobile type={PhilosophyContent.vision} />
-                <PhilosophyMobile type={PhilosophyContent.coreValues} />
+              <ScrollContainer className="scroll-container flex cursor-pointer snap-x overflow-auto pb-3">
+                <div className="snap-center">
+                  <PhilosophyMobile type={PhilosophyContent.mission} />
+                </div>
+                <div className="snap-center">
+                  <PhilosophyMobile type={PhilosophyContent.vision} />
+                </div>
+                <div className="snap-center">
+                  <PhilosophyMobile type={PhilosophyContent.coreValues} />
+                </div>
               </ScrollContainer>
             </div>
           </section>
           {/* Member Section */}
-          <section className="mb-[5vh] md:mb-[10vh]">
+          <section className="snap-center mb-[5vh] md:mb-[10vh]">
             <SectionTitleStyle>Members</SectionTitleStyle>
             {/* PC ver & Mobile ver */}
             <Members />
           </section>
 
           {/* History Section */}
-          <section className="my-4">
+          <section className="snap-center my-4">
             <SectionTitleStyle>History</SectionTitleStyle>
             {/* PC ver & Mobile ver */}
             <div className="flex items-center">

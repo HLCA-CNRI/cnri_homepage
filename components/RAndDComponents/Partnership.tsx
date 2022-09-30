@@ -95,7 +95,7 @@ function Partnership() {
       <div className="flex">
         {contents.current.map((c, idx) => (
           <div
-            className=" hover:cursor-pointer"
+            className=" hover:cursor-pointer  snap-end"
             key={c.title}
             id={c.title}
             onClick={onCompanyClick}
@@ -112,7 +112,7 @@ function Partnership() {
       </div>
       {/* 사진 + 화살표 */}
       {curImgs && (
-        <div className="flex items-center justify-center mb-10 animate-fadein">
+        <div className="snap-end flex items-center justify-center mb-10 animate-fadein">
           {curImgs.length !== 1 && (
             <div className="w-[20px]" id={ArrowDirection.LEFT} role="button" onClick={onArrowClick}>
               <Arrow direction={ArrowDirection.LEFT} />

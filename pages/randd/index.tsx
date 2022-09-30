@@ -38,9 +38,9 @@ function Randd() {
     <>
       <NextSeo {...randdSeo} />
 
-      <div className="mx-[3vw] 2xl:mx-auto  2xl:w-[1450px] 2xl:px-[200px]">
+      <div className="snap-mandatory mx-[3vw] 2xl:mx-auto  2xl:w-[1450px] 2xl:px-[200px] ">
         {/* Welcoming Section */}
-        <section className="block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh]  mx-auto">
+        <section className="snap-center block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh]  mx-auto">
           {/* Welcoming Section */}
           {/* TODO:md 싸이즈 이상일때 transition 적용 */}
           <motion.div
@@ -73,17 +73,17 @@ function Randd() {
         </section>
         {/* LCA Section */}
 
-        <div className="text-center md:text-left ">
-          <div className="w-[100%] ">
-            <SectionTitleStyle>What is LCA?</SectionTitleStyle>
+        <div className="snap-start md:snap-align-none text-center md:text-left  ">
+          <div className=" w-[100%] ">
+            <SectionTitleStyle className="snap-center">What is LCA?</SectionTitleStyle>
             {/* When display size is greater than md  */}
 
-            <div className="hidden md:flex md:mt-[10px]">
+            <div className="md:snap-start hidden md:flex md:mt-[10px]">
               <LCA />
             </div>
 
             {/* When display size is smaller than md  */}
-            <div className=" md:hidden">
+            <div className="snap-center  md:hidden">
               <LCAMobile />
             </div>
             {/* <div className="md:hidden"></div> */}
@@ -91,7 +91,7 @@ function Randd() {
             <div className="grid grid-cols-2" />
           </div>
           {/* Partnership Section */}
-          <div className="w-[100%] mt-[6vh] md:mt-[12vh]">
+          <div className="snap-center md:snap-align-none w-[100%] mt-[6vh] ">
             <SectionTitleStyle>Our Work and Partnership</SectionTitleStyle>
             {/* When display size is greater than md  */}
             <div className="hidden xl:flex xl:justify-center xl:mt-[10px]">

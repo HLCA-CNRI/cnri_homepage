@@ -72,7 +72,7 @@ const MeasureCard = () => {
           {/* first container */}
           <div
             className={`absolute w-[100%]  h-full  right-0 z-10  ${
-              curKey === "" ? "unClicked" : "w-[57%]"
+              curKey === "" ? "from57toFull" : "to57"
             }`}>
             {/* image wrapper */}
             <div
@@ -81,7 +81,7 @@ const MeasureCard = () => {
                   ? "unClicked"
                   : curKey === contentArr.current[0].key
                   ? "unClicked"
-                  : "w-[200px]"
+                  : "clicked"
               }`}>
               <Image
                 src={contentArr.current[0].srcPath}
@@ -272,6 +272,21 @@ const clicked = keyframes`
 
 `;
 
+const to57 = keyframes`
+  from{
+  }to{
+    width:57%;
+  }
+`;
+
+const from57toFull = keyframes`
+  from{
+    width:57%;
+  }to{
+    width:100%;
+  }
+`;
+
 const unClicked = keyframes`
   from{
     width:200px;
@@ -287,5 +302,13 @@ const Wrapper = styled.div`
   }
   .unClicked {
     animation: ${unClicked} 0.2s ease-out 1 forwards;
+  }
+
+  .to57 {
+    animation: ${to57} 0.2s ease-out 1 forwards;
+  }
+
+  .from57toFull {
+    animation: ${from57toFull} 0.2s ease-out 1 forwards;
   }
 `;

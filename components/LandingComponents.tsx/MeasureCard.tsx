@@ -6,11 +6,6 @@ import LandingContents, {LandingSubContentsType} from "../../functions/LandingCo
 import TransitionVariants from "../../functions/TransitionVariants";
 import {ScrollContainer} from "../../styles/commonStyles";
 
-// interface IReportCard {
-//   // 카드 내용
-//   content: LandingSubContentsType;
-// }
-
 const MeasureCard = () => {
   const controlText = useAnimation(); // 내용 애니메이션 variant
   const [curContent, setCurContent] = useState<LandingSubContentsType>();
@@ -66,25 +61,30 @@ const MeasureCard = () => {
       <Wrapper
         role="button"
         onClick={onCardClick}
-        className="hidden md:flex  w-full h-[360px]  flex-row cursor-pointer flex justify-center relative">
+        className="hidden lg:flex  w-full h-[360px]  flex-row cursor-pointer flex justify-center relative">
         {/* Images */}
         <div className="absolute w-full h-full rounded-forImg ">
           {/* first container */}
           <div
-            className={`absolute w-[62%]  h-full  right-0 mr-[38%] z-10  ${
-              curKey === "" ? "unClicked" : "clicked"
+            className={`absolute w-[100%]  h-full  right-0 z-10  ${
+              curKey === "" ? "from57toFull" : "to57"
             }`}>
             {/* image wrapper */}
             <div
-              className={`relative w-[600px]  h-full  ${
-                curKey === "" ? "unClicked" : curKey === contentArr.current[0].key ? "" : "clicked"
+              className={`relative w-[500px]  h-full  ${
+                curKey === ""
+                  ? "unClicked"
+                  : curKey === contentArr.current[0].key
+                  ? "unClicked"
+                  : "clicked"
               }`}>
               <Image
                 src={contentArr.current[0].srcPath}
                 data-key={contentArr.current[0].key}
                 alt="measure img"
                 layout="fill"
-                className={`h-full object-cover rounded-forImg  `}
+                sizes="500px"
+                className={` object-cover rounded-forImg  `}
               />
               {curKey === "" ? (
                 <ImageCover width="500px" z={10} data-key={contentArr.current[0].key} />
@@ -96,72 +96,83 @@ const MeasureCard = () => {
 
           {/* second containter */}
           <div
-            className={`absolute w-[40%]  h-full  right-0 mr-[32%]   ${
+            className={`absolute h-full  right-0  z-20
+            ${
               curKey === ""
-                ? "unClicked"
-                : curKey === contentArr.current[0].key && pastKey === ""
-                ? "firstOneClicked"
-                : curKey === contentArr.current[0].key && pastKey !== ""
-                ? "firstOneClickedWhenOpened"
-                : curKey === contentArr.current[1].key && pastKey !== ""
-                ? "secondOneClickedWhenOpened"
-                : curKey === contentArr.current[2].key && pastKey !== ""
-                ? "thirdOneClickedWhenOpened"
-                : "clicked"
+                ? "w-[73%]"
+                : curKey === contentArr.current[0].key
+                ? "w-[23%]"
+                : "w-[52%]"
             }`}>
             <div
               className={`relative w-[500px]  h-full z-20 ${
-                curKey === "" ? "unClicked" : curKey === contentArr.current[1].key ? "" : "clicked"
+                curKey === ""
+                  ? "unClicked"
+                  : curKey === contentArr.current[1].key
+                  ? "unClicked"
+                  : "w-[200px]"
               }`}>
               <Image
                 src={contentArr.current[1].srcPath}
                 data-key={contentArr.current[1].key}
                 alt="measure img"
-                width="600px"
-                height="400px"
                 layout="fill"
-                className={`h-full object-cover rounded-forImg z-3 `}
+                sizes="500px"
+                className={`h-full object-cover rounded-forImg  `}
               />
               {curKey === "" ? (
-                <ImageCover width="500px" z={20} data-key={contentArr.current[1].key} />
+                <ImageCover
+                  width="500px"
+                  z={20}
+                  data-key={contentArr.current[1].key}
+                  className={`relative w-[500px]  h-full z-20 ${
+                    curKey === ""
+                      ? "unClicked"
+                      : curKey === contentArr.current[1].key
+                      ? "unClicked"
+                      : "w-[200px]"
+                  }`}
+                />
               ) : curKey !== contentArr.current[1].key ? (
-                <ImageCover width="200px" z={20} data-key={contentArr.current[1].key} />
+                <ImageCover
+                  width="200px"
+                  z={20}
+                  data-key={contentArr.current[1].key}
+                  className={`relative w-[500px]  h-full z-20 ${
+                    curKey === ""
+                      ? "unClicked"
+                      : curKey === contentArr.current[1].key
+                      ? "unClicked"
+                      : "w-[200px]"
+                  }`}
+                />
               ) : null}
             </div>
           </div>
 
           {/* third containter */}
           <div
-            className={`absolute w-[500px]  h-full  right-0 z-30 ${
-              curKey === ""
-                ? ""
-                : curKey === contentArr.current[2].key && pastKey === ""
-                ? "selected"
-                : curKey === contentArr.current[2].key && pastKey !== ""
-                ? "selectedWhenOpened"
-                : "clicked"
+            className={`absolute  h-full  right-0 z-30 ${
+              curKey === "" || curKey === contentArr.current[2].key ? "w-[500px]" : "w-[200px]"
             }`}>
             <div
-              className={`relative w-[520px]  h-full right-0 ${
-                curKey === "" && pastKey === contentArr.current[2].key
-                  ? "unClickedWhenSelected"
-                  : curKey === "" && pastKey !== contentArr.current[2].key
+              className={`relative w-[500px]  h-full right-0 ${
+                curKey === ""
+                  ? "w-[500px]"
+                  : curKey === contentArr.current[2].key
                   ? "unClicked"
-                  : curKey === contentArr.current[2].key && pastKey === ""
-                  ? "selected"
-                  : curKey === contentArr.current[2].key && pastKey !== ""
-                  ? "selectedWhenOpened"
-                  : "clicked"
+                  : "w-[200px]"
               }`}>
               <Image
                 src={contentArr.current[2].srcPath}
                 data-key={contentArr.current[2].key}
                 alt="measure img"
                 layout="fill"
+                sizes="520px"
                 className={`h-full object-cover rounded-forImg  `}
               />
               {curKey === "" ? (
-                <ImageCover width="520px" z={30} data-key={contentArr.current[2].key} />
+                <ImageCover width="500px" z={30} data-key={contentArr.current[2].key} />
               ) : curKey !== contentArr.current[2].key ? (
                 <ImageCover width="200px" z={30} data-key={contentArr.current[2].key} />
               ) : null}
@@ -196,7 +207,7 @@ const MeasureCard = () => {
       <ScrollContainer
         role="button"
         // onClick={onCardClick}
-        className={`flex md:hidden snap-x snap-mandatory  overflow-auto  `}>
+        className={`flex lg:hidden snap-x snap-mandatory  overflow-auto  `}>
         {contentArr.current.map((c) => (
           <div className={`snap-center `}>
             <div
@@ -208,6 +219,7 @@ const MeasureCard = () => {
                 data-key={c.key}
                 alt={c.title}
                 layout="fill"
+                sizes="90vw"
                 className={`h-full object-cover rounded-landing_mobile  `}
               />
             </div>
@@ -215,14 +227,6 @@ const MeasureCard = () => {
               <div className="text-[4vw] py-[1vh] pt-[8vh] font-bold text-center  ">{c.title}</div>
               <div className="text-[2.8vw] px-[5vw] mb-[1.5vh]">{c.content}</div>
             </div>
-            {/* {c.key === curContent?.key && c.key !== pastKey && (
-              <div className="relative mx-[0.7vw] border-[0.5vw] rounded-b-landing_mobile border-t-0 top-[-5vh] z-[-10] animate-fadein">
-                <div className="text-[4vw] py-[1vh] pt-[8vh] font-bold text-center  ">
-                  {curContent?.title}
-                </div>
-                <div className="text-[2.8vw] px-[5vw] mb-[1.5vh]">{curContent?.content}</div>
-              </div>
-            )} */}
           </div>
         ))}
       </ScrollContainer>
@@ -239,7 +243,7 @@ const ImageCover = styled.div<{width: string; z: number}>`
   z-index: ${({z}) => z};
   background-color: #888888;
   mix-blend-mode: multiply;
-  transition: all 0.2s ease-out;
+  transition: background-color 0.1s ease-out;
   border-radius: 2.5rem;
 
   &:hover {
@@ -255,6 +259,21 @@ const clicked = keyframes`
 
 `;
 
+const to57 = keyframes`
+  from{
+  }to{
+    width:57%;
+  }
+`;
+
+const from57toFull = keyframes`
+  from{
+    width:57%;
+  }to{
+    width:100%;
+  }
+`;
+
 const unClicked = keyframes`
   from{
     width:200px;
@@ -262,70 +281,6 @@ const unClicked = keyframes`
     
   }
 
-`;
-
-const selected = keyframes`
-from{
- 
-}to{
-  width:550px;
-}
-`;
-
-const unClickedWhenSelected = keyframes`
-  from{
-    width:550px;
-  }to{
-    width:500px;
-  }
-
-`;
-
-const selectedWhenOpened = keyframes`
-from{
-  width:100px;
-}to{
-  width:550px;
-}
-`;
-
-// 첫번째 컨테이너 클릭 시 두번째 컨테이너의 위치 변경을 위함
-const firstOneClicked = keyframes`
-from{
-}to{
-  width:200px;
-  margin-right:5%;
-}
-`;
-
-const firstOneClickedWhenOpened = keyframes`
-from{
-  margin-right:3%;
-}to{
-  width:200px;
-  margin-right:5%;
-}
-`;
-
-const secondOneClickedWhenOpened = keyframes`
-from{
-  width:40%;
-  margin-right:5%;
-}to{
-  width:550px;
-  margin-right:0%;
-}
-`;
-
-// 세번째 컨테이너 클릭 시 두번째 컨테이너의 위치 변경을 위함
-const thirdOneClickedWhenOpened = keyframes`
-from{
-  width:10%;
-  margin-right:32%;
-}to{
-  width:200px;
-  margin-right:32%;
-}
 `;
 
 const Wrapper = styled.div`
@@ -336,29 +291,11 @@ const Wrapper = styled.div`
     animation: ${unClicked} 0.2s ease-out 1 forwards;
   }
 
-  .unClickedWhenSelected {
-    animation: ${unClickedWhenSelected} 0.2s ease-out 1 forwards;
-  }
-  .selected {
-    animation: ${selected} 0.2s ease-out 1 forwards;
+  .to57 {
+    animation: ${to57} 0.2s ease-out 1 forwards;
   }
 
-  .firstOneClicked {
-    animation: ${firstOneClicked} 0.2s ease-out 1 forwards;
-  }
-
-  .firstOneClickedWhenOpened {
-    animation: ${firstOneClickedWhenOpened} 0.2s ease-out 1 forwards;
-  }
-
-  .secondOneClickedWhenOpened {
-    animation: ${secondOneClickedWhenOpened} 0.2s ease-out 1 forwards;
-  }
-
-  .thirdOneClickedWhenOpened {
-    animation: ${thirdOneClickedWhenOpened} 0.2s ease-out 1 forwards;
-  }
-  .selectedWhenOpened {
-    animation: ${selectedWhenOpened} 0.2s ease-out 1 fowards;
+  .from57toFull {
+    animation: ${from57toFull} 0.2s ease-out 1 forwards;
   }
 `;

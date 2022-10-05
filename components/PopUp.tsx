@@ -1,8 +1,11 @@
 import React, {useState, useRef, memo, useEffect} from "react";
+import Image from "next/image";
 import styled from "styled-components";
 import {setCookie} from "cookies-next";
 import {PopUpContents} from "../functions/PopUpContents";
 import {CookieKey} from "../constants/enum/cookie_key.enum";
+import pcBackground from "../public/images/popup_background.png";
+import mbBackground from "../public/images/mobile_popup_background.png";
 
 const PopUp = () => {
   const [isOpened, setIsOpened] = useState(true);
@@ -13,7 +16,6 @@ const PopUp = () => {
   useEffect(() => {
     if (!doesHideToday) return;
     const expireDate = new Date();
-    // expireDate.setDate(expireDate.getMinutes() + 10);
     expireDate.setDate(expireDate.getDate() + 1);
 
     const options = {path: "/", expires: expireDate};
@@ -46,7 +48,17 @@ const PopUp = () => {
           className={`flex justify-center items-center  fixed top-0 left-0 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)] z-[999] `}>
           {/* PC version */}
           <div
-            className={`hidden md:block landscape:block absolute w-[880px] h-[490px] bg-popup-img bg-cover z-[200] rounded-forPopup  shadow-md `}>
+            className={`hidden md:block landscape:block absolute w-[880px] h-[490px]  bg-cover z-[200] rounded-forPopup  shadow-md `}>
+            <div className="w-full h-full absolute">
+              <Image
+                priority
+                src={pcBackground}
+                alt="background"
+                sizes="880px"
+                layout="fill"
+                className="object-cover"
+              />
+            </div>
             <div className="px-[34px] py-[37px]">
               <div
                 role="button"
@@ -89,12 +101,21 @@ const PopUp = () => {
           </div>
 
           {/* Moblie version */}
-          <MobliePopUp className="md:hidden landscape:hidden relative  overflow-hidden m-auto w-[77vw] h-[68vh] bg-popup-img-moblie bg-cover pt-[1.7vh]">
+          <MobliePopUp className="md:hidden landscape:hidden relative  overflow-hidden m-auto w-[77vw] h-[68vh] bg-cover pt-[1.7vh]">
+            <div className="absolute w-full h-full">
+              <Image
+                src={mbBackground}
+                alt="popup background"
+                layout="fill"
+                sizes="77vw"
+                className="object-cover z-[-10]"
+              />
+            </div>
             <div
               role="button"
               id={delBtnId.current}
               onClick={onDelbtnClick}
-              className="relative text-1vw] font-normal text-light_gray  hover:cursor-pointer left-[4vw]">
+              className="relative top-[2vh] font-normal text-light_gray  hover:cursor-pointer left-[4vw]">
               ×
             </div>
             <div className="text-[4.5vw] font-bold text-center whitespace-pre mt-[2vh] mb-[2vh]">

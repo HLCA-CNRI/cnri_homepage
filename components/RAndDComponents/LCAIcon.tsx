@@ -15,7 +15,9 @@ const LCAIcon = memo(({content, isOpened}: PropsType) => {
       <div className="w-[17vw] h-[17vw] mx-auto mt-[1vh]">
         <img src={isOpened ? content.svg_white : content.svg_colored} alt={content.kTitle} />
       </div>
-      <div className={`text-[3vw] ${isOpened ? "text-white" : ""}`}>{content.kTitle}</div>
+      <div className={`text-[3vw] font-medium ${isOpened ? "text-white" : ""}`}>
+        {content.kTitle}
+      </div>
     </div>
   );
 });

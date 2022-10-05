@@ -1,4 +1,5 @@
 import {useEffect, memo} from "react";
+import Image from "next/image";
 import {useInView} from "react-intersection-observer";
 import {motion, useAnimation} from "framer-motion";
 import {NextSeo} from "next-seo";
@@ -8,8 +9,7 @@ import LCA from "../../components/RAndDComponents/LCA";
 import PartnershipMobile from "../../components/RAndDComponents/PartnershipMobile";
 import LCAMobile from "../../components/RAndDComponents/LCAMobile";
 import {SectionTitleStyle} from "../../styles/commonStyles";
-import LCAIcon from "../../components/RAndDComponents/LCAIcon";
-import LCAContents from "../../functions/LCAContents";
+
 // R&D Page seo 내용
 const randdSeo = {
   title: "R&D",
@@ -25,6 +25,10 @@ function Randd() {
   const controlVid = useAnimation(); // Welcoming section에서 배경 애니메이션
   const [ref, inView] = useInView(); // react-intersection-observer 쓰이는 hook.사용자가 view안에 접근했는지 확인.
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // 처음 뷰 접근할때 애니메이션 기능
   useEffect(() => {
     if (inView) {
@@ -37,21 +41,23 @@ function Randd() {
     <>
       <NextSeo {...randdSeo} />
 
-      <div className="mx-[3vw] 2xl:mx-20">
+      <div className="snap-mandatory mx-[3vw] 2xl:mx-auto  2xl:w-[1450px] 2xl:px-[200px] ">
         {/* Welcoming Section */}
-        <section className="block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh] 2xl:w-[1300px] mx-auto">
+        <section className="snap-center block md:hidden relative my-[3vh] mb-[5vh] md:mb-[10vh]  mx-auto">
           {/* Welcoming Section */}
           {/* TODO:md 싸이즈 이상일때 transition 적용 */}
           <motion.div
             ref={ref}
-            className="h-[60vh] sm:h-[80vh]"
+            className="h-[60vh] sm:h-[80vh] relative"
             animate={controlVid}
             initial="vidHidden"
             variants={TransitionVariants.TansitionVidLToR}>
-            <img
+            <Image
               alt="rAnddIntro"
               src="/images/rAnddIntro.jpg"
-              className="object-cover h-full w-full rounded-lg shadow-lg"
+              layout="fill"
+              priority
+              className="object-cover  rounded-lg shadow-lg"
             />
           </motion.div>
           {/* FIXME:애니메이션 기능 적용하면 모바일에서 깨짐.. */}
@@ -70,28 +76,28 @@ function Randd() {
         </section>
         {/* LCA Section */}
 
-        <div className="2xl:mx-auto 2xl:w-[1300px] text-center md:text-left ">
-          <div className="w-[100%] ">
+        <div className="snap-start md:snap-align-none text-center md:text-left  ">
+          <div className=" w-[100%] ">
             <SectionTitleStyle>What is LCA?</SectionTitleStyle>
             {/* When display size is greater than md  */}
 
-            <div className="hidden md:flex">
+            <div className="lg:snap-end hidden lg:flex lg:mt-[10px]">
               <LCA />
             </div>
 
             {/* When display size is smaller than md  */}
-            <div className=" md:hidden">
+            <div className="snap-center  lg:hidden">
               <LCAMobile />
             </div>
-            <div className="md:hidden"></div>
+            {/* <div className="md:hidden"></div> */}
 
             <div className="grid grid-cols-2" />
           </div>
           {/* Partnership Section */}
-          <div className="w-[100%] mt-[6vh] md:mt-[12vh]">
+          <div className="snap-center md:snap-align-none w-[100%] mt-[6vh] ">
             <SectionTitleStyle>Our Work and Partnership</SectionTitleStyle>
             {/* When display size is greater than md  */}
-            <div className="hidden xl:flex">
+            <div className="hidden xl:flex xl:justify-center xl:mt-[10px]">
               <Partnership />
             </div>
             {/* When display size is smaller than md  */}

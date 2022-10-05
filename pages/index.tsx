@@ -1,25 +1,21 @@
-import Head from "next/head";
 import Link from "next/link";
-import {memo} from "react";
-import LandingMobile from "../components/LandingComponents.tsx/LandingMobile";
-import TransitionVariants from "../functions/TransitionVariants";
-import VerticalSlidingCard from "../components/LandingComponents.tsx/VerticalSlidingCard";
-import HorizontalSlidingCard from "../components/LandingComponents.tsx/HorizontalSlidingCard";
+import {memo, useEffect} from "react";
 import LandingContents from "../functions/LandingContents";
 import {SectionTitleStyle, SectionSubTitleStyle, LinkButton} from "../styles/commonStyles";
-import ReduceCard from "../components/LandingComponents.tsx/ReduceCard";
-import colors from "../constants/colors";
 import ReduceCards from "../components/LandingComponents.tsx/ReduceCards";
 import RemoveCards from "../components/LandingComponents.tsx/RemoveCards";
 import ReportCard from "../components/LandingComponents.tsx/ReportCard";
 import MeasureCard from "../components/LandingComponents.tsx/MeasureCard";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       {/* Welcoming Section */}
-      <div className="">
-        <div className="pt-[5vh]">
+      <div className="snap-mandatory">
+        <div className="pt-[5vh] snap-center">
           <div className="flex justify-center font-bold text-[7vw] md:text-[5vw] 2xl:text-[60px]">
             넷제로 달성을 위해 필요한
           </div>
@@ -35,7 +31,7 @@ function Home() {
             CIET
           </LinkButton>
         </div>
-        <div className="flex justify-center ">
+        <div className="flex justify-center snap-center">
           <video
             autoPlay
             loop
@@ -65,9 +61,9 @@ function Home() {
           <div className="py-[1.7vh] mx-[3vw]  cursor-pointer">보고서</div>
         </Link>
       </section>
-      <section className="flex-col justify-center items-center 2xl:w-[1450px]  mx-auto 2xl:px-[200px] px-[3vw] pb-[130px] ">
+      <section className=" flex-col justify-center items-center 2xl:w-[1450px]  mx-auto 2xl:px-[200px] px-[3vw] pb-[130px] ">
         {/* Measure Section */}
-        <section id="measure" className="scroll-mt-28 ">
+        <section id="measure" className="snap-center scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Measure.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Measure.subtitle}</SectionSubTitleStyle>
 
@@ -76,7 +72,7 @@ function Home() {
         </section>
 
         {/* Reduce Section */}
-        <section id="reduce" className="scroll-mt-28 ">
+        <section id="reduce" className="snap-center scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Reduce.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Reduce.subtitle}</SectionSubTitleStyle>
 
@@ -85,7 +81,7 @@ function Home() {
         </section>
 
         {/* Remove Section */}
-        <section id="remove" className=" scroll-mt-28 ">
+        <section id="remove" className="snap-center  scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Remove.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Remove.subtitle}</SectionSubTitleStyle>
 
@@ -94,7 +90,7 @@ function Home() {
         </section>
 
         {/* Report Section */}
-        <section id="report" className="scroll-mt-28 ">
+        <section id="report" className="snap-center scroll-mt-28 ">
           <SectionTitleStyle>{LandingContents.Report.title}</SectionTitleStyle>
           <SectionSubTitleStyle>{LandingContents.Report.subtitle}</SectionSubTitleStyle>
           {/* When display is greater than md */}

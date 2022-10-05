@@ -1,5 +1,4 @@
 import React, {memo, useRef, useState} from "react";
-// import ScrollContainer from "react-indiana-drag-scroll";
 import {ArrowDirection} from "../../constants/enum/arrow_direction.enum";
 import MemberContent from "../../functions/MemberContent";
 import {ScrollContainer} from "../../styles/commonStyles";
@@ -8,14 +7,16 @@ import MemberCard from "./MemberCard";
 
 const Members = memo(() => {
   const [curFirstIdx, setCurFirstIdx] = useState(0);
-  //   const [cur];s
   const members = useRef([
     MemberContent.min,
     MemberContent.jonghoh,
     MemberContent.prof,
     MemberContent.minhyeok,
+    MemberContent.seungbum,
     MemberContent.kyunghoh,
-    MemberContent.cherin,
+    MemberContent.minhee,
+    MemberContent.jeongyun,
+    MemberContent.hyelim,
   ]);
 
   const onArrowClick = (e: any) => {
@@ -32,34 +33,33 @@ const Members = memo(() => {
     }
   };
   return (
-    <div className="flex w-[100%] flex-nowrap items-center">
+    <div className="w-full">
       {/* PC ver */}
-      <div className="hidden xl:flex flex-nowrap items-center justify-center">
+      <div className="hidden xl:flex  items-center justify-center h-full">
         <div
           role="button"
-          className={`mt-[200px] ${curFirstIdx === 0 ? "invisible" : ""} `}
+          className={`block h-full  pt-[130px] ${curFirstIdx === 0 ? "invisible" : ""} `}
           onClick={onArrowClick}
           id={ArrowDirection.LEFT}>
-          <div className="w-[30px]">
+          <div className="w-[20px] mr-6 h-full">
             <Arrow direction={ArrowDirection.LEFT} />
           </div>
         </div>
-        <div className=" flex overflow-hidden">
-          {members.current.map(
-            (m, idx) =>
-              (idx === curFirstIdx || idx === curFirstIdx + 1 || idx === curFirstIdx + 2) && (
-                <div key={m.name} className="mx-10 ">
-                  <MemberCard member={m} />
-                </div>
-              )
-          )}
-        </div>
+
+        {members.current.map(
+          (m, idx) =>
+            (idx === curFirstIdx || idx === curFirstIdx + 1 || idx === curFirstIdx + 2) && (
+              <div key={m.name} className={`${idx === curFirstIdx + 1 ? "mx-8" : ""}`}>
+                <MemberCard member={m} />
+              </div>
+            )
+        )}
         <div
           role="button"
-          className={`mt-[200px] ${curFirstIdx === members.current.length - 3 ? "invisible" : ""} `}
+          className={`mt-[130px] ${curFirstIdx === members.current.length - 3 ? "invisible" : ""} `}
           onClick={onArrowClick}
           id={ArrowDirection.RIGHT}>
-          <div className="w-[30px]">
+          <div className="w-[20px] ml-6">
             <Arrow direction={ArrowDirection.RIGHT} />
           </div>
         </div>
@@ -68,7 +68,7 @@ const Members = memo(() => {
       {/* mobile ver */}
       <ScrollContainer className="snap-x snap-mandatory xl:hidden scroll-container flex overflow-auto cursor-pointer pb-[3vh]">
         {members.current.map((m) => (
-          <div key={m.name} className="mx-10 snap-center">
+          <div key={m.name} className="mx-8 snap-center">
             <MemberCard member={m} />
           </div>
         ))}

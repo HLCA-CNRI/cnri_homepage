@@ -7,7 +7,7 @@ const PhilosophyContent = {
       "지속 가능한 지구를 실현해내겠습니다.",
     ],
     videoPath: "./video/philosophy1.mp4",
-    imgPath: "./images/philosophy1Pic.png",
+    imgPath: "/images/philosophy1Pic.png",
   },
   vision: {
     title: "Vision",
@@ -17,7 +17,7 @@ const PhilosophyContent = {
       "모든 탄소를 찾아내겠습니다.",
     ],
     videoPath: "./video/philosophy2.mp4",
-    imgPath: "./images/philosophy2Pic.png",
+    imgPath: "/images/philosophy2Pic.png",
   },
   coreValues: {
     title: "Core Values",
@@ -27,7 +27,7 @@ const PhilosophyContent = {
       "기술혁신이 불러오는 세상의 변화",
     ],
     videoPath: "./video/philosophy3.mp4",
-    imgPath: "./images/philosophy3Pic.png",
+    imgPath: "/images/philosophy3Pic.png",
   },
 };
 

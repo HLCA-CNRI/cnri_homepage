@@ -23,6 +23,7 @@ const RemoveCards = () => {
             onClick={onCardClick}
             className="flex-1 ">
             <RemoveCard
+              sizes="510px"
               contents={LandingContents.Remove.content1}
               isOpened={curKey === LandingContents.Remove.content1.key}
             />
@@ -33,6 +34,7 @@ const RemoveCards = () => {
             onClick={onCardClick}
             className="flex-1 mr-[40px]">
             <RemoveCard
+              sizes="510px"
               contents={LandingContents.Remove.content2}
               isOpened={curKey === LandingContents.Remove.content2.key}
             />
@@ -48,7 +50,7 @@ const RemoveCards = () => {
             data-key={c.key}
             onClick={onCardClick}
             className="snap-center mx-[2vw]">
-            <RemoveCard contents={c} isOpened />
+            <RemoveCard sizes="90vw" contents={c} isOpened />
           </div>
         ))}
       </ScrollContainer>

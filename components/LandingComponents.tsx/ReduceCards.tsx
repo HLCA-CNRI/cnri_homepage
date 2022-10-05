@@ -31,6 +31,7 @@ const ReduceCards = () => {
             onClick={onCardClick}
             className="mr-[30px] flex-1">
             <ReduceCard
+              sizes="50vw"
               isOpened={curKey === LandingContents.Reduce.content1.key}
               contents={LandingContents.Reduce.content1}
               bgColor={colors.CNRI_LIGHT_GREEN}
@@ -42,6 +43,7 @@ const ReduceCards = () => {
             onClick={onCardClick}
             className=" flex-1">
             <ReduceCard
+              sizes="50vw"
               isOpened={curKey === LandingContents.Reduce.content2.key}
               contents={LandingContents.Reduce.content2}
               bgColor={colors.CNRI_DARK_GREEN}
@@ -54,6 +56,7 @@ const ReduceCards = () => {
           onClick={onCardClick}
           className="flex  mt-[30px] flex-1">
           <ReduceCard
+            sizes="90vw"
             isOpened={curKey === LandingContents.Reduce.content3.key}
             contents={LandingContents.Reduce.content3}
             bgColor={colors.CNRI_DARK_BLUE}
@@ -67,6 +70,7 @@ const ReduceCards = () => {
           {contents.current.map((c, idx) => (
             <div role="button" data-key={c.key} onClick={onCardClick} className="snap-center  ">
               <ReduceCard
+                sizes="90vw"
                 contents={c}
                 bgColor={contentColor.current[idx]}
                 isOpened={curKey === c.key}

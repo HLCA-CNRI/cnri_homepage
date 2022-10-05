@@ -9,7 +9,7 @@ const HistoryCard = memo(({content}: {content: HistoryContentType}) => {
   return (
     <div
       className={` basis-[400px] my-[1vh] md:mx-[10px] flex flex-grow flex-col items-center    border-2 rounded-forImg   transition-all duration-[0.5s] bg-[white] mx-auto  ${
-        isOpened ? "h-[63vh] md:h-[440px]   bg-history_gradient" : "h-[11vh] md:h-[90px]"
+        isOpened ? "h-[140vw] md:h-[500px]   bg-history_gradient" : "h-[11vh] md:h-[90px]"
       }`}>
       <div
         role="button"

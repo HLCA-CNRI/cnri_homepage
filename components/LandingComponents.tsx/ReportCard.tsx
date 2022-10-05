@@ -34,7 +34,7 @@ const ReportCard = ({content}: IReportCard) => {
       {/* PC ver */}
       <div
         role="button"
-        className={`hidden md:flex w-full h-[20rem] flex flex-row cursor-pointer flex justify-center relative 
+        className={`hidden lg:flex w-full h-[20rem] flex flex-row cursor-pointer flex justify-center relative 
       }`}
         onClick={onCardClick}>
         {/* 이미지 */}
@@ -73,7 +73,7 @@ const ReportCard = ({content}: IReportCard) => {
 
       {/* Mobile ver */}
       <div
-        className="flex flex-col justify-center items-center md:hidden"
+        className="flex flex-col justify-center items-center lg:hidden"
         role="button"
         onClick={onCardClick}>
         {/* 이미지 */}
@@ -92,10 +92,10 @@ const ReportCard = ({content}: IReportCard) => {
         {/* 텍스트 */}
         {isOpened && (
           <div className="animate-fadein">
-            <div className="text-landing_mobile_title font-bold text-center py-[2vh] mt-[1vh] ">
+            <div className="text-landing_mobile_title  font-bold text-center py-[2vh] mt-[1vh] ">
               {content.title}
             </div>
-            <div className="text-landing_mobile_content px-[4vw]"> {content.content}</div>
+            <div className="text-landing_mobile_content  px-[4vw]"> {content.content}</div>
           </div>
         )}
       </div>

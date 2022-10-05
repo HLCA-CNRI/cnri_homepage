@@ -82,12 +82,12 @@ function Randd() {
             <SectionTitleStyle>What is LCA?</SectionTitleStyle>
             {/* When display size is greater than md  */}
 
-            <div className="md:snap-end hidden md:flex md:mt-[10px]">
+            <div className="lg:snap-end hidden lg:flex lg:mt-[10px]">
               <LCA />
             </div>
 
             {/* When display size is smaller than md  */}
-            <div className="snap-center  md:hidden">
+            <div className="snap-center  lg:hidden">
               <LCAMobile />
             </div>
             {/* <div className="md:hidden"></div> */}

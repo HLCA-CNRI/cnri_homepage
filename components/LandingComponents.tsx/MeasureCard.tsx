@@ -66,7 +66,7 @@ const MeasureCard = () => {
       <Wrapper
         role="button"
         onClick={onCardClick}
-        className="hidden md:flex  w-full h-[360px]  flex-row cursor-pointer flex justify-center relative">
+        className="hidden lg:flex  w-full h-[360px]  flex-row cursor-pointer flex justify-center relative">
         {/* Images */}
         <div className="absolute w-full h-full rounded-forImg ">
           {/* first container */}
@@ -212,7 +212,7 @@ const MeasureCard = () => {
       <ScrollContainer
         role="button"
         // onClick={onCardClick}
-        className={`flex md:hidden snap-x snap-mandatory  overflow-auto  `}>
+        className={`flex lg:hidden snap-x snap-mandatory  overflow-auto  `}>
         {contentArr.current.map((c) => (
           <div className={`snap-center `}>
             <div

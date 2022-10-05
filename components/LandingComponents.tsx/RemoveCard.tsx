@@ -35,10 +35,10 @@ const RemoveCard = ({
         className={` ${
           isOpened ? "animate-fadein " : "hidden md:animate-fadeout"
         } flex flex-col items-center justify-center `}>
-        <div className="text-landing_mobile_title border-t-[0.1vh] pt-[2vh] pb-[1.2vh] mt-[2vh] md:text-[24px] md:pt-[1.6rem] md:pb-4 md:mt-5  md:border-t-[2px] font-bold  border-slate-600 w-[95%] text-center ">
+        <div className="text-landing_mobile_title border-t-[0.1vh] pt-[2vh] pb-[1.2vh] mt-[2vh] md:text-[3.8vw] lg:text-[24px] md:pt-[1.6rem] md:pb-4 md:mt-5  md:border-t-[2px] font-bold  border-slate-600 w-[95%] text-center ">
           {contents.title}
         </div>
-        <div className="text-landing_mobile_content md:text-[14.5px]  md:w-[83%] md:leading-[160%]">
+        <div className="text-landing_mobile_content md:text-[2vw] lg:text-[14.5px]  md:w-[83%] md:leading-[160%]">
           {contents.content}
         </div>
       </div>

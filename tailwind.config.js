@@ -585,7 +585,7 @@ module.exports = {
       min: "min-content",
       max: "max-content",
       fit: "fit-content",
-      landing_mobile: "25vh",
+      landing_mobile: "55vw",
     }),
     inset: ({theme}) => ({
       auto: "auto",

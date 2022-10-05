@@ -1,5 +1,4 @@
 import React, {memo, useRef, useState} from "react";
-// import ScrollContainer from "react-indiana-drag-scroll";
 import {ArrowDirection} from "../../constants/enum/arrow_direction.enum";
 import MemberContent from "../../functions/MemberContent";
 import {ScrollContainer} from "../../styles/commonStyles";
@@ -8,7 +7,6 @@ import MemberCard from "./MemberCard";
 
 const Members = memo(() => {
   const [curFirstIdx, setCurFirstIdx] = useState(0);
-  //   const [cur];s
   const members = useRef([
     MemberContent.min,
     MemberContent.jonghoh,

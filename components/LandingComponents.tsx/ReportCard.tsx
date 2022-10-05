@@ -24,11 +24,6 @@ const ReportCard = ({content}: IReportCard) => {
     setIsOpened((cur) => !cur);
   }, [isOpened]);
 
-  // 모바일 카드 클릭한 경우
-  const onMobileClick = useCallback(() => {
-    // TODO
-  }, [isOpened]);
-
   return (
     <>
       {/* PC ver */}

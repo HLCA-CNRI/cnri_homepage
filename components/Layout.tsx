@@ -1,6 +1,6 @@
 import {memo, ReactNode, useState, useEffect} from "react";
 import {useRouter} from "next/router";
-import {hasCookie, deleteCookie, getCookie, getCookies} from "cookies-next";
+import {hasCookie, deleteCookie} from "cookies-next";
 import Footer from "./LayoutComponents/Footer";
 import NavBar from "./LayoutComponents/NavBar";
 import PopUp from "./PopUp";
@@ -34,8 +34,3 @@ function Layout({children}: LayoutInterface) {
 }
 
 export default memo(Layout);
-
-// const Wrapper=styled.div`
-//   background-image :
-
-// `

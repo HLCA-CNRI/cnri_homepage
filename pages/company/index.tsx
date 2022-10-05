@@ -1,9 +1,8 @@
 import {motion, useAnimation} from "framer-motion";
-import {useEffect, memo, useRef} from "react";
+import {useEffect, memo} from "react";
 import Image from "next/image";
 import {useInView} from "react-intersection-observer";
 import {NextSeo} from "next-seo";
-// import ScrollContainer from "react-indiana-drag-scroll";
 import TransitionVariants from "../../functions/TransitionVariants";
 import PhilosophyComp from "../../components/CompanyComponents/PhilosophyComp";
 import PhilosophyContent from "../../functions/PhilosophyContent";

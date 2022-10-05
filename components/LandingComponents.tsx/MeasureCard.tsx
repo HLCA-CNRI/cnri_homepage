@@ -6,11 +6,6 @@ import LandingContents, {LandingSubContentsType} from "../../functions/LandingCo
 import TransitionVariants from "../../functions/TransitionVariants";
 import {ScrollContainer} from "../../styles/commonStyles";
 
-// interface IReportCard {
-//   // 카드 내용
-//   content: LandingSubContentsType;
-// }
-
 const MeasureCard = () => {
   const controlText = useAnimation(); // 내용 애니메이션 variant
   const [curContent, setCurContent] = useState<LandingSubContentsType>();
@@ -232,14 +227,6 @@ const MeasureCard = () => {
               <div className="text-[4vw] py-[1vh] pt-[8vh] font-bold text-center  ">{c.title}</div>
               <div className="text-[2.8vw] px-[5vw] mb-[1.5vh]">{c.content}</div>
             </div>
-            {/* {c.key === curContent?.key && c.key !== pastKey && (
-              <div className="relative mx-[0.7vw] border-[0.5vw] rounded-b-landing_mobile border-t-0 top-[-5vh] z-[-10] animate-fadein">
-                <div className="text-[4vw] py-[1vh] pt-[8vh] font-bold text-center  ">
-                  {curContent?.title}
-                </div>
-                <div className="text-[2.8vw] px-[5vw] mb-[1.5vh]">{curContent?.content}</div>
-              </div>
-            )} */}
           </div>
         ))}
       </ScrollContainer>

@@ -1,14 +1,7 @@
-import Head from "next/head";
 import Link from "next/link";
 import {memo, useEffect} from "react";
-import LandingMobile from "../components/LandingComponents.tsx/LandingMobile";
-import TransitionVariants from "../functions/TransitionVariants";
-import VerticalSlidingCard from "../components/LandingComponents.tsx/VerticalSlidingCard";
-import HorizontalSlidingCard from "../components/LandingComponents.tsx/HorizontalSlidingCard";
 import LandingContents from "../functions/LandingContents";
 import {SectionTitleStyle, SectionSubTitleStyle, LinkButton} from "../styles/commonStyles";
-import ReduceCard from "../components/LandingComponents.tsx/ReduceCard";
-import colors from "../constants/colors";
 import ReduceCards from "../components/LandingComponents.tsx/ReduceCards";
 import RemoveCards from "../components/LandingComponents.tsx/RemoveCards";
 import ReportCard from "../components/LandingComponents.tsx/ReportCard";

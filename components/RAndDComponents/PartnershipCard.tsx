@@ -1,4 +1,4 @@
-import React, {memo, useEffect, useRef} from "react";
+import React, {memo} from "react";
 import Image from "next/image";
 import {PartnershipContentType} from "../../functions/PartnershipContent";
 

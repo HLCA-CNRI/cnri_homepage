@@ -16,7 +16,6 @@ const PopUp = () => {
   useEffect(() => {
     if (!doesHideToday) return;
     const expireDate = new Date();
-    // expireDate.setDate(expireDate.getMinutes() + 10);
     expireDate.setDate(expireDate.getDate() + 1);
 
     const options = {path: "/", expires: expireDate};

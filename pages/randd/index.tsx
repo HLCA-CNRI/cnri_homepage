@@ -9,8 +9,7 @@ import LCA from "../../components/RAndDComponents/LCA";
 import PartnershipMobile from "../../components/RAndDComponents/PartnershipMobile";
 import LCAMobile from "../../components/RAndDComponents/LCAMobile";
 import {SectionTitleStyle} from "../../styles/commonStyles";
-import LCAIcon from "../../components/RAndDComponents/LCAIcon";
-import LCAContents from "../../functions/LCAContents";
+
 // R&D Page seo 내용
 const randdSeo = {
   title: "R&D",

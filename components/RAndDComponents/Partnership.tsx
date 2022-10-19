@@ -61,7 +61,7 @@ function Partnership() {
               content={c}
               isLeft={idx < 3}
               isOpened={curContentTitle === c.title}
-              contentIdx={0}
+              contentIdx={curImgIdx}
               isLast={idx === contents.current.length - 1}
             />
           </div>

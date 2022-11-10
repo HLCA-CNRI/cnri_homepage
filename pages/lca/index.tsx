@@ -153,7 +153,7 @@ function lca() {
 
       {/* 상단 내비게이션 */}
       <TopNav scrollY={scrollY}>
-        <p className="hidden sm:block xl:text-lg">{contents.topNavText}</p>
+        <p className="xl:text-lg">{contents.topNavText}</p>
         <ul>
           <li>
             <a href="#01">01</a>
@@ -172,32 +172,37 @@ function lca() {
 
       {/* 주요 내용 */}
       <Main>
-        {contents.sectionContents.map((sectionContent) => (
-          <Section key={sectionContent.numberString} id={sectionContent.numberString}>
-            <SectionTitle>
-              <h2>{sectionContent.numberString}</h2>
-              <h3>{sectionContent.title}</h3>
-            </SectionTitle>
-            <SectionContent>
-              <SectionImage>
-                <Image
-                  src={sectionContent.imagePath}
-                  alt={sectionContent.imageAlt}
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </SectionImage>
-              <div className="flex flex-col space-y-2 h-full lg:ml-6">
-                <SectionDescription>
-                  {sectionContent.description.map((description) => (
-                    <p key={description}>{description}</p>
-                  ))}
-                </SectionDescription>
-                <SectionDetail sectionContent={sectionContent} />
-              </div>
-            </SectionContent>
-          </Section>
-        ))}
+        {contents.sectionContents.map((sectionContent, index) => {
+          const isEven = (index + 1) % 2 === 0;
+          return (
+            <Section key={sectionContent.numberString} id={sectionContent.numberString}>
+              <SectionTitle className={isEven ? "justify-end" : "justify-start"}>
+                <h2>{sectionContent.numberString}</h2>
+                <h3>{sectionContent.title}</h3>
+              </SectionTitle>
+              <SectionContent>
+                <div className="flex flex-col space-y-2 w-full h-3/4">
+                  <SectionDescription className={isEven ? "items-end" : "items-start"}>
+                    {sectionContent.description.map((description) => (
+                      <p key={description} className={isEven ? "text-right" : "text-left"}>
+                        {description}
+                      </p>
+                    ))}
+                  </SectionDescription>
+                  <SectionDetail sectionContent={sectionContent} index={index} />
+                </div>
+                <SectionImage>
+                  <Image
+                    src={sectionContent.imagePath}
+                    alt={sectionContent.imageAlt}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </SectionImage>
+              </SectionContent>
+            </Section>
+          );
+        })}
       </Main>
 
       {/* 문의하기 */}
@@ -214,7 +219,7 @@ function lca() {
       {/* 풋터 */}
       <Footer>
         <FooterImage>
-          <img src="/images/CNRI_logo_black_under.svg" alt="footerImage" />
+          <Image src="/images/CNRI_logo_black_under.svg" alt="footerImage" layout="fill" />
         </FooterImage>
         <FooterText>
           <div className="grid grid-cols-8 gap-2">
@@ -327,7 +332,7 @@ const TopNav = styled.div<{scrollY: number}>`
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1280px) {
     padding: 0 1rem;
     flex-direction: column;
     justify-content: center;
@@ -343,18 +348,28 @@ const TopNav = styled.div<{scrollY: number}>`
 
 const Main = styled.div`
   width: 100%;
-  // height: fit-content;
   background-color: #fff;
-  padding: 5rem 12rem;
+  padding: 5rem 24rem;
+
+  @media (max-width: 1536px) {
+    padding: 4rem 16rem;
+  }
 
   @media (max-width: 1280px) {
-    padding: 1rem 1rem;
+    padding: 3rem 12rem;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 2rem 8rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
   }
 `;
 
 const Section = styled.div`
   width: 100%;
-  // height: 100%;
   margin-bottom: 5rem;
 `;
 
@@ -362,12 +377,11 @@ const SectionTitle = styled.div`
   width: 100%;
   height: 5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   h2 {
     font-size: 2rem;
     font-weight: 700;
+    margin-right: 1rem;
   }
   h3 {
     font-size: 1.5rem;
@@ -388,27 +402,22 @@ const SectionContent = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: start;
-  align-items: start;
+  align-items: center;
   margin-top: 2rem;
   white-space: pre-line;
-
-  @media (max-width: 1280px) {
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 
 const SectionImage = styled.div`
   position: relative;
-  width: 40%;
-  height: 30rem;
+  width: 100%;
+  height: 50rem;
 
   @media (max-width: 1280px) {
-    width: 100%;
     flex-direction: column;
     align-items: center;
-    height: 20rem;
+    height: 30rem;
   }
 `;
 
@@ -418,7 +427,6 @@ const SectionDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
   p {
     font-size: 1rem;
     font-weight: 400;
@@ -478,6 +486,7 @@ const FooterImage = styled.div`
   height: 100px;
   width: 350px;
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
 
@@ -491,7 +500,6 @@ const FooterText = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0.5rem;
-  // width: 100%;
   height: 5rem;
   justify-content: center;
   align-items: center;

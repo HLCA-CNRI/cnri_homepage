@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@tailwindui/react": "^0.1.1",
+    "@typeform/embed-react": "^2.1.0",
     "classnames": "^2.3.1",
     "cookies-next": "^2.1.1",
     "flowbite": "^1.4.7",

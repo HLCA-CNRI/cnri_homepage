@@ -26,9 +26,9 @@ function Layout({children}: LayoutInterface) {
   return (
     <>
       {router.pathname === "/" && !doesHidePopup && <PopUp />}
-      <NavBar />
+      {router.pathname !== "/lca" && <NavBar />}
       {children}
-      <Footer />
+      {router.pathname !== "/lca" && <Footer />}
     </>
   );
 }

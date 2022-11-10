@@ -1,4 +1,4 @@
-import React, {useState, useRef, memo, useEffect} from "react";
+import {useState, useRef, memo, useEffect} from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import {setCookie} from "cookies-next";
@@ -28,7 +28,7 @@ const PopUp = () => {
     if (id === delBtnId.current) {
       setIsOpened(false);
     } else {
-      window.location.href = "https://lca.oopy.io/";
+      window.open("/lca");
     }
   };
 
@@ -79,7 +79,7 @@ const PopUp = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://lca.oopy.io/"
+                  href={`${window.location.href}/lca`}
                   className="inline-block mx-4 bg-white text-popup_text text-[30px] font-semibold rounded-md px-[30px] py-[8px] shadow-md">
                   안내 바로가기
                 </a>
@@ -156,7 +156,7 @@ const PopUp = () => {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://lca.oopy.io/"
+                  href={`${window.location.href}/lca`}
                   className="block w-full m-0">
                   안내 바로가기
                 </a>

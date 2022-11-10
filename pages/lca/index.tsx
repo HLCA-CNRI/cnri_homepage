@@ -23,7 +23,7 @@ const contents: ContentsType = {
       imagePath: "/images/lca/section1.png",
       imageAlt: "section1",
       description: [
-        "EU의 CBAM(탄소국경세). 탄소회계 상의 Scope3 공급망 관리 이슈로 인해 제품의 LCA 분석의 필요성이 빠르게 증가하고 있습니다.",
+        "EU의 CBAM(탄소국경세), 탄소회계 상의 Scope3 공급망 관리 이슈로 인해 제품의 LCA 분석의 필요성이 빠르게 증가하고 있습니다.",
         "당사는 ISO 14067을 준수하여 LCA 분석을 진행하며 미국의 GREET 프로그램을 적극 활용하여 규제 대응에 최선을 다하고 있습니다.",
       ],
       additionalContents: [

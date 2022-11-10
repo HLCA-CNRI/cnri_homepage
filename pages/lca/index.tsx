@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {Widget} from "@typeform/embed-react";
 import Image from "next/image";
 import {memo, useEffect, useState} from "react";
+import {NextSeo} from "next-seo";
 import SectionDetail, {SectionContentType} from "../../components/LCAComponents/SectionDetail";
 
 type ContentsType = {
@@ -132,6 +133,16 @@ const contents: ContentsType = {
   ],
 };
 
+// LCA Project Page seo 내용
+const lcaProjectSeo = {
+  title: "LCA Project",
+  canonical: "https://www.cnrikorea.com/lca",
+  openGraph: {
+    url: "https://www.cnrikorea.com/lca",
+    title: "LCA Project | CNRIKOREA",
+  },
+};
+
 function lca() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -144,101 +155,104 @@ function lca() {
   }, []);
 
   return (
-    <Wrapper>
-      {/* 최상단 */}
-      <TopPart>
-        <h1>{contents.topTitle}</h1>
-        <p>{contents.topDescription}</p>
-      </TopPart>
+    <>
+      <NextSeo {...lcaProjectSeo} />
+      <Wrapper>
+        {/* 최상단 */}
+        <TopPart>
+          <h1>{contents.topTitle}</h1>
+          <p>{contents.topDescription}</p>
+        </TopPart>
 
-      {/* 상단 내비게이션 */}
-      <TopNav scrollY={scrollY}>
-        <p className="xl:text-lg">{contents.topNavText}</p>
-        <ul>
-          <li>
-            <a href="#01">01</a>
-          </li>
-          <li>
-            <a href="#02">02</a>
-          </li>
-          <li>
-            <a href="#03">03</a>
-          </li>
-          <li>
-            <a href="#contact">문의하기</a>
-          </li>
-        </ul>
-      </TopNav>
+        {/* 상단 내비게이션 */}
+        <TopNav scrollY={scrollY}>
+          <p className="xl:text-lg">{contents.topNavText}</p>
+          <ul>
+            <li>
+              <a href="#01">01</a>
+            </li>
+            <li>
+              <a href="#02">02</a>
+            </li>
+            <li>
+              <a href="#03">03</a>
+            </li>
+            <li>
+              <a href="#contact">문의하기</a>
+            </li>
+          </ul>
+        </TopNav>
 
-      {/* 주요 내용 */}
-      <Main>
-        {contents.sectionContents.map((sectionContent, index) => {
-          const isEven = (index + 1) % 2 === 0;
-          return (
-            <Section key={sectionContent.numberString} id={sectionContent.numberString}>
-              <SectionTitle className={isEven ? "justify-end" : "justify-start"}>
-                <h2>{sectionContent.numberString}</h2>
-                <h3>{sectionContent.title}</h3>
-              </SectionTitle>
-              <SectionContent>
-                <div className="flex flex-col space-y-2 w-full h-3/4">
-                  <SectionDescription className={isEven ? "items-end" : "items-start"}>
-                    {sectionContent.description.map((description) => (
-                      <p key={description} className={isEven ? "text-right" : "text-left"}>
-                        {description}
-                      </p>
-                    ))}
-                  </SectionDescription>
-                  <SectionDetail sectionContent={sectionContent} index={index} />
-                </div>
-                <SectionImage>
-                  <Image
-                    src={sectionContent.imagePath}
-                    alt={sectionContent.imageAlt}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </SectionImage>
-              </SectionContent>
-            </Section>
-          );
-        })}
-      </Main>
+        {/* 주요 내용 */}
+        <Main>
+          {contents.sectionContents.map((sectionContent, index) => {
+            const isEven = (index + 1) % 2 === 0;
+            return (
+              <Section key={sectionContent.numberString} id={sectionContent.numberString}>
+                <SectionTitle className={isEven ? "justify-end" : "justify-start"}>
+                  <h2>{sectionContent.numberString}</h2>
+                  <h3>{sectionContent.title}</h3>
+                </SectionTitle>
+                <SectionContent>
+                  <div className="flex flex-col space-y-2 w-full h-3/4">
+                    <SectionDescription className={isEven ? "items-end" : "items-start"}>
+                      {sectionContent.description.map((description) => (
+                        <p key={description} className={isEven ? "text-right" : "text-left"}>
+                          {description}
+                        </p>
+                      ))}
+                    </SectionDescription>
+                    <SectionDetail sectionContent={sectionContent} index={index} />
+                  </div>
+                  <SectionImage>
+                    <Image
+                      src={sectionContent.imagePath}
+                      alt={sectionContent.imageAlt}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </SectionImage>
+                </SectionContent>
+              </Section>
+            );
+          })}
+        </Main>
 
-      {/* 문의하기 */}
-      <Contact id="contact">
-        <h2>문의하기</h2>
-        <div className="grid xl:grid-cols-2">
-          <Widget id="BsJPJCcK" className="typeform w-full h-[550px]" />
-          <ContactBlock>
-            <div className="upper-line absolute" />
-          </ContactBlock>
-        </div>
-      </Contact>
-
-      {/* 풋터 */}
-      <Footer>
-        <FooterImage>
-          <Image src="/images/CNRI_logo_black_under.svg" alt="footerImage" layout="fill" />
-        </FooterImage>
-        <FooterText>
-          <div className="grid grid-cols-8 gap-2">
-            <span>E-mail</span>
-            <span className="col-span-7">: contact@cnrikorea.com</span>
+        {/* 문의하기 */}
+        <Contact id="contact">
+          <h2>문의하기</h2>
+          <div className="grid xl:grid-cols-2">
+            <Widget id="BsJPJCcK" className="typeform w-full h-[550px]" />
+            <ContactBlock>
+              <div className="upper-line absolute" />
+            </ContactBlock>
           </div>
-          <div className="grid grid-cols-8 gap-2">
-            <span>TEL</span>
-            <span className="col-span-7">: 010-3652-8419</span>
-          </div>
-          <div className="grid grid-cols-8 gap-2">
-            <span>본사</span>
-            <span className="col-span-7">
-              : 서울특별시 관악구 남부순환로 1793(백광빌딩), 9층 CNRIKOREA
-            </span>
-          </div>
-        </FooterText>
-      </Footer>
-    </Wrapper>
+        </Contact>
+
+        {/* 풋터 */}
+        <Footer>
+          <FooterImage>
+            <Image src="/images/CNRI_logo_black_under.svg" alt="footerImage" layout="fill" />
+          </FooterImage>
+          <FooterText>
+            <div className="grid grid-cols-8 gap-2">
+              <span>E-mail</span>
+              <span className="col-span-7">: contact@cnrikorea.com</span>
+            </div>
+            <div className="grid grid-cols-8 gap-2">
+              <span>TEL</span>
+              <span className="col-span-7">: 010-3652-8419</span>
+            </div>
+            <div className="grid grid-cols-8 gap-2">
+              <span>본사</span>
+              <span className="col-span-7">
+                : 서울특별시 관악구 남부순환로 1793(백광빌딩), 9층 CNRIKOREA
+              </span>
+            </div>
+          </FooterText>
+        </Footer>
+      </Wrapper>
+    </>
   );
 }
 

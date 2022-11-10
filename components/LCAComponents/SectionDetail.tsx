@@ -86,11 +86,11 @@ const Wrapper = styled.div`
     transition: transform 0.3s;
     width: 16px;
     height: 16px;
-    transform: rotate(180deg);
+    transform: rotate(0deg);
   }
 
   details[open] .arrow {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
 `;
 

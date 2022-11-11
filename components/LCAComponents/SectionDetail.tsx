@@ -108,6 +108,11 @@ const DetailsSummary = styled.details`
     line-height: 1.25rem;
     color: #dcdcdc;
     margin-bottom: 1rem;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
   }
 `;
 

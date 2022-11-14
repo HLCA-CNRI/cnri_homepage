@@ -1,11 +1,9 @@
 import {NextSeo} from "next-seo";
 import Image from "next/image";
 import {memo, useEffect} from "react";
-import ScrollContainer from "react-indiana-drag-scroll";
 import styled from "styled-components";
 import CietProcessSection from "../../../components/Products/CietLanding/Process/CietProcessSection";
 import NormalProcessSection from "../../../components/Products/CietLanding/Process/NormalProcessSection";
-import {cietCardContent} from "../../../functions/cietContents";
 import * as SS from "../../../components/Products/CietLanding/SharedStyle";
 import Report from "../../../components/Products/Common/Report/Report";
 import colors from "../../../constants/colors";
@@ -85,11 +83,11 @@ function CietPage() {
         </div>
         <div className="flex ">
           <ImageStyle className="phone">
-            <Image src="/images/ciet/ciet_phone_home.png" layout="fill" />
+            <Image src="/images/ciet/ciet_phone_home.png" layout="fill" priority />
           </ImageStyle>
 
           <ImageStyle className="phone">
-            <Image src="/images/ciet/ciet_phone_qna.png" layout="fill" />
+            <Image src="/images/ciet/ciet_phone_qna.png" layout="fill" priority />
           </ImageStyle>
         </div>
       </section>
@@ -104,7 +102,7 @@ function CietPage() {
       {/* section 2 */}
       <section className=" flex-col-reverse justify-center w-full flex flex-col  md:landscape:px-[17vw] md:landscape:flex-row md:landscape:justify-between items-center  md:landscape:gap-10 h-screen scroll-mt-28 snap-center snap-always bg-ciet_beige_bg">
         <ImageStyle className="puzzle md:landscape:mt-3">
-          <Image src="/images/ciet/puzzle_beige_bg.png" layout="fill" />
+          <Image src="/images/ciet/puzzle_beige_bg.png" layout="fill" priority />
         </ImageStyle>
         <div className="flex flex-col justify-center md:landscape:justify-start order-1 md:landscape:order-2">
           <SS.PageMintTitle className="text-left text-ciet_mint_2 ">
@@ -153,7 +151,7 @@ function CietPage() {
         </div>
         <div className="-right-[5vw] md:landscape:right-0 flex-1 flex justify-end items-end  relative ">
           <ImageStyle className="ecount_screenshot flex-end">
-            <Image src="/images/ciet/ecount_screenshot.png" layout="fill" />
+            <Image src="/images/ciet/ecount_screenshot.png" layout="fill" priority />
           </ImageStyle>
         </div>
       </section>
@@ -177,8 +175,6 @@ function CietPage() {
 }
 
 export default memo(CietPage);
-
-const SectionContainer = styled.div``;
 
 const ImageStyle = styled.div`
   & * {
@@ -230,31 +226,31 @@ const ImageStyle = styled.div`
   }
 `;
 
-const CardStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+// const CardStyle = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 0.5rem;
 
-  @media screen and (max-width: 640px) {
-    &:last-child {
-      padding-right: 12vw;
-    }
-  }
-`;
+//   @media screen and (max-width: 640px) {
+//     &:last-child {
+//       padding-right: 12vw;
+//     }
+//   }
+// `;
 
-const CardImageStyle = styled.div`
-  & * {
-    width: 15vw !important;
-    height: 10vw !important;
-    position: static !important;
-  }
+// const CardImageStyle = styled.div`
+//   & * {
+//     width: 15vw !important;
+//     height: 10vw !important;
+//     position: static !important;
+//   }
 
-  @media screen and (max-width: 640px) {
-    & * {
-      width: 70vw !important;
-      height: 50vw !important;
-    }
-  }
-`;
+//   @media screen and (max-width: 640px) {
+//     & * {
+//       width: 70vw !important;
+//       height: 50vw !important;
+//     }
+//   }
+// `;

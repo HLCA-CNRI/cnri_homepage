@@ -83,11 +83,10 @@ function NavigationBar() {
               </div>
             )}
             <div className="list">
-              <span className="hover:text-constant-CIET_MINT">
-                <a href="https://cis.cnrikorea.com" target="_blank" rel="noopener noreferrer">
-                  CIS
-                </a>
-              </span>
+              <Link href="/product/cis">
+                <span className="hover:text-constant-CIET_MINT">CIS</span>
+              </Link>
+
               <Link href="/product/ciet">
                 <span className="hover:text-constant-CIET_MINT">CIET</span>
               </Link>
@@ -142,15 +141,13 @@ function NavigationBar() {
         </ul>
 
         <div className="flex">
-          <HeaderLinkButton
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://cis.cnrikorea.com">
-            CIS
-          </HeaderLinkButton>
-          <HeaderLinkButton rel="noopener noreferrer" href="/product/ciet">
-            CIET
-          </HeaderLinkButton>
+          <Link href="/product/cis">
+            <HeaderLinkButton>CIS</HeaderLinkButton>
+          </Link>
+
+          <Link href="/product/ciet">
+            <HeaderLinkButton>CIET</HeaderLinkButton>
+          </Link>
           <button type="button" className="sm:hidden">
             <HamburgerMenu />
           </button>

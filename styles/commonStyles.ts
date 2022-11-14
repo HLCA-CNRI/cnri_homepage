@@ -16,7 +16,7 @@ export const ButtonCSS = css`
   }
 `;
 
-export const HeaderLinkButton = styled.a`
+export const HeaderLinkButton = styled.button`
   ${ButtonCSS}
   display:inline-block;
   width: 15vw;
@@ -61,7 +61,7 @@ export const HeaderLinkButton = styled.a`
   // }
 `;
 
-export const LinkButton = styled.a`
+export const LinkButton = styled.button`
   ${ButtonCSS}
   display:inline-block;
   width: 20vw;
@@ -70,6 +70,7 @@ export const LinkButton = styled.a`
   border-radius: 100vw;
   margin: 0 2vw;
   font-size: 5vw;
+  cursor: pointer;
   // 중간 크기 화면인 경우
   @media only screen and (min-width: ${mediaQuery.MD}) {
   }

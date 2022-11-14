@@ -24,12 +24,12 @@ function Home() {
           </div>
         </div>
         <div className="flex justify-center my-[34.56px]  ">
-          <LinkButton target="_blank" rel="noopener noreferrer" href="https://cis.cnrikorea.com">
-            CIS
-          </LinkButton>
-          <LinkButton rel="noopener noreferrer" href="/product/ciet">
-            CIET
-          </LinkButton>
+          <Link href="product/cis" passHref>
+            <LinkButton>CIS</LinkButton>
+          </Link>
+          <Link href="product/ciet" passHref>
+            <LinkButton>CIET</LinkButton>
+          </Link>
         </div>
         <div className="flex justify-center snap-center">
           <video

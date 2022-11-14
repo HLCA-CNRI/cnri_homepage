@@ -13,7 +13,7 @@ function NavigationBar() {
     <div className="sticky z-50  inset-x-0 top-0">
       <nav className="px-[6vw] flex place-items-center justify-between min-w-[100%] bg-white border-b-2 h-[10vh] lg:h-[12vh]">
         <Link href="/" className="flex items-center my-4" passHref>
-          <Image
+          <img
             alt="logoImg"
             src="/images/CNRI_logo_black_under.svg"
             className="md:h-[6.5vh] h-[4.5vh] cursor-pointer"

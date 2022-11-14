@@ -1,12 +1,6 @@
 import React, {memo} from "react";
-import styled from "styled-components";
-// import {Jockey_One as Jockey} from "@next/font/google";
+import Image from "next/image";
 import classNames from "classnames";
-import colors from "../../../../constants/colors";
-
-// const jockey = Jockey({
-//   weight: "400",
-// });
 
 const ShortCut = memo(() => (
   <div className="h-full gap-[3vh] w-full flex flex-col justify-center items-center space-y-4 md:gap-3   ">
@@ -48,9 +42,3 @@ const ShortCut = memo(() => (
 ));
 
 export default ShortCut;
-
-const H1 = styled.h1`
-  span::first-letter {
-    color: ${colors.CIS_MAIN_GREEN};
-  }
-`;

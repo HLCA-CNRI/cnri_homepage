@@ -81,7 +81,7 @@ function HamburgerMenu() {
           <MenuContainer>
             <div role="button" className="w-[100%] flex justify-end">
               <div className=" pt-[72px] w-[60%] bg-white shadow-lg border h-[100vh] ">
-                <Link href="/">
+                <Link href="/" passHref>
                   <div
                     role="button"
                     className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]"
@@ -132,7 +132,7 @@ function HamburgerMenu() {
                   </ul>
                 </ProductListStyle>
                 <hr />
-                <Link href="/company">
+                <Link href="/company" passHref>
                   <div
                     role="button"
                     className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]"
@@ -142,7 +142,7 @@ function HamburgerMenu() {
                   </div>
                 </Link>
                 <hr />
-                <Link href="/randd">
+                <Link href="/randd" passHref>
                   <div
                     role="button"
                     className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"

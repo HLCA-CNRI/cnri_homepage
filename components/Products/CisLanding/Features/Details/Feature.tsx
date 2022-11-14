@@ -14,7 +14,12 @@ const Feature = memo(({number, description}: PropTypes) => (
     <Number>0{number}</Number>
     <FeatureDescription>{description}</FeatureDescription>
     <div className="w-[80vw] h-[80vw] md:landscape:w-[17vw] md:landscape:h-[16vw] relative mx-auto flex justify-center items-center">
-      <Image src={`/images/cis/feature_${number}.png`} alt={`기능_${number}`} layout="fill" />
+      <Image
+        src={`/images/cis/feature_${number}.png`}
+        alt={`기능_${number}`}
+        layout="fill"
+        priority
+      />
     </div>
   </div>
 ));

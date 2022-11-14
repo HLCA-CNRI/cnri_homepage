@@ -20,13 +20,13 @@ const CietProcessSection = memo(() => (
     <div className="flex flex-col justify-center items-center md:landscape:flex-row md:landscape:mt-[1.5vh]">
       <ContentContainer className=" md:landscape:ml-[8vw] ">
         <ContentImageContainer className="w-[25vh] h-[25vh] md:landscape:w-[45vh] md:landscape:h-[45vh] ">
-          <Image src="/images/ciet/puzzle_beige_bg.png" layout="fill" alt="퍼즐 이미지" />
+          <Image src="/images/ciet/puzzle_beige_bg.png" layout="fill" alt="퍼즐 이미지" priority />
         </ContentImageContainer>
         <ContentDescription>주요 데이터 API 연동</ContentDescription>
       </ContentContainer>
 
       <div className="w-[8vh] h-[8vh] my-[1vh] md:landscape:w-[8vw] md:landscape:h-[8vw] rotate-90 md:landscape:ml-[4vw] md:landscape:mr-[1vw] md:landscape:top-[-2vh] md:landscape:rotate-0 relative ">
-        <Image src="/images/ciet/arrow_white.svg" layout="fill" alt="화살표" />
+        <Image src="/images/ciet/arrow_white.svg" layout="fill" alt="화살표" priority />
       </div>
 
       <ContentContainer>
@@ -35,6 +35,7 @@ const CietProcessSection = memo(() => (
             src="/images/ciet/desktop_company_result.png"
             layout="fill"
             alt="ciet 회사 결과 페이지"
+            priority
           />
         </ContentImageContainer>
         <ContentDescription className="md:landscape:ml-[2vw]">

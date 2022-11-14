@@ -22,7 +22,7 @@ const UseCase1 = memo(() => (
     </div>
     <SS.UsecaseImgNLabelContainer>
       <SS.UsecaseImageContainer>
-        <Image src="/images/cis/example_1.png" alt="실제 사용 사례 1" layout="fill" />
+        <Image src="/images/cis/example_1.png" alt="실제 사용 사례 1" layout="fill" priority />
       </SS.UsecaseImageContainer>
       <SS.ImageLabel color={colors.CIS_MAIN_GREEN} bgColor={colors.BEIGE_BG_2}>
         가상공정 기준

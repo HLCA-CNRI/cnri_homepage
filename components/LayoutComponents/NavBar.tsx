@@ -3,19 +3,16 @@ import Image from "next/image";
 import {useRouter} from "next/router";
 import {memo} from "react";
 import styled from "styled-components";
-import {HeaderLinkButton, LinkButton} from "../../styles/commonStyles";
+import {HeaderLinkButton} from "../../styles/commonStyles";
 import HamburgerMenu from "./Hamburger/HamburgerMenu";
-import useHover from "../../hooks/useHover";
 
 function NavigationBar() {
   const router = useRouter();
-  const [isHover, onMouseEnter, onMouseLeave] = useHover();
-  console.log(router.pathname);
 
   return (
     <div className="sticky z-50  inset-x-0 top-0">
       <nav className="px-[6vw] flex place-items-center justify-between min-w-[100%] bg-white border-b-2 h-[10vh] lg:h-[12vh]">
-        <Link href="/" className="flex items-center my-4">
+        <Link href="/" className="flex items-center my-4" passHref>
           <img
             alt="logoImg"
             src="/images/CNRI_logo_black_under.svg"
@@ -83,11 +80,11 @@ function NavigationBar() {
               </div>
             )}
             <div className="list">
-              <Link href="/product/cis">
+              <Link href="/product/cis" passHref>
                 <span className="hover:text-constant-CIET_MINT">CIS</span>
               </Link>
 
-              <Link href="/product/ciet">
+              <Link href="/product/ciet" passHref>
                 <span className="hover:text-constant-CIET_MINT">CIET</span>
               </Link>
             </div>
@@ -141,11 +138,11 @@ function NavigationBar() {
         </ul>
 
         <div className="flex">
-          <Link href="/product/cis">
+          <Link href="/product/cis" passHref>
             <HeaderLinkButton>CIS</HeaderLinkButton>
           </Link>
 
-          <Link href="/product/ciet">
+          <Link href="/product/ciet" passHref>
             <HeaderLinkButton>CIET</HeaderLinkButton>
           </Link>
           <button type="button" className="sm:hidden">

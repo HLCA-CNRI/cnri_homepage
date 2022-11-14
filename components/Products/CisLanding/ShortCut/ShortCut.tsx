@@ -1,22 +1,15 @@
 import React, {memo} from "react";
-import styled from "styled-components";
-// import {Jockey_One as Jockey} from "@next/font/google";
+import Image from "next/image";
 import classNames from "classnames";
-import colors from "../../../../constants/colors";
-
-// const jockey = Jockey({
-//   weight: "400",
-// });
+import Link from "next/link";
 
 const ShortCut = memo(() => (
   <div className="h-full gap-[3vh] w-full flex flex-col justify-center items-center space-y-4 md:gap-3   ">
-    <a
-      className="w-[48vw] md:w-1/3 h-auto"
-      href="https://www.cnrikorea.com"
-      target="_blank"
-      rel="noreferrer">
-      <img src="/images/CNRI_logo_black_under 2.svg" alt="mainLogo" />
-    </a>
+    <Link href="/" passHref>
+      <div className="relative w-[48vh] h-[7vh] md:w-1/3 md:h-[10vh] ">
+        <Image src="/images/CNRI_logo_black_under 2.svg" alt="mainLogo" layout="fill" priority />
+      </div>
+    </Link>
     <h1
       id="mainTitle"
       className={classNames(
@@ -48,9 +41,3 @@ const ShortCut = memo(() => (
 ));
 
 export default ShortCut;
-
-const H1 = styled.h1`
-  span::first-letter {
-    color: ${colors.CIS_MAIN_GREEN};
-  }
-`;

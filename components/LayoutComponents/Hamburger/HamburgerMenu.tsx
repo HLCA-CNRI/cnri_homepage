@@ -81,7 +81,7 @@ function HamburgerMenu() {
           <MenuContainer>
             <div role="button" className="w-[100%] flex justify-end">
               <div className=" pt-[72px] w-[60%] bg-white shadow-lg border h-[100vh] ">
-                <Link href="/">
+                <Link href="/" passHref>
                   <div
                     role="button"
                     className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]"
@@ -110,14 +110,14 @@ function HamburgerMenu() {
                       active: prodListIsOpen,
                     })}>
                     <li className="w-full h-[5vh] border-t-[0.3vh] border-dashed ">
-                      <a href="https://cis.cnrikorea.com" target="_blank" rel="noopener noreferrer">
+                      <Link href="/product/cis" passHref>
                         <div
                           role="button"
                           onClick={clickBurger}
                           className=" w-full h-full px-[5vw] flex items-center text-right">
                           CIS
                         </div>
-                      </a>
+                      </Link>
                     </li>
                     <li className="w-full h-[5vh] ">
                       <Link href="/product/ciet" passHref>
@@ -132,7 +132,7 @@ function HamburgerMenu() {
                   </ul>
                 </ProductListStyle>
                 <hr />
-                <Link href="/company">
+                <Link href="/company" passHref>
                   <div
                     role="button"
                     className=" py-[2vh] text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%]  px-[5vw]"
@@ -142,7 +142,7 @@ function HamburgerMenu() {
                   </div>
                 </Link>
                 <hr />
-                <Link href="/randd">
+                <Link href="/randd" passHref>
                   <div
                     role="button"
                     className=" py-[2vh]  text-[3vw] flex justify-between cursor-pointer hover:text-blue-600 hover:text-[3.5vw] w-[100%] px-[5vw]"

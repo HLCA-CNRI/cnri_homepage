@@ -31,7 +31,7 @@ const Features = memo(() => {
       <Title color={colors.CIS_MAIN_GREEN}>CIS 기능 소개</Title>
       <div className="flex-col justify-center items-start gap-[10vw] md:landscape:flex-row md:landscape:justify-between md:landscape:gap-[1vw] md:landscape:items-center flex  ">
         {features.map((f, idx) => (
-          <Feature number={idx + 1} description={f.description} imgSrc={f.imgSrc} />
+          <Feature number={idx + 1} description={f.description} />
         ))}
       </div>
     </ContentContainer>

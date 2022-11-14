@@ -1,6 +1,7 @@
 import React, {memo} from "react";
 import Features from "../../../components/Products/CisLanding/Features/Features";
 import Intro from "../../../components/Products/CisLanding/Intro/Intro";
+import ShortCut from "../../../components/Products/CisLanding/ShortCut/ShortCut";
 import UseCase1 from "../../../components/Products/CisLanding/UseCase/UseCase1";
 import UseCase2 from "../../../components/Products/CisLanding/UseCase/UseCase2";
 import UseCase3 from "../../../components/Products/CisLanding/UseCase/UseCase3";
@@ -10,6 +11,9 @@ import colors from "../../../constants/colors";
 
 const index = memo(() => (
   <div>
+    <CSS.SectionContainer className="snap-always snap-center" bgColor={colors.BEIGE_BG_2}>
+      <ShortCut />
+    </CSS.SectionContainer>
     <CSS.SectionHeightFluidContainer
       className="snap-always snap-center"
       bgColor={colors.CIS_MAIN_GREEN}>

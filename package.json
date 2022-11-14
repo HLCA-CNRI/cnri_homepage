@@ -36,6 +36,7 @@
     "react-indiana-drag-scroll": "^2.2.0",
     "react-intersection-observer": "^9.2.2",
     "react-player": "^2.10.1",
+    "sharp": "^0.31.2",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

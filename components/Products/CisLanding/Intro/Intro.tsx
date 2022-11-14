@@ -36,7 +36,7 @@ const Intro = memo(() => (
       </ContentContainer>
     </div>
     <div className="w-[86vw] h-[63vw] snap-always snap-center md:landscape:w-[35vw] md:landscape:h-[27vw] md:snap-none relative   ">
-      <Image src="/images/cis/intro.png" alt="introduce" layout="fill" />
+      <Image src="/images/cis/intro.png" alt="introduce" layout="fill" priority />
     </div>
   </SS.ContentFlex>
 ));

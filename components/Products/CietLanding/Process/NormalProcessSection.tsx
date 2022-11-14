@@ -15,7 +15,12 @@ const NormalProcessSection = memo(() => (
     <CostTime normalContent="소요 시간" strongContent="최소 48시간" />
 
     <div className="hidden md:landscape:block relative w-[60vw] h-[24vw] mt-[5vh]">
-      <Image src="/images/ciet/normal_process.png" layout="fill" alt="ciet 회사 결과 페이지" />
+      <Image
+        src="/images/ciet/normal_process.png"
+        layout="fill"
+        alt="ciet 회사 결과 페이지"
+        priority
+      />
     </div>
 
     <div className=" flex flex-col justify-center items-center md:landscape:hidden ">

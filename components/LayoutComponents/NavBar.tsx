@@ -34,8 +34,8 @@ function NavigationBar() {
               </div>
             )}
             <div className="list">
-              <Link href="/product/cis" passHref>
-                <span className="hover:text-constant-CIET_MINT">CIS</span>
+              <Link href="/product/greenerp" passHref>
+                <span className="hover:text-constant-CIET_MINT">GreenERP</span>
               </Link>
 
               <Link href="/product/ciet" passHref>
@@ -95,13 +95,6 @@ function NavigationBar() {
           <a href="https://cis.cnrikorea.com" target="_blank" rel="noreferrer">
             <CarbonToolButton>탄소회계 산정툴</CarbonToolButton>
           </a>
-          {/* <Link href="/product/cis" passHref>
-            <HeaderLinkButton>CIS</HeaderLinkButton>
-          </Link>
-
-          <Link href="/product/ciet" passHref>
-            <HeaderLinkButton>CIET</HeaderLinkButton>
-          </Link> */}
           <button type="button" className="sm:hidden">
             <HamburgerMenu />
           </button>

@@ -19,7 +19,7 @@ const ProductButtons = memo(() => {
       title: "탄소회계 ERP",
       mainColor: colors.CIS_MAIN_GREEN,
       logoPath: "/images/cis/greenerp_logo.svg",
-      link: "/product/cis",
+      link: "/product/greenerp",
     },
     {
       description: "업무 효율 개선을 위한",

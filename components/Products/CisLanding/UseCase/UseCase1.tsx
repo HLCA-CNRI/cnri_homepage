@@ -2,9 +2,10 @@ import React, {memo} from "react";
 import Image from "next/image";
 import * as SS from "../SharedStyle";
 import colors from "../../../../constants/colors";
+import * as CSS from "../../Common/SharedStyle";
 
 const UseCase1 = memo(() => (
-  <SS.ContentFlex isPhotoLeft={false}>
+  <CSS.ContentFlex isPhotoLeft={false}>
     <div>
       <SS.UsecaseTitleContainer>
         <SS.Title
@@ -28,7 +29,7 @@ const UseCase1 = memo(() => (
         가상공정 기준
       </SS.ImageLabel>
     </SS.UsecaseImgNLabelContainer>
-  </SS.ContentFlex>
+  </CSS.ContentFlex>
 ));
 
 export default UseCase1;

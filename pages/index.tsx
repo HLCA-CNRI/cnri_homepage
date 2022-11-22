@@ -10,7 +10,7 @@ function Home() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className=" w-full h-full">
+    <Wrapper>
       <CardSection>
         <div className=" hidden xl:block w-full h-full">
           <PcCards />
@@ -23,11 +23,16 @@ function Home() {
       <ButtonSection>
         <ProductButtons />
       </ButtonSection>
-    </div>
+    </Wrapper>
   );
 }
 
 export default memo(Home);
+const Wrapper = styled.div`
+  min-height: 70vh;
+  height: 100%;
+  width: 100%;
+`;
 
 const CardSection = styled.div`
   // background-color: yellow;

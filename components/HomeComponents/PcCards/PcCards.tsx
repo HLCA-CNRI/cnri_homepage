@@ -87,7 +87,7 @@ const Card = styled(SS.CardStyle)<{
   padding: 30px;
 
   grid-template-columns: ${({isPlacedLeft, isOtherCardHover}) =>
-    isPlacedLeft && !isOtherCardHover ? "2fr 1fr" : "1fr 2fr"};
+    isPlacedLeft && !isOtherCardHover ? "2fr 1fr" : "0.8fr 2.2fr"};
   transform-origin: ${({isPlacedLeft}) => (isPlacedLeft ? "left 80%" : "right 20%")};
 
   width: ${({isHover, isOtherCardHover}) =>

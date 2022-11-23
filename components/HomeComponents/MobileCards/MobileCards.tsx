@@ -27,7 +27,11 @@ const MobileCards = memo(() => {
   return (
     <div className="w-full h-full overflow-hidden">
       <CardsWrapper>
-        <CardWrapper align={Direction.RIGHT} isLeftCardShown={isLeftCardShown}>
+        <CardWrapper
+          align={Direction.RIGHT}
+          isLeftCardShown={isLeftCardShown}
+          id={Direction.RIGHT}
+          onClick={handleClick}>
           <Card>
             <LeftCardText />
             <LeftNonTextWrapper>
@@ -42,7 +46,11 @@ const MobileCards = memo(() => {
             />
           </ArrowWrapper>
         </CardWrapper>
-        <CardWrapper align={Direction.LEFT} isLeftCardShown={isLeftCardShown}>
+        <CardWrapper
+          align={Direction.LEFT}
+          isLeftCardShown={isLeftCardShown}
+          id={Direction.LEFT}
+          onClick={handleClick}>
           <ArrowWrapper id={Direction.LEFT} onClick={handleClick}>
             <Image
               src="/images/icons/double_arrow_left.svg"

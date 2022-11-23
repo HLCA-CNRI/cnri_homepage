@@ -34,7 +34,7 @@ const BetaInfo = memo(
               bgColor="white"
               color="black"
               hoverColor={btnHoverColor}
-              onClick={() => router.push(`/participate/${urlParam}`)}>
+              onClick={() => router.push(`/participate`)}>
               참여하러 가기
             </Button>
             <Button

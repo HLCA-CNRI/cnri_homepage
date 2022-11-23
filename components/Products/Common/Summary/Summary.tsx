@@ -1,4 +1,5 @@
 import React, {memo} from "react";
+import {useRouter} from "next/router";
 import Image from "next/image";
 import {MdFileDownload} from "react-icons/md";
 import styled from "styled-components";
@@ -22,7 +23,8 @@ type PropTypes = {
 
 const Summary = memo(
   ({isPhotoLeft = false, logoPath, imgPath, productEnum, mainColor, darkColor}: PropTypes) => {
-    const esline = "";
+    const router = useRouter();
+
     return (
       <CSS.ContentFlex isPhotoLeft={isPhotoLeft}>
         <div>
@@ -48,7 +50,9 @@ const Summary = memo(
                 <MdFileDownload size={22} color="white" className="inline xl:ml-1" />
               </Button>
             </a>
-            <Button bgColor={mainColor}>데모신청</Button>
+            <Button bgColor={mainColor} onClick={() => router.push("/participate")}>
+              데모신청
+            </Button>
           </div>
         </div>
         <PcImageWrapper>

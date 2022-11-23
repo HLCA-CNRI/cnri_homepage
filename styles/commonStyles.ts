@@ -141,3 +141,38 @@ export const ScrollContainer = styled.div`
     box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
   }
 `;
+
+export const ModalBackground = styled.div`
+  position: fixed;
+  top: -13vh;
+  left: 0;
+  width: 100%;
+  height: 113vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 50 !important;
+`;
+
+export const ModalContentContainer = styled.div<{
+  width?: string;
+  height?: string;
+  bgColor?: string;
+  radius?: string;
+}>`
+  background-color: ${({bgColor}) => bgColor ?? "white"};
+  z-index: 51;
+  position: fixed;
+  width: ${({width}) => width ?? "400px"};
+  height: ${({height}) => height ?? "auto"};
+
+  border-radius: ${({radius}) => radius ?? "0rem"};
+  top: 50%;
+  left: 50%;
+  transition: 0.4s ease-in-out;
+  transform: translate(-50%, -200%);
+  opacity: 0;
+  box-shadow: 0px 6px 20px rgb(0 0 0 / 10%);
+  &.active {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+`;

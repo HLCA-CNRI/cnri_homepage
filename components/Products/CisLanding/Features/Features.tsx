@@ -2,6 +2,7 @@ import React, {memo} from "react";
 import styled from "styled-components";
 import colors from "../../../../constants/colors";
 import * as SS from "../SharedStyle";
+import * as CSS from "../../Common/SharedStyle";
 import Feature from "./Details/Feature";
 
 const Features = memo(() => {
@@ -18,17 +19,13 @@ const Features = memo(() => {
       description: `LCI DB 적용을 통한 제품별 CFP\n(Carbon Footprint) 산정`,
       imgSrc: "",
     },
-    {
-      description: `전력 부문 미래 예측 분석 역량을 활용한\n배출량 예측 기능`,
-      imgSrc: "",
-    },
   ];
 
   return (
     <ContentContainer
       isPhotoLeft={false}
       className=" py-[6vh] px-[10vw]  md:landscape:px-0 md:landscape:py-0">
-      <Title color={colors.CIS_MAIN_GREEN}>CIS 기능 소개</Title>
+      <Title color={colors.CIS_MAIN_GREEN}>GreenERP 기능 소개</Title>
       <div className="flex-col justify-center items-start gap-[10vw] md:landscape:flex-row md:landscape:justify-between md:landscape:gap-[1vw] md:landscape:items-center flex  ">
         {features.map((f, idx) => (
           <Feature number={idx + 1} description={f.description} />
@@ -44,9 +41,10 @@ const Title = styled(SS.Title)`
   font-weight: bold;
   text-align: left;
   padding: 0;
+  font-size: 2rem;
 `;
 
-const ContentContainer = styled(SS.ContentFlex)`
+const ContentContainer = styled(CSS.ContentFlex)`
   flex-direction: column;
   align-items: stretch;
   gap: 2vw;

@@ -13,7 +13,7 @@ const Feature = memo(({number, description}: PropTypes) => (
   <div className="snap-always snap-center md:landscape:snap-none md:landscape:snap-normal">
     <Number>0{number}</Number>
     <FeatureDescription>{description}</FeatureDescription>
-    <div className="w-[80vw] h-[80vw] md:landscape:w-[17vw] md:landscape:h-[16vw] relative mx-auto flex justify-center items-center">
+    <div className="w-[80vw] h-[80vw] md:landscape:w-[300px] md:landscape:h-[300px] relative mx-auto flex justify-center items-center">
       <Image
         src={`/images/cis/feature_${number}.png`}
         alt={`기능_${number}`}
@@ -33,7 +33,7 @@ const Number = styled.div`
   padding-top: 2vw;
 
   @media screen and (min-width: 768px) and (orientation: landscape) {
-    font-size: 2vw;
+    font-size: 1.8rem;
     padding-top: 0vw;
     padding-bottom: 0.5vw;
   }
@@ -46,7 +46,7 @@ const FeatureDescription = styled(Description)`
   text-align: left;
   margin: 0;
   @media screen and (min-width: 768px) and (orientation: landscape) {
-    font-size: 1vw;
+    font-size: 1rem;
     padding: 1vw 0;
   }
 `;

@@ -56,7 +56,7 @@ const Wrapper = styled.div`
   height: 100%;
 
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-columns: 2fr 1.4fr 2fr;
 `;
 
 const Column = styled.div`
@@ -66,10 +66,10 @@ const Column = styled.div`
   align-items: center;
 `;
 const IconsColumn = styled(Column)`
-  grid-template-rows: 3fr 1fr 3fr 1fr 3fr;
+  grid-template-rows: 3fr 0.5fr 3fr 0.5fr 3fr;
 `;
 const ArrowColumn = styled(Column)`
-  grid-template-rows: 3fr 5fr 3fr;
+  grid-template-rows: 3fr 4fr 3fr;
 `;
 
 const ArrowWrapper = styled.div`
@@ -112,7 +112,7 @@ const IconWrapper = styled.div`
 `;
 const IconText = styled.div`
   margin-top: 10%;
-  font-size: 0.4vw;
+  font-size: 0.1vw;
   text-align: center;
 
   @media screen and (min-width: 1200px) {

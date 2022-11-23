@@ -28,7 +28,7 @@ const ReportModal = memo(({setIsOpen}: PropTypes) => {
       {/* mobile */}
       <ModalContentContainer className="active block xl:hidden" width="90vw" height="52vw">
         <div className="w-full h-full relative">
-          <Image src="/images/product/beta_report_full.png" layout="fill" />
+          <Image src="/images/product/beta_report_full.png" layout="fill" priority />
         </div>
       </ModalContentContainer>
     </>

@@ -39,7 +39,7 @@ const Summary = memo(
             <Description>{ProductNameSummaryMapping.get(productEnum ?? "")}</Description>
           </div>
           <MobileImageWrapper>
-            <Image src={imgPath} layout="fill" alt={`${productEnum}_sample_img`} />
+            <Image src={imgPath} layout="fill" alt={`${productEnum}_sample_img`} priority />
           </MobileImageWrapper>
           <div className="flex flex-col gap-5 items-center md:items-start ">
             <a
@@ -56,7 +56,7 @@ const Summary = memo(
           </div>
         </div>
         <PcImageWrapper>
-          <Image src={imgPath} layout="fill" alt={`${productEnum}_sample_img`} />
+          <Image src={imgPath} layout="fill" alt={`${productEnum}_sample_img`} priority />
         </PcImageWrapper>
       </CSS.ContentFlex>
     );

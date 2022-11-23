@@ -8,7 +8,7 @@ import {LcaCycleKorMapping} from "../../../constants/lcaMapping";
 const CarbonCycle = memo(() => {
   const firstCol: LcaCycle[] = [LcaCycle.RESOURCE, LcaCycle.DISPOSAL, LcaCycle.USE];
   const secondCol: LcaCycle[] = [LcaCycle.PROCESSING, LcaCycle.MANUFACTURE, LcaCycle.DISTRIBUTION];
-  const iconSize = "90%";
+  const iconSize = 18;
 
   return (
     <Wrapper>

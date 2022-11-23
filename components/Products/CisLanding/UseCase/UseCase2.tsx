@@ -2,9 +2,10 @@ import React, {memo} from "react";
 import Image from "next/image";
 import * as SS from "../SharedStyle";
 import colors from "../../../../constants/colors";
+import * as CSS from "../../Common/SharedStyle";
 
 const UseCase2 = memo(() => (
-  <SS.ContentFlex isPhotoLeft>
+  <CSS.ContentFlex isPhotoLeft>
     <div>
       <SS.UsecaseTitleContainer>
         <SS.Title
@@ -18,7 +19,7 @@ const UseCase2 = memo(() => (
       <SS.Description mobileColor={colors.CIS_MAIN_GREEN}>
         ERP 서비스와 연동한
         <br />
-        <strong>자동화 탄소회계 </strong>
+        <strong>탄소회계 자동화 </strong>
         시스템
       </SS.Description>
     </div>
@@ -30,7 +31,7 @@ const UseCase2 = memo(() => (
         가상공정 기준
       </SS.ImageLabel>
     </SS.UsecaseImgNLabelContainer>
-  </SS.ContentFlex>
+  </CSS.ContentFlex>
 ));
 
 export default UseCase2;

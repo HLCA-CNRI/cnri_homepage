@@ -10,7 +10,7 @@ import ArrowGreen from "../../../../public/images/ciet/arrow_green.svg";
 import Time from "../../../../public/images/ciet/icon_time.svg";
 
 const NormalProcessSection = memo(() => (
-  <SS.SectionContainer className="bg-ciet_beige_bg justify-center md:landscape:justify-start">
+  <SS.SectionContainer className="bg-beige_bg_2 justify-center md:landscape:justify-start">
     <ProcessPageTitle title="기존 업무 프로세스" />
     <CostTime normalContent="소요 시간" strongContent="최소 48시간" />
 

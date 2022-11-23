@@ -3,9 +3,10 @@ import styled from "styled-components";
 import Image from "next/image";
 import * as SS from "../SharedStyle";
 import colors from "../../../../constants/colors";
+import * as CSS from "../../Common/SharedStyle";
 
 const Intro = memo(() => (
-  <SS.ContentFlex isPhotoLeft={false} className="py-[6vh]">
+  <CSS.ContentFlex isPhotoLeft={false} className="py-[6vh]">
     <div className="snap-always snap-center pt-[6vh] px-[10vw] md:landscape:p-0 md:landscape:snap-none flex flex-col justify-center items-start ">
       <ContentContainer>
         <IntroTitle>
@@ -35,10 +36,16 @@ const Intro = memo(() => (
         </Description>
       </ContentContainer>
     </div>
-    <div className="w-[86vw] h-[63vw] snap-always snap-center md:landscape:w-[35vw] md:landscape:h-[27vw] md:snap-none relative   ">
-      <Image src="/images/cis/intro.png" alt="introduce" layout="fill" priority />
+    <div className="w-[86vw] h-[63vw] snap-always snap-center md:landscape:w-[600px] md:landscape:h-[500px] md:snap-none relative   ">
+      <Image
+        src="/images/cis/intro.png"
+        alt="introduce"
+        layout="fill"
+        priority
+        className="object-contain"
+      />
     </div>
-  </SS.ContentFlex>
+  </CSS.ContentFlex>
 ));
 
 export default Intro;
@@ -49,8 +56,8 @@ const IntroTitle = styled.div`
   font-weight: light;
   padding-bottom: 0vh;
   @media screen and (min-width: 768px) and (orientation: landscape) {
-    font-size: 2vw;
-    padding-bottom: 1vw;
+    font-size: 1.75rem;
+    padding-bottom: 20px;
   }
 `;
 
@@ -66,6 +73,6 @@ const Description = styled(SS.Description)`
   margin: 5vw 0;
   margin: 0;
   @media screen and (min-width: 768px) and (orientation: landscape) {
-    font-size: 1vw;
+    font-size: 1rem;
   }
 `;

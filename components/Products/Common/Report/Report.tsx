@@ -9,16 +9,18 @@ const Report = memo(({color}: {color: string}) => (
     <div className="hidden md:landscape:flex md:landscape:flex-col  justify-center items-center">
       <div className="flex justify-center gap-[2vw] mb-[2vw] items-center ">
         <ReportDescription1 />
-        <ArrowContainer className="w-[12vw] h-[1vw] relative" color={color}>
+        <ArrowContainer
+          className="w-[15vw] h-[1vh] lg:w-[200px] lg:h-[10px] relative"
+          color={color}>
           <Image src="/images/ciet/arrow_dotted_horizontal.svg" layout="fill" alt="report1" />
         </ArrowContainer>
         <ReportDescription2 />
       </div>
-      <div className="flex justify-around w-[80vw] ">
-        <ImageContainer className="w-[65vh]">
+      <div className="flex justify-around w-[1100px] ">
+        <ImageContainer className="w-[500px]">
           <Image src="/images/ciet/report_1.png" layout="fill" alt="report1" priority />
         </ImageContainer>
-        <ImageContainer className="w-[65vh]">
+        <ImageContainer className="w-[500px]">
           <Image src="/images/ciet/report_2.png" layout="fill" alt="report1" priority />
         </ImageContainer>
       </div>
@@ -89,10 +91,10 @@ const ContentDescription = styled.div`
   border-radius: 2vw;
 
   @media screen and (min-width: 768px) and (orientation: landscape) {
-    width: 15vw;
-    height: 4vw;
+    width: 230px;
+    height: 80px;
     border-radius: 0.8vw;
-    font-size: 0.8vw;
+    font-size: 0.8rem;
   }
 `;
 
@@ -100,8 +102,8 @@ const ImageContainer = styled.div`
   position: relative;
 
   @media screen and (min-width: 768px) and (orientation: landscape) {
-    height: 50vh;
-    border-radius: 5vw;
+    height: 350px;
+    // border-radius: 5vw;
   }
 `;
 

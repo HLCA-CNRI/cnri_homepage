@@ -1,12 +1,19 @@
 import {NextSeo} from "next-seo";
 import Image from "next/image";
-import {memo, useEffect} from "react";
+import {memo, useEffect, useState} from "react";
 import styled from "styled-components";
 import CietProcessSection from "../../../components/Products/CietLanding/Process/CietProcessSection";
 import NormalProcessSection from "../../../components/Products/CietLanding/Process/NormalProcessSection";
 import * as SS from "../../../components/Products/CietLanding/SharedStyle";
+import BetaInfo from "../../../components/Products/Common/BetaInfo/BetaInfo";
 import Report from "../../../components/Products/Common/Report/Report";
+import ReportModal from "../../../components/Products/Common/ReportModal/ReportModal";
+import SectionFluidContainer from "../../../components/Products/Common/SectionContainer/SectionFluidContainer";
+import SectionNormalContainer from "../../../components/Products/Common/SectionContainer/SectionNormalContainer";
+import Summary from "../../../components/Products/Common/Summary/Summary";
 import colors from "../../../constants/colors";
+import {ProductNameEnum} from "../../../constants/enum/product_name.enum";
+import {ProductEngNameMapping, ProductKorNameMapping} from "../../../constants/productMapping";
 
 // Company Page seo 내용
 const cietSeo = {
@@ -23,74 +30,30 @@ function CietPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  const [isReportImgOpen, setIsReportImgOpen] = useState(false);
+
   return (
     <div>
       <NextSeo {...cietSeo} />
-      <div className="snap-center snap-always pb-[5vh] md:landscape:pb-[25vh]">
-        <div className="pt-[15vh] md:landscape:pt-[25vh] flex flex-col items-center">
-          <div className="h-[2.5vh] w-[30vw] md:landscape:h-[4.5vh] md:landscape:w-[10vw]   relative cursor-pointer  m-3 mb-4">
-            <Image alt="logoImg" src="/images/CIET_signature.svg" layout="fill" sizes="300px" />
-          </div>
-          <div className="flex justify-center font-bold text-[5vw] md:landscape:text-[4vw] 2xl:text-[3vw]">
-            기후변화 대응,
-          </div>
-          <div className="flex justify-center font-bold text-[5vw] md:landscape:text-[4vw]  2xl:text-[3vw]">
-            이제는 데이터 기반으로.
-          </div>
-        </div>
-        <div className="flex justify-center my-[3.2vh]">
-          <a
-            className="bg-white text-constant-CIET_MINT hover:bg-constant-CIET_MINT hover:text-white border-2 border-constant-CIET_MINT transition-all duration-300 ease-in text-[3vw] md:landscape:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:landscape:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://ciet.cnrikorea.com">
-            바로가기
-          </a>
-          <a
-            className="scroll-smooth text-white bg-constant-CIET_MINT hover:bg-white hover:text-constant-CIET_MINT border-2 border-constant-CIET_MINT transition-all  ease-in text-[3vw] md:landscape:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:landscape:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
-            rel="noopener noreferrer"
-            href="#footer">
-            문의하기
-          </a>
-        </div>
-      </div>
-
-      {/* section 1 */}
-      <section className="w-full flex flex-col md:landscape:flex-row justify-center items-center gap-5 md:landscape:gap-10 h-screen scroll-mt-28 snap-center snap-always bg-ciet_mint_2">
-        <div className="flex flex-col justify-center md:landscape:justify-start">
-          <h3 className="flex flex-col justify-center  md:landscape:justify-start ">
-            <span className="text-[6vw] text-center md:landscape:text-left md:landscape:text-[2vw]">
-              단 30초 만에,
-            </span>
-            <SS.PageWhiteTitle className="text-center md:landscape:text-left">
-              임직원 회사 생활
-              <br />
-              데이터 수집
-            </SS.PageWhiteTitle>
-          </h3>
-          <SS.SectionDescription>
-            <p className="hidden md:landscape:block">
-              상황별 제시되는 최적의 질문 응답만으로
-              <br />
-              임직원들의 회사 생활 데이터를 수집할 수 있습니다.
-            </p>
-            <p className=" hidden md:landscape:block">
-              단 30초의 응답만으로 측정하기 어렵던
-              <br />
-              임직원들로 인한 탄소배출량을 손쉽게 측정하세요.
-            </p>
-          </SS.SectionDescription>
-        </div>
-        <div className="flex ">
-          <ImageStyle className="phone">
-            <Image src="/images/ciet/ciet_phone_home.png" layout="fill" priority />
-          </ImageStyle>
-
-          <ImageStyle className="phone">
-            <Image src="/images/ciet/ciet_phone_qna.png" layout="fill" priority />
-          </ImageStyle>
-        </div>
-      </section>
+      <SectionFluidContainer height="300px" bgColor={colors.CIET_MINT_2} hasPadding={false}>
+        <BetaInfo
+          productNameEng={ProductEngNameMapping.get(ProductNameEnum.CIET) ?? ""}
+          productNameKor={ProductKorNameMapping.get(ProductNameEnum.CIET) ?? ""}
+          urlParam={ProductNameEnum.GREENERP}
+          btnHoverColor={colors.CIET_BTN_HOVER}
+          setIsReportOpen={setIsReportImgOpen}
+        />
+      </SectionFluidContainer>
+      <SectionNormalContainer bgColor={colors.BEIGE_BG_2}>
+        <Summary
+          productEnum={ProductNameEnum.CIET}
+          isPhotoLeft
+          logoPath="/images/ciet/ciet_logo.svg"
+          imgPath="/images/ciet/desktop_company_result.png"
+          mainColor={colors.CIET_MINT_2}
+          darkColor={colors.CIET_NAVY}
+        />
+      </SectionNormalContainer>
 
       <section className="snap-center snap-always">
         <NormalProcessSection />
@@ -98,9 +61,8 @@ function CietPage() {
       <section className="snap-center snap-always">
         <CietProcessSection />
       </section>
-
       {/* section 2 */}
-      <section className=" flex-col-reverse justify-center w-full flex flex-col  md:landscape:px-[17vw] md:landscape:flex-row md:landscape:justify-between items-center  md:landscape:gap-10 h-screen scroll-mt-28 snap-center snap-always bg-ciet_beige_bg">
+      <section className=" flex-col-reverse justify-center w-full flex flex-col  md:landscape:px-[17vw] md:landscape:flex-row md:landscape:justify-between items-center  md:landscape:gap-10 h-screen scroll-mt-28 snap-center snap-always bg-beige_bg_2">
         <ImageStyle className="puzzle md:landscape:mt-3">
           <Image src="/images/ciet/puzzle_beige_bg.png" layout="fill" priority />
         </ImageStyle>
@@ -125,7 +87,6 @@ function CietPage() {
           </SS.SectionDescription>
         </div>
       </section>
-
       {/* section 3 */}
       <section className=" relative w-full flex justify-center items-center flex-col md:landscape:flex-row md:landscape:items-stretch  gap-5 md:landscape:gap-[10vw] h-screen scroll-mt-28 snap-center snap-always bg-ciet_mint_2 overflow-x-hidden">
         <div className="flex flex-col justify-center mt-[10vh] md:landscape:mt-0 md:landscape:justify-center  md:landscape:pl-[15vw] ">
@@ -155,21 +116,45 @@ function CietPage() {
           </ImageStyle>
         </div>
       </section>
+      <section className="w-full flex flex-col md:landscape:flex-row justify-center items-center gap-5 md:landscape:gap-10 h-screen scroll-mt-28 snap-center snap-always bg-beige_bg_2">
+        <div className="flex flex-col justify-center md:landscape:justify-start">
+          <h3 className="flex flex-col justify-center  md:landscape:justify-start ">
+            <span className="text-[6vw] text-center md:landscape:text-left md:landscape:text-[2vw] font-bold">
+              단 30초 만에,
+            </span>
+            <SS.PageMintTitle className="text-center md:landscape:text-left">
+              임직원 회사 생활
+              <br />
+              데이터 수집
+            </SS.PageMintTitle>
+          </h3>
+          <SS.SectionDescription>
+            <p className="hidden md:landscape:block">
+              상황별 제시되는 최적의 질문 응답만으로
+              <br />
+              임직원들의 회사 생활 데이터를 수집할 수 있습니다.
+            </p>
+            <p className=" hidden md:landscape:block">
+              단 30초의 응답만으로 측정하기 어렵던
+              <br />
+              임직원들로 인한 탄소배출량을 손쉽게 측정하세요.
+            </p>
+          </SS.SectionDescription>
+        </div>
+        <div className="flex ">
+          <ImageStyle className="phone">
+            <Image src="/images/ciet/ciet_phone_home.png" layout="fill" priority />
+          </ImageStyle>
 
-      <div className="w-full h-[100vh] pt-[13vh] flex   md:landscape:flex-row  justify-center items-center  bg-ciet_beige_bg snap-center snap-always">
-        <Report color={colors.CIET_MINT_2} />
-      </div>
-
-      <section>
-        <div className="flex justify-center my-[10vh]">
-          <a
-            className="scroll-smooth text-white bg-ciet_mint_2 hover:bg-white hover:text-ciet_mint_2 border-2 border-ciet_mint_2 transition-all  ease-in  text-[3vw] md:landscape:text-[1vw] rounded-lg px-[7vw] py-[1vh] md:landscape:py-[2vh] 2xl:py-[1.5vh] 2xl:px-[5vw] mx-[1.5vw] font-bold"
-            rel="noopener noreferrer"
-            href="#footer">
-            문의하기
-          </a>
+          <ImageStyle className="phone">
+            <Image src="/images/ciet/ciet_phone_qna.png" layout="fill" priority />
+          </ImageStyle>
         </div>
       </section>
+      <div className="w-full h-[100vh] pt-[13vh] flex   md:landscape:flex-row  justify-center items-center  bg-ciet_mint_2 snap-center snap-always">
+        <Report color={colors.CIET_MINT_2} />
+      </div>
+      {isReportImgOpen ? <ReportModal setIsOpen={setIsReportImgOpen} /> : null}
     </div>
   );
 }

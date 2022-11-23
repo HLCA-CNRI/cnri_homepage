@@ -110,12 +110,12 @@ function HamburgerMenu() {
                       active: prodListIsOpen,
                     })}>
                     <li className="w-full h-[5vh] border-t-[0.3vh] border-dashed ">
-                      <Link href="/product/cis" passHref>
+                      <Link href="/product/greenerp" passHref>
                         <div
                           role="button"
                           onClick={clickBurger}
                           className=" w-full h-full px-[5vw] flex items-center text-right">
-                          CIS
+                          GreenERP
                         </div>
                       </Link>
                     </li>

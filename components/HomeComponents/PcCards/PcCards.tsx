@@ -91,7 +91,7 @@ const Card = styled(SS.CardStyle)<{
   transform-origin: ${({isPlacedLeft}) => (isPlacedLeft ? "left 80%" : "right 20%")};
 
   width: ${({isHover, isOtherCardHover}) =>
-    isHover ? "800px" : isOtherCardHover ? "400px" : "500px"};
+    isHover ? "800px" : isOtherCardHover ? "450px" : "500px"};
 
   height: ${({isHover, isOtherCardHover}) => (isHover ? "430px" : "350px")};
 `;

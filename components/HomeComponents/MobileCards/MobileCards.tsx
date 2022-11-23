@@ -50,7 +50,7 @@ const MobileCards = memo(() => {
               alt="left arrow button"
             />
           </ArrowWrapper>
-          <Card width="45vh">
+          <Card width="47vh">
             <RightCardText />
             <RightNonTextWrapper>
               <RightNonText />

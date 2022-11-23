@@ -32,7 +32,7 @@ const ProductButtons = memo(() => {
       description: "제품 탄소발자국",
       title: "LCA 문의",
       mainColor: colors.CIET_NAVY,
-      logoPath: "/images/lca/lca_logo.svg",
+      logoPath: "/images/lca/lca_logo.png",
       link: "/lca",
     },
   ];
@@ -97,7 +97,7 @@ const ProductButton = memo(({description, title, mainColor, logoPath, link}: But
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}>
       <ButtonCover isHover={isHover}>
-        <div className="w-1/2 h-full relative ">
+        <div className="w-1/2 h-[80%] relative ">
           <Image src={logoPath} alt="logo" layout="fill" className="object-contain" />
         </div>
       </ButtonCover>

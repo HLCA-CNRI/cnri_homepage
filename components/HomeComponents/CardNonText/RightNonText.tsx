@@ -15,7 +15,7 @@ const RightNonText = memo(() => (
     </div>
 
     <ImgWrapper>
-      <Image src="/images/lca/lca_result_summary.png" layout="fill" className="object-contain" />
+      <Image src="/images/lca/lca_result_summary.png" layout="fill" objectFit="contain" />
     </ImgWrapper>
   </Wrapper>
 ));

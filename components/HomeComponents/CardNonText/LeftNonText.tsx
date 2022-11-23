@@ -6,7 +6,7 @@ import colors from "../../../constants/colors";
 const LeftNonText = memo(() => (
   <Wrapper>
     <LeftImageWrapper>
-      <Image src="/images/cis/intro.png" layout="fill" alt="greenerp" className="object-contain" />
+      <Image src="/images/cis/intro.png" layout="fill" alt="greenerp" objectFit="contain" />
     </LeftImageWrapper>
     <ImgCaption>GreenERP</ImgCaption>
   </Wrapper>

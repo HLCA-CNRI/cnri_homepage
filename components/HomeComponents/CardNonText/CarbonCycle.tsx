@@ -18,7 +18,7 @@ const CarbonCycle = memo(() => {
             <IconBox lcaEnum={lca} key={`${lca}_iconBox`} />
             {idx !== firstCol.length - 1 ? (
               <ArrowWrapper>
-                <VscTriangleDown size={iconSize} key={`${lca}_arrow`} />
+                <VscTriangleUp size={iconSize} key={`${lca}_arrow`} />
               </ArrowWrapper>
             ) : null}
           </>
@@ -39,7 +39,7 @@ const CarbonCycle = memo(() => {
             <IconBox lcaEnum={lca} key={`${lca}_iconBox`} />
             {idx !== secondCol.length - 1 ? (
               <ArrowWrapper>
-                <VscTriangleUp size={iconSize} key={`${lca}_arrow`} />
+                <VscTriangleDown size={iconSize} key={`${lca}_arrow`} />
               </ArrowWrapper>
             ) : null}
           </>

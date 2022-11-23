@@ -97,7 +97,7 @@ const ProductButton = memo(({description, title, mainColor, logoPath, link}: But
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}>
       <ButtonCover isHover={isHover}>
-        <div className="w-1/2 h-[80%] relative ">
+        <div className="w-[40%] h-[80%] relative ">
           <Image src={logoPath} alt="logo" layout="fill" className="object-contain" />
         </div>
       </ButtonCover>
@@ -110,11 +110,11 @@ const ProductButton = memo(({description, title, mainColor, logoPath, link}: But
 
 const ButtonSizeStyle = css`
   width: 70vw;
-  height: 20vw;
+  height: 17vw;
 
   @media screen and (min-width: 1200px) {
-    width: 250px;
-    height: 90px;
+    width: 260px;
+    height: 70px;
   }
 `;
 

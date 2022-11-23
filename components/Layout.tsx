@@ -25,7 +25,7 @@ function Layout({children}: LayoutInterface) {
 
   return (
     <>
-      {router.pathname === "/" && !doesHidePopup && <PopUp />}
+      {/* {router.pathname === "/" && !doesHidePopup && <PopUp />} */}
       {router.pathname !== "/lca" && <NavBar />}
       {router.pathname === "/" ? <div className="bg-beige_bg_2 h-full">{children}</div> : children}
       {router.pathname !== "/lca" && <Footer />}

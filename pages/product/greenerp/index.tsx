@@ -67,8 +67,7 @@ const index = memo(() => {
       <SectionNormalContainer bgColor={colors.BEIGE_BG_2}>
         <Report color={colors.CIS_MAIN_GREEN} />
       </SectionNormalContainer>
-      {/* <div className="absolute -top-[13vh] bottom-0 bg-black w-[100vw] h-[113vh] z-[1000] " /> */}
-      {isReportImgOpen ? <ReportModal setIsOpen={setIsReportImgOpen} /> : null}
+      <ReportModal isOpen={isReportImgOpen} setIsOpen={setIsReportImgOpen} />
     </div>
   );
 });

@@ -21,7 +21,7 @@ const ReportModal = memo(({setIsOpen}: PropTypes) => {
         height="34vw"
         onClick={onClick}>
         <div className="w-full h-full relative">
-          <Image src="/images/product/beta_report_full.png" layout="fill" />
+          <Image src="/images/product/beta_report_full.png" layout="fill" priority />
         </div>
       </ModalContentContainer>
 

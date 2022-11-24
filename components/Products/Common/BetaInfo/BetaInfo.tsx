@@ -57,10 +57,10 @@ const BetaInfo = memo(
         {/* 리포트 */}
         <ReportWrapper onClick={onReportClick}>
           <PointerWrapper className="pointer">
-            <Image src="/images/product/pointer.svg" layout="fill" priority />
+            <Image src="/images/product/pointer.svg" layout="fill" />
           </PointerWrapper>
           <ImageWrapper className="image">
-            <Image src="/images/product/beta_report.png" layout="fill" />
+            <Image src="/images/product/beta_report.png" layout="fill" priority />
           </ImageWrapper>
         </ReportWrapper>
       </Wrapper>

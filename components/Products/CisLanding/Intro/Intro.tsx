@@ -17,7 +17,7 @@ const Intro = memo(() => (
           <strong>저렴하고 쉬워졌습니다.</strong>
         </IntroTitle>
         <Description>
-          <strong>CIS</strong>는 공정 데이터 관리와 배출량 관리를
+          <strong>GreenERP</strong>는 공정 데이터 관리와 배출량 관리를
           <br />
           <strong>한 번에 할 수 있는 클라우드 기반 서비스</strong>입니다.
         </Description>
@@ -31,7 +31,7 @@ const Intro = memo(() => (
           <strong>높일 수 </strong>있습니다.
         </IntroTitle>
         <Description>
-          <strong>CIS</strong>는 고객사들이 요구하는 <strong>Carbon Footprint</strong>를<br />
+          <strong>GreenERP</strong>는 고객사들이 요구하는 <strong>Carbon Footprint</strong>를<br />
           <strong>매 순간 관리 가능한 형태</strong>로 제공합니다.
         </Description>
       </ContentContainer>

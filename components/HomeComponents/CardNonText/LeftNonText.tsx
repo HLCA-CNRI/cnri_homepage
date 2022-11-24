@@ -6,7 +6,7 @@ import colors from "../../../constants/colors";
 const LeftNonText = memo(() => (
   <Wrapper>
     <LeftImageWrapper>
-      <Image src="/images/cis/intro.png" layout="fill" alt="greenerp" objectFit="contain" />
+      <Image src="/images/cis/intro_home.png" layout="fill" alt="greenerp" objectFit="contain" />
     </LeftImageWrapper>
     <ImgCaption>GreenERP</ImgCaption>
   </Wrapper>
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 const LeftImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 90%;
+  height: 100%;
 `;
 
 const ImgCaption = styled.div`

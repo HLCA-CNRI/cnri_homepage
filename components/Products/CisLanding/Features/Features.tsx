@@ -8,7 +8,7 @@ import Feature from "./Details/Feature";
 const Features = memo(() => {
   const features = [
     {
-      description: `클라우드 기반 SaaS ERP를\n통해 공정 데이터 관리`,
+      description: `클라우드 기반 SaaS ERP를 통해\n공정 데이터 관리`,
       imgSrc: "",
     },
     {

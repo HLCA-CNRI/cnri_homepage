@@ -167,12 +167,10 @@ export const ModalContentContainer = styled.div<{
   border-radius: ${({radius}) => radius ?? "0rem"};
   top: 50%;
   left: 50%;
-  transition: 0.4s ease-in-out;
-  transform: translate(-50%, -200%);
+  transform: translate(-50%, -50%);
   opacity: 0;
   box-shadow: 0px 6px 20px rgb(0 0 0 / 10%);
   &.active {
     opacity: 1;
-    transform: translate(-50%, -50%);
   }
 `;

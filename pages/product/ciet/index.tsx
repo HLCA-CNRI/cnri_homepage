@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import {NextSeo} from "next-seo";
 import Image from "next/image";
 import {memo, useEffect, useState} from "react";
@@ -154,7 +155,7 @@ function CietPage() {
       <div className="w-full h-[100vh] pt-[13vh] flex   md:landscape:flex-row  justify-center items-center  bg-ciet_mint_2 snap-center snap-always">
         <Report color={colors.CIET_MINT_2} />
       </div>
-      {isReportImgOpen ? <ReportModal setIsOpen={setIsReportImgOpen} /> : null}
+      <ReportModal isOpen={isReportImgOpen} setIsOpen={setIsReportImgOpen} />
     </div>
   );
 }
@@ -211,31 +212,9 @@ const ImageStyle = styled.div`
   }
 `;
 
-// const CardStyle = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   gap: 0.5rem;
-
-//   @media screen and (max-width: 640px) {
-//     &:last-child {
-//       padding-right: 12vw;
-//     }
-//   }
-// `;
-
-// const CardImageStyle = styled.div`
-//   & * {
-//     width: 15vw !important;
-//     height: 10vw !important;
-//     position: static !important;
-//   }
-
-//   @media screen and (max-width: 640px) {
-//     & * {
-//       width: 70vw !important;
-//       height: 50vw !important;
-//     }
-//   }
-// `;
+const ModalWrapper = styled.div<{isOpened: boolean}>`
+  width: 100%;
+  height: 100%;
+  z-index: ${({isOpened}) => (isOpened ? "-10" : "-1000")};
+  opacity: ${({isOpened}) => (isOpened ? "1" : "0")};
+`;

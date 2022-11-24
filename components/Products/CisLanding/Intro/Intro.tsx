@@ -7,7 +7,7 @@ import * as CSS from "../../Common/SharedStyle";
 
 const Intro = memo(() => (
   <CSS.ContentFlex isPhotoLeft={false} className="py-[6vh]">
-    <div className="snap-always snap-center pt-[6vh] px-[10vw] md:landscape:p-0 md:landscape:snap-none flex flex-col justify-center items-start ">
+    <div className="sm:snap-always snap-center pt-[6vh] px-[10vw] md:landscape:p-0 md:landscape:snap-none flex flex-col justify-center items-start ">
       <ContentContainer>
         <IntroTitle>
           어려운 탄소회계가

@@ -142,14 +142,14 @@ export const ScrollContainer = styled.div`
   }
 `;
 
-export const ModalBackground = styled.div`
+export const ModalBackground = styled.div<{isOpen: boolean}>`
   position: fixed;
   top: -13vh;
   left: 0;
   width: 100%;
   height: 113vh;
   background: rgba(0, 0, 0, 0.3);
-  z-index: 50 !important;
+  z-index: ${({isOpen}) => (isOpen ? "50 !important" : "-10")};
 `;
 
 export const ModalContentContainer = styled.div<{
@@ -157,9 +157,9 @@ export const ModalContentContainer = styled.div<{
   height?: string;
   bgColor?: string;
   radius?: string;
+  isOpen: boolean;
 }>`
   background-color: ${({bgColor}) => bgColor ?? "white"};
-  z-index: 51;
   position: fixed;
   width: ${({width}) => width ?? "400px"};
   height: ${({height}) => height ?? "auto"};
@@ -167,12 +167,8 @@ export const ModalContentContainer = styled.div<{
   border-radius: ${({radius}) => radius ?? "0rem"};
   top: 50%;
   left: 50%;
-  transition: 0.4s ease-in-out;
-  transform: translate(-50%, -200%);
-  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: ${({isOpen}) => (isOpen ? "51" : "-100")};
+  opacity: ${({isOpen}) => (isOpen ? "1" : "0")};
   box-shadow: 0px 6px 20px rgb(0 0 0 / 10%);
-  &.active {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
 `;

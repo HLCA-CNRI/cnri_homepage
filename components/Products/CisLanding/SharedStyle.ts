@@ -45,13 +45,19 @@ export const Description = styled.div<{mobileColor?: string}>`
   }
 `;
 
-export const UsecaseImageContainer = styled.div`
+export const UsecaseImageContainer = styled.div<{isOriginLeft: boolean}>`
   width: 92vw;
   height: 60vw;
   position: relative;
   @media screen and (min-width: 768px) and (orientation: landscape) {
     width: 600px;
     height: 400px;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    transform-origin: ${({isOriginLeft}) => (isOriginLeft ? "20% 50%" : "80% 50%")};
+    &:hover {
+      transform: scale(150%);
+    }
   }
 `;
 

@@ -36,7 +36,7 @@ const Intro = memo(() => (
         </Description>
       </ContentContainer>
     </div>
-    <div className="w-[86vw] h-[63vw] snap-always snap-center md:landscape:w-[600px] md:landscape:h-[500px] md:snap-none relative   ">
+    <ImageWrapper className="snap-always snap-center">
       <Image
         src="/images/cis/intro.png"
         alt="introduce"
@@ -44,7 +44,7 @@ const Intro = memo(() => (
         priority
         className="object-contain"
       />
-    </div>
+    </ImageWrapper>
   </CSS.ContentFlex>
 ));
 
@@ -74,5 +74,23 @@ const Description = styled(SS.Description)`
   margin: 0;
   @media screen and (min-width: 768px) and (orientation: landscape) {
     font-size: 1rem;
+  }
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+
+  width: 86vw;
+  height: 63vw;
+  @media screen and (min-width: 1200px) and (orientation: landscape) {
+    width: 600px;
+    height: 500px;
+    transition: all ease-in-out 0.5s;
+    transform-origin: 50% 20%;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(160%);
+    }
   }
 `;

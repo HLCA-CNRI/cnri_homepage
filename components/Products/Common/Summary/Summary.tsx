@@ -56,7 +56,13 @@ const Summary = memo(
           </div>
         </div>
         <PcImageWrapper>
-          <Image src={imgPath} layout="fill" alt={`${productEnum}_sample_img`} priority />
+          <Image
+            src={imgPath}
+            layout="fill"
+            alt={`${productEnum}_sample_img`}
+            objectFit="contain"
+            priority
+          />
         </PcImageWrapper>
       </CSS.ContentFlex>
     );
@@ -113,6 +119,12 @@ const PcImageWrapper = styled.div`
     display: block;
     width: 730px;
     height: 500px;
+    cursor: pointer;
+    transform-origin: 50% 20%;
+    transition: all ease-in-out 0.5s;
+    &:hover {
+      transform: scale(150%);
+    }
   }
 `;
 

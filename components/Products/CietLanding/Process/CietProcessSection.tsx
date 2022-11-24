@@ -35,6 +35,7 @@ const CietProcessSection = memo(() => (
             src="/images/ciet/desktop_company_result.png"
             layout="fill"
             alt="ciet 회사 결과 페이지"
+            objectFit="contain"
             priority
           />
         </ContentImageContainer>

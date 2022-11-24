@@ -18,10 +18,10 @@ const Report = memo(({color}: {color: string}) => (
       </div>
       <div className="flex justify-around w-[1100px] ">
         <ImageContainer className="w-[500px]">
-          <Image src="/images/ciet/report_1.png" layout="fill" alt="report1" priority />
+          <Image src="/images/product/report_1.png" layout="fill" alt="report1" priority />
         </ImageContainer>
         <ImageContainer className="w-[500px]">
-          <Image src="/images/ciet/report_2.png" layout="fill" alt="report1" priority />
+          <Image src="/images/product/report_2.png" layout="fill" alt="report1" priority />
         </ImageContainer>
       </div>
     </div>

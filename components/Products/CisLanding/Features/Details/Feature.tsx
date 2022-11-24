@@ -13,7 +13,7 @@ const Feature = memo(({number, description}: PropTypes) => (
   <div className="snap-always snap-center md:landscape:snap-none md:landscape:snap-normal">
     <Number>0{number}</Number>
     <FeatureDescription>{description}</FeatureDescription>
-    <div className="w-[80vw] h-[80vw] md:landscape:w-[300px] md:landscape:h-[300px] relative mx-auto flex justify-center items-center">
+    <div className="w-[70vw] h-[70vw] md:landscape:w-[300px] md:landscape:h-[300px] relative mx-auto flex justify-center items-center">
       <Image
         src={`/images/cis/feature_${number}.png`}
         alt={`기능_${number}`}

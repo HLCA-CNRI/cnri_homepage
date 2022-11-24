@@ -30,7 +30,13 @@ const Report = memo(({color}: {color: string}) => (
     <div className=" h-full py-[8vh]  flex md:landscape:hidden flex-col justify-between w-full items-center">
       <MobileContentContainer>
         <MobileImageContainer className="h-[25vh]">
-          <Image src="/images/ciet/report_1.png" layout="fill" alt="report1" />
+          <Image
+            src="/images/product/report_1.png"
+            layout="fill"
+            alt="report1"
+            objectFit="contain"
+            priority
+          />
         </MobileImageContainer>
         <ReportDescription1 />
       </MobileContentContainer>
@@ -41,7 +47,13 @@ const Report = memo(({color}: {color: string}) => (
 
       <MobileContentContainer>
         <MobileImageContainer className="h-[25vh]">
-          <Image src="/images/ciet/report_2.png" layout="fill" alt="report1" />
+          <Image
+            src="/images/product/report_2.png"
+            layout="fill"
+            alt="report1"
+            objectFit="contain"
+            priority
+          />
         </MobileImageContainer>
         <ReportDescription2 />
       </MobileContentContainer>
@@ -55,7 +67,7 @@ const ReportDescription1 = memo(() => (
   <ContentDescription>
     온실가스 배출량 보고서 자동 생성
     <br />
-    간편하게(ESG 보고서 형태)
+    (ESG 보고서 형태)
   </ContentDescription>
 ));
 

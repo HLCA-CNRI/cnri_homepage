@@ -39,8 +39,8 @@ const ImgWrapper = styled.div`
   height: 100%;
   position: relative;
   margin: 0 auto;
-  box-shadow: 0 10px 30px 0 rgb(82 169 156 / 0.15);
   @media screen and (min-width: 1200px) {
+    box-shadow: 0 10px 30px 0 rgb(82 169 156 / 0.15);
     width: 82%;
     height: 100%;
   }

@@ -58,7 +58,7 @@ const MobileCards = memo(() => {
               alt="left arrow button"
             />
           </ArrowWrapper>
-          <Card width="47vh">
+          <Card>
             <RightCardText />
             <RightNonTextWrapper>
               <RightNonText />
@@ -85,7 +85,7 @@ const CardWrapper = styled.div<{align: Direction; isLeftCardShown: boolean}>`
 
   gap: 2vh;
   align-items: ${({align}) => (align === Direction.LEFT ? "flex-start" : "flex-end")};
-  transform: ${({isLeftCardShown}) => (isLeftCardShown ? "" : "translateX(-40vh)")};
+  transform: ${({isLeftCardShown}) => (isLeftCardShown ? "" : "translateX(-70vw)")};
 `;
 
 const Card = styled(SS.CardStyle)<{width?: string}>`
@@ -95,8 +95,8 @@ const Card = styled(SS.CardStyle)<{width?: string}>`
   align-items: center;
   padding: 5vh 4vw;
 
-  width: ${({width}) => width ?? "37vh"};
-  height: 55vh;
+  width: ${({width}) => width ?? "80vw"};
+  height: 120vw;
 
   @media screen and (orientation: landscape) {
     // width: 33vh;

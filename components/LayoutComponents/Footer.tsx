@@ -9,7 +9,7 @@ function Footer() {
       className={`w-[100%] ${
         router.pathname === "/product/ciet"
           ? "snap-start"
-          : router.pathname === "/"
+          : router.pathname === "/" || router.pathname === "/participate"
           ? ""
           : "snap-end"
       } ${

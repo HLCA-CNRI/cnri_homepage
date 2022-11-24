@@ -34,7 +34,7 @@ const NormalProcessSection = memo(() => (
         <MobileContentDescription>탄소회계</MobileContentDescription>
       </div>
       <GrFormClose size={30} color={colors.DARK_GRAY_2} className="my-[1vh]" />
-      <div className="relative w-[40vw] h-[18vw]">
+      <div className="relative w-[38vw] h-[16vw]">
         <Image src="/images/ciet/icon_cycle.svg" layout="fill" alt="일반 공정 1년 반복 횟수" />
         <div className="absolute w-full h-full flex justify-center items-center">
           <div className="text-[3vw] text-dark_gray font-bold">12회 (1~12월)</div>
@@ -49,17 +49,17 @@ export default NormalProcessSection;
 
 const MobileArrow = memo(({text}: {text: string}) => (
   <div className="relative flex flex-col justify-center items-center">
-    <div className="rotate-90  w-[10vh] h-[7vh] mt-[1vh] ">
+    <div className="rotate-90  w-[8vh] h-[6vh] mt-[0.5vh] ">
       <Image src="/images/ciet/arrow_green.svg" layout="fill" alt="화살표" />
     </div>
-    <div className="relative -top-[3vh]">{text}</div>
+    <div className="relative -top-[3vh] text-[2vw]">{text}</div>
   </div>
 ));
 
 const TextWithTimeIcon = memo(({text}: {text: string}) => (
   <div className="flex items-center justify-center mr-[5vw]">
-    <Time size="20" />
-    <span className="font-bold text-[4vw] text-dark_gray">{text}</span>
+    <Time size="18" />
+    <span className="font-bold text-[3.5vw] text-dark_gray">{text}</span>
   </div>
 ));
 
@@ -72,8 +72,8 @@ const MobileContentDescription = styled.div`
   color: ${colors.GREEN_GRAY};
 
   margin: 0.5vh 0;
-  border-radius: 3vw;
-  width: 60vw;
-  height: 8vw;
-  font-size: 4vw;
+  border-radius: 2vw;
+  width: 55vw;
+  height: 6vw;
+  font-size: 3vw;
 `;

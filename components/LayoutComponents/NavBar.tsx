@@ -27,7 +27,7 @@ function NavigationBar() {
                 ? "font-bold text-black"
                 : "text-[gray]"
             }`}>
-            <Link href="/product/ciet">PRODUCT</Link>
+            <Link href="/product/greenerp">PRODUCT</Link>
             {router.pathname === "/product/ciet" && (
               <div className="absolute w-full mx-auto border-2  border-black top-[8.3vh] bg-black ">
                 {" "}

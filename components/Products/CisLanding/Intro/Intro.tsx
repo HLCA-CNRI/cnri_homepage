@@ -8,6 +8,7 @@ import * as CSS from "../../Common/SharedStyle";
 const Intro = memo(() => (
   <CSS.ContentFlex isPhotoLeft={false} className="py-[6vh]">
     <div className="sm:snap-always snap-center pt-[6vh] px-[10vw] md:landscape:p-0 md:landscape:snap-none flex flex-col justify-center items-start ">
+      {/* <div className="pt-[6vh] px-[10vw] md:landscape:p-0 md:landscape:snap-none flex flex-col justify-center items-start "> */}
       <ContentContainer>
         <IntroTitle>
           어려운 탄소회계가
@@ -36,13 +37,24 @@ const Intro = memo(() => (
         </Description>
       </ContentContainer>
     </div>
-    <ImageWrapper className="snap-always snap-center">
+    {/* PC용 - snap이 PC버전에서도 적용되어 임시로 이렇게 수정  */}
+    <ImageWrapper className="hidden xl:block">
       <Image
         src="/images/cis/intro.png"
         alt="introduce"
         layout="fill"
         priority
-        className="object-contain"
+        objectFit="contain"
+      />
+    </ImageWrapper>
+    {/* 모바일용 */}
+    <ImageWrapper className="snap-always snap-center block xl:hidden">
+      <Image
+        src="/images/cis/intro.png"
+        alt="introduce"
+        layout="fill"
+        priority
+        objectFit="contain"
       />
     </ImageWrapper>
   </CSS.ContentFlex>

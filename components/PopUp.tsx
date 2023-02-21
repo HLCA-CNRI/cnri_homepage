@@ -70,12 +70,12 @@ const PopUp = () => {
                 ×
               </div>
             </div>
-            <footer className=" absolute w-full text-right text-white text-[13px]  leading-[50px] bottom-0 transform:transition w-full h-[40px]">
+            <footer className=" absolute  w-full text-right text-white text-[13px]  leading-[50px] bottom-0 transform:transition w-full h-[40px]">
               <div
                 role="button"
-                className="absolute text-right w-full top-8 right-4"
+                className="absolute text-right w-full top-8 right-0  flex items-center justify-end gap-1"
                 onClick={onNotOpenPopup}>
-                <input type="checkbox" id="checkbox" checked={doesHideToday} />
+                <input type="checkbox" id="checkbox" className="mt-0.5" checked={doesHideToday} />
                 <span> 하루동안 열지 않기</span>
               </div>
             </footer>

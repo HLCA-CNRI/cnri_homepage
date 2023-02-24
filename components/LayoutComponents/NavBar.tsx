@@ -91,9 +91,16 @@ function NavigationBar() {
           </li>
         </ul>
 
-        <div className="flex h-full items-center">
+        <div className="flex h-full items-center gap-0 md:gap-1">
+          <a href="https://fashion-lca.cnrikorea.com" target="_blank" rel="noreferrer">
+            <FashionCarbonToolButton>패션 LCA</FashionCarbonToolButton>
+          </a>
           <a href="https://cis.cnrikorea.com" target="_blank" rel="noreferrer">
-            <CarbonToolButton>탄소회계 산정툴</CarbonToolButton>
+            <CarbonToolButton>
+              탄소회계
+              <br className="block md:hidden" />
+              산정툴
+            </CarbonToolButton>
           </a>
           <button type="button" className="sm:hidden">
             <HamburgerMenu />
@@ -151,15 +158,23 @@ const CarbonToolButton = styled.div`
     color: white;
   }
 
-  padding: 0 3vw;
+  padding: 0 2vw;
   height: 15vw;
   border-radius: 3vw;
-  margin-right: 5vw;
+  margin-right: 1vw;
 
   @media screen and (min-width: 1200px), (orientation: landscape) {
     padding: 0 1.5vw;
     height: 3.5vw;
     border-radius: 1vw;
     margin-right: 0;
+  }
+`;
+
+const FashionCarbonToolButton = styled(CarbonToolButton)`
+  border: 2px solid black;
+
+  &:hover {
+    background-color: black;
   }
 `;

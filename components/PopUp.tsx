@@ -18,7 +18,7 @@ const PopUp = () => {
     const options = {path: "/", expires: expireDate};
 
     setCookie(CookieKey.NOT_SHOW_TODAY, true, options);
-  }, [doesHideToday]);
+  }, [isOpened]);
 
   const onDelbtnClick = (e: any) => {
     const {id} = e.target;

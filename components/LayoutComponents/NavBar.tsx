@@ -1,14 +1,20 @@
 import Link from "next/link";
+import {CgClose} from "react-icons/cg";
 import Image from "next/image";
 import {useRouter} from "next/router";
-import {memo} from "react";
+import {memo, useState} from "react";
 import styled from "styled-components";
-import {HeaderLinkButton} from "../../styles/commonStyles";
 import HamburgerMenu from "./Hamburger/HamburgerMenu";
 import colors from "../../constants/colors";
+import mediaList from "../../constants/mediaList";
 
 function NavigationBar() {
   const router = useRouter();
+  const [showFashionLcaBubble, setShowFashionLcaBubble] = useState(true);
+
+  const handleBubbleRemove = () => {
+    setShowFashionLcaBubble(false);
+  };
 
   return (
     <div className="sticky z-50  inset-x-0 top-0 ">
@@ -21,17 +27,17 @@ function NavigationBar() {
           />
         </Link>
         <ul className="hidden sm:flex ">
-          <ProductListStyle
-            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
-              router.pathname === "/product/ciet" || router.pathname === "/"
+          <GroupTab
+            className={` ${
+              router.pathname === "/product/ciet" ||
+              router.pathname === "/product/greenerp" ||
+              router.pathname === "/"
                 ? "font-bold text-black"
                 : "text-[gray]"
             }`}>
             <Link href="/product/greenerp">PRODUCT</Link>
-            {router.pathname === "/product/ciet" && (
-              <div className="absolute w-full mx-auto border-2  border-black top-[8.3vh] bg-black ">
-                {" "}
-              </div>
+            {(router.pathname === "/product/ciet" || router.pathname === "/product/greenerp") && (
+              <div className="absolute w-full mx-auto border-2  border-black top-[8.3vh] bg-black " />
             )}
             <div className="list">
               <Link href="/product/greenerp" passHref>
@@ -42,24 +48,22 @@ function NavigationBar() {
                 <span className="hover:text-constant-CIET_MINT">CIET</span>
               </Link>
             </div>
-          </ProductListStyle>
+          </GroupTab>
 
-          <li
-            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
+          <Tab
+            className={`${
               router.pathname === "/company" || router.pathname === "/"
                 ? "font-bold text-black"
                 : "text-[gray]"
             }`}>
             <Link href="/company">COMPANY</Link>
             {router.pathname === "/company" && (
-              <div className="absolute w-[6%] mx-auto border-2 border-black top-[11.8vh] bg-black ">
-                {" "}
-              </div>
+              <div className="absolute w-[6%] mx-auto border-2 border-black top-[11.8vh] bg-black " />
             )}
-          </li>
+          </Tab>
 
-          <li
-            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
+          <Tab
+            className={`${
               router.pathname === "/randd" || router.pathname === "/"
                 ? "font-bold text-black"
                 : "text-[gray]"
@@ -70,31 +74,55 @@ function NavigationBar() {
                 {" "}
               </div>
             )}
-          </li>
+          </Tab>
 
-          <li
+          {/* <li
             className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
               router.pathname === "/" ? "font-bold text-black" : "text-[gray]"
             }`}>
             <a target="_blank" rel="noopener noreferrer" href="https://front-end-developer.oopy.io">
               JOBS
             </a>
-          </li>
-
-          <li
-            className={`flex justify-center mx-[0.3vw]  px-[1vw] py-[1vh] text-[1.5vw] md:text-[1vw] font-medium  ${
+          </li> */}
+          <GroupTab
+            className={`cursor-pointer  ${
               router.pathname === "/" ? "font-bold text-black" : "text-[gray]"
             }`}>
-            <a target="_blank" rel="noopener noreferrer" href="https://brunch.co.kr/@cnrikorea">
-              BLOG
-            </a>
-          </li>
+            <span>MEDIA</span>
+
+            <div className="list">
+              {mediaList.map((media) => (
+                <a href={media.link} target="_blank" rel="noopener noreferrer">
+                  <span className="hover:text-constant-CIET_MINT">{media.name}</span>
+                </a>
+              ))}
+            </div>
+          </GroupTab>
         </ul>
 
         <div className="flex h-full items-center gap-0 md:gap-1">
-          <a href="https://fashion-lca.cnrikorea.com" target="_blank" rel="noreferrer">
-            <FashionCarbonToolButton>패션 LCA</FashionCarbonToolButton>
-          </a>
+          <div className="relative">
+            <a href="https://fashion-lca.cnrikorea.com" target="_blank" rel="noreferrer">
+              <FashionCarbonToolButton>패션 LCA</FashionCarbonToolButton>
+            </a>
+            {showFashionLcaBubble ? (
+              <FashionCarbonBubble className=" animate-bounce">
+                <div className="flex gap-1">
+                  <strong>NEW RELEASE✨</strong>
+                  <CgClose
+                    color="#ffffff"
+                    size="13"
+                    className="relative -right-2 -top-0.5 cursor-pointer"
+                    onClick={handleBubbleRemove}
+                  />
+                </div>
+                <div>
+                  의류 탄소계산기를 <br />
+                  체험해보세요!
+                </div>
+              </FashionCarbonBubble>
+            ) : null}
+          </div>
           <a href="https://cis.cnrikorea.com" target="_blank" rel="noreferrer">
             <CarbonToolButton>
               탄소회계
@@ -113,19 +141,33 @@ function NavigationBar() {
 
 export default memo(NavigationBar);
 
-const ProductListStyle = styled.li`
+const Tab = styled.li`
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.3vw;
+  padding: 1vh 1vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1vw;
+  }
+`;
+
+const GroupTab = styled(Tab)`
   position: relative;
 
   .list {
     opacity: 0;
     visibility: hidden;
-    width: 100%;
+    width: 8vw;
     height: auto;
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: -13vh;
-    left: 0;
+    top: 5vh;
     background-color: #fff;
     border: 1px solid #e5e5e5;
   }
@@ -135,8 +177,15 @@ const ProductListStyle = styled.li`
     visibility: visible;
   }
 
-  .list span {
-    padding: 0.8vw 1vw;
+  .list > span {
+    padding: 0.8vw;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease-in;
+  }
+
+  .list a {
+    padding: 0.8vw;
     cursor: pointer;
     text-align: center;
     transition: 0.3s ease-in;
@@ -177,4 +226,17 @@ const FashionCarbonToolButton = styled(CarbonToolButton)`
   &:hover {
     background-color: black;
   }
+`;
+
+const FashionCarbonBubble = styled.div`
+  position: absolute;
+  background-color: black;
+  width: auto;
+  white-space: nowrap;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: default;
 `;

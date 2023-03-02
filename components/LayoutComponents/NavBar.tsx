@@ -1,15 +1,20 @@
 import Link from "next/link";
+import {CgClose} from "react-icons/cg";
 import Image from "next/image";
 import {useRouter} from "next/router";
-import {memo} from "react";
+import {memo, useState} from "react";
 import styled from "styled-components";
-import {HeaderLinkButton} from "../../styles/commonStyles";
 import HamburgerMenu from "./Hamburger/HamburgerMenu";
 import colors from "../../constants/colors";
 import mediaList from "../../constants/mediaList";
 
 function NavigationBar() {
   const router = useRouter();
+  const [showFashionLcaBubble, setShowFashionLcaBubble] = useState(true);
+
+  const handleBubbleRemove = () => {
+    setShowFashionLcaBubble(false);
+  };
 
   return (
     <div className="sticky z-50  inset-x-0 top-0 ">
@@ -96,9 +101,28 @@ function NavigationBar() {
         </ul>
 
         <div className="flex h-full items-center gap-0 md:gap-1">
-          <a href="https://fashion-lca.cnrikorea.com" target="_blank" rel="noreferrer">
-            <FashionCarbonToolButton>패션 LCA</FashionCarbonToolButton>
-          </a>
+          <div className="relative">
+            <a href="https://fashion-lca.cnrikorea.com" target="_blank" rel="noreferrer">
+              <FashionCarbonToolButton>패션 LCA</FashionCarbonToolButton>
+            </a>
+            {showFashionLcaBubble ? (
+              <FashionCarbonBubble className=" animate-bounce">
+                <div className="flex gap-1">
+                  <strong>NEW RELEASE✨</strong>
+                  <CgClose
+                    color="#ffffff"
+                    size="13"
+                    className="relative -right-2 -top-0.5 cursor-pointer"
+                    onClick={handleBubbleRemove}
+                  />
+                </div>
+                <div>
+                  의류 탄소계산기를 <br />
+                  체험해보세요!
+                </div>
+              </FashionCarbonBubble>
+            ) : null}
+          </div>
           <a href="https://cis.cnrikorea.com" target="_blank" rel="noreferrer">
             <CarbonToolButton>
               탄소회계
@@ -202,4 +226,17 @@ const FashionCarbonToolButton = styled(CarbonToolButton)`
   &:hover {
     background-color: black;
   }
+`;
+
+const FashionCarbonBubble = styled.div`
+  position: absolute;
+  background-color: black;
+  width: auto;
+  white-space: nowrap;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: default;
 `;

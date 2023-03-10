@@ -104,7 +104,7 @@ function NavigationBar() {
           <div className="relative">
             <a href="https://fashion-lca.cnrikorea.com" target="_blank" rel="noreferrer">
               <FashionCarbonToolButton className="flex flex-col items-center lg:flex-row lg:gap-[0.25vw] ">
-                <span className="label lg:mr-[0.2vw] w-fit bg-cis_main_green text-white px-[0.5vw] py-[0.2vw] font-normal rounded-[0.6vw] text-[0.8vw]   ">
+                <span className="label lg:mr-[0.2vw] lg:text-[0.8vw] min:text-2 w-fit bg-cis_main_green text-white px-[0.5vw] py-[0.2vw] font-normal rounded-[0.6vw]    ">
                   NEW
                 </span>
                 <span className="text ">패션 LCA</span>
@@ -228,7 +228,7 @@ const FashionCarbonToolButton = styled(CarbonToolButton)`
 const FashionCarbonBubble = styled.div`
   position: absolute;
   background-color: black;
-  width: auto;
+  width: 35vw;
   white-space: nowrap;
   color: white;
   cursor: default;
@@ -238,6 +238,8 @@ const FashionCarbonBubble = styled.div`
   border-radius: 0.5rem;
   margin-top: 0.5rem;
   text-align: center;
+  left: -9vw;
+  // transform: translateX(-100%);
 
   @media (min-width: 1024px), (orientation: landscape) {
     padding: 0.8vw 1.5vw;

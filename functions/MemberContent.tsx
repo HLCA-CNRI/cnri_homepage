@@ -32,12 +32,12 @@ const MemberContent: {[key: string]: any} = {
     pic_square: "/images/members/minhyeok_square.jpg",
   },
   seungbum: {
-    name: "한승범",
+    name: "유현서",
     position: "Research Scientist",
     description:
-      "서울대학교 기계항공공학부 학사과정 중이며 공학적 지식과 아이디어로 기후 문제를 해결하는데 큰 관심을 가지고 있습니다.",
-    pic: "/images/members/seungbum.jpg",
-    pic_square: "/images/members/seungbum_square.jpg",
+      "서울대학교 화학생물공학부 및 글로벌환경경영 학사 과정 중입니다. 배출량 산정 및 LCA 분석을 진행하며, 지속가능한 순환경제를 위해 고민하며 도전하고 있습니다.",
+    pic: "/images/members/hyeonseo.jpg",
+    pic_square: "/images/members/hyeonseo_square.jpg",
   },
   kyunghoh: {
     name: "안경호",

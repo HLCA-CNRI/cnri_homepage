@@ -246,5 +246,6 @@ const FashionCarbonBubble = styled.div`
     font-size: 0.7vw;
     border-radius: 0.6vw;
     margin-top: 0.5vw;
+    width: auto;
   }
 `;

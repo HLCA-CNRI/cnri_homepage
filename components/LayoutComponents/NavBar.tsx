@@ -100,19 +100,24 @@ function NavigationBar() {
           </GroupTab>
         </ul>
 
-        <div className="flex h-full items-center gap-0 md:gap-1">
+        <div className="flex h-full items-center gap-[2vw] lg:gap-[2vw]">
           <div className="relative">
             <a href="https://fashion-lca.cnrikorea.com" target="_blank" rel="noreferrer">
-              <FashionCarbonToolButton>패션 LCA</FashionCarbonToolButton>
+              <FashionCarbonToolButton className="flex flex-col items-center lg:flex-row lg:gap-[0.25vw] ">
+                <span className="label lg:mr-[0.2vw] w-fit bg-cis_main_green text-white px-[0.5vw] py-[0.2vw] font-normal rounded-[0.6vw] text-[0.8vw]   ">
+                  NEW
+                </span>
+                <span className="text ">패션 LCA</span>
+              </FashionCarbonToolButton>
             </a>
             {showFashionLcaBubble ? (
               <FashionCarbonBubble className=" animate-bounce">
-                <div className="flex gap-1">
-                  <strong>NEW RELEASE✨</strong>
+                <div>
+                  <strong className="text-center">NEW RELEASE✨</strong>
                   <CgClose
                     color="#ffffff"
                     size="13"
-                    className="relative -right-2 -top-0.5 cursor-pointer"
+                    className="absolute right-0.5 top-0.5 lg:right-[0.2vw] lg:top-[0.2vw] cursor-pointer"
                     onClick={handleBubbleRemove}
                   />
                 </div>
@@ -124,9 +129,9 @@ function NavigationBar() {
             ) : null}
           </div>
           <a href="https://cis.cnrikorea.com" target="_blank" rel="noreferrer">
-            <CarbonToolButton>
+            <CarbonToolButton className="text-cis_main_green">
               탄소회계
-              <br className="block md:hidden" />
+              <br className="block lg:hidden" />
               산정툴
             </CarbonToolButton>
           </a>
@@ -193,38 +198,30 @@ const GroupTab = styled(Tab)`
 `;
 
 const CarbonToolButton = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: all ease-in-out 0.5s;
   text-align: center;
-
-  margin: auto 0;
-  border: 2px solid ${colors.CIS_MAIN_GREEN};
+  font-weight: 800;
 
   &:hover {
-    background-color: ${colors.CIS_MAIN_GREEN};
-    color: white;
+    color: ${colors.HOVER_GREEN};
   }
 
-  padding: 0 2vw;
-  height: 15vw;
-  border-radius: 3vw;
-  margin-right: 1vw;
+  font-size: 2vh;
 
   @media screen and (min-width: 1200px), (orientation: landscape) {
-    padding: 0 1.5vw;
-    height: 3.5vw;
-    border-radius: 1vw;
-    margin-right: 0;
+    font-size: 1vw;
   }
 `;
 
 const FashionCarbonToolButton = styled(CarbonToolButton)`
-  border: 2px solid black;
+  &:hover .label {
+    transition: all ease-in-out 0.3s;
+    background-color: ${colors.HOVER_GREEN};
+  }
 
-  &:hover {
-    background-color: black;
+  &:hover .text {
+    transition: all ease-in-out 0.3s;
+    color: ${colors.DARK_GRAY_3};
   }
 `;
 
@@ -234,9 +231,18 @@ const FashionCarbonBubble = styled.div`
   width: auto;
   white-space: nowrap;
   color: white;
+  cursor: default;
+
   padding: 0.5rem 1rem;
   font-size: 12px;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
-  cursor: default;
+  text-align: center;
+
+  @media (min-width: 1024px), (orientation: landscape) {
+    padding: 0.8vw 1.5vw;
+    font-size: 0.7vw;
+    border-radius: 0.6vw;
+    margin-top: 0.5vw;
+  }
 `;

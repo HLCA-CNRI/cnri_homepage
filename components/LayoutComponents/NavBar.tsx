@@ -248,5 +248,6 @@ const FashionCarbonBubble = styled.div`
     margin-top: 0.5vw;
     width: auto;
     left: 0;
+    // left: 0;
   }
 `;

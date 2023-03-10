@@ -67,6 +67,7 @@ module.exports = {
       ciet_btn_hover: "#C4EBE8",
       cis_main_green: "#58BE91",
       light_green: "#41D395",
+      hover_green: "#079E68",
       dark_green: " #233323",
       dark_gray: " #575756",
       dark_gray_2: " #716962",

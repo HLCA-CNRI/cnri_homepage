@@ -20,9 +20,9 @@ function Home() {
           <MobileCards />
         </div>
       </CardSection>
-      <ButtonSection>
+      {/* <ButtonSection>
         <ProductButtons />
-      </ButtonSection>
+      </ButtonSection> */}
     </Wrapper>
   );
 }

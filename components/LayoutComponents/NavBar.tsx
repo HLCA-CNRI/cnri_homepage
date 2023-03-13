@@ -29,17 +29,18 @@ function NavigationBar() {
         <ul className="hidden sm:flex ">
           <GroupTab
             className={` ${
-              router.pathname === "/product/ciet" ||
-              router.pathname === "/product/greenerp" ||
+              router.pathname === "/lca" ||
+              // router.pathname === "/product/ciet" ||
+              // router.pathname === "/product/greenerp" ||
               router.pathname === "/"
                 ? "font-bold text-black"
                 : "text-[gray]"
             }`}>
-            <Link href="/product/greenerp">PRODUCT</Link>
-            {(router.pathname === "/product/ciet" || router.pathname === "/product/greenerp") && (
-              <div className="absolute w-full mx-auto border-2  border-black top-[8.3vh] bg-black " />
+            <Link href="/lca">LCA</Link>
+            {router.pathname === "/lca" && (
+              <div className="absolute w-full mx-auto border-2  border-black top-[8.4vh] bg-black " />
             )}
-            <div className="list">
+            {/* <div className="list">
               <Link href="/product/greenerp" passHref>
                 <span className="hover:text-constant-CIET_MINT">GreenERP</span>
               </Link>
@@ -47,7 +48,7 @@ function NavigationBar() {
               <Link href="/product/ciet" passHref>
                 <span className="hover:text-constant-CIET_MINT">CIET</span>
               </Link>
-            </div>
+            </div> */}
           </GroupTab>
 
           <Tab

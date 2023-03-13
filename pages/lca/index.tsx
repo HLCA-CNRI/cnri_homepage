@@ -305,10 +305,10 @@ const TopPart = styled.div`
 
 const TopNav = styled.div<{scrollY: number}>`
   position: sticky;
-  top: 0;
+  top: 11.8vh;
   z-index: 10;
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background-color: ${(props) => (props.scrollY > 180 ? "#7dd3c8" : "#fff")};
   color: ${(props) => (props.scrollY > 180 ? "#fff" : "#193532")};
   display: flex;
@@ -351,6 +351,7 @@ const TopNav = styled.div<{scrollY: number}>`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    top: 10vh;
 
     p {
       font-size: 1rem;

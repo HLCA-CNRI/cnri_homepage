@@ -103,11 +103,13 @@ function HamburgerMenu() {
                 <hr />
 
                 <GroupTab onClick={clickProdList}>
-                  <Tab>
-                    <div>PRODUCT</div>
-                    <GrNext />
-                  </Tab>
-                  <ul
+                  <Link href="/lca" passHref>
+                    <Tab>
+                      <div>LCA</div>
+                      <GrNext />
+                    </Tab>
+                  </Link>
+                  {/* <ul
                     className={classNames({
                       active: prodListIsOpen,
                     })}>
@@ -125,7 +127,7 @@ function HamburgerMenu() {
                         </div>
                       </Link>
                     </li>
-                  </ul>
+                  </ul> */}
                 </GroupTab>
                 <hr />
                 <Link href="/company" passHref>

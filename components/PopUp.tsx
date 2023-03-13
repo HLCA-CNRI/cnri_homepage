@@ -45,16 +45,16 @@ const PopUp = () => {
           className={`flex justify-center items-center  fixed top-0 left-0 w-[100vw] h-[100vh] bg-[rgba(0,0,0,0.5)] z-[999] `}>
           {/* PC version */}
           <div
-            className={` absolute md:landscape:w-[25vw] md:landscape:h-[25vw] w-[90vw] h-[90vw]    bg-cover z-[200] shadow-md  `}>
+            className={` absolute md:landscape:w-[30vw] md:landscape:h-[30vw] w-[90vw] h-[90vw]    bg-cover z-[200] shadow-md  `}>
             <a
-              href="https://jmagazine.joins.com/forbes/view/337505"
+              href="https://event-us.kr/cnrikorea/event/58692"
               className="w-full h-full absolute"
               target="_blank"
               rel="noopener noreferrer">
               <Image
                 priority
                 src={pcBackground}
-                alt="이민 대표 포브스 코리아 30세 미만 30인 선정"
+                alt="제 2회 Scope3 세미나"
                 sizes="880px"
                 layout="fill"
                 className="object-cover"

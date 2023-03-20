@@ -33,7 +33,7 @@ function LCA() {
           </ArrowCover>
         </div>
         <div className="flex items-center justify-around">
-          <LCACard content={LCAContents.distribution} />
+          <LCACard content={LCAContents.endOfLife} />
           <ArrowCover className="w-[15px]">
             <Arrow direction={ArrowDirection.LEFT} />
           </ArrowCover>
@@ -41,7 +41,7 @@ function LCA() {
           <ArrowCover className="w-[15px]">
             <Arrow direction={ArrowDirection.LEFT} />
           </ArrowCover>
-          <LCACard content={LCAContents.endOfLife} />
+          <LCACard content={LCAContents.distribution} />
         </div>
       </div>
     </div>

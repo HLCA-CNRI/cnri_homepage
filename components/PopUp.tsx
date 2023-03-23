@@ -47,7 +47,7 @@ const PopUp = () => {
           <div
             className={` absolute md:landscape:w-[25vw] md:landscape:h-[25vw] w-[90vw] h-[90vw]    bg-cover z-[200] shadow-md  `}>
             <a
-              href="https://event-us.kr/cnrikorea/event/58692"
+              href="https://jmagazine.joins.com/forbes/view/337505"
               className="w-full h-full absolute"
               target="_blank"
               rel="noopener noreferrer">

@@ -29,7 +29,7 @@ function Home() {
 
 export default memo(Home);
 const Wrapper = styled.div`
-  min-height: 70vh;
+  min-height: 65.8vh;
   height: 100%;
   width: 100%;
 `;
@@ -44,8 +44,8 @@ const CardSection = styled.div`
 
   @media screen and (min-width: 1200px) {
     width: 1280px;
-    height: 490px;
-    padding: 40px 0;
+    height: 600px;
+    padding: 60px 0 40px 0;
     margin: 0 auto;
   }
 `;

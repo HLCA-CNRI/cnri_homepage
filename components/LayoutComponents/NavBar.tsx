@@ -102,7 +102,7 @@ function NavigationBar() {
         </ul>
 
         <div className="flex h-full items-center gap-[2vw] lg:gap-[2vw]">
-          <div className="relative">
+          {/* <div className="relative">
             <a href="https://fashion-lca.cnrikorea.com" target="_blank" rel="noreferrer">
               <FashionCarbonToolButton className="flex flex-col items-center lg:flex-row lg:gap-[0.25vw] ">
                 <span className="label lg:mr-[0.2vw] lg:text-[0.8vw] min:text-2 w-fit bg-cis_main_green text-white px-[0.5vw] py-[0.2vw] font-normal rounded-[0.6vw]    ">
@@ -128,7 +128,7 @@ function NavigationBar() {
                 </div>
               </FashionCarbonBubble>
             ) : null}
-          </div>
+          </div> */}
           <a href="https://cis.cnrikorea.com" target="_blank" rel="noreferrer">
             <CarbonToolButton className="text-cis_main_green">
               탄소회계

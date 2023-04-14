@@ -50,14 +50,14 @@ const CardSection = styled.div`
   }
 `;
 
-const ButtonSection = styled.div`
-  margin: auto;
+// const ButtonSection = styled.div`
+//   margin: auto;
 
-  width: 100vw;
-  height: 50vh;
+//   width: 100vw;
+//   height: 50vh;
 
-  @media screen and (min-width: 1200px) {
-    width: 1280px;
-    height: 180px;
-  }
-`;
+//   @media screen and (min-width: 1200px) {
+//     width: 1280px;
+//     height: 180px;
+//   }
+// `;

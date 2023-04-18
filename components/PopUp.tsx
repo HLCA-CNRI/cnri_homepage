@@ -47,7 +47,8 @@ const PopUp = () => {
           <div
             className={` absolute md:landscape:w-[25vw] md:landscape:h-[25vw] w-[90vw] h-[90vw]    bg-cover z-[200] shadow-md  `}>
             <a
-              href="https://jmagazine.joins.com/forbes/view/337505"
+              href="https://event-us.kr/cnrikorea/event/61627"
+              // "https://jmagazine.joins.com/forbes/view/337505" 포브스 링크
               className="w-full h-full absolute"
               target="_blank"
               rel="noopener noreferrer">
@@ -65,7 +66,7 @@ const PopUp = () => {
                 role="button"
                 id={delBtnId.current}
                 onClick={onDelbtnClick}
-                className="relative  right-1 text-[20px] font-semibold text-black flex justify-end  hover:cursor-pointer opacity-40">
+                className="relative  right-1 text-[20px] font-semibold text-white flex justify-end  hover:cursor-pointer opacity-70">
                 ×
               </div>
             </div>

@@ -29,7 +29,7 @@ function Home() {
 
 export default memo(Home);
 const Wrapper = styled.div`
-  min-height: 65.8vh;
+  min-height: 66.9vh;
   height: 100%;
   width: 100%;
 `;

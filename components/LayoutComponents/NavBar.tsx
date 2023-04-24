@@ -129,13 +129,13 @@ function NavigationBar() {
               </FashionCarbonBubble>
             ) : null}
           </div> */}
-          <a href="https://cis.cnrikorea.com" target="_blank" rel="noreferrer">
-            <CarbonToolButton className="text-cis_main_green">
-              탄소회계
-              <br className="block lg:hidden" />
-              산정툴
-            </CarbonToolButton>
-          </a>
+          {/* <a href="https://cis.cnrikorea.com" target="_blank" rel="noreferrer"> */}
+          <CarbonToolButton className="text-cis_main_green invisible pointer-events-none">
+            탄소회계
+            <br className="block lg:hidden" />
+            산정툴
+          </CarbonToolButton>
+          {/* </a> */}
           <button type="button" className="sm:hidden">
             <HamburgerMenu />
           </button>

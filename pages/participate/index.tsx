@@ -3,8 +3,7 @@ import {Widget} from "@typeform/embed-react";
 import styled from "styled-components";
 
 const participate = memo(() => (
-  <ParticipateWrapper className="w-full  flex justify-center items-center snap-end">
-    {/* <Widget id="BsJPJCcK" className="typeform w-[80%] h-[550px] px-0" /> */}
+  <ParticipateWrapper className="w-full  flex justify-center items-center ">
     <iframe
       title="문의하기"
       src={process.env.NEXT_PUBLIC_WALLA_URL}

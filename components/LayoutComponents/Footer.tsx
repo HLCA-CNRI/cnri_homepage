@@ -7,9 +7,9 @@ function Footer() {
     <div
       id="footer"
       className={`w-[100%] ${
-        router.pathname === "/product/ciet"
+        router.pathname === "/product/ciet" || router.pathname === "/participate"
           ? "snap-start"
-          : router.pathname === "/" || router.pathname === "/participate"
+          : router.pathname === "/"
           ? ""
           : "snap-end"
       } ${
@@ -19,12 +19,12 @@ function Footer() {
           ? "bg-beige_bg_2"
           : ""
       }`}>
-      <div className="h-fit w-screen py-12 flex justify-center border-t-2">
+      <div className="portrait:lg:h-[27vh] h-[230px] w-screen py-5 flex justify-center border-t-2">
         <div className="w-full px-2 md:w-2/3 grid grid-rows-2 md:grid-rows-1 grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-          <div className="relative flex flex-col space-y-2 justify-between">
+          <div className="relative flex flex-col space-y-2 justify-center ">
             <img
               alt="logo"
-              className="w-1/2 md:w-5/12 h-auto"
+              className="w-1/2 sm:w-1/4 md:w-5/12 h-auto"
               src="/images/CNRI_logo_black_under.svg"
             />
             <span>
@@ -33,7 +33,7 @@ function Footer() {
             </span>
           </div>
           <div className="grid md:grid-rows-5 md:grid-cols-1 gap-2">
-            <div className="grid grid-cols-4 ">
+            <div className="grid grid-cols-4 items-center content-center">
               <span className="font-semibold">회사명</span>
               <span className="col-span-3">(주)탄소중립연구원</span>
             </div>

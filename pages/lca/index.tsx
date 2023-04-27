@@ -221,11 +221,14 @@ function lca() {
         {/* 문의하기 */}
         <Contact id="contact">
           <h2>문의하기</h2>
-          <div className="grid xl:grid-cols-2">
-            <Widget id="BsJPJCcK" className="typeform w-full h-[550px]" />
-            <ContactBlock>
-              <div className="upper-line absolute" />
-            </ContactBlock>
+          <div className="grid  h-[60vh] md:h-[530px]">
+            <iframe
+              title="문의하기"
+              src={process.env.NEXT_PUBLIC_WALLA_URL}
+              width="100%"
+              height="100%"
+              style={{border: "none"}}
+            />
           </div>
         </Contact>
 

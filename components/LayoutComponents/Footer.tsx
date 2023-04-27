@@ -7,9 +7,9 @@ function Footer() {
     <div
       id="footer"
       className={`w-[100%] ${
-        router.pathname === "/product/ciet" || router.pathname === "/participate"
+        router.pathname === "/product/ciet"
           ? "snap-start"
-          : router.pathname === "/"
+          : router.pathname === "/" || router.pathname === "/participate"
           ? ""
           : "snap-end"
       } ${

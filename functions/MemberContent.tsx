@@ -23,15 +23,6 @@ const MemberContent: {[key: string]: any} = {
     pic: "/images/members/prof.jpg",
     pic_square: "/images/members/prof_square.jpg",
   },
-  // minhyeok: {
-  //   name: "고민혁",
-  //   position: "Senior Researcher",
-  //   description:
-  //     "서울대학교 기계항공공학부 학사과정 중이며 LCA 기법 트렌드에 관심이 많고 훗날 이를 주도하고 싶다는 목표가 있습니다.",
-  //   pic: "/images/members/minhyeok.jpg",
-  //   pic_square: "/images/members/minhyeok_square.jpg",
-  // }
-  // ,
   hyeonseo: {
     name: "유현서",
     position: "Research Scientist",
@@ -40,21 +31,21 @@ const MemberContent: {[key: string]: any} = {
     pic: "/images/members/hyeonseo.jpg",
     pic_square: "/images/members/hyeonseo_square.jpg",
   },
+  yoondeok: {
+    name: "김윤덕",
+    position: "Software Developer",
+    description:
+      "고객들에게 최고의 경험과 가치를 전달하는 소프트웨어를 만들기 위해 연구하는 소프트웨어 개발자입니다.",
+    pic: "/images/members/yoondeok.jpg",
+    pic_square: "/images/members/yoondeok_square.jpg",
+  },
   kyunghoh: {
     name: "안경호",
-    position: "Software Developer/PO",
+    position: "Software Developer",
     description:
       "웹, 모바일, 서버 등 다양한 IT 개발 경험을 바탕으로 기후 변화와 탄소 중립 해결을 위한 클라우드 SaaS를 만들어가는 개발자입니다.",
     pic: "/images/members/kyunghoh.jpg",
     pic_square: "/images/members/kyunghoh_square.jpg",
-  },
-  minhee: {
-    name: "백민희",
-    position: "Software Developer",
-    description:
-      "웹 프론트엔드 개발을 담당하고 있습니다. 세상에 긍정적인 영향을 줄 수 있는 개발자가 되고 싶습니다.",
-    pic: "/images/members/minhee.jpg",
-    pic_square: "/images/members/minhee_square.jpg",
   },
   jeongyun: {
     name: "최정윤",
@@ -64,6 +55,14 @@ const MemberContent: {[key: string]: any} = {
     pic: "/images/members/jeongyun.jpg",
     pic_square: "/images/members/jeongyun_square.jpg",
   },
+  jihyung: {
+    name: "이지형",
+    position: "Software Developer",
+    description:
+      "녹색 미래를 꿈꾸며 모두가 손쉽게 탄소 중립을 실천할 수 있도록 돕는 프론트엔드 개발자입니다.",
+    pic: "/images/members/jihyung.jpg",
+    pic_square: "/images/members/jihyung_square.jpg",
+  },
   hyelim: {
     name: "박혜림",
     position: "UX/UI Designer",
@@ -72,15 +71,6 @@ const MemberContent: {[key: string]: any} = {
     pic: "/images/members/hyelim.jpg",
     pic_square: "/images/members/hyelim_square.jpg",
   },
-
-  // cherin: {
-  //   name: "유채린",
-  //   position: "Software Developer",
-  //   description:
-  //     "홈페이지와 Light Calculator 개발을 담당하였고, 탄소중립을 위한 멋진 개발자가 되고 싶습니다.",
-  //   pic: "/images/members/cherin.jpg",
-  //   pic_square: "/images/members/cherin_square.jpg",
-  // },
 };
 
 export default MemberContent;

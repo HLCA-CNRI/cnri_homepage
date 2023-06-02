@@ -11,11 +11,11 @@ const Members = memo(() => {
     MemberContent.min,
     MemberContent.jonghoh,
     MemberContent.prof,
-    // MemberContent.minhyeok,
     MemberContent.hyeonseo,
+    MemberContent.yoondeok,
     MemberContent.kyunghoh,
-    MemberContent.minhee,
     MemberContent.jeongyun,
+    MemberContent.jihyung,
     MemberContent.hyelim,
   ]);
 

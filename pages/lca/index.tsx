@@ -243,8 +243,8 @@ function lca() {
               <span className="col-span-7">: contact@cnrikorea.com</span>
             </div>
             <div className="grid grid-cols-8 gap-2">
-              <span>TEL</span>
-              <span className="col-span-7">: 010-3652-8419</span>
+              <span>대표이사</span>
+              <span className="col-span-7">: 이민</span>
             </div>
             <div className="grid grid-cols-8 gap-2">
               <span>본사</span>

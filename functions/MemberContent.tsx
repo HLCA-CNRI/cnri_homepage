@@ -39,14 +39,6 @@ const MemberContent: {[key: string]: any} = {
     pic: "/images/members/yoondeok.jpg",
     pic_square: "/images/members/yoondeok_square.jpg",
   },
-  kyunghoh: {
-    name: "안경호",
-    position: "Software Developer",
-    description:
-      "웹, 모바일, 서버 등 다양한 IT 개발 경험을 바탕으로 기후 변화와 탄소 중립 해결을 위한 클라우드 SaaS를 만들어가는 개발자입니다.",
-    pic: "/images/members/kyunghoh.jpg",
-    pic_square: "/images/members/kyunghoh_square.jpg",
-  },
   jeongyun: {
     name: "최정윤",
     position: "Software Developer",

@@ -13,7 +13,6 @@ const Members = memo(() => {
     MemberContent.prof,
     MemberContent.hyeonseo,
     MemberContent.yoondeok,
-    MemberContent.kyunghoh,
     MemberContent.jeongyun,
     MemberContent.jihyung,
     MemberContent.hyelim,

@@ -5,7 +5,7 @@ import styled, {css} from "styled-components";
 import {deleteCookie, setCookie} from "cookies-next";
 import {CookieKey} from "../constants/enum/cookie_key.enum";
 // import pcBackground from "../public/images/popup_background.png";
-import forbesPopupBackground from "../public/images/forbes_popup_background.png";
+import popupBackground from "../public/images/popup_background.png";
 
 const PopUp = () => {
   const [isOpened, setIsOpened] = useState(true);
@@ -48,17 +48,16 @@ const PopUp = () => {
           <div
             className={` absolute md:landscape:w-[25vw] md:landscape:h-[25vw] w-[90vw] h-[90vw]    bg-cover z-[200] shadow-md  `}>
             <a
-              href="https://jmagazine.joins.com/forbes/view/337505"
-              // 포브스
               // 링크
+              href="https://career-cnri.oopy.io/"
               className="w-full h-full absolute"
               target="_blank"
               rel="noopener noreferrer">
               <Image
                 priority
-                src={forbesPopupBackground}
+                src={popupBackground}
                 // src={pcBackground}
-                alt="이민 대표 포브스 코리아 30세 미만 30인 선정"
+                alt="탄소중립연구원 채용공고"
                 sizes="880px"
                 layout="fill"
                 className="object-cover"
@@ -69,7 +68,7 @@ const PopUp = () => {
                 role="button"
                 id={delBtnId.current}
                 onClick={onDelbtnClick}
-                className="relative  right-1 text-[20px] font-semibold flex justify-end  hover:cursor-pointer opacity-70">
+                className="relative  right-1 text-[20px] font-semibold flex justify-end  hover:cursor-pointer text-[white]">
                 ×
               </div>
             </div>
